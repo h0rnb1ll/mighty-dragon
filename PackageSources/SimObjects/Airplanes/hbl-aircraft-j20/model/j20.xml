@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<ModelInfo guid="{2bdfeef1-2298-4510-9185-415944d6674e}" version="1.1">
+	<LODS>
+		<LOD ModelFile="J20.gltf" minSize="1"/>
+	</LODS>
+
+	<Behaviors>
+		<Include ModelBehaviorFile="Asobo\Exterior.xml"/>
+		<Include ModelBehaviorFile="Evanburnsdev\Lighting.xml"/>
+    	<Include ModelBehaviorFile="Asobo\Generic\FX.xml"/>
+		<Component ID="Lighting">
+			<UseTemplate Name="EVANBURNSDEV_LIGHTING_Formation_Lights_Template"/>
+		</Component>
+		<Component ID="GEAR">
+			<UseTemplate Name="ASOBO_GEAR_Center_Tire_Template"/>
+			<UseTemplate Name="ASOBO_GEAR_Left_Tire_Template"/>
+			<UseTemplate Name="ASOBO_GEAR_Right_Tire_Template"/>
+		</Component>
+		<Component ID="FX_CONTRAILS">
+			<Component ID="FX_CONTRAIL_QUAD_LEFT_OUT" Node="fx_contrail_left">
+				<UseTemplate Name="ASOBO_GT_FX">
+					<FX_CODE>(A:CONTRAILS CONDITIONS MET:1, Keyframe) 0 &gt;</FX_CODE>
+					<FX_OFFSET_X>0</FX_OFFSET_X>
+					<FX_OFFSET_Y>0</FX_OFFSET_Y>
+					<FX_OFFSET_Z>-0</FX_OFFSET_Z>
+					<FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
+					<FX_NAME>FX_CONTRAILS</FX_NAME>
+				</UseTemplate>
+			</Component>
+			<Component ID="FX_CONTRAIL_QUAD_RIGHT_OUT" Node="fx_contrail_right">
+				<UseTemplate Name="ASOBO_GT_FX">
+					<FX_CODE>(A:CONTRAILS CONDITIONS MET:1, Keyframe) 0 &gt;</FX_CODE>
+					<FX_OFFSET_X>0</FX_OFFSET_X>
+					<FX_OFFSET_Y>0</FX_OFFSET_Y>
+					<FX_OFFSET_Z>-0</FX_OFFSET_Z>
+					<FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
+					<FX_NAME>FX_CONTRAILS</FX_NAME>
+				</UseTemplate>
+			</Component>
+		</Component>
+		<Component ID="FX_CONTRAIL_RIBBON">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:CONTRAILS CONDITIONS MET:1, Keyframe) 0 &gt;</FX_CODE>
+					<FX_OFFSET_X>0</FX_OFFSET_X>
+					<FX_OFFSET_Y>0</FX_OFFSET_Y>
+					<FX_OFFSET_Z>0</FX_OFFSET_Z>
+					<FX_GUID>{904EC2CE-F8DD-4480-99E7-B33F7CF6E114}</FX_GUID>
+					<FX_NAME>FX_CONTRAILS_RIBBON</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_CONTRAIL_RIBBON_LEFT_OUT" Node="fx_contrail_left">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+			<Component ID="FX_CONTRAIL_RIBBON_RIGHT_OUT" Node="fx_contrail_right">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+
+		<Component ID="RUDDER">
+			<Component ID="RUDDER_LEFT">
+				<DefaultTemplateParameters>
+					<ANIM_NAME>Rudder_Left</ANIM_NAME>
+					<ANIM_LENGTH>100</ANIM_LENGTH>
+				</DefaultTemplateParameters>
+				<UseTemplate Name = "ASOBO_GT_Anim_Code">
+					<ANIM_CODE>
+						(A:RUDDER DEFLECTION PCT, percent) 0.5 * 50 +
+						(A:SPOILERS LEFT POSITION, percent) 0.5 *
+						+
+					</ANIM_CODE>
+				</UseTemplate>
+			</Component>
+			<Component ID="RUDDER_RIGHT">
+				<DefaultTemplateParameters>
+					<ANIM_NAME>Rudder_Right</ANIM_NAME>
+					<ANIM_LENGTH>100</ANIM_LENGTH>
+				</DefaultTemplateParameters>
+				<UseTemplate Name = "ASOBO_GT_Anim_Code">
+					<ANIM_CODE>
+						(A:RUDDER DEFLECTION PCT, percent) 0.5 * 50 +
+						(A:SPOILERS RIGHT POSITION, percent) -0.5 *
+						+
+					</ANIM_CODE>
+				</UseTemplate>
+			</Component>
+		</Component>
+	</Behaviors>
+</ModelInfo>
+
