@@ -1,0 +1,53 @@
+﻿<script type="text/html" id="HUD">
+    <glasscockpit-highlight id="highlight"></glasscockpit-highlight>
+    <div id="Mainframe">
+        <div id="Electricity" state="off">
+            <glasscockpit-hud-heading-indicator id="Heading" background="false"></glasscockpit-hud-heading-indicator>
+            <glasscockpit-hud-g-indicator id="GForce" background="false"></glasscockpit-hud-g-indicator>
+            <div id="HorizonContainer">
+                <map-instrument id="SyntheticVision" bing-mode="horizon" bing-id="HUD_SyntheticVision" show-overlay="false" config-path="/Pages/VCockpit/Instruments/NavSystems/HUD/"></map-instrument>
+                <glasscockpit-hud-attitude-indicator id="Horizon" background="false"></glasscockpit-hud-attitude-indicator>
+            </div>
+
+            <div id="InstrumentsContainer">
+                <glasscockpit-hud-altimeter id="Altimeter"></glasscockpit-hud-altimeter>
+                <glasscockpit-hud-airspeed-indicator id="Airspeed"></glasscockpit-hud-airspeed-indicator>
+                <glasscockpit-hud-hsi id="Compass"></glasscockpit-hud-hsi>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<link rel="stylesheet" href="HUD.css" />
+
+<script type="text/html" import-script="/JS/Types.js" import-async="false"></script>
+<script type="text/html" import-script="/JS/Inputs.js"></script>
+<script type="text/html" import-script="/JS/SortedList.js"></script>
+<script type="text/html" import-script="/JS/avionics.js"></script>
+<script type="text/html" import-script="/JS/SimPlane.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/WaypointLoader.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/FlightPlan.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/FlightPlanManager.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/Waypoint.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/NearestWaypoint.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/Approach.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/Runway.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/GeoCalc.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/HudHSIndicator.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/HudAltimeter.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/HudAirspeedIndicator.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/HudAttitudeIndicator.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/HudHeading.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/HudGIndicator.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SearchField.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SelectableElement.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/ContextualMenu.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js"></script>
+<!--<script type="text/html" import-script="/JS/debug.js"></script>-->
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/HUD/HUD.js"></script>

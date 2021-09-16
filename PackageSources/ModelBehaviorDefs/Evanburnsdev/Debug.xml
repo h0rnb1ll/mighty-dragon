@@ -1,0 +1,305 @@
+<ModelBehaviors>
+	<Include ModelBehaviorFile="Asobo\Common.xml"/>
+	
+	<Template Name="EVANBURNSDEV_FUEL_Switch_Pump_SubTemplate">
+		<DefaultTemplateParameters>
+			<ANIM_NAME>FUEL_#INTERACTION#_Pump_#ID#</ANIM_NAME>
+			<NODE_ID>FUEL_#INTERACTION#_Pump_#ID#</NODE_ID>
+			<PART_ID>FUEL_#INTERACTION#_Pump</PART_ID>
+			<WWISE_EVENT>fuel_pump_switch</WWISE_EVENT>
+			<WWISE_EVENT_1>fuel_pump_switch_on</WWISE_EVENT_1>
+			<NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
+			<WWISE_EVENT_2>fuel_pump_switch_off</WWISE_EVENT_2>
+			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
+		</DefaultTemplateParameters>
+		<Switch Param="SWITCH_TYPE">
+			<Case Value="ON_OFF">
+				<Component ID="#NODE_ID#" Node="#NODE_ID#">
+					<UseTemplate Name="ASOBO_GT_Switch_Code">
+						<ANIM_CODE>(A:FUELSYSTEM PUMP SWITCH:#ID#, Bool) 100 *</ANIM_CODE>
+						<LEFT_SINGLE_CODE>#ID# (&gt;K:FUELSYSTEM_PUMP_TOGGLE)</LEFT_SINGLE_CODE>
+						<ANIMREF_ID>0</ANIMREF_ID>
+						<ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
+						<ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
+						<ANIMTIP_0>Turn Pump #ID# On</ANIMTIP_0>
+						<ANIMTIP_1>Turn Pump #ID# Off</ANIMTIP_1>
+					</UseTemplate>
+				</Component>
+			</Case>
+		</Switch>
+	</Template>
+	<Template Name="EVANBURNSDEV_FUEL_Switch_Pump_Template">
+		<DefaultTemplateParameters>
+			<ID>1</ID>
+			<SWITCH_TYPE>ON_OFF</SWITCH_TYPE>
+			<INTERACTION>Switch</INTERACTION>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_FUEL_Switch_Pump_SubTemplate">
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_DEBUG_ELEVATOR_DEFL">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>5</FREQUENCY>
+			<UPDATE_CODE>
+				(A:ELEVATOR DEFLECTION, radians) 180 * 
+				3.14159 / (&gt;L:XMLVAR_EBD_ELEVATOR_DEFL)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:USER INPUT ENABLED, Boolean) (&gt;L:XMLVAR_EBD_USER_INPUT_ENABLED)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_DEBUG_AOA">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:INCIDENCE ALPHA, radians) 180 * 
+				3.14159 / (&gt;L:XMLVAR_EBD_AOA)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_DEBUG_TAT">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:TOTAL AIR TEMPERATURE, radians) (&gt;L:XMLVAR_EBD_TAT)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_DEBUG_CN1">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:TURB ENG CORRECTED N1:1, percent) (&gt;L:XMLVAR_EBD_CN1)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_DEBUG_CN2">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:TURB ENG CORRECTED N2:1, percent) (&gt;L:XMLVAR_EBD_CN2)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_DEBUG_ENGINES">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>(A:TURB ENG THROTTLE COMMANDED N1:1, percent) (&gt;L:XMLVAR_EBD_ENGINE_THROTTLE_TURB_ENG_COMMANDED_N1)</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>(A:TURB ENG COMMANDED N1:1, percent) (&gt;L:XMLVAR_EBD_ENGINE_TURB_ENG_COMMANDED_N1)</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:TURB ENG N1:1, percent) (&gt;L:XMLVAR_EBD_ENGINE_N1)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:TURB ENG CORRECTED N1:1, percent) (&gt;L:XMLVAR_EBD_ENGINE_CORRECTED_N1)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:TURB ENG N2:1, percent) (&gt;L:XMLVAR_EBD_ENGINE_N2)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:TURB ENG CORRECTED N2:1, percent) (&gt;L:XMLVAR_EBD_ENGINE_CORRECTED_N2)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:TURB ENG FUEL FLOW PPH:1, pph) (&gt;L:XMLVAR_EBD_ENGINE_FF)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>
+				(A:TURB ENG CORRECTED FF:1, pph) (&gt;L:XMLVAR_EBD_ENGINE_CORRECTED_FF)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_DEBUG_FBW">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE ELAC SWITCH:1, bool) (&gt;L:XMLVAR_EBD_FBW_ELAC_SW_1)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE FAC SWITCH:1, bool) (&gt;L:XMLVAR_EBD_FBW_FAC_SW_1)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE SEC SWITCH:1, bool) (&gt;L:XMLVAR_EBD_FBW_SEC_SW_1)
+			</UPDATE_CODE>
+		</UseTemplate>
+		
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE ELAC SWITCH:2, bool) (&gt;L:XMLVAR_EBD_FBW_ELAC_SW_2)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE FAC SWITCH:2, bool) (&gt;L:XMLVAR_EBD_FBW_FAC_SW_2)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE SEC SWITCH:2, bool) (&gt;L:XMLVAR_EBD_FBW_SEC_SW_2)
+			</UPDATE_CODE>
+		</UseTemplate>
+		
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE ELAC SWITCH:3, bool) (&gt;L:XMLVAR_EBD_FBW_ELAC_SW_3)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE FAC SWITCH:3, bool) (&gt;L:XMLVAR_EBD_FBW_FAC_SW_3)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE SEC SWITCH:3, bool) (&gt;L:XMLVAR_EBD_FBW_SEC_SW_3)
+			</UPDATE_CODE>
+		</UseTemplate>
+		
+		
+		
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE ELAC FAILED:1, bool) (&gt;L:XMLVAR_EBD_FBW_ELAC_FAILED_1)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE FAC FAILED:1, bool) (&gt;L:XMLVAR_EBD_FBW_FAC_FAILED_1)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE SEC FAILED:1, bool) (&gt;L:XMLVAR_EBD_FBW_SEC_FAILED_1)
+			</UPDATE_CODE>
+		</UseTemplate>
+		
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE ELAC FAILED:2, bool) (&gt;L:XMLVAR_EBD_FBW_ELAC_FAILED_2)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE FAC FAILED:2, bool) (&gt;L:XMLVAR_EBD_FBW_FAC_FAILED_2)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE SEC FAILED:2, bool) (&gt;L:XMLVAR_EBD_FBW_SEC_FAILED_2)
+			</UPDATE_CODE>
+		</UseTemplate>
+		
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE ELAC FAILED:3, bool) (&gt;L:XMLVAR_EBD_FBW_ELAC_FAILED_3)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE FAC FAILED:3, bool) (&gt;L:XMLVAR_EBD_FBW_FAC_FAILED_3)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:FLY BY WIRE SEC FAILED:3, bool) (&gt;L:XMLVAR_EBD_FBW_SEC_FAILED_3)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	
+	<Template Name="EVANBURNSDEV_DEBUG_LIGHTING_TAXI">		
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:LIGHT TAXI ON, bool) (&gt;L:XMLVAR_EBD_LIGHT_TAXI_ON)
+				(A:LIGHT TAXI, bool) (&gt;L:XMLVAR_EBD_LIGHT_TAXI)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_DEBUG_POTENTIOMETER">
+		<DefaultTemplateParameters>
+			<POTENTIOMETER>9</POTENTIOMETER>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#_VALUE) (&gt;L:XMLVAR_EBD_DEBUG_POTENTIOMETER_#POTENTIOMETER#_INPUT)
+				(A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent) (&gt;L:XMLVAR_EBD_DEBUG_POTENTIOMETER_#POTENTIOMETER#)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_THROTTLE_Commanded_N1">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>(A:TURB ENG THROTTLE COMMANDED N1:1, percent) (&gt;L:XMLVAR_THROTTLE_TURB_ENG_COMMANDED_N1)</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>(A:TURB ENG COMMANDED N1:1, percent) (&gt;L:XMLVAR_TURB_ENG_COMMANDED_N1)</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>10</FREQUENCY>
+			<UPDATE_CODE>(A:TURB ENG CORRECTED N1:1, percent) (&gt;L:XMLVAR_TURB_ENG_CORRECTED_N1)</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_DEBUG_ELEVATORS">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:ELEVATOR POSITION, Position) (&gt;L:XMLVAR_EBD_DEBUG_ELEVATORS)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_DEBUG_PITOT">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>
+				(A:PITOT HEAT, Bool) (&gt;L:XMLVAR_EBD_DEBUG_PITOT_HEAT)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+</ModelBehaviors>

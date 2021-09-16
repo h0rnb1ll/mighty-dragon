@@ -1,0 +1,185 @@
+<ModelBehaviors>
+	<Include ModelBehaviorFile="Asobo\Common.xml"/>
+
+	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Generic">
+		<DefaultTemplateParameters>
+			<ANIM_NAME>#NODE_ID#</ANIM_NAME>
+			<WWISE_EVENT_1>parking_brake_switch_on</WWISE_EVENT_1>
+			<WWISE_EVENT_2>parking_brake_switch_off</WWISE_EVENT_2>
+			<NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
+			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
+			<Condition Check="LOCAL_VAR">
+				<True>
+					<LEFT_SINGLE_CODE>(L:#SIMVAR#, bool) ! (&gt;L:#SIMVAR#, bool)</LEFT_SINGLE_CODE>
+					<ANIM_CODE>(L:#SIMVAR#, bool) 100 *</ANIM_CODE>
+				</True>
+				<False>
+					<LEFT_SINGLE_CODE>(A:#SIMVAR#, bool) ! (&gt;A:#SIMVAR#, bool)</LEFT_SINGLE_CODE>
+					<ANIM_CODE>(A:#SIMVAR#, bool) 100 *</ANIM_CODE>
+				</False>
+			</Condition>
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="ASOBO_GT_Switch_Code" />
+		</Component>
+	</Template>
+	
+	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Bus_Toggle">
+		<Component ID="#ID#" Node="#ID#">
+			<DefaultTemplateParameters>
+				<BUS_SRC>11</BUS_SRC>
+				<BUS_DEST>10</BUS_DEST>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_GT_Switch_Code">
+				<ANIM_NAME>#ID#</ANIM_NAME>
+				<NODE_ID>#ID#</NODE_ID>
+				<PART_ID>#ID#</PART_ID>
+				<LEFT_SINGLE_CODE>
+					#BUS_SRC# #BUS_DEST# (&gt;K:2:ELECTRICAL_BUS_TO_BUS_CONNECTION_TOGGLE)
+				</LEFT_SINGLE_CODE>
+				<ANIM_CODE>
+					#BUS_SRC# (&gt;A:BUS LOOKUP INDEX, Number)
+					(A:BUS CONNECTION ON:#BUS_DEST#, Bool) 100 *
+				</ANIM_CODE>
+			</UseTemplate>
+		</Component>
+	</Template>
+	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Double_Bus_Toggle">
+		<Component ID="#ID#" Node="#ID#">
+			<DefaultTemplateParameters>
+				<BUS_SRC1>11</BUS_SRC1>
+				<BUS_DEST1>10</BUS_DEST1>
+				<BUS_SRC2>11</BUS_SRC2>
+				<BUS_DEST2>10</BUS_DEST2>
+				<WWISE_EVENT_1>alternator_switch_on</WWISE_EVENT_1>
+				<WWISE_EVENT_2>alternator_switch_off</WWISE_EVENT_2>
+				<ANIMTIP_0>Connect Generator</ANIMTIP_0>
+				<ANIMTIP_1>Disconnect Generator</ANIMTIP_1>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_GT_Switch_Code">
+				<ANIM_NAME>#ID#</ANIM_NAME>
+				<NODE_ID>#ID#</NODE_ID>
+				<PART_ID>#ID#</PART_ID>
+				<LEFT_SINGLE_CODE>
+					#BUS_SRC1# #BUS_DEST1# (&gt;K:2:ELECTRICAL_BUS_TO_BUS_CONNECTION_TOGGLE)
+					#BUS_SRC2# #BUS_DEST2# (&gt;K:2:ELECTRICAL_BUS_TO_BUS_CONNECTION_TOGGLE)
+				</LEFT_SINGLE_CODE>
+				<ANIM_CODE>
+					#BUS_SRC1# (&gt;A:BUS LOOKUP INDEX, Number)
+					(A:BUS CONNECTION ON:#BUS_DEST1#, Bool) 100 *
+				</ANIM_CODE>
+			</UseTemplate>
+		</Component>
+	</Template>
+	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_APU_Starter_Template">
+		<DefaultTemplateParameters>
+			<ANIM_NAME>ELECTRICAL_Switch_APU_Starter</ANIM_NAME>
+			<NODE_ID>ELECTRICAL_Switch_APU_Starter</NODE_ID>
+			<PART_ID>ELECTRICAL_Switch_APU_Starter</PART_ID>
+			<NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
+			<WWISE_EVENT_1>starter_apu_switch_on</WWISE_EVENT_1>
+			<WWISE_EVENT_2>starter_apu_switch_off</WWISE_EVENT_2>
+			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
+			<ANIMTIP_0>Start APU</ANIMTIP_0>
+			<ANIMTIP_1>Stop APU</ANIMTIP_1>
+		</DefaultTemplateParameters>
+		<OverrideTemplateParameters>
+			<LEFT_SINGLE_CODE>
+				(A:APU SWITCH, Bool) if{
+					(&gt;K:APU_OFF_SWITCH)
+					0 0 (&gt;K:2:APU_GENERATOR_SWITCH_SET)
+				}
+				els{
+					(&gt;K:APU_STARTER)
+					0 1 (&gt;K:2:APU_GENERATOR_SWITCH_SET)
+				}
+			</LEFT_SINGLE_CODE>
+			<ANIM_CODE>
+				(A:APU SWITCH, Bool) 100 *
+			</ANIM_CODE>
+		</OverrideTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="ASOBO_GT_Switch_Code" />
+		</Component>
+	</Template>	
+	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_APU_Bleed_Template">
+		<DefaultTemplateParameters>
+			<ANIM_NAME>ELECTRICAL_Switch_APU_Bleed</ANIM_NAME>
+			<NODE_ID>ELECTRICAL_Switch_APU_Bleed</NODE_ID>
+			<PART_ID>ELECTRICAL_Switch_APU_Bleed</PART_ID>
+			<TOOLTIPID>%((A:BLEED AIR APU, Bool) )%{if}TT:COCKPIT.TOOLTIPS.PRESSURIZATION_PANEL_APU_BLEED_TURN_OFF%{else}TT:COCKPIT.TOOLTIPS.PRESSURIZATION_PANEL_APU_BLEED_TURN_ON%{end}</TOOLTIPID>
+		</DefaultTemplateParameters>
+		<OverrideTemplateParameters>
+			<ANIM_CODE>(A:BLEED AIR APU, Bool) 100 *</ANIM_CODE>
+			<LEFT_SINGLE_CODE>(&gt;K:APU_BLEED_AIR_SOURCE_TOGGLE)</LEFT_SINGLE_CODE>
+		</OverrideTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="ASOBO_GT_Switch_Code" />
+		</Component>
+	</Template>
+	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Engine_Bleed_Template">
+		<DefaultTemplateParameters>
+			<ANIM_NAME>ELECTRICAL_Switch_Engine_Bleed_#ID#</ANIM_NAME>
+			<NODE_ID>ELECTRICAL_Switch_Engine_Bleed_#ID#</NODE_ID>
+			<PART_ID>ELECTRICAL_Switch_Engine_Bleed</PART_ID>
+			<TOOLTIPID>%((A:BLEED AIR ENGINE:#ID#, Bool) !)%{if}TT:COCKPIT.TOOLTIPS.PRESSURIZATION_PANEL_ENGINE_#ID#_BLEED_TURN_ON%{else}TT:COCKPIT.TOOLTIPS.PRESSURIZATION_PANEL_ENGINE_#ID#_BLEED_TURN_OFF%{end}</TOOLTIPID>
+		</DefaultTemplateParameters>
+		<OverrideTemplateParameters>
+			<ANIM_CODE>(A:BLEED AIR ENGINE:#ID#, Bool) 100 *</ANIM_CODE>
+			<LEFT_SINGLE_CODE>#ID# (&gt;K:ENGINE_BLEED_AIR_SOURCE_TOGGLE)</LEFT_SINGLE_CODE>
+		</OverrideTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="ASOBO_GT_Switch_Code" />
+		</Component>
+	</Template>
+	<Template Name="EVANBURNSDEV_ELECTRICAL_Log_Bus_Vars">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>(A:ELECTRICAL MAIN BUS VOLTAGE:#ID#, volts) (&gt;L:XMLVAR_EBD_BUS_#ID#_VOLTS)</UPDATE_CODE>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>1</FREQUENCY>
+			<UPDATE_CODE>(A:ELECTRICAL MAIN BUS AMPS:#ID#, volts) (&gt;L:XMLVAR_EBD_BUS_#ID#_AMPS)</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	
+	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Battery_Master_Template">
+		<DefaultTemplateParameters>
+			<ID>1</ID>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Battery_Master_SubTemplate">
+		</UseTemplate>
+	</Template>	
+	
+	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Battery_Master_SubTemplate">
+		<DefaultTemplateParameters>
+			<ANIM_NAME>ELECTRICAL_Switch_Battery_Master_#ID#</ANIM_NAME>
+			<NODE_ID>ELECTRICAL_Switch_Battery_Master_#ID#</NODE_ID>
+			<ANIM_NAME_LOCK>ELECTRICAL_Switch_Battery_Master_#ID#_Lock</ANIM_NAME_LOCK>
+			<NODE_ID_LOCK>ELECTRICAL_Switch_Battery_Master_#ID#_Lock</NODE_ID_LOCK>
+			<PART_ID>ELECTRICAL_Switch_Battery_Master</PART_ID>
+			
+			<FAULT_NODE_ID>ELECTRICAL_Switch_Battery_Master_Fault_#ID#</FAULT_NODE_ID>
+			<OFF_NODE_ID>ELECTRICAL_Switch_Battery_Master_Off_#ID#</OFF_NODE_ID>
+			<ON_NODE_ID>ELECTRICAL_Switch_Battery_Master_On_#ID#</ON_NODE_ID>
+			<WWISE_EVENT_1>battery_switch_on</WWISE_EVENT_1>
+			<WWISE_EVENT_2>battery_switch_off</WWISE_EVENT_2>
+			
+			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.MASTER_SWITCH_BAT_OFF</ANIMTIP_0>
+			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.MASTER_SWITCH_BAT_ON</ANIMTIP_1>
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="ASOBO_GT_Switch_Code">
+				<ANIM_CODE>(A:ELECTRICAL MASTER BATTERY:#ID#, Bool) 100 *</ANIM_CODE>
+				<!--<HELPID>HELPID_GAUGE_BATTERY_SWITCH</HELPID> -->
+				<LEFT_SINGLE_CODE>
+					0 (&gt;K:TOGGLE_MASTER_BATTERY)
+				</LEFT_SINGLE_CODE>
+				<WWISE_EVENT_1>battery_switch_on</WWISE_EVENT_1>
+				<WWISE_EVENT_2>battery_switch_off</WWISE_EVENT_2>
+				<NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
+				<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
+			</UseTemplate>
+		</Component>
+	</Template>
+</ModelBehaviors>

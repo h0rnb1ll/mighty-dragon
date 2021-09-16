@@ -1,0 +1,87 @@
+<ModelBehaviors>
+	<Include ModelBehaviorFile="Asobo\Common.xml"/>
+	<Include ModelBehaviorFile="Asobo\Generic.xml"/>
+	
+	<Template Name="EVANBURNSDEV_FlyByWire_Initialize">
+		<DefaultTemplateParameters>
+			<!-- Pitch Rate PIDs(Elevators) -->
+			<REQ_PITCH_RATE>40</REQ_PITCH_RATE>
+			<PITCH_P>0</PITCH_P>
+			<PITCH_I>0</PITCH_I>
+			<PITCH_D>0</PITCH_D>
+			<PITCH_O_MAX>1</PITCH_O_MAX>
+			
+			<!-- G Force PIDs(Elevators) -->
+			<REQ_G_FORCE>12</REQ_G_FORCE>
+			<G_FORCE_P>0</G_FORCE_P>
+			<G_FORCE_I>0</G_FORCE_I>
+			<G_FORCE_D>0</G_FORCE_D>
+			<G_FORCE_O_MAX>1</G_FORCE_O_MAX>
+
+			<!-- Elevator Trim PIDs -->
+			<REQ_ETRIM_RATE>0</REQ_ETRIM_RATE>
+			<ETRIM_P>0</ETRIM_P>
+			<ETRIM_I>0</ETRIM_I>
+			<ETRIM_D>0</ETRIM_D>
+			<ETRIM_O_MAX>0</ETRIM_O_MAX>
+
+			<!-- Roll PIDs(Ailerons) -->
+			<REQ_ROLL_RATE>40</REQ_ROLL_RATE>
+			<ROLL_P>0</ROLL_P>
+			<ROLL_I>0</ROLL_I>
+			<ROLL_D>0</ROLL_D>
+			<ROLL_O_MAX>1</ROLL_O_MAX>
+
+			<!-- Yaw PIDs(Rudder) -->
+			<REQ_YAW_RATE>5</REQ_YAW_RATE>
+			<YAW_P>0</YAW_P>
+			<YAW_I>0</YAW_I>
+			<YAW_D>0</YAW_D>
+			<YAW_O_MAX>1</YAW_O_MAX>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<UPDATE_ONCE>True</UPDATE_ONCE>
+			<UPDATE_CODE>
+				#REQ_PITCH_RATE# (&gt;L:XMLVAR_EBD_FBW_REQ_PITCH_RATE)
+				#PITCH_P# (&gt;L:XMLVAR_EBD_FBW_PITCH_P)
+				#PITCH_I# (&gt;L:XMLVAR_EBD_FBW_PITCH_I)
+				#PITCH_D# (&gt;L:XMLVAR_EBD_FBW_PITCH_D)
+				#PITCH_O_MAX# (&gt;L:XMLVAR_EBD_FBW_PITCH_OUTPUT_MAX)
+				#REQ_G_FORCE# (&gt;L:XMLVAR_EBD_FBW_REQ_G_FORCE)
+				#G_FORCE_P# (&gt;L:XMLVAR_EBD_FBW_G_FORCE_P)
+				#G_FORCE_I# (&gt;L:XMLVAR_EBD_FBW_G_FORCE_I)
+				#G_FORCE_D# (&gt;L:XMLVAR_EBD_FBW_G_FORCE_D)
+				#G_FORCE_O_MAX# (&gt;L:XMLVAR_EBD_FBW_G_FORCE_OUTPUT_MAX)
+				#REQ_ETRIM_RATE# (&gt;L:XMLVAR_EBD_FBW_REQ_ETRIM_RATE)
+				#ETRIM_P# (&gt;L:XMLVAR_EBD_FBW_ETRIM_P)
+				#ETRIM_I# (&gt;L:XMLVAR_EBD_FBW_ETRIM_I)
+				#ETRIM_D# (&gt;L:XMLVAR_EBD_FBW_ETRIM_D)
+				#ETRIM_O_MAX# (&gt;L:XMLVAR_EBD_FBW_ETRIM_OUTPUT_MAX)
+				#REQ_ROLL_RATE# (&gt;L:XMLVAR_EBD_FBW_REQ_ROLL_RATE)
+				#ROLL_P# (&gt;L:XMLVAR_EBD_FBW_ROLL_P)
+				#ROLL_I# (&gt;L:XMLVAR_EBD_FBW_ROLL_I)
+				#ROLL_D# (&gt;L:XMLVAR_EBD_FBW_ROLL_D)
+				#ROLL_O_MAX# (&gt;L:XMLVAR_EBD_FBW_ROLL_OUTPUT_MAX)
+				#REQ_YAW_RATE# (&gt;L:XMLVAR_EBD_FBW_REQ_YAW_RATE)
+				#YAW_P# (&gt;L:XMLVAR_EBD_FBW_YAW_P)
+				#YAW_I# (&gt;L:XMLVAR_EBD_FBW_YAW_I)
+				#YAW_D# (&gt;L:XMLVAR_EBD_FBW_YAW_D)
+				#YAW_O_MAX# (&gt;L:XMLVAR_EBD_FBW_YAW_OUTPUT_MAX)
+				1 (&gt;L:XMLVAR_EBD_FBW_PIDS_SET)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_FlyByWire">
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>60</FREQUENCY>
+			<UPDATE_CODE>
+				(L:XMLVAR_EBD_FBW_PITCH_STAT, Boolean) 1 and
+				(A:YOKE Y POSITION, degrees) *
+				0.01 *
+				(A:ELEVATOR TRIM POSITION, degrees) +
+				(&gt;A:ELEVATOR TRIM POSITION, degrees)
+			</UPDATE_CODE>
+		</UseTemplate>
+	</Template>
+	
+</ModelBehaviors>

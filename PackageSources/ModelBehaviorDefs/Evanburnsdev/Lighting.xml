@@ -1,0 +1,755 @@
+<ModelBehaviors>
+	<Template Name="EVANBURNSDEV_LIGHTING_Formation_Lights_SubTemplate">
+		<DefaultTemplateParameters>
+			<PART_ID>V_Tails</PART_ID>
+			<SCREEN_EMISSIVE_CODE>(L:XMLVAR_EBD_LIGHTING_FORMATION)</SCREEN_EMISSIVE_CODE>
+			<EMISSIVE_CODE_FACTOR>1</EMISSIVE_CODE_FACTOR>
+			<FAILURE>(A:CIRCUIT AVIONICS ON, Bool)</FAILURE>
+			<!-- Norm = 0.2; Brt = 2  -->
+		</DefaultTemplateParameters>
+		<Component ID="#PART_ID#" Node="#PART_ID#">
+			<UseTemplate Name="ASOBO_GT_Material_Emissive_Code">
+				<EMISSIVE_CODE>#SCREEN_EMISSIVE_CODE#</EMISSIVE_CODE>
+			</UseTemplate>
+		</Component>
+	</Template>
+	<Template Name="EVANBURNSDEV_LIGHTING_Formation_Lights_Template">
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Formation_Lights_SubTemplate">
+			<PART_ID>V_Tails</PART_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Formation_Lights_SubTemplate">
+			<PART_ID>Fuselage_Top</PART_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Formation_Lights_SubTemplate">
+			<PART_ID>Fuselage_Bottom</PART_ID>
+		</UseTemplate>
+	</Template>
+	
+	<Template Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+		<DefaultTemplateParameters>
+			<NODE_ID>LIGHTING_Generic_Emissive</NODE_ID>
+			<EMISSIVE_CODE>1</EMISSIVE_CODE>
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#_Emissive" Node="#NODE_ID#">
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>#EMISSIVE_CODE# (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent over 100) *</EMISSIVE_CODE>
+				<FAILURE>(A:CIRCUIT AVIONICS ON, Bool)</FAILURE>
+			</UseTemplate>
+		</Component>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Knob_Cabin_Template">
+		<DefaultTemplateParameters>
+			<Condition Check="ID">
+				<True>
+					<NODE_ID>LIGHTING_Knob_Cabin_#ID#</NODE_ID>
+					<ANIM_NAME>LIGHTING_Knob_Cabin_#ID#</ANIM_NAME>
+				</True>
+				<False>
+					<NODE_ID>LIGHTING_Knob_Cabin</NODE_ID>
+					<ANIM_NAME>LIGHTING_Knob_Cabin</ANIM_NAME>
+				</False>
+			</Condition>
+			<POTENTIOMETER>4</POTENTIOMETER>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_SubTemplate">
+			<LIGHT_SIMVAR>LIGHT CABIN</LIGHT_SIMVAR>
+			<LIGHT_EVENTID>CABIN_LIGHTS_SET</LIGHT_EVENTID>
+			<Condition Valid="USE_INTEGRATED_POWER_SETTING">
+				<LIGHT_EVENTID_SET_POWER_SETTING>CABIN_LIGHTS_POWER_SETTING_SET</LIGHT_EVENTID_SET_POWER_SETTING>
+				<LIGHT_SIMVAR_POWER_SETTING>LIGHT CABIN POWER SETTING</LIGHT_SIMVAR_POWER_SETTING>
+			</Condition>
+		</UseTemplate>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Knob_Glareshield_Template">
+		<DefaultTemplateParameters>
+			<Condition Check="ID">
+				<True>
+					<NODE_ID>LIGHTING_Knob_Glareshield_#ID#</NODE_ID>
+					<ANIM_NAME>LIGHTING_Knob_Glareshield_#ID#</ANIM_NAME>
+				</True>
+				<False>
+					<NODE_ID>LIGHTING_Knob_Glareshield</NODE_ID>
+					<ANIM_NAME>LIGHTING_Knob_Glareshield</ANIM_NAME>
+				</False>
+			</Condition>
+			<POTENTIOMETER>5</POTENTIOMETER>
+			<ANIMREF_ID>0</ANIMREF_ID>
+			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LIGHTING_KNOB_GLARESHIELD_DECREASE</ANIMTIP_0>
+			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
+			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LIGHTING_KNOB_GLARESHIELD_INCREASE</ANIMTIP_1>
+			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>		
+		</DefaultTemplateParameters>
+		
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_SubTemplate">
+			<LIGHT_SIMVAR>LIGHT GLARESHIELD</LIGHT_SIMVAR>
+			<LIGHT_EVENTID>GLARESHIELD_LIGHTS_SET</LIGHT_EVENTID>
+			<Condition Valid="USE_INTEGRATED_POWER_SETTING">
+				<LIGHT_EVENTID_SET_POWER_SETTING>GLARESHIELD_LIGHTS_POWER_SETTING_SET</LIGHT_EVENTID_SET_POWER_SETTING>
+				<LIGHT_SIMVAR_POWER_SETTING>LIGHT GLARESHIELD POWER SETTING</LIGHT_SIMVAR_POWER_SETTING>
+			</Condition>
+		</UseTemplate>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+		<DefaultTemplateParameters>
+			<Condition Check="ID">
+				<True>
+					<NODE_ID>LIGHTING_Knob_Avionics_#ID#</NODE_ID>
+					<ANIM_NAME>LIGHTING_Knob_Avionics_#ID#</ANIM_NAME>
+				</True>
+				<False>
+					<NODE_ID>LIGHTING_Knob_Avionics</NODE_ID>
+					<ANIM_NAME>LIGHTING_Knob_Avionics</ANIM_NAME>
+				</False>
+			</Condition>
+			<POTENTIOMETER>9</POTENTIOMETER>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_SubTemplate">
+		</UseTemplate>
+	</Template>
+	
+	<Template Name="EVANBURNSDEV_LIGHTING_Knob_SubTemplate">	
+		<DefaultTemplateParameters>
+			<CLOCKWISE_CODE/>
+			<ANTICLOCKWISE_CODE/>
+			<MAX_VALUE>100</MAX_VALUE>
+			<Condition Valid="PREVENT_OFF">
+				<True>
+					<MIN_VALUE>3</MIN_VALUE>
+				</True>
+				<False>
+					<MIN_VALUE>0</MIN_VALUE>
+				</False>
+			</Condition>
+			<KNOB_TURN_SPEED>10</KNOB_TURN_SPEED>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_SubSubTemplate">
+			<CLOCKWISE_CODE>
+				#CLOCKWISE_CODE#
+				(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) #KNOB_TURN_SPEED# + #MAX_VALUE# min (&gt;L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 
+				(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 10 / 2 pow #POTENTIOMETER# (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+				(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 10 / 2 pow (&gt;L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#_VALUE) 
+			</CLOCKWISE_CODE>
+			<ANTICLOCKWISE_CODE>
+				#ANTICLOCKWISE_CODE#
+				(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) #KNOB_TURN_SPEED# - #MIN_VALUE# max (&gt;L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 
+				(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 10 / 2 pow #POTENTIOMETER# (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+				(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 10 / 2 pow (&gt;L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#_VALUE) 
+			</ANTICLOCKWISE_CODE>
+			<Condition Check="SIMVAR_INDEX">
+				<True>
+					<LIGHT_SIMVAR>#LIGHT_SIMVAR#:#SIMVAR_INDEX#</LIGHT_SIMVAR>
+				</True>
+				<False>
+					<SIMVAR_INDEX></SIMVAR_INDEX>
+				</False>
+			</Condition>
+		</UseTemplate>
+	</Template>
+	
+	<Template Name="EVANBURNSDEV_LIGHTING_Knob_SubSubTemplate">
+		<DefaultTemplateParameters>
+			<ANIMREF_ID>0</ANIMREF_ID>
+			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
+			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
+			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LIGHTING_KNOB_LIGHT_GENERIC_DECREASE</ANIMTIP_0>
+			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LIGHTING_KNOB_LIGHT_GENERIC_INCREASE</ANIMTIP_1> 
+			<WWISE_EVENT>lighting_knob_generic</WWISE_EVENT>
+			<INIT_POTENTIOMETER_TO_SIMVAR>True</INIT_POTENTIOMETER_TO_SIMVAR>
+			<COUNT Process="Int">100 #KNOB_TURN_SPEED# /</COUNT>
+			<THRESHOLD_INPUT>0.00025</THRESHOLD_INPUT>
+			<THRESHOLD_MOUSE>0.005</THRESHOLD_MOUSE>
+			<Condition Check="LIGHT_SIMVAR">
+				<CUSTOM_CONDITION_OFF></CUSTOM_CONDITION_OFF>
+				<INIT_VALUE>0</INIT_VALUE>
+				<Condition Check="SIMVAR_INDEX">
+					<True>
+						<LIGHT_SIMVAR>#LIGHT_SIMVAR#:#SIMVAR_INDEX#</LIGHT_SIMVAR>
+						<INC_COUNTER/>
+						<DEC_COUNTER/>
+						<STORE_COUNTER/>
+						<INIT_COUNTER/>
+						<Condition Valid="USE_INTEGRATED_POWER_SETTING">
+							<True>
+								<CHECK_COUNTER>(A:#LIGHT_SIMVAR_POWER_SETTING#:#SIMVAR_INDEX#, Percent) 0 == and</CHECK_COUNTER>
+							</True>
+							<False>
+								<CHECK_COUNTER>(A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent) 0 == and</CHECK_COUNTER>
+							</False>
+						</Condition>
+					</True>
+					<False>
+						<SIMVAR_INDEX></SIMVAR_INDEX>
+						<INC_COUNTER>
+							(A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent) 0 == if{
+								(L:XMLVAR_#LIGHT_EVENTID#_ON_Counter) 1 + (&gt;L:XMLVAR_#LIGHT_EVENTID#_ON_Counter)
+							}
+						</INC_COUNTER>
+						<STORE_COUNTER>
+							(A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent) (&gt;O:XMLVAR_Potentiometer_PreviousFrameValue)
+						</STORE_COUNTER>
+						<DEC_COUNTER>
+							(O:XMLVAR_Potentiometer_PreviousFrameValue) 0 &gt;
+							(A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent) 0 == and if{
+								(L:XMLVAR_#LIGHT_EVENTID#_ON_Counter) 1 - (&gt;L:XMLVAR_#LIGHT_EVENTID#_ON_Counter)
+							}
+						</DEC_COUNTER>
+						<INIT_COUNTER>
+							(A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent) 0 &gt; if{
+								(L:XMLVAR_#LIGHT_EVENTID#_ON_Counter) 1 + (&gt;L:XMLVAR_#LIGHT_EVENTID#_ON_Counter)
+							}
+						</INIT_COUNTER>
+						<CHECK_COUNTER>
+							(L:XMLVAR_#LIGHT_EVENTID#_ON_Counter) 0 == and 
+						</CHECK_COUNTER>
+					</False>
+				</Condition>
+			</Condition>
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<DefaultTemplateParameters>
+				<Condition Check="LIGHT_SIMVAR">
+					<Condition Check="NO_AUTHORITY_OVER_SWITCH_STATE">
+						<True>
+							<TURN_ON_LIGHT_CODE></TURN_ON_LIGHT_CODE>
+							<TURN_OFF_LIGHT_CODE></TURN_OFF_LIGHT_CODE>
+						</True>
+						<False>
+							<TURN_ON_LIGHT_CODE>
+								(A:#LIGHT_SIMVAR#, Bool) ! if{ #SIMVAR_INDEX# 1 (&gt;K:2:#LIGHT_EVENTID#) }
+							</TURN_ON_LIGHT_CODE>
+							<TURN_OFF_LIGHT_CODE>
+								(A:#LIGHT_SIMVAR#, Bool) 
+								#CHECK_COUNTER#
+								#CUSTOM_CONDITION_OFF# 
+								if{ #SIMVAR_INDEX# 0 (&gt;K:2:#LIGHT_EVENTID#) }
+							</TURN_OFF_LIGHT_CODE>
+						</False>
+					</Condition>
+					<Condition Valid="USE_INTEGRATED_POWER_SETTING">
+						<True>
+							<SET_POTENTIOMETER_VALUE>#SIMVAR_INDEX# (&gt;K:2:#LIGHT_EVENTID_SET_POWER_SETTING#)</SET_POTENTIOMETER_VALUE>
+						</True>
+						<False>
+							<SET_POTENTIOMETER_VALUE>#POTENTIOMETER# (&gt;K:2:LIGHT_POTENTIOMETER_SET)</SET_POTENTIOMETER_VALUE>
+						</False>
+					</Condition>
+				</Condition>
+			</DefaultTemplateParameters>
+			<OverrideTemplateParameters>
+				<Condition Valid="USE_INTEGRATED_POWER_SETTING">
+					<POTENTIOMETER_MATCH_SIMVAR>False</POTENTIOMETER_MATCH_SIMVAR>
+				</Condition>
+			</OverrideTemplateParameters>
+			<Condition Check="INIT_VALUE">
+				<Condition Valid="LIGHT_SIMVAR">
+					<True>
+						<Update Once="True">
+							#TURN_ON_LIGHT_CODE#
+							#INIT_VALUE# (&gt;L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 
+							(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 10 / 2 pow #POTENTIOMETER# (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 10 / 2 pow (&gt;L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#_VALUE) 
+						</Update>
+					</True>
+					<False>
+						<Update Once="True">
+							#INIT_VALUE# (&gt;L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 
+							(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 10 / 2 pow #POTENTIOMETER# (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 10 / 2 pow (&gt;L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#_VALUE) 
+						</Update>
+					</False>
+				</Condition>
+			</Condition>
+			
+			<UseTemplate Name="EVANBURNSDEV_GT_Knob_Finite_Simvar">
+				<Condition Valid="USE_INTEGRATED_POWER_SETTING">
+					<True>
+						<ANIM_SIMVAR>#LIGHT_SIMVAR_POWER_SETTING#:#SIMVAR_INDEX#</ANIM_SIMVAR>
+						<ANIM_SIMVAR_UNITS>Percent</ANIM_SIMVAR_UNITS>
+					</True>
+					<False>
+						<ANIM_SIMVAR>XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#</ANIM_SIMVAR>
+						<ANIM_SIMVAR_UNITS>Percent</ANIM_SIMVAR_UNITS>
+					</False>
+				</Condition>
+				<Condition Check="LIGHT_SIMVAR">
+					<CLOCKWISE_CODE>
+						#INC_COUNTER#
+						#TURN_ON_LIGHT_CODE#
+						#CLOCKWISE_CODE#
+					</CLOCKWISE_CODE>
+					<ANTICLOCKWISE_CODE>
+						#STORE_COUNTER#
+						#ANTICLOCKWISE_CODE#
+						#DEC_COUNTER#
+						#TURN_OFF_LIGHT_CODE#
+					</ANTICLOCKWISE_CODE>
+				</Condition>
+			</UseTemplate>
+		</Component>
+	</Template>
+
+	<Template Name = "EVANBURNSDEV_LIGHTING_Switch_Rotary_Template">
+		<DefaultTemplateParameters>
+			<CLOCKWISE_CODE/>
+			<ANTICLOCKWISE_CODE/>
+			<MAX_VALUE>100</MAX_VALUE>
+			<Condition Valid="PREVENT_OFF">
+				<True>
+					<MIN_VALUE>3</MIN_VALUE>
+				</True>
+				<False>
+					<MIN_VALUE>0</MIN_VALUE>
+				</False>
+			</Condition>
+			<KNOB_TURN_SPEED>25</KNOB_TURN_SPEED>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Rotary_SubTemplate">
+			<CLOCKWISE_CODE>
+				#CLOCKWISE_CODE#
+				(L:XMLVAR_EBD_SWITCH_#NODE_ID#) #KNOB_TURN_SPEED# + #MAX_VALUE# min (&gt;L:XMLVAR_EBD_SWITCH_#NODE_ID#) 
+				(L:XMLVAR_EBD_SWITCH_#NODE_ID#) 10 / 2 pow (&gt;L:XMLVAR_EBD_SWITCH_#NODE_ID#_VALUE) 
+			</CLOCKWISE_CODE>
+			<ANTICLOCKWISE_CODE>
+				#ANTICLOCKWISE_CODE#
+				(L:XMLVAR_EBD_SWITCH_#NODE_ID#) #KNOB_TURN_SPEED# - #MIN_VALUE# max (&gt;L:XMLVAR_EBD_SWITCH_#NODE_ID#) 
+				(L:XMLVAR_EBD_SWITCH_#NODE_ID#) 10 / 2 pow (&gt;L:XMLVAR_EBD_SWITCH_#NODE_ID#_VALUE) 
+			</ANTICLOCKWISE_CODE>
+			<SIMVAR_INDEX></SIMVAR_INDEX>
+		</UseTemplate>
+	</Template>
+	<Template Name = "EVANBURNSDEV_LIGHTING_Switch_Rotary_SubTemplate">
+		<DefaultTemplateParameters>
+			<ANIMREF_ID>0</ANIMREF_ID>
+			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
+			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
+			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LIGHTING_KNOB_LIGHT_GENERIC_DECREASE</ANIMTIP_0>
+			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LIGHTING_KNOB_LIGHT_GENERIC_INCREASE</ANIMTIP_1> 
+			<WWISE_EVENT>lighting_knob_generic</WWISE_EVENT>
+			<COUNT Process="Int">100 #KNOB_TURN_SPEED# /</COUNT>
+		</DefaultTemplateParameters>
+		
+		<Update Once="True">
+			0 (&gt;L:XMLVAR_EBD_SWITCH_#NODE_ID#)
+		</Update>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="EVANBURNSDEV_GT_Knob_Finite_Simvar">
+				<ANIM_SIMVAR>XMLVAR_EBD_SWITCH_#NODE_ID#</ANIM_SIMVAR>
+				<ANIM_SIMVAR_UNITS>Percent</ANIM_SIMVAR_UNITS>
+			</UseTemplate>
+		</Component>
+	</Template>
+
+	<Template Name = "EVANBURNSDEV_GT_Knob_Finite_Simvar">
+		<DefaultTemplateParameters>
+			<ANIM_SIMVAR_UNITS>percent</ANIM_SIMVAR_UNITS>
+			<Condition Check="REV_POT">
+				<True>
+					<ANIM_SIMVAR_MIN>100</ANIM_SIMVAR_MIN>
+					<ANIM_SIMVAR_MAX>0</ANIM_SIMVAR_MAX>
+				</True>
+				<False>
+					<ANIM_SIMVAR_MIN>0</ANIM_SIMVAR_MIN>
+					<ANIM_SIMVAR_MAX>100</ANIM_SIMVAR_MAX>
+				</False>
+			</Condition>
+			<EXTRA_INTERACTION/>
+			<ANIMREF_ID>0</ANIMREF_ID>
+			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
+			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
+			<ANIMTIP_0></ANIMTIP_0>
+			<ANIMTIP_1></ANIMTIP_1>	
+			<ANIM_LAG>100</ANIM_LAG>
+			<ANIM_WRAP>True</ANIM_WRAP>
+			<!-- Should not be overriden except from generic template -->
+		</DefaultTemplateParameters>
+
+		<UseTemplate Name = "ASOBO_GT_Anim_Code">
+			<ANIM_CODE>
+				(L:#ANIM_SIMVAR#) #ANIM_SIMVAR_MIN# - #ANIM_SIMVAR_MAX# #ANIM_SIMVAR_MIN# - / 100 * 
+			</ANIM_CODE>
+		</UseTemplate>
+		<!-- <UseTemplate Name = "ASOBO_GT_AnimTriggers_SoundEvents_Same"/> -->
+		<UseTemplate Name = "ASOBO_GT_Interaction_WheelAndContinuousLeft#EXTRA_INTERACTION#">
+			<Condition Check="REV_POT">
+				<True>
+					<CLOCKWISE_CODE>
+						#ANTICLOCKWISE_CODE#
+					</CLOCKWISE_CODE>
+					<ANTICLOCKWISE_CODE>
+						#CLOCKWISE_CODE#
+					</ANTICLOCKWISE_CODE>
+				</True>
+				<False>
+					<CLOCKWISE_CODE>
+						#CLOCKWISE_CODE#
+					</CLOCKWISE_CODE>
+					<ANTICLOCKWISE_CODE>
+						#ANTICLOCKWISE_CODE#
+					</ANTICLOCKWISE_CODE>
+				</False>
+			</Condition>
+		</UseTemplate>
+
+		<Condition Valid="WWISE_EVENT">
+			<UseTemplate Name = "ASOBO_GT_AnimTriggers_SoundEvents_Same">
+			</UseTemplate>
+		</Condition>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_Taxi_Template">
+		<DefaultTemplateParameters>
+			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.TAXI_LIGHT_OFF</ANIMTIP_0>
+			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.TAXI_LIGHT_ON</ANIMTIP_1>
+			<WWISE_EVENT_1>taxi_light_switch_on</WWISE_EVENT_1>
+			<WWISE_EVENT_2>taxi_light_switch_off</WWISE_EVENT_2>
+			<NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
+			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
+			<GEAR_PROHIBITS>True</GEAR_PROHIBITS>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Light_Template">
+			<LIGHT_TYPE>TAXI</LIGHT_TYPE>
+		</UseTemplate>
+	</Template>
+	
+	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_Landing_Template">
+		<DefaultTemplateParameters>
+			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_OFF</ANIMTIP_0>
+			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_ON</ANIMTIP_1>
+			<ANIMTIP_2>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_RETRACT</ANIMTIP_2>
+			<WWISE_EVENT_1>landing_light_switch_on</WWISE_EVENT_1>
+			<WWISE_EVENT_2>landing_light_switch_off</WWISE_EVENT_2>
+			<NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
+			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
+			<GEAR_PROHIBITS>True</GEAR_PROHIBITS>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Light_Template">
+			<LIGHT_TYPE>LANDING</LIGHT_TYPE>
+			<KEY_ID>LANDING_LIGHTS_TOGGLE</KEY_ID>
+		</UseTemplate>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_Template">
+		<DefaultTemplateParameters>
+			<ID>1</ID>
+			<SIMVAR_INDEX>0</SIMVAR_INDEX>
+			<INTERACTION>Switch</INTERACTION>
+			<KEY_ID>TOGGLE_#LIGHT_TYPE#_LIGHTS</KEY_ID>
+			<GEAR_PROHIBITS>False</GEAR_PROHIBITS>
+		</DefaultTemplateParameters>
+	
+		<Condition Valid="GEAR_PROHIBITS">
+			<True>
+				<Update Once="True">
+					(A:LIGHT #LIGHT_TYPE#, Bool) (&gt;L:XMLVAR_EBD_#KEY_ID#)
+				</Update>
+			</True>
+		</Condition>
+		<Update Once="True">
+			#SIMVAR_INDEX# (&gt;K:#KEY_ID#)
+		</Update>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>5</FREQUENCY>
+			<UPDATE_CODE>
+				(A:LIGHT #LIGHT_TYPE#, Bool) (&gt;L:XMLVAR_EBD_#LIGHT_TYPE#)
+				(A:LIGHT #LIGHT_TYPE# ON, Bool) (&gt;L:XMLVAR_EBD_#LIGHT_TYPE#_ON)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<Condition Valid="GEAR_PROHIBITS">
+			<True>
+				<UseTemplate Name="ASOBO_GT_Update">
+					<FREQUENCY>5</FREQUENCY>
+						<UPDATE_CODE>
+							(A:GEAR CENTER POSITION, Percent) 100 >= (L:XMLVAR_EBD_#KEY_ID#) and (A:LIGHT #LIGHT_TYPE#, Bool) ^ if{
+								#SIMVAR_INDEX# (&gt;K:#KEY_ID#)
+							}
+						</UPDATE_CODE>
+				</UseTemplate>
+			</True>
+		</Condition>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Light_SubTemplate">
+		</UseTemplate>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_SubTemplate">
+		<DefaultTemplateParameters>
+			<ANIM_NAME>LIGHTING_#INTERACTION#_Light_#LIGHT_TYPE#_#ID#</ANIM_NAME>
+			<PART_ID>LIGHTING_#INTERACTION#_Light_#LIGHT_TYPE#</PART_ID>
+			<NODE_ID>LIGHTING_#INTERACTION#_Light_#LIGHT_TYPE#_#ID#</NODE_ID>
+			<WWISE_EVENT>light_switch</WWISE_EVENT>
+			<KEY_ID>TOGGLE_#LIGHT_TYPE#_LIGHTS</KEY_ID>
+			<HELPID>HELPID_GAUGE_LIGHT_SWITCH_#LIGHT_TYPE#</HELPID>
+		</DefaultTemplateParameters>
+
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<DefaultTemplateParameters>
+				<TOOLTIPID>%((A:#ANIM_SIMVAR#, #ANIM_SIMVAR_UNITS#))%{if}TT:COCKPIT.TOOLTIPS.#LIGHT_TYPE#_LIGHT_ON %{else}TT:COCKPIT.TOOLTIPS.#LIGHT_TYPE#_LIGHT_OFF%{end}</TOOLTIPID>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_GT_Switch_Code">
+				<Condition Valid="GEAR_PROHIBITS">
+					<True>
+						<ANIM_CODE>(L:XMLVAR_EBD_#KEY_ID#, Bool) 100 *</ANIM_CODE>
+						<LEFT_SINGLE_CODE>
+							(L:XMLVAR_EBD_#KEY_ID#) ! (&gt;L:XMLVAR_EBD_#KEY_ID#)
+						</LEFT_SINGLE_CODE>
+					</True>
+					<False>
+						<ANIM_CODE>(A:LIGHT #LIGHT_TYPE#:#SIMVAR_INDEX#, Bool) 100 *</ANIM_CODE>
+						<LEFT_SINGLE_CODE>
+							#SIMVAR_INDEX# (&gt;K:#KEY_ID#)
+						</LEFT_SINGLE_CODE>
+					</False>
+				</Condition>
+			</UseTemplate>
+			<Update Once="True">
+				#SIMVAR_INDEX# (&gt;K:#KEY_ID#)
+			</Update>
+		</Component>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_Double_Template">
+		<DefaultTemplateParameters>
+			<GEAR_PROHIBITS>False</GEAR_PROHIBITS>
+			<ANIM_SIMVAR1>LIGHT #LIGHT_TYPE1#:#SIMVAR_INDEX1#</ANIM_SIMVAR1>
+			<ANIM_SIMVAR2>LIGHT #LIGHT_TYPE2#:#SIMVAR_INDEX2#</ANIM_SIMVAR2>
+			<KEY_ID1>TOGGLE_#LIGHT_TYPE1#_LIGHTS</KEY_ID1>
+			<KEY_ID2>TOGGLE_#LIGHT_TYPE2#_LIGHTS</KEY_ID2>
+			<WWISE_EVENT>double_light_switch</WWISE_EVENT>
+			<ANIMREF_ID>0</ANIMREF_ID>
+			<ANIMTIP_2_ON_PERCENT>1</ANIMTIP_2_ON_PERCENT>
+			<ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
+			<ANIMTIP_1_ON_PERCENT>0.5</ANIMTIP_1_ON_PERCENT>
+			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.NOSE_LIGHT_SET_TO</ANIMTIP_0>
+			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.NOSE_LIGHT_SET_OFF</ANIMTIP_1>
+			<ANIMTIP_2>TT:COCKPIT.TOOLTIPS.NOSE_LIGHT_SET_TAXI</ANIMTIP_2>
+			<NUM_STATES>3</NUM_STATES>
+		</DefaultTemplateParameters>
+		<Condition Valid="GEAR_PROHIBITS">
+			<True>
+				<UseTemplate Name="ASOBO_GT_Update">
+					<FREQUENCY>5</FREQUENCY>
+						<UPDATE_CODE>
+							(A:GEAR CENTER POSITION, Percent) 100 >= (L:XMLVAR_EBD_#KEY_ID1#) and (A:LIGHT #LIGHT_TYPE1#, Bool) ^ if{
+								#SIMVAR_INDEX1# (&gt;K:#KEY_ID1#)
+							}
+							(A:GEAR CENTER POSITION, Percent) 100 >= (L:XMLVAR_EBD_#KEY_ID2#) and (A:LIGHT #LIGHT_TYPE2#, Bool) ^ if{
+								#SIMVAR_INDEX2# (&gt;K:#KEY_ID2#)
+							}
+						</UPDATE_CODE>
+				</UseTemplate>
+				<Update Once="True">
+					(A:LIGHT #LIGHT_TYPE1#, Bool) (&gt;L:XMLVAR_EBD_#KEY_ID1#)
+					(A:LIGHT #LIGHT_TYPE2#, Bool) (&gt;L:XMLVAR_EBD_#KEY_ID2#)
+				</Update>
+			</True>
+		</Condition>
+		<Update Once="True">
+			#SIMVAR_INDEX1# (&gt;K:#KEY_ID1#)
+			#SIMVAR_INDEX2# (&gt;K:#KEY_ID2#)
+		</Update>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<FREQUENCY>5</FREQUENCY>
+			<UPDATE_CODE>
+				(A:LIGHT #LIGHT_TYPE1#, Bool) (&gt;L:XMLVAR_EBD_#LIGHT_TYPE1#)
+				(A:LIGHT #LIGHT_TYPE2#, Bool) (&gt;L:XMLVAR_EBD_#LIGHT_TYPE2#)
+				(A:LIGHT #LIGHT_TYPE1# ON, Bool) (&gt;L:XMLVAR_EBD_#LIGHT_TYPE1#_ON)
+				(A:LIGHT #LIGHT_TYPE2# ON, Bool) (&gt;L:XMLVAR_EBD_#LIGHT_TYPE2#_ON)
+			</UPDATE_CODE>
+		</UseTemplate>
+		<Condition Valid="GEAR_PROHIBITS">
+			<True>
+				<UseTemplate Name="ASOBO_GT_Update">
+					<FREQUENCY>5</FREQUENCY>
+						<UPDATE_CODE>
+							(A:GEAR CENTER POSITION, Percent) 100 >= (L:XMLVAR_EBD_#KEY_ID1#) and (A:LIGHT #LIGHT_TYPE1#, Bool) ^ if{
+								#SIMVAR_INDEX1# (&gt;K:#KEY_ID1#)
+							}
+							(A:GEAR CENTER POSITION, Percent) 100 >= (L:XMLVAR_EBD_#KEY_ID2#) and (A:LIGHT #LIGHT_TYPE2#, Bool) ^ if{
+								#SIMVAR_INDEX2# (&gt;K:#KEY_ID2#)
+							}
+						</UPDATE_CODE>
+				</UseTemplate>
+			</True>
+		</Condition>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="ASOBO_GT_Switch_3States">
+				<Condition Valid="GEAR_PROHIBITS">
+					<True>
+						<CODE_POS_0>
+							(L:XMLVAR_EBD_#KEY_ID1#) ! if{
+								1 (&gt;L:XMLVAR_EBD_#KEY_ID1#)
+							}
+							(L:XMLVAR_EBD_#KEY_ID2#) ! if{
+								1 (&gt;L:XMLVAR_EBD_#KEY_ID2#)
+							}
+						</CODE_POS_0>
+						<CODE_POS_1>
+							(L:XMLVAR_EBD_#KEY_ID1#) if{
+								0 (&gt;L:XMLVAR_EBD_#KEY_ID1#)
+							}
+							(L:XMLVAR_EBD_#KEY_ID2#) if{
+								0 (&gt;L:XMLVAR_EBD_#KEY_ID2#)
+							}
+						</CODE_POS_1>
+						<CODE_POS_2>
+							(L:XMLVAR_EBD_#KEY_ID1#) if{
+								0 (&gt;L:XMLVAR_EBD_#KEY_ID1#)
+							}
+							(L:XMLVAR_EBD_#KEY_ID2#) ! if{
+								1 (&gt;L:XMLVAR_EBD_#KEY_ID2#)
+							}
+						</CODE_POS_2>
+						<STATE0_TEST> (L:XMLVAR_EBD_#KEY_ID1#, Bool) </STATE0_TEST>
+						<STATE1_TEST> (L:XMLVAR_EBD_#KEY_ID1#, Bool) ! (L:XMLVAR_EBD_#KEY_ID2#, Bool) ! and </STATE1_TEST>
+						<STATE2_TEST> (L:XMLVAR_EBD_#KEY_ID1#, Bool) ! (L:XMLVAR_EBD_#KEY_ID2#, Bool) and </STATE2_TEST>
+					</True>
+					<False>
+						<CODE_POS_0>
+							(A:#ANIM_SIMVAR1#, Bool) ! if{
+								#SIMVAR_INDEX1# (&gt;K:#KEY_ID1#)
+							}
+							(A:#ANIM_SIMVAR2#, Bool) ! if{
+								#SIMVAR_INDEX2# (&gt;K:#KEY_ID2#)
+							}
+						</CODE_POS_0>
+						<CODE_POS_1>
+							(A:#ANIM_SIMVAR1#, Bool) if{
+								#SIMVAR_INDEX1# (&gt;K:#KEY_ID1#)
+							}
+							(A:#ANIM_SIMVAR2#, Bool) if{
+								#SIMVAR_INDEX2# (&gt;K:#KEY_ID2#)
+							}
+						</CODE_POS_1>
+						<CODE_POS_2>
+							(A:#ANIM_SIMVAR1#, Bool) if{
+								#SIMVAR_INDEX1# (&gt;K:#KEY_ID1#)
+							}
+							(A:#ANIM_SIMVAR2#, Bool) ! if{
+								#SIMVAR_INDEX2# (&gt;K:#KEY_ID2#)
+							}
+						</CODE_POS_2>
+						<STATE0_TEST> (A:#ANIM_SIMVAR1#, Bool) </STATE0_TEST>
+						<STATE1_TEST> (A:#ANIM_SIMVAR1#, Bool) ! (A:#ANIM_SIMVAR2#, Bool) ! and </STATE1_TEST>
+						<STATE2_TEST> (A:#ANIM_SIMVAR1#, Bool) ! (A:#ANIM_SIMVAR2#, Bool) and </STATE2_TEST>
+					</False>
+				</Condition>
+			</UseTemplate>
+		</Component>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Gear_Light_Template">
+		<DefaultTemplateParameters>
+			<ID>0</ID>
+			<GEAR_ID>0</GEAR_ID>
+		</DefaultTemplateParameters>
+	</Template>
+	<Template Name="EVANBURNSDEV_LIGHTING_Gear_Light_SubTemplate">
+		<DefaultTemplateParameters>
+			<NODE_ID>LANDING_GEAR_Light_#ID#</NODE_ID>
+			<SIMVAR>GEAR POSITION:#GEAR_ID#</SIMVAR>
+			<CHECKED_PERCENT_VALUE>100</CHECKED_PERCENT_VALUE>
+			<PART_ID>LANDING_GEAR_Light</PART_ID>
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#_Off_VisibilityNode" Node="#NODE_ID#_Off">
+			<UseTemplate Name="ASOBO_GT_Visibility_Code">
+				<VISIBILITY_CODE>(A:#SIMVAR#, Percent) 0 == (A:CIRCUIT AVIONICS ON, Bool) ! or </VISIBILITY_CODE>
+			</UseTemplate>
+		</Component>
+		<Component ID="#NODE_ID#_Red_VisibilityNode" Node="#NODE_ID#_Red">
+			<UseTemplate Name="ASOBO_GT_Visibility_Code">
+				<VISIBILITY_CODE>(A:#SIMVAR#, Percent) 100 != (A:#SIMVAR#, Percent) 0 != and (A:CIRCUIT AVIONICS ON, Bool) and </VISIBILITY_CODE>
+			</UseTemplate>
+		</Component>
+		<Component ID="#NODE_ID#_Green_VisibilityNode" Node="#NODE_ID#_Grn">
+			<UseTemplate Name="ASOBO_GT_Visibility_Code">
+				<VISIBILITY_CODE>(A:#SIMVAR#, Percent) 100 == (A:CIRCUIT AVIONICS ON, Bool) and </VISIBILITY_CODE>
+			</UseTemplate>
+		</Component>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Exterior_Template">
+		<DefaultTemplateParameters>
+			<KNOB_POSITION_TYPE>L</KNOB_POSITION_TYPE>
+			<SWITCH_DIRECTION>Horizontal</SWITCH_DIRECTION>
+			<ARROW_TYPE>Curved</ARROW_TYPE>
+			<ANIM_NAME>#NODE_ID#</ANIM_NAME>
+			<WWISE_EVENT>lighting_knob_generic</WWISE_EVENT>
+			<ANIMTIP_0>Exterior Lights</ANIMTIP_0>
+			<ANIMTIP_1>Exterior Lights</ANIMTIP_1>
+			<ANIMTIP_2>Exterior Lights</ANIMTIP_2>
+			<ANIMTIP_3>Exterior Lights</ANIMTIP_3>
+			<ANIMTIP_4>Exterior Lights</ANIMTIP_4>
+			<CODE_POS_0> 
+				(A:LIGHT NAV ON, bool) if{ 0 (&gt;K:TOGGLE_NAV_LIGHTS) }
+				(A:LIGHT WING ON, bool) if{ 0 (&gt;K:TOGGLE_WING_LIGHTS) }
+				(A:LIGHT BEACON ON, bool) if{ 0 (&gt;K:TOGGLE_BEACON_LIGHTS) }
+			</CODE_POS_0>
+			<CODE_POS_1> 
+				(A:LIGHT NAV ON, bool) if{ 0 (&gt;K:TOGGLE_NAV_LIGHTS) }
+				(A:LIGHT WING ON, bool) if{ 0 (&gt;K:TOGGLE_WING_LIGHTS) }
+				(A:LIGHT BEACON ON, bool) ! if{ 0 (&gt;K:TOGGLE_BEACON_LIGHTS) }
+			</CODE_POS_1>
+			<CODE_POS_2> 
+				(A:LIGHT NAV ON, bool) ! if{ 0 (&gt;K:TOGGLE_NAV_LIGHTS) }
+				(A:LIGHT WING ON, bool) if{ 0 (&gt;K:TOGGLE_WING_LIGHTS) }
+				(A:LIGHT BEACON ON, bool) ! if{ 0 (&gt;K:TOGGLE_BEACON_LIGHTS) }
+			</CODE_POS_2>
+			<CODE_POS_3> 
+				(A:LIGHT NAV ON, bool) if{ 0 (&gt;K:TOGGLE_NAV_LIGHTS) }
+				(A:LIGHT WING ON, bool) ! if{ 0 (&gt;K:TOGGLE_WING_LIGHTS) }
+				(A:LIGHT BEACON ON, bool) if{ 0 (&gt;K:TOGGLE_BEACON_LIGHTS) }
+			</CODE_POS_3>
+			<CODE_POS_4> 
+				(A:LIGHT NAV ON, bool) ! if{ 0 (&gt;K:TOGGLE_NAV_LIGHTS) }
+				(A:LIGHT WING ON, bool) if{ 0 (&gt;K:TOGGLE_WING_LIGHTS) }
+				(A:LIGHT BEACON ON, bool) if{ 0 (&gt;K:TOGGLE_BEACON_LIGHTS) }
+			</CODE_POS_4>
+			<STATE0_TEST> (A:LIGHT NAV ON, bool) ! (A:LIGHT WING ON, bool) ! and (A:LIGHT BEACON ON, bool) ! and </STATE0_TEST>
+			<STATE1_TEST> (A:LIGHT NAV ON, bool) ! (A:LIGHT WING ON, bool) ! and (A:LIGHT BEACON ON, bool) and </STATE1_TEST>
+			<STATE2_TEST> (A:LIGHT NAV ON, bool) (A:LIGHT WING ON, bool) ! and (A:LIGHT BEACON ON, bool) and </STATE2_TEST>
+			<STATE3_TEST> (A:LIGHT NAV ON, bool) ! (A:LIGHT WING ON, bool) and (A:LIGHT BEACON ON, bool) ! and </STATE3_TEST>
+			<STATE4_TEST> (A:LIGHT NAV ON, bool) (A:LIGHT WING ON, bool) ! and (A:LIGHT BEACON ON, bool) ! and </STATE4_TEST>
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<Update Once="True">
+				0 (&gt;K:TOGGLE_NAV_LIGHTS) 
+				0 (&gt;K:TOGGLE_WING_LIGHTS) 
+				0 (&gt;K:TOGGLE_BEACON_LIGHTS)
+			</Update>
+			<UseTemplate Name="ASOBO_GT_Switch_5States" />
+		</Component>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Formation_Template">
+		<DefaultTemplateParameters>
+			<KNOB_POSITION_TYPE>L</KNOB_POSITION_TYPE>
+			<SWITCH_DIRECTION>Horizontal</SWITCH_DIRECTION>
+			<ARROW_TYPE>Curved</ARROW_TYPE>
+			<ANIM_NAME>#NODE_ID#</ANIM_NAME>
+			<WWISE_EVENT>lighting_knob_generic</WWISE_EVENT>
+			<CODE_POS_0> 
+				0 (&gt;L:XMLVAR_EBD_LIGHTING_FORMATION)
+			</CODE_POS_0>
+			<CODE_POS_1> 
+				0.2 (&gt;L:XMLVAR_EBD_LIGHTING_FORMATION)
+			</CODE_POS_1>
+			<CODE_POS_2> 
+				2 (&gt;L:XMLVAR_EBD_LIGHTING_FORMATION)
+			</CODE_POS_2>
+			<STATE0_TEST> (L:XMLVAR_EBD_LIGHTING_FORMATION) 0 == </STATE0_TEST>
+			<STATE1_TEST> (L:XMLVAR_EBD_LIGHTING_FORMATION) 0.2 == </STATE1_TEST>
+			<STATE2_TEST> (L:XMLVAR_EBD_LIGHTING_FORMATION) 2 == </STATE2_TEST>
+			<ANIMTIP_0>Formation Lights</ANIMTIP_0>
+			<ANIMTIP_1>Formation Lights</ANIMTIP_1>
+			<ANIMTIP_2>Formation Lights</ANIMTIP_2>
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<Update Once="True">
+			</Update>
+			<UseTemplate Name="ASOBO_GT_Switch_3States" />
+		</Component>
+	</Template>
+
+</ModelBehaviors>

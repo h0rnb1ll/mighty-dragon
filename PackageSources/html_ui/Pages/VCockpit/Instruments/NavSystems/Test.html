@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+	<link rel="import" href="/Pages/VCockpit/Core/VCockpit.html">
+	<link rel="import" href="/Pages/VCockpit/Instruments/NavSystems/HUD/HUD.html">
+	<!-- <script type="text/html" import-template="/Pages/VCockpit/Instruments/NavSystems/HUD/HUD.html"></script> -->
+	<!-- <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/HUD/HUD.js"></script> -->
+
+
+	<script src="/JS/coherent.js"></script>
+	<script src="/JS/common.js"></script>
+	<script src="/JS/Types.js" import-async="false"></script>
+	<script src="/JS/Inputs.js"></script>
+	<script src="/JS/SortedList.js"></script>
+	<script src="/JS/avionics.js"></script>
+	<script src="/JS/SimPlane.js"></script>
+	
+	<script src="/Pages/VCockpit/Core/VCockpit.js"></script>
+	<script src="/Pages/VCockpit/Instruments/Shared/Utils/DataReadManager.js"></script>
+	<script src="/Pages/VCockpit/Instruments/Shared/FlightElements/GeoCalc.js"></script>
+	<script src="/Pages/VCockpit/Instruments/Shared/FlightElements/FlightPlan.js"></script>
+	<script src="/Pages/VCockpit/Instruments/Shared/FlightElements/FlightPlanManager.js"></script>
+
+	<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/HudAltimeter.js"></script>
+	<script src="/Pages/VCockpit/Instruments/NavSystems/Shared/HudAirspeedIndicator.js"></script>
+	<script src="/Pages/VCockpit/Instruments/NavSystems/Shared/HudAttitudeIndicator.js"></script>
+	<script src="/Pages/VCockpit/Instruments/NavSystems/Shared/HudHeading.js"></script>
+
+	<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SearchField.js"></script>
+	<script src="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SelectableElement.js"></script>
+	<script src="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/ContextualMenu.js"></script>
+
+	<script src="/Pages/VCockpit/Instruments/Shared/BaseInstrument.js"></script>
+	<script src="/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js"></script>
+
+	<script src="/Pages/VCockpit/Instruments/NavSystems/HUD/HUD.js"></script>
+
+	<script type="text/html" id="HUD">
+		<glasscockpit-highlight id="highlight"></glasscockpit-highlight>
+		<div id="Mainframe">
+			<div id="Electricity" state="off">
+				<div id="Console">Initializing System...</div>
+				<img id="Splash" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/Logo/Garmin.svg" />
+				<div id="HorizonContainer">
+					<map-instrument id="SyntheticVision" bing-mode="horizon" bing-id="HUD_SyntheticVision" show-overlay="false" config-path="/Pages/VCockpit/Instruments/NavSystems/HUD/"></map-instrument>
+					<glasscockpit-hud-attitude-indicator id="Horizon" background="false"></glasscockpit-hud-attitude-indicator>
+					<glasscockpit-hud-heading-indicator id="Heading" background="false"></glasscockpit-hud-heading-indicator>
+				</div>
+
+				<div id="InstrumentsContainer">
+					<glasscockpit-hud-altimeter id="Altimeter"></glasscockpit-hud-altimeter>
+					<glasscockpit-hud-airspeed-indicator id="Airspeed"></glasscockpit-hud-airspeed-indicator>
+					<div id="RadarAltitude" state="Inactive">
+						<div id="RA_Title">
+							RA
+						</div>
+						<div id="RA_Value">
+							1080
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+    <script>
+        var rot = 0;
+        var head = 0;
+        var course = 0;
+        var deviation = -1;
+        var variation = 0.05;
+
+        window.onload = () => {
+            let hudpage = document.getElementById("HUD");
+            //let hsi = document.getElementById("hsi");
+            setInterval(
+                () => {
+					let hudpage = document.getElementById("HUD");
+				
+					/*
+                    let hsi = document.getElementById("hsi");
+                    let rotElem = document.getElementById("rot");
+                    let headElem = document.getElementById("head");
+
+                    hsi.setAttribute("rotation", rot);
+                    hsi.setAttribute("heading_bug_rotation", head);
+                    hsi.setAttribute("course", course);
+                    hsi.setAttribute("course_deviation", deviation);
+                    hsi.setAttribute("show_dme", "true");
+                    hsi.setAttribute("show_bearing1", "true");
+                    hsi.setAttribute("show_bearing2", "true");
+                    hsi.setAttribute("bearing2_bearing", course/0.78);
+
+                    rot = ((rot + 1) % 360);
+                    head = ((head + 2) % 360);
+                    course = ((course + 3) % 360);
+                    deviation = deviation + variation;
+                    if (deviation >= 1) {
+                        variation = -0.05;
+                    }
+                    if (deviation <= -1) {
+                        variation = 0.05;
+                    }
+					*/
+                },
+                35
+            )
+        }
+    </script>
+    <title>Test SVG</title>
+   <!--  <style>
+        @font-face {
+            font-family: "Roboto-Bold";
+            src: url("/Fonts/RobotoMono-Bold.ttf") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            background-color: moccasin;
+        }
+        #hsi {
+            margin-left: 300px;
+            margin-top: 300px;
+            display: block;
+            width: 307px;
+            height: 307px;
+        }
+    </style> -->
+	<link rel="stylesheet" href="/Pages/VCockpit/Instruments/NavSystems/HUD/HUD.css" />
+</head>
+
+<body>
+    <hud-element id="HUD"></hud-element>
+</body>
+
+</html>

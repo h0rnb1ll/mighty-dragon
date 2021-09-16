@@ -1,0 +1,49 @@
+﻿/** This mixin makes a single line element fit exactly on the Roboto font for easier integration. */
+@font-face {
+  font-family: "Font-Italic";
+  src: url("/Fonts/Roboto-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Font-Bold";
+  src: url("/Fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Font-BoldItalic";
+  src: url("/Fonts/Roboto-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Font-Medium";
+  /** src: url("/Fonts/Roboto-Medium.ttf") format("truetype"); */
+  src: url("/Fonts/amarurgt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+livery-registration-element {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  livery-registration-element #Mainframe {
+    position: absolute;
+    top: 100;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    livery-registration-element #Mainframe #background {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute; }
+    livery-registration-element #Mainframe #text {
+      font-family: Font-Medium;
+      font-size: 1px;
+      white-space: nowrap;
+      position: absolute;
+      height: auto;
+      width: auto; }
+

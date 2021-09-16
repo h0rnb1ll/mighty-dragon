@@ -1,0 +1,355 @@
+﻿:root {
+  --bodyHeightScale: 1; }
+
+@keyframes TemporaryShow {
+  0%, 100% {
+    visibility: visible; } }
+
+@keyframes TemporaryHide {
+  0%, 100% {
+    visibility: hidden; } }
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+  html body {
+    -webkit-user-select: none;
+    font-family: Roboto-Regular;
+    font-size: calc(var(--viewportHeightRatio) * (36px / 21.6) * var(--currentPageHeight) / 100);
+    color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+
+#highlight {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10; }
+
+#Electricity {
+  width: 100%;
+  height: 100%; }
+  #Electricity[state=off] {
+    display: none; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/Fonts/RobotoMono-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("/Fonts/RobotoMono-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("/Fonts/RobotoMono-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+#Mainframe {
+  --refWidth: 1024;
+  --refHeight: 768; }
+
+smfd-element {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  font-family: Roboto-Bold;
+  overflow: hidden; }
+  smfd-element #Console {
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-size: 4vh;
+    z-index: 1000; }
+  smfd-element #Splash {
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000; }
+  smfd-element #Validate {
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 999; }
+  smfd-element #Electricity {
+    width: 100%;
+    height: 100%; }
+    smfd-element #Electricity[state=off] {
+      display: none; }
+  smfd-element #highlight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10; }
+  smfd-element .PopupWindow {
+    visibility: hidden; }
+    smfd-element .PopupWindow[state=Active] {
+      visibility: inherit; }
+  smfd-element #Mainframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative; }
+    smfd-element #Mainframe #Electricity {
+      position: relative; }
+      smfd-element #Mainframe #Electricity #MainDisplay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0%;
+				background-color: #070708; /*#1a1d21;*/
+        font-size: calc( 2 * 1vh * var(--bodyHeightScale));
+        text-align: center; }
+				smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys {
+					position: absolute;
+					background-color: rgba(var(--color_rgb), 0);
+					display: flex;
+					width: 100%;
+					height: 100%;
+					bottom: 0%;
+					font-size: 2vh;
+					text-align: center; }
+					smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey {
+						position: relative;
+						width: 20%;
+						height: 100%;
+						border-right: 0.6vh solid;
+						padding-top: calc(var(--viewportHeightRatio) * (8px / 21.6) * var(--currentPageHeight) / 100); }
+						smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey[state=White] {
+							color: #070708; /*#1a1d21;*/
+							background-color: white; }
+						smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey[state=AdvisoryAlert] {
+							color: #070708; /*#1a1d21;*/
+							background-color: white; }
+						smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey[state=YellowAlert] {
+							color: #070708; /*#1a1d21;*/
+							background-color: yellow; }
+						smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey[state=RedAlert] {
+							color: white;
+							background-color: red; }
+						smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey .Title {
+							position: absolute;
+							width: 95%;
+							left: 2.5%;
+							height: 90%; }
+						smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey .Value {
+							position: absolute;
+							height: 50%;
+							width: 95%;
+							left: 2.5%;
+							bottom: 0%;
+							color: #36c8d2; }
+						smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey .Status {
+							position: absolute;
+							width: 80%;
+							left: 10%;
+							height: 10%;
+							bottom: 10%;
+							display: none; }
+							smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey .Status[state=Active] {
+								display: block;
+								background-color: lawngreen; }
+							smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey .Status[state=Inactive] {
+								display: block;
+								background-color: black; }
+					smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Top {
+						position: absolute;
+						Left: 10%;
+						background-color: #070708; /*#1a1d21;*/
+						display: flex;
+						width: 80%;
+						height: 12.5%;
+						Top: 0%;
+						font-size: 2vh;
+						text-align: center;
+						border-bottom: 0.4vh solid white;
+						border-left: 0.4vh solid white; }
+					smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Bottom {
+						position: absolute;
+						Left: 10%;
+						background-color: #070708; /*#1a1d21;*/
+						display: flex;
+						width: 80%;
+						height: 12.5%;
+						Bottom: 0%;
+						font-size: 2vh;
+						text-align: center;
+						border-top: 0.4vh solid white;
+						border-left: 0.4vh solid white; }
+          smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Left {
+            position: absolute;
+            Left: 0%;
+            background-color: #070708; /*#1a1d21;*/
+            display: flex;
+            flex-direction: column;
+            width: 12.5%;
+            height: 83.5%;
+            Bottom: -0.6vh;
+            font-size: 2vh;
+            text-align: center;
+            border-right: 0.4vh solid white;
+            border-top: 0.4vh solid white; }
+            smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Left .SoftKey {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              border-bottom: 0.6vh solid;
+              border-right: 0vh solid;
+              padding-top: calc(var(--viewportHeightRatio) * (8px / 21.6) * var(--currentPageHeight) / 100); }
+          smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Right {
+            position: absolute;
+            Right: 0%;
+            background-color: #070708; /*#1a1d21;*/
+            display: flex;
+            flex-direction: column;
+            width: 12.5%;
+            height: 83.5%;
+            Bottom: -0.6vh;
+            font-size: 2vh;
+            text-align: center;
+            border-left: 0.4vh solid white;
+            border-top: 0.4vh solid white; }
+            smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Right .SoftKey {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              border-bottom: 0.6vh solid;
+              border-right: 0vh solid;
+              padding-top: calc(var(--viewportHeightRatio) * (8px / 21.6) * var(--currentPageHeight) / 100); }
+				
+				smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay {
+					position: absolute;
+					height: 75%;
+					width: 100%;
+					top: 12.5%;
+					background-color: #070708; /*#1a1d21;*/
+					font-size: calc( 2 * 1vh * var(--bodyHeightScale));
+					text-align: center; }
+					smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #EnginePage {
+						transform: rotateX(0);
+						left: 0%;
+						top: 0%;
+						width: 75%;
+						height: 100%;
+						background-color: #070708; /*#1a1d21;*/
+						position: absolute; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #EnginePage #ED {
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							display: block; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #EnginePage[state=piston] #TurboEngine {
+							display: none; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #EnginePage[state=piston] #XMLEngineDisplay {
+							display: none; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #EnginePage[state=turbo] {
+							width: 35%; }
+							smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #EnginePage[state=turbo] #PistonEngine {
+								display: none; }
+							smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #EnginePage[state=turbo] #XMLEngineDisplay {
+								display: none; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #EnginePage[state=XML] #TurboEngine {
+							display: none; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #EnginePage[state=XML] #PistonEngine {
+							display: none; }
+					smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #FuelPage {
+						transform: rotateX(0);
+						left: 0%;
+						top: 0%;
+						width: 75%;
+						height: 100%;
+						background-color: #070708; /*#1a1d21;*/
+						position: absolute; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #FuelPage #FD {
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							display: block; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #FuelPage[state=piston] #TurboEngine {
+							display: none; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #FuelPage[state=piston] #XMLEngineDisplay {
+							display: none; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #FuelPage[state=turbo] {
+							width: 35%; }
+							smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #FuelPage[state=turbo] #PistonEngine {
+								display: none; }
+							smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #FuelPage[state=turbo] #XMLEngineDisplay {
+								display: none; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #FuelPage[state=XML] #TurboEngine {
+							display: none; }
+						smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #FuelPage[state=XML] #PistonEngine {
+							display: none; }
+          smfd-element #Mainframe #Electricity #CenterDisplay #Map {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            bottom: 0%;
+            left: 0%;
+            display: block;
+            /* Map position (left and top) is set in mapConfig.json file (see SvgMapConfig.ts) (makes it editable at runtime) */
+            /* Map position (left and top) is set in mapConfig.json file (see SvgMapConfig.ts) (makes it editable at runtime) */ }
+            smfd-element #Mainframe #Electricity #CenterDisplay #Map #MapOrientation {
+              position: absolute;
+              top: 0%;
+              right: 0%;
+              width: 10%;
+              height: calc( 3 * 1vh * var(--bodyHeightScale));
+              background-color: #070708; /*#1a1d21;*/
+              color: white; }
+            smfd-element #Mainframe #Electricity #CenterDisplay #Map #WindData {
+              position: absolute;
+              top: 0%;
+              width: 7%;
+              right: 10%; }
+            smfd-element #Mainframe #Electricity #CenterDisplay #Map #MapRange {
+              position: absolute;
+              bottom: 0%;
+              right: 0%;
+              width: 10%;
+              height: 3vh;
+              background-color: #070708; /*#1a1d21;*/
+              color: #36c8d2;
+              display: flex;
+              font-size: 2.4vh; }
+              smfd-element #Mainframe #Electricity #CenterDisplay #Map #MapRange .Align {
+                width: 50%;
+                text-align: right; }
+              smfd-element #Mainframe #Electricity #CenterDisplay #Map #MapRange .unit {
+                font-size: 1.5vh;
+                line-height: 1.2vh;
+                text-align: left; }
+            smfd-element #Mainframe #Electricity #CenterDisplay #Map #MapSVG, smfd-element #Mainframe #Electricity #CenterDisplay #Map #road-network-canvas {
+              transform: rotateX(0);
+              position: absolute; }
+            smfd-element #Mainframe #Electricity #CenterDisplay #Map bing-map {
+              transform: rotateX(0);
+              position: absolute;
+              left: 0px;
+              top: 0px;
+              width: 100%;
+              height: 100%; }
+            smfd-element #Mainframe #Electricity #CenterDisplay #Map #WeatherSVG {
+              transform: scale(1.07); }
+  smfd-element #map {
+    position: absolute;
+    left: 0;
+    top: -11.5%;
+    width: 100%; }
+

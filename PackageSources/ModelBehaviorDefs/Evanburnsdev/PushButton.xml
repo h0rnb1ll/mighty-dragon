@@ -1,0 +1,190 @@
+<ModelBehaviors>
+	<!--
+		Simple push button object.
+
+		Required parameter:
+			ANIM_NAME
+			LEFT_SINGLE_CODE
+	-->
+	<Template Name = "EVANBURNSDEV_GT_Push_Button">
+		<DefaultTemplateParameters>
+			<ANIM_LENGTH>100</ANIM_LENGTH>
+			<ANIM_DURATION>0.5</ANIM_DURATION>
+			<SWITCH_POSITION_TYPE>O</SWITCH_POSITION_TYPE>
+			<SWITCH_POSITION_VAR>_ButtonAnimVar</SWITCH_POSITION_VAR>
+			<Condition Valid="LEFT_SINGLE_CODE_REPEAT_FREQUENCY">
+				<True>
+					<LEFT_LEAVE_CODE>0</LEFT_LEAVE_CODE>
+				</True>
+			</Condition>
+			<Condition Check="LEFT_SINGLE_CODE_DRAG_IM">
+				<False>
+					<NO_PREEXISTING_DRAG_IM_DEFINITION/>
+				</False>
+			</Condition>
+			<Condition Check="LEFT_SINGLE_CODE">
+				<True>
+					<LEFT_SINGLE_CODE_DEFAULT_IM>#LEFT_SINGLE_CODE#</LEFT_SINGLE_CODE_DEFAULT_IM>
+					<LEFT_SINGLE_CODE_DRAG_IM>#LEFT_SINGLE_CODE#</LEFT_SINGLE_CODE_DRAG_IM>
+				</True>
+				<False>
+					<LEFT_SINGLE_CODE_DEFAULT_IM/>
+					<LEFT_SINGLE_CODE_DRAG_IM/>
+				</False>
+			</Condition>
+			<DISABLE_INTERACTION_LOCK>True</DISABLE_INTERACTION_LOCK>
+		</DefaultTemplateParameters>
+
+		<Update Frequency = "10">
+			(#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) 0 &gt; (O:ForcePush) 0 &gt; or if{
+				(#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) 0.1 #ANIM_DURATION# / - (O:ForcePush) max (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+			}
+		</Update>
+
+		<UseTemplate Name = "ASOBO_GT_Anim_Code">
+			<Condition Valid="OVERRIDE_ANIM_CODE">
+				<True>
+					<ANIM_CODE>#OVERRIDE_ANIM_CODE#</ANIM_CODE>
+				</True>
+				<False>
+					<ANIM_CODE>#ANIM_LENGTH# (#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) *</ANIM_CODE>
+				</False>
+			</Condition>
+		</UseTemplate>
+
+		<UseTemplate Name = "ASOBO_GT_AnimTriggers_2SoundEvents">
+		</UseTemplate>
+
+		<Condition Check="LEFT_LEAVE_CODE">
+			<True>
+				<Condition Valid="LEFT_SINGLE_CODE_REPEAT_FREQUENCY">
+					<True>
+						<UseTemplate Name="ASOBO_GT_Update">
+							<FREQUENCY>#LEFT_SINGLE_CODE_REPEAT_FREQUENCY#</FREQUENCY>
+							<UPDATE_CODE>(O:ForcePush) if{ #LEFT_SINGLE_CODE# }</UPDATE_CODE>
+						</UseTemplate>
+					</True>
+				</Condition>
+				<UseTemplate Name = "ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+					<LEFT_SINGLE_CODE>1 (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) #LEFT_SINGLE_CODE# 1 (&gt;O:ForcePush)</LEFT_SINGLE_CODE>
+					<LEFT_LEAVE_CODE>0 (&gt;O:ForcePush) #LEFT_LEAVE_CODE#</LEFT_LEAVE_CODE>
+				</UseTemplate>
+			</True>
+			<False>
+				<UseTemplate Name = "ASOBO_GT_Interaction_LeftSingle_Code">
+					<LEFT_SINGLE_CODE_DEFAULT_IM>
+						1 (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+						#LEFT_SINGLE_CODE_DEFAULT_IM#
+					</LEFT_SINGLE_CODE_DEFAULT_IM>
+					<Condition Check="NO_PREEXISTING_DRAG_IM_DEFINITION">
+						<LEFT_SINGLE_CODE_DRAG_IM>
+						1 (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+							#LEFT_SINGLE_CODE_DRAG_IM#
+						</LEFT_SINGLE_CODE_DRAG_IM>
+					</Condition>
+				</UseTemplate>
+			</False>
+		</Condition>
+	</Template>
+
+
+	<!--
+		Push button, with action on short press, and action on long press.
+
+		Required parameter:
+			SHORT_CLICK_CODE
+			LONG_CLICK_CODE
+	-->
+	<Template Name = "EVANBURNSDEV_GT_Push_Button_Timed">
+		<DefaultTemplateParameters>
+			<ANIM_LENGTH>100</ANIM_LENGTH>
+			<LEFT_SINGLE_CODE/>
+			<LEFT_LEAVE_CODE/>
+			<DISABLE_INTERACTION_LOCK>True</DISABLE_INTERACTION_LOCK>
+			<Condition Valid="REPEAT_FREQUENCY">
+				<True>
+					<LEFT_LEAVE_CODE>0</LEFT_LEAVE_CODE>
+				</True>
+			</Condition>
+		</DefaultTemplateParameters>
+
+		<Update Frequency = "10">
+			(O:_PressTime) 0 &gt;
+			if{ #ANIM_LENGTH# (&gt;O:_ButtonAnimVar) }
+			els{ (O:_ButtonAnimVar) #ANIM_LENGTH# 0.7 * - 0 max (&gt;O:_ButtonAnimVar) }
+		</Update>
+
+		<Condition Check="DISABLE_BUTTON_ANIMATIONS">
+			<False>
+				<UseTemplate Name = "ASOBO_GT_Anim_Code">
+					<ANIM_CODE>(O:_ButtonAnimVar)</ANIM_CODE>
+				</UseTemplate>
+				<UseTemplate Name = "ASOBO_GT_AnimTriggers_2SoundEvents">
+				</UseTemplate>
+			</False>
+		</Condition>
+
+
+		<UseTemplate Name = "EVANBURNSDEV_GT_Interaction_Left_Timed_Code">
+		</UseTemplate>
+	</Template>
+	<!--
+		Left click timed interaction, with short and long press codes.
+
+		Required parameter:
+			SHORT_CLICK_CODE
+			LONG_CLICK_CODE
+	-->
+	<Template Name = "EVANBURNSDEV_GT_Interaction_Left_Timed_Code">
+		<DefaultTemplateParameters>
+			<LONG_CLICK_TIME>2</LONG_CLICK_TIME>
+			<HELPID/>
+			<TOOLTIPID/>
+			<SHORT_CLICK_CODE/>
+			<LEFT_SINGLE_CODE/>
+			<LEFT_LEAVE_CODE/>
+		</DefaultTemplateParameters>
+		<!--
+		<Condition Valid="REPEAT_FREQUENCY">
+			<True>
+				<UseTemplate Name="ASOBO_GT_Update">
+					<FREQUENCY>#REPEAT_FREQUENCY#</FREQUENCY>
+					<UPDATE_CODE>
+						(O:_PressTime) 0 &gt; if{
+							(E:SIMULATION TIME, second) (O:_PressTime) #LONG_CLICK_TIME# + &gt;
+							if{ #LONG_CLICK_CODE# }
+						}
+					</UPDATE_CODE>
+				</UseTemplate>
+			</True>
+		</Condition>
+		<UseTemplate Name = "ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+			<LEFT_SINGLE_CODE>1 (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) #LEFT_SINGLE_CODE# 1 (&gt;O:ForcePush)</LEFT_SINGLE_CODE>
+			<LEFT_LEAVE_CODE>0 (&gt;O:ForcePush) #LEFT_LEAVE_CODE#</LEFT_LEAVE_CODE>
+		</UseTemplate>
+		-->
+		<Update Frequency = "#REPEAT_FREQUENCY#">
+			(O:_PressTime) 0 &gt; if{
+				(E:SIMULATION TIME, second) (O:_PressTime) #LONG_CLICK_TIME# + &gt;
+				if{ 
+					#LONG_CLICK_CODE# 
+				}
+			}
+		</Update>
+
+		<UseTemplate Name = "ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+			<LEFT_SINGLE_CODE>
+				(E:SIMULATION TIME, second) (&gt;O:_PressTime)
+				#LEFT_SINGLE_CODE#
+			</LEFT_SINGLE_CODE>
+			<LEFT_LEAVE_CODE>
+				(O:_PressTime) 0 &gt; if{
+					(E:SIMULATION TIME, second) (O:_PressTime) #LONG_CLICK_TIME# + &lt;
+					if{ #SHORT_CLICK_CODE# }
+				}
+				0 (&gt;O:_PressTime)
+				#LEFT_LEAVE_CODE#
+			</LEFT_LEAVE_CODE>
+		</UseTemplate>
+	</Template>
+</ModelBehaviors>

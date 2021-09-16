@@ -1,0 +1,169 @@
+﻿<link rel="stylesheet" href="SMFD.css" />
+
+<script type="text/html" id="SMFD">
+    <glasscockpit-highlight id="highlight"></glasscockpit-highlight>
+    <div id="Mainframe">
+        <div id="Electricity" state="off">
+            <div id="MainDisplay">
+				<div id="CenterDisplay">
+					<div id="EnginePage">
+						<as3000-engine-display id="ED"></as3000-engine-display>
+					</div>
+					<div id="FuelPage">
+						<as3000-engine-display id="FD"></as3000-engine-display>
+					</div>
+                    <div id="Map">
+                        <!--<map-instrument bing-id="MFD" config-path="/Pages/VCockpit/Instruments/NavSystems/MFD/SMFD/mapConfig.json" hide-flightplan-if-bushtrip="true"></map-instrument>-->
+                        <!--<glasscockpit-wind-data id="WindData"></glasscockpit-wind-data>-->
+                    </div>
+				</div>
+                <div id="SoftKeys">
+					<div id="Top">
+						<div id="Key1" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key2" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key3" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key4" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key5" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+					</div>
+					<div id="Bottom">
+						<div id="Key6" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key7" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key8" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key9" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key10" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+					</div>
+					<div id="Left">
+						<div id="Key11" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key12" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key13" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key14" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key15" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+					</div>
+					<div id="Right">
+						<div id="Key16" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key17" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key18" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key19" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+						<div id="Key20" class="SoftKey">
+							<div class="Title"></div>
+							<div class="Value"></div>
+							<div class="Status"></div>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/html" import-script="/JS/SimPlane.js"></script>
+
+<script type="text/html" import-script="/JS/dataStorage.js"></script><!-- Needs to be here to prevent random buggy screens -->
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Data/EBDDataIO.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/Templates/Highlight/highlight.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/Templates/WindDataDisplay/WindDataDisplay.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/Templates/XMLEngineDisplay/XMLEngineDisplay.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SearchField.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SelectableElement.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/ContextualMenu.js"></script>
+
+<script type="text/html" import-template="/Pages/VCockpit/Instruments/Shared/Map/MapInstrument.html"></script>
+<script type="text/html" import-template="/Pages/VCockpit/Instruments/Shared/Map/EBDMapInstrument.html"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/AbstractGauge.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/CircularGauge.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/HorizontalGauge.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/VerticalGauge.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/FlapsGauge.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/AilTrimGauge.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/ElevTrimGauge.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/RudderTrimGauge.js"></script>
+
+<script type="text/html" import-template="/Pages/VCockpit/Instruments/NavSystems/AS3000/Templates/EngineDisplay.html"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/TwentySoftKeys.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/CommonPFD_MFD.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/GaugeElement.js"></script>
+
+<!--<script type="text/html" import-script="/JS/debug.js"></script>-->
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/MFD/SMFD/SMFD.js"></script>

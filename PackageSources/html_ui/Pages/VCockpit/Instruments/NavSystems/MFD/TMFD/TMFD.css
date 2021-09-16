@@ -1,0 +1,2317 @@
+﻿:root {
+  --bodyHeightScale: 1; }
+
+@keyframes TemporaryShow {
+  0%, 100% {
+    visibility: visible; } }
+
+@keyframes TemporaryHide {
+  0%, 100% {
+    visibility: hidden; } }
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+  html body {
+    -webkit-user-select: none;
+    font-family: Roboto-Regular;
+    font-size: calc(var(--viewportHeightRatio) * (36px / 21.6) * var(--currentPageHeight) / 100);
+    color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+
+#highlight {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10; }
+
+#Electricity {
+  width: 100%;
+  height: 100%; }
+  #Electricity[state=off] {
+    display: none; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/Fonts/RobotoMono-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("/Fonts/RobotoMono-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("/Fonts/RobotoMono-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@keyframes SelectedCharBlinkFreqEdit {
+  0%, 40% {
+    background-color: aqua;
+    color: black; }
+  60%, 100% {
+    background-color: none;
+    color: aqua; } }
+
+tmfd-element {
+  font-family: Roboto-Bold;
+  width: 100%;
+  height: 100%;
+  position: fixed; }
+  tmfd-element #Mainframe {
+    width: 100%;
+    height: 100%; }
+  tmfd-element #Splash {
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000; }
+  tmfd-element #Electricity {
+    height: 100%;
+    width: 100%; }
+    tmfd-element #Electricity[state=off] {
+      display: none; }
+    tmfd-element #Electricity[state=init] #Splash {
+      animation: TemporaryShow 3.5s 1; }
+    tmfd-element #Electricity #highlight {
+      height: 100%;
+      width: 100%; }
+    tmfd-element #Electricity #PageTitle {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      height: 10%;
+      width: 100%;
+      background-color: black;
+      color: white;
+      font-size: 5vh;
+      text-align: center; }
+    tmfd-element #Electricity #PagesDisplay {
+      position: absolute;
+      height: 68%;
+      width: 100%;
+      left: 0%;
+      top: 10%;
+      background-color: black; }
+      tmfd-element #Electricity #PagesDisplay #PFDHome, tmfd-element #Electricity #PagesDisplay #SpeedBugs, tmfd-element #Electricity #PagesDisplay #Timers, tmfd-element #Electricity #PagesDisplay #Minimums, tmfd-element #Electricity #PagesDisplay #PFDSettings, tmfd-element #Electricity #PagesDisplay #MFDHome, tmfd-element #Electricity #PagesDisplay #WeatherSelection, tmfd-element #Electricity #PagesDisplay #DirectTo, tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan, tmfd-element #Electricity #PagesDisplay #NavComHome, tmfd-element #Electricity #PagesDisplay #WaypointsInfo, tmfd-element #Electricity #PagesDisplay #AirportInfo, tmfd-element #Electricity #PagesDisplay #Nearest, tmfd-element #Electricity #PagesDisplay #NearestAirport, tmfd-element #Electricity #PagesDisplay #NearestIntersection, tmfd-element #Electricity #PagesDisplay #NearestVOR, tmfd-element #Electricity #PagesDisplay #NearestNDB, tmfd-element #Electricity #PagesDisplay #Procedures, tmfd-element #Electricity #PagesDisplay #DepartureSelection, tmfd-element #Electricity #PagesDisplay #ArrivalSelection, tmfd-element #Electricity #PagesDisplay #ApproachSelection {
+        display: none; }
+      tmfd-element #Electricity #PagesDisplay[state=NavComHome] #NavComHome,
+      tmfd-element #Electricity #PagesDisplay[state=PFDHome] #PFDHome,
+      tmfd-element #Electricity #PagesDisplay[state=SpeedBugs] #SpeedBugs,
+      tmfd-element #Electricity #PagesDisplay[state=Timers] #Timers,
+      tmfd-element #Electricity #PagesDisplay[state=Minimums] #Minimums,
+      tmfd-element #Electricity #PagesDisplay[state=PFDSettings] #PFDSettings,
+      tmfd-element #Electricity #PagesDisplay[state=DirectTo] #DirectTo,
+      tmfd-element #Electricity #PagesDisplay[state=ActiveFlightPlan] #ActiveFlightPlan,
+      tmfd-element #Electricity #PagesDisplay[state=MFDHome] #MFDHome,
+      tmfd-element #Electricity #PagesDisplay[state=WeatherSelection] #WeatherSelection,
+      tmfd-element #Electricity #PagesDisplay[state=WaypointsInfo] #WaypointsInfo,
+      tmfd-element #Electricity #PagesDisplay[state=AirportInfo] #AirportInfo,
+      tmfd-element #Electricity #PagesDisplay[state=Nearest] #Nearest,
+      tmfd-element #Electricity #PagesDisplay[state=NearestAirport] #NearestAirport,
+      tmfd-element #Electricity #PagesDisplay[state=NearestIntersection] #NearestIntersection,
+      tmfd-element #Electricity #PagesDisplay[state=NearestVOR] #NearestVOR,
+      tmfd-element #Electricity #PagesDisplay[state=NearestNDB] #NearestNDB,
+      tmfd-element #Electricity #PagesDisplay[state=Procedures] #Procedures,
+      tmfd-element #Electricity #PagesDisplay[state=DepartureSelection] #DepartureSelection,
+      tmfd-element #Electricity #PagesDisplay[state=ArrivalSelection] #ArrivalSelection,
+      tmfd-element #Electricity #PagesDisplay[state=ApproachSelection] #ApproachSelection {
+        display: block; }
+      tmfd-element #Electricity #PagesDisplay #PFDHome {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+      tmfd-element #Electricity #PagesDisplay #MFDHome .gradientButton .active, tmfd-element #Electricity #PagesDisplay #WeatherSelection .gradientButton .active {
+        display: none; }
+      tmfd-element #Electricity #PagesDisplay #MFDHome .gradientButton[state="Active"], tmfd-element #Electricity #PagesDisplay #WeatherSelection .gradientButton[state="Active"] {
+        border: 0.4vh solid aqua; }
+        tmfd-element #Electricity #PagesDisplay #MFDHome .gradientButton[state="Active"] .img, tmfd-element #Electricity #PagesDisplay #WeatherSelection .gradientButton[state="Active"] .img {
+          display: none; }
+        tmfd-element #Electricity #PagesDisplay #MFDHome .gradientButton[state="Active"] .active, tmfd-element #Electricity #PagesDisplay #WeatherSelection .gradientButton[state="Active"] .active {
+          display: inline-block; }
+      tmfd-element #Electricity #PagesDisplay #SpeedBugs #SB_buttons {
+        position: absolute;
+        height: 60vh;
+        border: 0.4vh solid white;
+        border-collapse: collapse;
+        right: 10%;
+        width: 30%; }
+        tmfd-element #Electricity #PagesDisplay #SpeedBugs #SB_buttons tr, tmfd-element #Electricity #PagesDisplay #SpeedBugs #SB_buttons td {
+          height: 20%; }
+        tmfd-element #Electricity #PagesDisplay #SpeedBugs #SB_buttons td {
+          width: 50%;
+          position: relative;
+          border: 0.2vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #SpeedBugs #SB_buttons .gradientButton {
+          position: absolute;
+          width: auto;
+          height: auto;
+          top: 0.5vh;
+          bottom: 0.5vh;
+          left: 0.5vh;
+          right: 0.5vh; }
+          tmfd-element #Electricity #PagesDisplay #SpeedBugs #SB_buttons .gradientButton .mainValue {
+            color: aqua;
+            font-size: 3vh;
+            margin-top: 3.5vh; }
+          tmfd-element #Electricity #PagesDisplay #SpeedBugs #SB_buttons .gradientButton .statusBar {
+            bottom: 40%; }
+      tmfd-element #Electricity #PagesDisplay #SpeedBugs #SB_RestoreDefaults {
+        position: absolute;
+        left: 5%;
+        bottom: 5%;
+        width: 30%; }
+      tmfd-element #Electricity #PagesDisplay #Timers .sectionTitle {
+        position: absolute;
+        top: 0.5vh;
+        width: 100%;
+        height: 4vh;
+        font-size: 4vh;
+        text-align: center;
+        color: white; }
+      tmfd-element #Electricity #PagesDisplay #Timers #TimerZone {
+        position: absolute;
+        top: 10%;
+        left: 32.5%;
+        height: 20%;
+        width: 35%; }
+        tmfd-element #Electricity #PagesDisplay #Timers #TimerZone #TMR_Timer {
+          position: absolute;
+          top: 5vh;
+          width: 100%;
+          font-size: 7vh;
+          color: aqua; }
+      tmfd-element #Electricity #PagesDisplay #Timers #CountSelection {
+        position: absolute;
+        top: 40%;
+        left: 32.5%;
+        height: 50%;
+        width: 35%;
+        border: 0.2vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #Timers #CountSelection #TMR_UpButton {
+          position: absolute;
+          height: 40%;
+          top: 13%;
+          left: 2%;
+          right: 2%;
+          width: auto; }
+        tmfd-element #Electricity #PagesDisplay #Timers #CountSelection #TMR_DownButton {
+          position: absolute;
+          height: 40%;
+          top: 56%;
+          left: 2%;
+          right: 2%;
+          width: auto; }
+      tmfd-element #Electricity #PagesDisplay #Timers #TMR_ResetButton {
+        position: absolute;
+        bottom: 15%;
+        left: 12%; }
+      tmfd-element #Electricity #PagesDisplay #Timers #TMR_StopButton {
+        position: absolute;
+        bottom: 15%;
+        right: 12%; }
+      tmfd-element #Electricity #PagesDisplay #Minimums #min_typeButton {
+        position: absolute;
+        left: 5%;
+        width: 30%;
+        height: 20%; }
+      tmfd-element #Electricity #PagesDisplay #Minimums #min_tempAtDestButton {
+        position: absolute;
+        left: 5%;
+        top: 25%;
+        width: 30%;
+        height: 20%; }
+        tmfd-element #Electricity #PagesDisplay #Minimums #min_tempAtDestButton[state=Inactive] {
+          display: none; }
+      tmfd-element #Electricity #PagesDisplay #Minimums #min_keyboard {
+        position: absolute;
+        width: 55%;
+        right: 5%;
+        height: 100%; }
+        tmfd-element #Electricity #PagesDisplay #Minimums #min_keyboard #min_Display {
+          background-color: #212121;
+          width: 60%;
+          height: 9%;
+          position: absolute;
+          left: 0%;
+          top: 5%;
+          font-size: 5vh;
+          text-align: center; }
+          tmfd-element #Electricity #PagesDisplay #Minimums #min_keyboard #min_Display .Initial {
+            background-color: aqua;
+            color: black; }
+          tmfd-element #Electricity #PagesDisplay #Minimums #min_keyboard #min_Display .Writed {
+            background-color: none;
+            color: aqua; }
+          tmfd-element #Electricity #PagesDisplay #Minimums #min_keyboard #min_Display .ToWrite {
+            background-color: none;
+            color: black; }
+          tmfd-element #Electricity #PagesDisplay #Minimums #min_keyboard #min_Display .Writing {
+            animation: SelectedCharBlinkFreqEdit 1s infinite;
+            min-width: 0.5vw;
+            min-height: 6vh;
+            display: inline-block; }
+        tmfd-element #Electricity #PagesDisplay #Minimums #min_keyboard #min_Bksp {
+          position: absolute;
+          right: 0%;
+          top: 0%;
+          height: 20%; }
+        tmfd-element #Electricity #PagesDisplay #Minimums #min_keyboard #min_KeyBoard_Table {
+          position: absolute;
+          width: 70%;
+          height: 70%;
+          bottom: 0%; }
+          tmfd-element #Electricity #PagesDisplay #Minimums #min_keyboard #min_KeyBoard_Table .roundButton {
+            height: 14vh;
+            width: 14vh; }
+      tmfd-element #Electricity #PagesDisplay #PFDSettings .buttonsContainer {
+        position: absolute;
+        top: 10%;
+        width: 60%;
+        right: 5%;
+        font-size: 3.5vh;
+        border: 0.4vh solid grey; }
+        tmfd-element #Electricity #PagesDisplay #PFDSettings .buttonsContainer .line {
+          position: relative;
+          height: 15vh;
+          border-bottom: 0.4vh solid grey; }
+          tmfd-element #Electricity #PagesDisplay #PFDSettings .buttonsContainer .line .lineTitle {
+            position: absolute;
+            left: 0%;
+            width: 30%;
+            height: 100%;
+            line-height: 12vh; }
+            tmfd-element #Electricity #PagesDisplay #PFDSettings .buttonsContainer .line .lineTitle span {
+              vertical-align: middle;
+              display: inline-block;
+              line-height: 3.5vh; }
+          tmfd-element #Electricity #PagesDisplay #PFDSettings .buttonsContainer .line .gradientButton {
+            position: absolute;
+            right: 0%;
+            width: 70%;
+            height: 100%;
+            line-height: 12vh; }
+            tmfd-element #Electricity #PagesDisplay #PFDSettings .buttonsContainer .line .gradientButton .mainValue {
+              color: aqua; }
+      tmfd-element #Electricity #PagesDisplay #PFDSettings .SelectionMenu {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 3.5vh;
+        line-height: 15vh;
+        background-color: black; }
+        tmfd-element #Electricity #PagesDisplay #PFDSettings .SelectionMenu .gradientButton {
+          width: 100%;
+          height: 15vh; }
+        tmfd-element #Electricity #PagesDisplay #PFDSettings .SelectionMenu[state=Inactive] {
+          display: none; }
+      tmfd-element #Electricity #PagesDisplay #DirectTo #SelectionTabs {
+        position: absolute;
+        top: 2.5%;
+        left: 5%;
+        width: 20%; }
+        tmfd-element #Electricity #PagesDisplay #DirectTo #SelectionTabs .gradientButton {
+          height: 15vh;
+          width: 100%; }
+      tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent {
+        position: absolute;
+        width: 70%;
+        top: 2.5%;
+        left: 25%;
+        height: 90%;
+        border: 0.4vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #SelectedWaypoint {
+          width: 100%;
+          height: 15vh; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #SelectedWaypoint .mainValue {
+            position: absolute;
+            left: 2%;
+            top: 0%;
+            text-align: left;
+            color: aqua;
+            font-size: 6vh; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #SelectedWaypoint .title {
+            position: absolute;
+            left: 2%;
+            bottom: 0%;
+            text-align: left;
+            font-size: 4.5vh; }
+        tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopInfos #Location {
+          width: 48%;
+          margin-left: 2%; }
+        tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopInfos #Bearing {
+          width: 20%; }
+        tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopInfos #Distance {
+          width: 25%; }
+        tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopInfos div {
+          display: inline-block;
+          width: 30%; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopInfos div div {
+            display: block;
+            color: white;
+            font-size: 4vh;
+            width: 100%; }
+        tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopLine,
+        tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #MiddleLine {
+          position: relative;
+          width: 100%;
+          height: 16vh; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopLine .gradientButton,
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #MiddleLine .gradientButton {
+            position: absolute;
+            top: 0%;
+            display: inline-block;
+            text-align: center;
+            width: 48%;
+            height: 15vh; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopLine .gradientButton:first-child,
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #MiddleLine .gradientButton:first-child {
+            left: 1%; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopLine .gradientButton:last-child,
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #MiddleLine .gradientButton:last-child {
+            right: 1%; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #TopLine .mainValue,
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #MiddleLine .mainValue {
+            font-size: 4vh;
+            color: aqua; }
+        tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #bottomLine {
+          width: 100%;
+          height: 30vh;
+          position: relative; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #bottomLine .gradientButton {
+            display: inline-block;
+            text-align: center;
+            height: 20vh; }
+            tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #bottomLine .gradientButton .mainValue {
+              font-size: 4vh;
+              color: white; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #bottomLine #DRCT_ActivateDirect {
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            width: 29%; }
+            tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #bottomLine #DRCT_ActivateDirect .DrctImg {
+              vertical-align: middle;
+              padding-bottom: 1vh; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #bottomLine #DRCT_CancelButton {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 29%; }
+            tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #bottomLine #DRCT_CancelButton .DrctImg {
+              vertical-align: middle;
+              padding-bottom: 1vh; }
+          tmfd-element #Electricity #PagesDisplay #DirectTo #TabContent #Waypoint #bottomLine #DRCT_ActivateInsertInFP {
+            position: absolute;
+            top: 0%;
+            left: 30%;
+            width: 39%; }
+      tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #leftBar {
+        position: absolute;
+        left: 5%;
+        height: 98%;
+        width: 15%; }
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #leftBar .gradientButton {
+          height: 17%;
+          margin-bottom: 17%;
+          width: 100%; }
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #leftBar #AFPL_StbyFpl .mainText, tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #leftBar #AFPL_FplOptions .mainText {
+          font-size: 3.3vh; }
+      tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan {
+        position: absolute;
+        height: 97%;
+        left: 22%;
+        width: 75%;
+        border: 0.4vh solid white; }
+
+@keyframes rightEnter {
+  0% {
+    right: -29.5vw; }
+  100% {
+    right: 0vw; } }
+
+@keyframes rightExit {
+  0% {
+    right: 0vw;
+    visibility: visible; }
+  100% {
+    right: -29.5vw;
+    visibility: hidden; } }
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan .HalfMenu {
+          visibility: hidden; }
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan[displayedMenu=Waypoint] #AFPL_WaypointButtonsTable,
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan[displayedMenu=Destination] #AFPL_DestinationButtonsTable,
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan[displayedMenu=Origin] #AFPL_OriginButtonsTable {
+          visibility: visible;
+          animation: rightEnter 0.5s; }
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_Origin[state=SelectedWP],
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_EnRoute[state=SelectedWP],
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_Destination[state=SelectedWP] {
+          background-color: #0093d0; }
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable {
+          width: 100%;
+          height: 100%;
+          border: 0.4vh solid white;
+          border-collapse: collapse; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable thead {
+            display: block;
+            color: white;
+            font-size: 4vh;
+            height: 7vh;
+            width: 97%;
+            border-bottom: 0.4vh solid white;
+            padding-right: 3%; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody {
+            display: block;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 80vh;
+            width: 97%;
+            position: relative;
+            padding-right: 1.75%; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody::-webkit-scrollbar {
+              width: 0.5vw; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody::-webkit-scrollbar-track {
+              background: none; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody::-webkit-scrollbar-thumb {
+              background: white; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr[state="Selected"] {
+              background-color: #0093d0; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr[state=Inactive] {
+              display: none; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr[state=CurrentLeg] .Waypoint .mainValue, tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr[state=CurrentLeg] .Waypoint .title {
+              color: magenta; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr[state=CurrentLeg] .DTK, tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr[state=CurrentLeg] .DIS {
+              color: magenta; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr, tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody td {
+              height: 15.4vh;
+              position: relative; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .gradientButton {
+              position: absolute;
+              top: 0.4vh;
+              left: 0.4vh;
+              bottom: 0.4vh;
+              right: 0.4vh;
+              height: auto;
+              width: auto; }
+              tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .gradientButton .mainValue {
+                color: white;
+                font-size: 4vh; }
+                tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .gradientButton .mainValue[altitudeMode=Manual] {
+                  color: aqua; }
+                tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .gradientButton .mainValue[altitudeMode=Subdued] {
+                  color: darkcyan;
+                  -webkit-mask: url(/Pages/VCockpit/Instruments/NavSystems/Shared/Images/SubduedMask.png);
+                  -webkit-mask-repeat: repeat; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .Waypoint .mainValue {
+              position: absolute;
+              text-align: left;
+              left: 10%;
+              top: 5%; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .Waypoint .title {
+              position: absolute;
+              text-align: left;
+              left: 10%;
+              bottom: 10%;
+              width: 80%; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .Waypoint .symbol {
+              position: absolute;
+              right: 0%;
+              top: 0%; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .Waypoint[state=SelectedWP] {
+              background-color: #0093d0; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .DTK {
+              position: absolute;
+              right: 5%;
+              top: 10%;
+              font-size: 5vh;
+              color: white;
+              text-align: right; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody .DIS {
+              position: absolute;
+              right: 5%;
+              bottom: 10%;
+              font-size: 5vh;
+              color: white;
+              text-align: right; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody #CurrentLegArrowSVG {
+              position: absolute;
+              left: 0%;
+              top: 0%;
+              height: 100%;
+              width: 100%;
+              z-index: 1; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody #AFPL_EnRouteAdd[state="Inactive"] {
+              display: none; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable thead tr th:nth-child(1), tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr:first-child td:nth-child(1) {
+            width: 35vw; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable thead tr th:nth-child(2), tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr:first-child td:nth-child(2) {
+            width: 20vw; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable thead tr th:nth-child(3), tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable tbody tr:first-child td:nth-child(3) {
+            width: 20vw; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable #SizeSetter, tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable #SizeSetter td {
+            border: none;
+            height: 2px;
+            overflow: visible; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable #SizeSetter #CurrentLegArrowSVG {
+            overflow: visible; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan #AFPL_WayPointsTable td {
+            border: 0.4vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan .HalfMenu {
+          position: absolute;
+          right: 0vw;
+          top: 0%;
+          height: 100%;
+          border-collapse: collapse;
+          background-color: black;
+          width: 31.25vw; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan .HalfMenu tbody {
+            height: 100%; }
+          tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan .HalfMenu tr {
+            height: 20%; }
+            tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan .HalfMenu tr td {
+              border: 0.4vh solid white;
+              height: 20%;
+              width: 50%; }
+              tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan .HalfMenu tr td .gradientButton {
+                margin: 2%;
+                height: 96%;
+                width: 96%; }
+                tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan .HalfMenu tr td .gradientButton .statusBar {
+                  bottom: 20%; }
+                tmfd-element #Electricity #PagesDisplay #ActiveFlightPlan #flightPlan .HalfMenu tr td .gradientButton .mainText {
+                  font-size: 3.5vh;
+                  line-height: 4vh; }
+      tmfd-element #Electricity #PagesDisplay #Procedures .gradientButton .title {
+        top: 10%;
+        font-size: 4.5vh;
+        line-height: 5vh; }
+      tmfd-element #Electricity #PagesDisplay #Procedures .gradientButton .value {
+        position: absolute;
+        bottom: 10%;
+        width: 100%;
+        color: aqua;
+        font-size: 5.5vh; }
+      tmfd-element #Electricity #PagesDisplay #Procedures #Procedures_Departure {
+        position: absolute;
+        width: 60%;
+        height: 20%;
+        left: 20%;
+        top: 5%; }
+      tmfd-element #Electricity #PagesDisplay #Procedures #Procedures_Arrival {
+        position: absolute;
+        width: 60%;
+        height: 20%;
+        left: 20%;
+        top: 30%; }
+      tmfd-element #Electricity #PagesDisplay #Procedures #Procedures_Approach {
+        position: absolute;
+        width: 60%;
+        height: 20%;
+        left: 20%;
+        top: 55%; }
+      tmfd-element #Electricity #PagesDisplay #Procedures #Procedures_ActivateApproach {
+        position: absolute;
+        width: 20%;
+        height: 20%;
+        left: 10%;
+        top: 80%; }
+      tmfd-element #Electricity #PagesDisplay #Procedures #Procedures_ActivateVectorsToFinal {
+        position: absolute;
+        width: 20%;
+        height: 20%;
+        left: 40%;
+        top: 80%; }
+      tmfd-element #Electricity #PagesDisplay #Procedures #Procedures_ActivateMissedApproach {
+        position: absolute;
+        width: 20%;
+        height: 20%;
+        left: 70%;
+        top: 80%; }
+      tmfd-element #Electricity #PagesDisplay #DepartureSelection .gradientButton .title {
+        top: 10%;
+        font-size: 4.5vh; }
+      tmfd-element #Electricity #PagesDisplay #DepartureSelection .gradientButton .value {
+        position: absolute;
+        bottom: 15%;
+        color: aqua;
+        font-size: 5.5vh;
+        width: 100%;
+        text-align: center; }
+      tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Airport {
+        position: absolute;
+        top: 5%;
+        left: 2.5%;
+        width: 30%;
+        height: 20%; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Airport .ident {
+          position: absolute;
+          bottom: 25%;
+          color: aqua;
+          font-size: 5.5vh;
+          width: 100%;
+          text-align: center; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Airport .name {
+          position: absolute;
+          bottom: 5%;
+          font-size: 3vh;
+          width: 100%;
+          overflow: hidden;
+          text-align: center; }
+      tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Departure {
+        position: absolute;
+        top: 5%;
+        left: 35%;
+        right: 35%;
+        width: auto;
+        height: 20%; }
+      tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Transition {
+        position: absolute;
+        top: 5%;
+        right: 2.5%;
+        width: 30%;
+        height: 20%; }
+      tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Runway {
+        position: absolute;
+        width: 30%;
+        height: 20%;
+        left: 17.5%;
+        top: 27.5%; }
+      tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Options {
+        position: absolute;
+        width: 62.5%;
+        left: 2.5%;
+        height: 50%;
+        top: 50%;
+        border: 0.4vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Options .title {
+          position: absolute;
+          top: 2%;
+          width: 100%;
+          text-align: center;
+          font-size: 4.5vh; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Options .gradientButton .title {
+          top: 15%; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Options #Departure_Preview {
+          position: absolute;
+          top: 17.5%;
+          left: 2.5%;
+          height: 40%;
+          width: 42.5%; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Options #Departure_FilterBy {
+          position: absolute;
+          top: 17.5%;
+          right: 2.5%;
+          height: 40%;
+          width: 42.5%; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Options #Departure_Remove {
+          position: absolute;
+          bottom: 2.5%;
+          left: 2.5%;
+          height: 40%;
+          width: 42.5%; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Options #Departure_Load {
+          position: absolute;
+          bottom: 2.5%;
+          right: 2.5%;
+          height: 40%;
+          width: 42.5%; }
+      tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Sequence {
+        position: absolute;
+        right: 2.5%;
+        width: 30%;
+        top: 27.5%;
+        height: 72.5%;
+        border: 0.4vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Sequence .title {
+          position: absolute;
+          width: 100%;
+          font-size: 4.5vh;
+          text-align: center; }
+        tmfd-element #Electricity #PagesDisplay #DepartureSelection #Departure_Sequence .content {
+          position: absolute;
+          top: 10%;
+          width: 100%;
+          height: 90%;
+          font-size: 3.5vh;
+          margin-left: 0.5vh;
+          overflow-y: scroll; }
+      tmfd-element #Electricity #PagesDisplay #ArrivalSelection .gradientButton .title {
+        top: 10%;
+        font-size: 4.5vh; }
+      tmfd-element #Electricity #PagesDisplay #ArrivalSelection .gradientButton .value {
+        position: absolute;
+        bottom: 15%;
+        color: aqua;
+        font-size: 5.5vh;
+        width: 100%;
+        text-align: center; }
+      tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Airport {
+        position: absolute;
+        top: 5%;
+        left: 2.5%;
+        width: 30%;
+        height: 20%; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Airport .ident {
+          position: absolute;
+          bottom: 25%;
+          color: aqua;
+          font-size: 5.5vh;
+          width: 100%;
+          text-align: center; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Airport .name {
+          position: absolute;
+          bottom: 5%;
+          font-size: 3vh;
+          width: 100%;
+          overflow: hidden;
+          text-align: center; }
+      tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Arrival {
+        position: absolute;
+        top: 5%;
+        left: 35%;
+        right: 35%;
+        width: auto;
+        height: 20%; }
+      tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Transition {
+        position: absolute;
+        top: 5%;
+        right: 2.5%;
+        width: 30%;
+        height: 20%; }
+      tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Runway {
+        position: absolute;
+        width: 30%;
+        height: 20%;
+        left: 17.5%;
+        top: 27.5%; }
+      tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Options {
+        position: absolute;
+        width: 62.5%;
+        left: 2.5%;
+        height: 50%;
+        top: 50%;
+        border: 0.4vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Options .title {
+          position: absolute;
+          top: 2%;
+          width: 100%;
+          text-align: center;
+          font-size: 4.5vh; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Options .gradientButton .title {
+          top: 15%; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Options #Arrival_Preview {
+          position: absolute;
+          top: 17.5%;
+          left: 2.5%;
+          height: 40%;
+          width: 42.5%; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Options #Arrival_FilterBy {
+          position: absolute;
+          top: 17.5%;
+          right: 2.5%;
+          height: 40%;
+          width: 42.5%; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Options #Arrival_Remove {
+          position: absolute;
+          bottom: 2.5%;
+          left: 2.5%;
+          height: 40%;
+          width: 42.5%; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Options #Arrival_Load {
+          position: absolute;
+          bottom: 2.5%;
+          right: 2.5%;
+          height: 40%;
+          width: 42.5%; }
+      tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Sequence {
+        position: absolute;
+        right: 2.5%;
+        width: 30%;
+        top: 27.5%;
+        height: 72.5%;
+        border: 0.4vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Sequence .title {
+          position: absolute;
+          width: 100%;
+          font-size: 4.5vh;
+          text-align: center; }
+        tmfd-element #Electricity #PagesDisplay #ArrivalSelection #Arrival_Sequence .content {
+          position: absolute;
+          top: 10%;
+          width: 100%;
+          height: 90%;
+          font-size: 3.5vh;
+          margin-left: 0.5vh;
+          overflow-y: scroll; }
+      tmfd-element #Electricity #PagesDisplay #ApproachSelection .gradientButton .title {
+        top: 10%;
+        font-size: 4.5vh; }
+      tmfd-element #Electricity #PagesDisplay #ApproachSelection .gradientButton .value {
+        position: absolute;
+        bottom: 15%;
+        color: aqua;
+        font-size: 5.5vh;
+        width: 100%;
+        text-align: center; }
+      tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Airport {
+        position: absolute;
+        top: 5%;
+        left: 2.5%;
+        width: 30%;
+        height: 20%; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Airport .ident {
+          position: absolute;
+          bottom: 25%;
+          color: aqua;
+          font-size: 5.5vh;
+          width: 100%;
+          text-align: center; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Airport .name {
+          position: absolute;
+          bottom: 5%;
+          font-size: 3vh;
+          width: 100%;
+          overflow: hidden;
+          text-align: center; }
+      tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Approach {
+        position: absolute;
+        top: 5%;
+        left: 35%;
+        right: 35%;
+        width: auto;
+        height: 20%; }
+      tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Transition {
+        position: absolute;
+        top: 5%;
+        right: 2.5%;
+        width: 30%;
+        height: 20%; }
+      tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Minimums {
+        position: absolute;
+        width: 30%;
+        height: 20%;
+        left: 2.5%;
+        top: 27.5%; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Minimums .state {
+          position: absolute;
+          font-size: 3.5vh;
+          top: 35%;
+          width: 100%;
+          text-align: center; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Minimums .value {
+          font-size: 4vh; }
+      tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_PrimaryFrequency {
+        position: absolute;
+        width: 30%;
+        height: 20%;
+        left: 35%;
+        top: 27.5%; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_PrimaryFrequency .value {
+          color: white; }
+      tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Options {
+        position: absolute;
+        width: 62.5%;
+        left: 2.5%;
+        height: 50%;
+        top: 50%;
+        border: 0.4vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Options .title {
+          position: absolute;
+          top: 2%;
+          width: 100%;
+          text-align: center;
+          font-size: 4.5vh; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Options .gradientButton .title {
+          top: 15%; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Options #Approach_Preview {
+          position: absolute;
+          top: 17.5%;
+          left: 15%;
+          height: 40%;
+          width: 70%; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Options #Approach_Remove {
+          position: absolute;
+          bottom: 2.5%;
+          left: 2.5%;
+          height: 40%;
+          width: 30%; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Options #Approach_Load {
+          position: absolute;
+          bottom: 2.5%;
+          right: 35%;
+          left: 35%;
+          height: 40%;
+          width: 30%; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Options #Approach_LoadAndActivate {
+          position: absolute;
+          bottom: 2.5%;
+          right: 2.5%;
+          height: 40%;
+          width: 30%; }
+      tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Sequence {
+        position: absolute;
+        right: 2.5%;
+        width: 30%;
+        top: 27.5%;
+        height: 72.5%;
+        border: 0.4vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Sequence .title {
+          position: absolute;
+          width: 100%;
+          font-size: 4.5vh;
+          text-align: center; }
+        tmfd-element #Electricity #PagesDisplay #ApproachSelection #Approach_Sequence .content {
+          position: absolute;
+          top: 10%;
+          width: 100%;
+          height: 90%;
+          font-size: 3.5vh;
+          margin-left: 0.5vh;
+          overflow-y: scroll; }
+      tmfd-element #Electricity #PagesDisplay #AirportInfo #AirportInfo_SelectedWaypoint {
+        width: 30%;
+        height: 15vh; }
+        tmfd-element #Electricity #PagesDisplay #AirportInfo #AirportInfo_SelectedWaypoint .mainValue {
+          position: absolute;
+          text-align: left;
+          left: 5%;
+          top: 5%;
+          color: white;
+          font-size: 4vh; }
+        tmfd-element #Electricity #PagesDisplay #AirportInfo #AirportInfo_SelectedWaypoint .title {
+          position: absolute;
+          text-align: left;
+          left: 5%;
+          bottom: 5%;
+          width: 90%;
+          height: 7vh;
+          overflow: hidden; }
+        tmfd-element #Electricity #PagesDisplay #AirportInfo #AirportInfo_SelectedWaypoint .waypointSymbol {
+          position: absolute;
+          right: 0%;
+          top: 0%; }
+      tmfd-element #Electricity #PagesDisplay #AirportInfo #AirportInfo_Options {
+        width: 20%;
+        height: 15vh; }
+      tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart {
+        position: relative;
+        height: 70vh;
+        width: 100%; }
+        tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .LeftTabs {
+          position: absolute;
+          left: 5%;
+          right: 75%;
+          height: 100%; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .LeftTabs .gradientButton {
+            width: 100%;
+            height: 25%; }
+        tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .RightTabs {
+          position: absolute;
+          right: 5%;
+          left: 75%;
+          height: 100%; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .RightTabs .gradientButton {
+            width: 100%;
+            height: 25%; }
+        tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay {
+          position: absolute;
+          left: 25%;
+          right: 25%;
+          height: 100%;
+          border: 0.4vh solid white;
+          font-size: 5vh;
+          line-height: 5vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info, tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Freqs, tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways {
+            display: none; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay[state=Info] .Info,
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay[state=Freqs] .Freqs,
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay[state=Runways] .Runways {
+            display: block; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .city {
+            padding-left: 5%;
+            width: 95%;
+            height: 5vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .section {
+            width: 100%;
+            border-top: 0.4vh solid white;
+            padding-top: 2vh;
+            padding-bottom: 2vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .line {
+            width: 100%;
+            display: flex; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .region {
+            padding-left: 5%;
+            width: 95%;
+            height: 5vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .bearing {
+            width: 45%;
+            text-align: center;
+            height: 10vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .distance {
+            width: 45%;
+            text-align: center;
+            height: 10vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .latitude {
+            width: 100%;
+            text-align: center;
+            height: 5vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .longitude {
+            width: 100%;
+            text-align: center;
+            height: 5vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .elev {
+            width: 45%;
+            text-align: center;
+            height: 10vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .time {
+            width: 45%;
+            right: 0%;
+            text-align: center;
+            height: 10vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .fuel {
+            width: 45%;
+            text-align: center;
+            height: 10vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Info .privacy {
+            width: 45%;
+            right: 0%;
+            text-align: center;
+            height: 10vh; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Freqs {
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            position: relative; }
+            tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Freqs::-webkit-scrollbar {
+              width: 0.5vw; }
+            tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Freqs::-webkit-scrollbar-track {
+              background: none; }
+            tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Freqs::-webkit-scrollbar-thumb {
+              background: white; }
+            tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Freqs .line {
+              position: relative;
+              display: flex;
+              height: 25%;
+              border-bottom: 0.4vh solid white; }
+              tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Freqs .line .frequencyName {
+                position: absolute;
+                width: 50%;
+                height: 100%;
+                border-right: 0.4vh solid white; }
+              tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Freqs .line .buttonContainer {
+                position: absolute;
+                width: 50%;
+                height: 100%;
+                right: 0%; }
+                tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Freqs .line .buttonContainer .gradientButton {
+                  position: absolute;
+                  top: 0.2vh;
+                  bottom: 0.2vh;
+                  right: 0.2vh;
+                  left: 0.2vh;
+                  width: auto;
+                  height: auto; }
+          tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways {
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            position: relative; }
+            tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways::-webkit-scrollbar {
+              width: 0.5vw; }
+            tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways::-webkit-scrollbar-track {
+              background: none; }
+            tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways::-webkit-scrollbar-thumb {
+              background: white; }
+            tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways .line {
+              position: relative;
+              display: flex;
+              height: 33.33%;
+              border-bottom: 0.4vh solid white; }
+              tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways .line .name {
+                position: absolute;
+                top: 2%;
+                width: 100%;
+                height: 30%;
+                font-size: 6vh;
+                color: white; }
+              tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways .line .size {
+                position: absolute;
+                top: 32%;
+                width: 100%;
+                height: 20%;
+                font-size: 5vh;
+                color: white; }
+              tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways .line .surface {
+                position: absolute;
+                top: 62%;
+                width: 50%;
+                height: 20%;
+                font-size: 5vh;
+                color: white; }
+              tmfd-element #Electricity #PagesDisplay #AirportInfo .mainPart .CenterDisplay .Runways .line .lighting {
+                position: absolute;
+                top: 62%;
+                right: 0%;
+                width: 50%;
+                height: 20%;
+                font-size: 5vh;
+                color: white; }
+      tmfd-element #Electricity #PagesDisplay .NrstContainer {
+        width: 100%;
+        height: 98%;
+        position: relative; }
+        tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0%;
+          bottom: 0%;
+          left: 0%;
+          right: 0%;
+          border: 0.4vh solid white;
+          border-collapse: collapse;
+          color: white;
+          text-align: center;
+          font-size: 4vh; }
+          tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList .gradientButton {
+            position: absolute;
+            top: 0.4vh;
+            left: 0.4vh;
+            bottom: 0.4vh;
+            right: 0.4vh;
+            height: auto;
+            width: auto; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList .gradientButton .mainValue {
+              position: absolute;
+              text-align: left;
+              left: 5%;
+              top: 5%;
+              color: white;
+              font-size: 4vh; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList .gradientButton .title {
+              position: absolute;
+              text-align: left;
+              left: 5%;
+              bottom: 5%;
+              width: 90%;
+              height: 7vh;
+              overflow: hidden; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList .gradientButton .symbol {
+              position: absolute;
+              right: 0%;
+              top: 0%; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList .gradientButton .mainNumber {
+              font-size: 4vh;
+              padding: 0%;
+              margin: 0%;
+              margin-top: 3vh;
+              width: 100%;
+              text-align: center; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList .gradientButton[state=SelectedWP] {
+              background-color: #0093d0; }
+          tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList thead {
+            display: block;
+            color: white;
+            font-size: 4vh;
+            height: 7vh;
+            width: 97%;
+            border-bottom: 0.4vh solid white;
+            padding-right: 3%; }
+          tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList tbody {
+            display: block;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 80vh;
+            width: 97%;
+            position: relative;
+            padding-right: 1.75%; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList tbody::-webkit-scrollbar {
+              width: 0.5vw; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList tbody::-webkit-scrollbar-track {
+              background: none; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList tbody::-webkit-scrollbar-thumb {
+              background: white; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList tbody tr[state=Inactive] {
+              display: none; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList tbody tr, tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList tbody td {
+              height: 15.4vh;
+              position: relative; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList tbody td {
+              border-bottom: 0.4vh solid white; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList tbody tr td:first-child {
+              border-right: 0.4vh solid white; }
+          tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList #SizeSetter, tmfd-element #Electricity #PagesDisplay .NrstContainer .NearestList #SizeSetter td {
+            border: none;
+            height: 0vh;
+            overflow: visible; }
+        tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu {
+          position: absolute;
+          height: 100%;
+          width: 30%;
+          top: 0%;
+          right: -0.75%;
+          bottom: 0%;
+          background-color: black;
+          border: 0.4vh solid white; }
+
+@keyframes rightEnter {
+  0% {
+    right: -100%; }
+  100% {
+    right: -0.75%; } }
+          tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu[state=Inactive] {
+            display: none; }
+          tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu[state=Active] {
+            animation: rightEnter 0.5s 1; }
+          tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu tr, tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu td {
+            width: 100%;
+            height: 20%;
+            position: relative; }
+            tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu tr .gradientButton, tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu td .gradientButton {
+              position: absolute;
+              height: auto;
+              width: auto;
+              top: 2%;
+              left: 2%;
+              right: 2%;
+              bottom: 2%; }
+              tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu tr .gradientButton .statusBar, tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu td .gradientButton .statusBar {
+                bottom: 20%; }
+              tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu tr .gradientButton .mainText, tmfd-element #Electricity #PagesDisplay .NrstContainer .SelectionMenu td .gradientButton .mainText {
+                margin-top: 5%;
+                font-size: 3.5vh;
+                line-height: 4vh; }
+      tmfd-element #Electricity #PagesDisplay #NearestAirport {
+        width: 100%;
+        height: 100%; }
+        tmfd-element #Electricity #PagesDisplay #NearestAirport .NearestList thead tr th:nth-child(1), tmfd-element #Electricity #PagesDisplay #NearestAirport .NearestList tbody tr:first-child td:nth-child(1) {
+          width: 35vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestAirport .NearestList thead tr th:nth-child(2), tmfd-element #Electricity #PagesDisplay #NearestAirport .NearestList tbody tr:first-child td:nth-child(2) {
+          width: 20vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestAirport .NearestList thead tr th:nth-child(3), tmfd-element #Electricity #PagesDisplay #NearestAirport .NearestList tbody tr:first-child td:nth-child(3) {
+          width: 20vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestAirport .NearestList thead tr th:nth-child(4), tmfd-element #Electricity #PagesDisplay #NearestAirport .NearestList tbody tr:first-child td:nth-child(4) {
+          width: 20vw; }
+      tmfd-element #Electricity #PagesDisplay #NearestIntersection {
+        width: 100%;
+        height: 100%; }
+        tmfd-element #Electricity #PagesDisplay #NearestIntersection .NearestList thead tr th:nth-child(1), tmfd-element #Electricity #PagesDisplay #NearestIntersection .NearestList tbody tr:first-child td:nth-child(1) {
+          width: 35vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestIntersection .NearestList thead tr th:nth-child(2), tmfd-element #Electricity #PagesDisplay #NearestIntersection .NearestList tbody tr:first-child td:nth-child(2) {
+          width: 20vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestIntersection .NearestList thead tr th:nth-child(3), tmfd-element #Electricity #PagesDisplay #NearestIntersection .NearestList tbody tr:first-child td:nth-child(3) {
+          width: 40vw; }
+      tmfd-element #Electricity #PagesDisplay #NearestVOR {
+        width: 100%;
+        height: 100%; }
+        tmfd-element #Electricity #PagesDisplay #NearestVOR .NearestList tr td:last-child {
+          border-right: 0.4vh solid white;
+          border-left: 0.4vh solid white; }
+        tmfd-element #Electricity #PagesDisplay #NearestVOR .NearestList thead tr th:nth-child(1), tmfd-element #Electricity #PagesDisplay #NearestVOR .NearestList tbody tr:first-child td:nth-child(1) {
+          width: 35vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestVOR .NearestList thead tr th:nth-child(2), tmfd-element #Electricity #PagesDisplay #NearestVOR .NearestList tbody tr:first-child td:nth-child(2) {
+          width: 20vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestVOR .NearestList thead tr th:nth-child(3), tmfd-element #Electricity #PagesDisplay #NearestVOR .NearestList tbody tr:first-child td:nth-child(3) {
+          width: 20vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestVOR .NearestList thead tr th:nth-child(4), tmfd-element #Electricity #PagesDisplay #NearestVOR .NearestList tbody tr:first-child td:nth-child(4) {
+          width: 20vw; }
+      tmfd-element #Electricity #PagesDisplay #NearestNDB {
+        width: 100%;
+        height: 100%; }
+        tmfd-element #Electricity #PagesDisplay #NearestNDB .NearestList thead tr th:nth-child(1), tmfd-element #Electricity #PagesDisplay #NearestNDB .NearestList tbody tr:first-child td:nth-child(1) {
+          width: 35vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestNDB .NearestList thead tr th:nth-child(2), tmfd-element #Electricity #PagesDisplay #NearestNDB .NearestList tbody tr:first-child td:nth-child(2) {
+          width: 20vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestNDB .NearestList thead tr th:nth-child(3), tmfd-element #Electricity #PagesDisplay #NearestNDB .NearestList tbody tr:first-child td:nth-child(3) {
+          width: 20vw; }
+        tmfd-element #Electricity #PagesDisplay #NearestNDB .NearestList thead tr th:nth-child(4), tmfd-element #Electricity #PagesDisplay #NearestNDB .NearestList tbody tr:first-child td:nth-child(4) {
+          width: 20vw; }
+      tmfd-element #Electricity #PagesDisplay #NavComHome {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+        tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft {
+          position: absolute;
+          height: 100%;
+          width: 50%;
+          top: 0%;
+          border-collapse: collapse; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft #XPDR[state=Green] {
+            color: lawngreen; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft #Mic, tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft #Mon {
+            text-align: center; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft td {
+            border: 0.5vh solid white;
+            padding: 1%; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft .cutBot {
+            border-bottom: 0; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft .cutTop {
+            border-top: 0; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft tr:first-child td {
+            border-top: 0; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft tr:last-child td {
+            border-bottom: 0; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft tr td:first-child {
+            border-left: 0; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft .leftColumn {
+            width: 40%; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NavComLeft .rightColumn {
+            width: 60%; }
+        tmfd-element #Electricity #PagesDisplay #NavComHome #NumbersKeyboard {
+          position: absolute;
+          height: 100%;
+          width: 50.09%;
+          right: 0%;
+          top: -0.4%; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome #NumbersKeyboard td {
+            height: 20%;
+            width: 33.33%;
+            text-align: center; }
+        tmfd-element #Electricity #PagesDisplay #NavComHome .roundButton {
+          width: 12vh;
+          height: 12vh;
+          line-height: 12vh;
+          display: inline-block; }
+        tmfd-element #Electricity #PagesDisplay #NavComHome .gradientButton {
+          width: 18vh;
+          height: 12vh; }
+        tmfd-element #Electricity #PagesDisplay #NavComHome .gradient {
+          background: linear-gradient(#0093d0, rgba(0, 147, 208, 0) 60%);
+          height: 100%;
+          width: 100%;
+          color: white;
+          position: relative; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient .topText {
+            text-align: left;
+            font-size: 2vh;
+            margin-left: 8%; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient .mainNumber {
+            text-align: justify;
+            font-size: 5vh;
+            margin-left: 8%; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient .mainText {
+            text-align: center;
+            font-size: 3vh; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient .statusBar {
+            position: absolute;
+            width: 80%;
+            height: 4%;
+            background-color: grey;
+            left: 10%;
+            bottom: 55%; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Active] .mainNumber {
+            color: lawngreen; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Active] .statusBar {
+            background-color: lawngreen; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Selected] .mainNumber {
+            color: aqua; }
+            tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Selected] .mainNumber .Writing {
+              color: dimgray;
+              min-width: 5px;
+              min-height: 7vh;
+              display: inline-block; }
+              tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Selected] .mainNumber .Writing[state=Blink] {
+                background-color: aqua; }
+            tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Selected] .mainNumber .ToWrite {
+              color: dimgray; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Greyed] {
+            filter: grayscale(100%) brightness(40%); }
+            tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Greyed]:Hover:Active {
+              background-color: black !important; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Hidden] {
+            display: none !important; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient[state=Invisible] {
+            visibility: hidden !important; }
+          tmfd-element #Electricity #PagesDisplay #NavComHome .gradient:Hover:Active {
+            background-color: #0093d0; }
+        tmfd-element #Electricity #PagesDisplay #NavComHome .doubleArrowFreq {
+          position: absolute;
+          right: 5%;
+          bottom: -25%;
+          height: 40%;
+          z-index: 2; }
+    tmfd-element #Electricity #NavigationBar {
+      position: absolute;
+      bottom: 10%;
+      width: 100%;
+      height: 12%;
+      background-color: #212121; }
+      tmfd-element #Electricity #NavigationBar .gradientButton {
+        height: 80%;
+        left: 8%;
+        width: 14%;
+        margin-top: 0.4vh;
+        margin-bottom: 0.4vh;
+        display: inline-block; }
+    tmfd-element #Electricity #SoftKeys {
+      position: absolute;
+      bottom: 0%;
+      width: 100%;
+      height: 10%;
+      background-color: #212121;
+      color: #3F4751;
+      font-size: 4vh;
+      display: flex; }
+      tmfd-element #Electricity #SoftKeys div {
+        height: 100%;
+        text-align: center;
+        background-color: white;
+        margin-left: 0.4vh;
+        margin-right: 0.4vh;
+        display: table;
+        width: 33%; }
+        tmfd-element #Electricity #SoftKeys div p {
+          height: 100%;
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          padding-right: 2%;
+          color: #3F4751;
+          font-size: 4vh;
+          line-height: 4.5vh; }
+      tmfd-element #Electricity #SoftKeys #Softkey_1_Container {
+        height: 34%; }
+      tmfd-element #Electricity #SoftKeys #SoftKey_5_Container {
+        height: 21.5%;
+        line-height: 3vh; }
+    tmfd-element #Electricity #TransponderWindow #transponder_ModeSelect {
+      position: absolute;
+      left: 2%;
+      top: 0%; }
+      tmfd-element #Electricity #TransponderWindow #transponder_ModeSelect #transponder_ModeSelectTitle {
+        color: white;
+        font-size: 5vh; }
+      tmfd-element #Electricity #TransponderWindow #transponder_ModeSelect .mainText {
+        font-size: 3.5vh; }
+    tmfd-element #Electricity #TransponderWindow #transponder_CodeDisplay {
+      position: absolute;
+      right: 25%;
+      top: 10%;
+      background-color: #212121;
+      height: 11%;
+      width: 40%;
+      text-align: center; }
+      tmfd-element #Electricity #TransponderWindow #transponder_CodeDisplay #transponder_Code {
+        font-size: 8vh;
+        color: black; }
+        tmfd-element #Electricity #TransponderWindow #transponder_CodeDisplay #transponder_Code .Writed, tmfd-element #Electricity #TransponderWindow #transponder_CodeDisplay #transponder_Code .ToWrite {
+          background-color: none;
+          color: aqua; }
+        tmfd-element #Electricity #TransponderWindow #transponder_CodeDisplay #transponder_Code .Writing {
+          animation: SelectedCharBlinkFreqEdit 1s infinite;
+          min-width: 0.5vw;
+          min-height: 8vh;
+          display: inline-block; }
+        tmfd-element #Electricity #TransponderWindow #transponder_CodeDisplay #transponder_Code .Fixed {
+          background-color: aqua; }
+    tmfd-element #Electricity #TransponderWindow #transponder_Bksp {
+      position: absolute;
+      right: 2%;
+      top: 0%; }
+    tmfd-element #Electricity #TransponderWindow #transponder_NumberKeyboard {
+      position: absolute;
+      right: 2%;
+      top: 25%; }
+      tmfd-element #Electricity #TransponderWindow #transponder_NumberKeyboard .roundButton {
+        width: 20vh;
+        height: 20vh;
+        line-height: 20vh;
+        display: inline-block;
+        margin: 0.5vh; }
+    tmfd-element #Electricity #TransponderWindow #transponder_ActiveTransponder {
+      position: absolute;
+      left: 25%;
+      bottom: 0%; }
+    tmfd-element #Electricity #TransponderWindow #transponder_Vfr {
+      position: absolute;
+      right: 2%;
+      bottom: 0%; }
+    tmfd-element #Electricity #AudioRadiosWindow #tabView table {
+      width: 75vw;
+      height: 66vh;
+      border: 0.4vh solid white;
+      border-collapse: collapse; }
+      tmfd-element #Electricity #AudioRadiosWindow #tabView table thead {
+        display: block;
+        color: white;
+        font-size: 4vh;
+        height: 6vh;
+        width: 100%; }
+      tmfd-element #Electricity #AudioRadiosWindow #tabView table tbody {
+        display: block;
+        overflow-y: scroll;
+        height: 63vh;
+        width: 100%; }
+        tmfd-element #Electricity #AudioRadiosWindow #tabView table tbody::-webkit-scrollbar {
+          width: 0.5vw; }
+        tmfd-element #Electricity #AudioRadiosWindow #tabView table tbody::-webkit-scrollbar-track {
+          background: black; }
+        tmfd-element #Electricity #AudioRadiosWindow #tabView table tbody::-webkit-scrollbar-thumb {
+          background: white; }
+        tmfd-element #Electricity #AudioRadiosWindow #tabView table tbody tr[state="Selected"] {
+          background-color: #0093d0; }
+      tmfd-element #Electricity #AudioRadiosWindow #tabView table thead tr th:nth-child(1), tmfd-element #Electricity #AudioRadiosWindow #tabView table tbody tr:first-child td:nth-child(1),
+      tmfd-element #Electricity #AudioRadiosWindow #tabView table thead tr th:nth-child(3), tmfd-element #Electricity #AudioRadiosWindow #tabView table tbody tr:first-child td:nth-child(3) {
+        width: 22vw; }
+      tmfd-element #Electricity #AudioRadiosWindow #tabView table thead tr th:nth-child(2), tmfd-element #Electricity #AudioRadiosWindow #tabView table tbody tr:first-child td:nth-child(2) {
+        width: 31vw; }
+      tmfd-element #Electricity #AudioRadiosWindow #tabView table td {
+        border: 0.1vh solid white; }
+    tmfd-element #Electricity #AudioRadiosWindow #tabView .gradientButton {
+      width: auto;
+      height: 15vh; }
+      tmfd-element #Electricity #AudioRadiosWindow #tabView .gradientButton .mainNumber {
+        font-size: 5.5vh; }
+      tmfd-element #Electricity #AudioRadiosWindow #tabView .gradientButton .standbyFreq {
+        color: aqua; }
+    tmfd-element #Electricity #AudioRadiosWindow #tabView #Adf_Frequencies .activeFreq {
+      font-size: 5.5vh;
+      color: white; }
+    tmfd-element #Electricity #AudioRadiosWindow #tabView #Adf_Frequencies .standbyFreq {
+      font-size: 4.5vh;
+      color: aqua; }
+    tmfd-element #Electricity #frequencyKeyboard {
+      position: relative; }
+      tmfd-element #Electricity #frequencyKeyboard #topLine {
+        position: absolute;
+        display: flex;
+        width: 50%;
+        height: 10%;
+        left: 25%; }
+        tmfd-element #Electricity #frequencyKeyboard #topLine .gradientButton {
+          width: 12vh;
+          height: 12vh; }
+        tmfd-element #Electricity #frequencyKeyboard #topLine #FK_ActiveFreqLine {
+          color: white;
+          font-size: 3.5vh;
+          width: 100%;
+          text-align: center; }
+        tmfd-element #Electricity #frequencyKeyboard #topLine #FK_FreqDisplay {
+          background-color: grey;
+          margin: 1vh;
+          padding-top: 1vh;
+          height: 7vh;
+          width: 30vw;
+          text-align: center;
+          font-size: 4vh; }
+          tmfd-element #Electricity #frequencyKeyboard #topLine #FK_FreqDisplay .StbyFreq {
+            background-color: aqua;
+            color: black; }
+          tmfd-element #Electricity #frequencyKeyboard #topLine #FK_FreqDisplay .Writed {
+            background-color: none;
+            color: aqua; }
+          tmfd-element #Electricity #frequencyKeyboard #topLine #FK_FreqDisplay .ToWrite {
+            background-color: none;
+            color: dimgray; }
+          tmfd-element #Electricity #frequencyKeyboard #topLine #FK_FreqDisplay .Writing {
+            animation: SelectedCharBlinkFreqEdit 1s infinite;
+            min-width: 0.5vw;
+            min-height: 4vh;
+            display: inline-block; }
+          tmfd-element #Electricity #frequencyKeyboard #topLine #FK_FreqDisplay .Fixed {
+            background-color: aqua; }
+      tmfd-element #Electricity #frequencyKeyboard #KeyBoard {
+        position: absolute;
+        top: 27%;
+        height: 74%;
+        width: 50%;
+        left: 28%; }
+        tmfd-element #Electricity #frequencyKeyboard #KeyBoard .roundButton {
+          width: 12vh;
+          height: 12vh;
+          line-height: 12vh;
+          display: inline-block; }
+        tmfd-element #Electricity #frequencyKeyboard #KeyBoard .gradientButton {
+          width: 12vh;
+          height: 12vh; }
+        tmfd-element #Electricity #frequencyKeyboard #KeyBoard td {
+          width: 33.33%; }
+    tmfd-element #Electricity #timeKeyboard, tmfd-element #Electricity #speedKeyboard, tmfd-element #Electricity #altitudeKeyboard {
+      position: relative; }
+      tmfd-element #Electricity #timeKeyboard #TK_Bksp, tmfd-element #Electricity #timeKeyboard #SK_Bksp, tmfd-element #Electricity #timeKeyboard #AK_Bksp, tmfd-element #Electricity #speedKeyboard #TK_Bksp, tmfd-element #Electricity #speedKeyboard #SK_Bksp, tmfd-element #Electricity #speedKeyboard #AK_Bksp, tmfd-element #Electricity #altitudeKeyboard #TK_Bksp, tmfd-element #Electricity #altitudeKeyboard #SK_Bksp, tmfd-element #Electricity #altitudeKeyboard #AK_Bksp {
+        position: absolute;
+        width: 20%;
+        right: 5%; }
+      tmfd-element #Electricity #timeKeyboard #TK_TimeDisplay, tmfd-element #Electricity #timeKeyboard #SK_Display, tmfd-element #Electricity #timeKeyboard #AK_Display, tmfd-element #Electricity #speedKeyboard #TK_TimeDisplay, tmfd-element #Electricity #speedKeyboard #SK_Display, tmfd-element #Electricity #speedKeyboard #AK_Display, tmfd-element #Electricity #altitudeKeyboard #TK_TimeDisplay, tmfd-element #Electricity #altitudeKeyboard #SK_Display, tmfd-element #Electricity #altitudeKeyboard #AK_Display {
+        position: absolute;
+        width: 30%;
+        left: 35%;
+        background-color: grey;
+        margin: 1vh;
+        padding-top: 1vh;
+        text-align: center;
+        font-size: 7vh; }
+        tmfd-element #Electricity #timeKeyboard #TK_TimeDisplay .Writed, tmfd-element #Electricity #timeKeyboard #SK_Display .Writed, tmfd-element #Electricity #timeKeyboard #AK_Display .Writed, tmfd-element #Electricity #speedKeyboard #TK_TimeDisplay .Writed, tmfd-element #Electricity #speedKeyboard #SK_Display .Writed, tmfd-element #Electricity #speedKeyboard #AK_Display .Writed, tmfd-element #Electricity #altitudeKeyboard #TK_TimeDisplay .Writed, tmfd-element #Electricity #altitudeKeyboard #SK_Display .Writed, tmfd-element #Electricity #altitudeKeyboard #AK_Display .Writed {
+          background-color: none;
+          color: aqua; }
+        tmfd-element #Electricity #timeKeyboard #TK_TimeDisplay .ToWrite, tmfd-element #Electricity #timeKeyboard #SK_Display .ToWrite, tmfd-element #Electricity #timeKeyboard #AK_Display .ToWrite, tmfd-element #Electricity #speedKeyboard #TK_TimeDisplay .ToWrite, tmfd-element #Electricity #speedKeyboard #SK_Display .ToWrite, tmfd-element #Electricity #speedKeyboard #AK_Display .ToWrite, tmfd-element #Electricity #altitudeKeyboard #TK_TimeDisplay .ToWrite, tmfd-element #Electricity #altitudeKeyboard #SK_Display .ToWrite, tmfd-element #Electricity #altitudeKeyboard #AK_Display .ToWrite {
+          background-color: none;
+          color: dimgray; }
+        tmfd-element #Electricity #timeKeyboard #TK_TimeDisplay .Writing, tmfd-element #Electricity #timeKeyboard #SK_Display .Writing, tmfd-element #Electricity #timeKeyboard #AK_Display .Writing, tmfd-element #Electricity #speedKeyboard #TK_TimeDisplay .Writing, tmfd-element #Electricity #speedKeyboard #SK_Display .Writing, tmfd-element #Electricity #speedKeyboard #AK_Display .Writing, tmfd-element #Electricity #altitudeKeyboard #TK_TimeDisplay .Writing, tmfd-element #Electricity #altitudeKeyboard #SK_Display .Writing, tmfd-element #Electricity #altitudeKeyboard #AK_Display .Writing {
+          animation: SelectedCharBlinkFreqEdit 1s infinite;
+          min-width: 0.5vw;
+          min-height: 6vh;
+          display: inline-block; }
+        tmfd-element #Electricity #timeKeyboard #TK_TimeDisplay .Fixed, tmfd-element #Electricity #timeKeyboard #SK_Display .Fixed, tmfd-element #Electricity #timeKeyboard #AK_Display .Fixed, tmfd-element #Electricity #speedKeyboard #TK_TimeDisplay .Fixed, tmfd-element #Electricity #speedKeyboard #SK_Display .Fixed, tmfd-element #Electricity #speedKeyboard #AK_Display .Fixed, tmfd-element #Electricity #altitudeKeyboard #TK_TimeDisplay .Fixed, tmfd-element #Electricity #altitudeKeyboard #SK_Display .Fixed, tmfd-element #Electricity #altitudeKeyboard #AK_Display .Fixed {
+          background-color: aqua; }
+      tmfd-element #Electricity #timeKeyboard #KeyBoard, tmfd-element #Electricity #speedKeyboard #KeyBoard, tmfd-element #Electricity #altitudeKeyboard #KeyBoard {
+        position: absolute;
+        top: 25%;
+        height: 75%;
+        width: 60%;
+        left: 23%; }
+        tmfd-element #Electricity #timeKeyboard #KeyBoard .roundButton, tmfd-element #Electricity #speedKeyboard #KeyBoard .roundButton, tmfd-element #Electricity #altitudeKeyboard #KeyBoard .roundButton {
+          width: 15vh;
+          height: 15vh;
+          line-height: 15vh;
+          display: inline-block; }
+        tmfd-element #Electricity #timeKeyboard #KeyBoard .gradientButton, tmfd-element #Electricity #speedKeyboard #KeyBoard .gradientButton, tmfd-element #Electricity #altitudeKeyboard #KeyBoard .gradientButton {
+          width: 15vh;
+          height: 15vh; }
+        tmfd-element #Electricity #timeKeyboard #KeyBoard td, tmfd-element #Electricity #speedKeyboard #KeyBoard td, tmfd-element #Electricity #altitudeKeyboard #KeyBoard td {
+          width: 33.33%; }
+    tmfd-element #Electricity #fullKeyboard #Keyboard_LetterTable,
+    tmfd-element #Electricity #fullKeyboard #Keyboard_NumberTable {
+      display: none; }
+    tmfd-element #Electricity #fullKeyboard[keyboard=Letters] #Keyboard_LetterTable,
+    tmfd-element #Electricity #fullKeyboard[keyboard=Numbers] #Keyboard_NumberTable {
+      display: inherit; }
+    tmfd-element #Electricity #fullKeyboard #topLine {
+      position: absolute;
+      top: 5vh;
+      left: 0%;
+      height: 10vh;
+      width: 100%; }
+      tmfd-element #Electricity #fullKeyboard #topLine #EditText {
+        position: absolute;
+        left: 1%;
+        height: 100%;
+        width: 28%;
+        background-color: gray;
+        font-size: 7vh;
+        padding-left: 2%;
+        color: black; }
+        tmfd-element #Electricity #fullKeyboard #topLine #EditText .NoEdit {
+          background-color: aqua; }
+        tmfd-element #Electricity #fullKeyboard #topLine #EditText .Writed {
+          background-color: none;
+          color: aqua; }
+        tmfd-element #Electricity #fullKeyboard #topLine #EditText .ToWrite {
+          background-color: none;
+          color: dimgray; }
+        tmfd-element #Electricity #fullKeyboard #topLine #EditText .Writing {
+          animation: SelectedCharBlinkFreqEdit 1s infinite;
+          min-width: 0.5vw;
+          min-height: 6vh;
+          display: inline-block; }
+      tmfd-element #Electricity #fullKeyboard #topLine #Infos {
+        position: absolute;
+        left: 32%;
+        height: 100%;
+        width: 68%;
+        color: white;
+        font-size: 4vh;
+        vertical-align: bottom; }
+        tmfd-element #Electricity #fullKeyboard #topLine #Infos #InfosContent {
+          position: absolute;
+          bottom: 0%;
+          vertical-align: bottom;
+          width: 92%; }
+        tmfd-element #Electricity #fullKeyboard #topLine #Infos #InfosSymbol {
+          position: absolute;
+          bottom: 0%;
+          vertical-align: bottom;
+          width: 8%;
+          right: 0%; }
+    tmfd-element #Electricity #fullKeyboard #Keyboard_LetterTable,
+    tmfd-element #Electricity #fullKeyboard #Keyboard_NumberTable {
+      position: absolute;
+      top: 15vh;
+      left: 0%;
+      width: 100%;
+      height: 60%; }
+      tmfd-element #Electricity #fullKeyboard #Keyboard_LetterTable tr,
+      tmfd-element #Electricity #fullKeyboard #Keyboard_NumberTable tr {
+        height: 14.5vh; }
+        tmfd-element #Electricity #fullKeyboard #Keyboard_LetterTable tr td,
+        tmfd-element #Electricity #fullKeyboard #Keyboard_NumberTable tr td {
+          height: 14.5vh;
+          width: 14vw; }
+        tmfd-element #Electricity #fullKeyboard #Keyboard_LetterTable tr .Double,
+        tmfd-element #Electricity #fullKeyboard #Keyboard_NumberTable tr .Double {
+          width: 24vw; }
+      tmfd-element #Electricity #fullKeyboard #Keyboard_LetterTable .gradientButton,
+      tmfd-element #Electricity #fullKeyboard #Keyboard_NumberTable .gradientButton {
+        height: 14.5vh;
+        width: 13.5vw; }
+        tmfd-element #Electricity #fullKeyboard #Keyboard_LetterTable .gradientButton .mainText,
+        tmfd-element #Electricity #fullKeyboard #Keyboard_NumberTable .gradientButton .mainText {
+          display: inline;
+          font-size: 7vh;
+          vertical-align: central; }
+      tmfd-element #Electricity #fullKeyboard #Keyboard_LetterTable #K_SwitchToNum,
+      tmfd-element #Electricity #fullKeyboard #Keyboard_LetterTable #KN_SwitchToLetters,
+      tmfd-element #Electricity #fullKeyboard #Keyboard_NumberTable #K_SwitchToNum,
+      tmfd-element #Electricity #fullKeyboard #Keyboard_NumberTable #KN_SwitchToLetters {
+        font-size: 5vh;
+        width: 14vw; }
+    tmfd-element #Electricity #ConfirmationWindow {
+      z-index: 11;
+      position: absolute;
+      height: 70%;
+      top: 15%;
+      width: 60%;
+      left: 10%;
+      border: 0.4vh solid white; }
+      tmfd-element #Electricity #ConfirmationWindow #CW_Text {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 75%;
+        text-align: center;
+        font-size: 7vh; }
+      tmfd-element #Electricity #ConfirmationWindow #CW_Button {
+        position: absolute;
+        width: 20%;
+        height: 20%;
+        left: 40%;
+        bottom: 5%; }
+    tmfd-element #Electricity #terrainAlert {
+      z-index: 100; }
+
+@keyframes RedWarning {
+  0%, 45% {
+    background-color: red;
+    color: white; }
+  55%, 100% {
+    background-color: white;
+    color: red; } }
+
+@keyframes YellowWarning {
+  0%, 45% {
+    background-color: yellow;
+    color: black; }
+  55%, 100% {
+    background-color: black;
+    color: yellow; } }
+      tmfd-element #Electricity #terrainAlert #Warning {
+        width: 90%;
+        height: 13%;
+        position: absolute;
+        left: 5%;
+        top: 15%;
+        text-align: center;
+        background-color: red; }
+        tmfd-element #Electricity #terrainAlert #Warning[state="Red"] {
+          animation: RedWarning 1s infinite; }
+        tmfd-element #Electricity #terrainAlert #Warning[state="Yellow"] {
+          animation: YellowWarning 1s infinite; }
+        tmfd-element #Electricity #terrainAlert #Warning #WarningContent {
+          font-size: 8vh; }
+      tmfd-element #Electricity #terrainAlert #Warning_Taws {
+        position: absolute;
+        height: 30%;
+        width: 30%;
+        left: 35%;
+        bottom: 35%; }
+      tmfd-element #Electricity #terrainAlert #Warning_Ok {
+        position: absolute;
+        height: 20%;
+        width: 40%;
+        left: 5%;
+        bottom: 5%; }
+      tmfd-element #Electricity #terrainAlert #Warning_InhibitTaws {
+        position: absolute;
+        height: 20%;
+        width: 40%;
+        right: 5%;
+        bottom: 5%; }
+    tmfd-element #Electricity #insertBeforeWaypointWindow .WindowTitle {
+      width: 70%;
+      padding-left: 15%;
+      background-color: black; }
+    tmfd-element #Electricity #insertBeforeWaypointWindow .Container {
+      position: absolute;
+      background-color: black;
+      overflow-y: scroll;
+      width: 50%;
+      height: 84vh;
+      top: 10%;
+      left: 25%;
+      right: 25%;
+      padding-right: 0.35vw;
+      border: 0.2vh solid white;
+      border-right: 0.4vh solid white;
+      border-collapse: collapse; }
+      tmfd-element #Electricity #insertBeforeWaypointWindow .Container::-webkit-scrollbar {
+        width: 0.5vw; }
+      tmfd-element #Electricity #insertBeforeWaypointWindow .Container::-webkit-scrollbar-track {
+        background: none; }
+      tmfd-element #Electricity #insertBeforeWaypointWindow .Container::-webkit-scrollbar-thumb {
+        background: white; }
+      tmfd-element #Electricity #insertBeforeWaypointWindow .Container .line, tmfd-element #Electricity #insertBeforeWaypointWindow .Container .EndButtonLine {
+        width: 100%;
+        height: 16.6vh;
+        position: relative;
+        border: 0.2vh solid white;
+        border-right: 0.4vh solid white; }
+        tmfd-element #Electricity #insertBeforeWaypointWindow .Container .line[state=Inactive], tmfd-element #Electricity #insertBeforeWaypointWindow .Container .EndButtonLine[state=Inactive] {
+          display: none; }
+        tmfd-element #Electricity #insertBeforeWaypointWindow .Container .line .gradientButton, tmfd-element #Electricity #insertBeforeWaypointWindow .Container .EndButtonLine .gradientButton {
+          position: absolute;
+          left: 0.5vh;
+          right: 0.5vh;
+          top: 0.5vh;
+          bottom: 0.5vh;
+          width: auto;
+          height: auto; }
+          tmfd-element #Electricity #insertBeforeWaypointWindow .Container .line .gradientButton .mainValue, tmfd-element #Electricity #insertBeforeWaypointWindow .Container .EndButtonLine .gradientButton .mainValue {
+            position: absolute;
+            text-align: left;
+            left: 10%;
+            top: 5%;
+            color: white;
+            font-size: 4vh; }
+          tmfd-element #Electricity #insertBeforeWaypointWindow .Container .line .gradientButton .title, tmfd-element #Electricity #insertBeforeWaypointWindow .Container .EndButtonLine .gradientButton .title {
+            position: absolute;
+            text-align: left;
+            left: 10%;
+            bottom: 10%;
+            width: 80%; }
+          tmfd-element #Electricity #insertBeforeWaypointWindow .Container .line .gradientButton .symbol, tmfd-element #Electricity #insertBeforeWaypointWindow .Container .EndButtonLine .gradientButton .symbol {
+            position: absolute;
+            right: 0%;
+            top: 0%; }
+      tmfd-element #Electricity #insertBeforeWaypointWindow .Container .EndButtonLine {
+        height: 17vh; }
+    tmfd-element #Electricity #minimumSource .WindowTitle {
+      background-color: black; }
+    tmfd-element #Electricity #minimumSource .Container {
+      position: absolute;
+      width: 30%;
+      left: 35%;
+      height: 80%;
+      bottom: 5%;
+      background-color: black;
+      padding: 2%;
+      border: 0.4vh solid white; }
+      tmfd-element #Electricity #minimumSource .Container .gradientButton {
+        width: 100%; }
+        tmfd-element #Electricity #minimumSource .Container .gradientButton .mainValue {
+          color: white;
+          font-size: 5vh;
+          position: absolute;
+          top: 20%;
+          text-align: center;
+          width: 100%; }
+    tmfd-element #Electricity #LoadFrequencyPopup .content {
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      top: 10%;
+      bottom: 10%;
+      height: auto;
+      width: auto;
+      border: 0.4vh solid white;
+      background-color: black; }
+      tmfd-element #Electricity #LoadFrequencyPopup .content .title {
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        text-align: center;
+        color: white;
+        font-size: 5vh; }
+      tmfd-element #Electricity #LoadFrequencyPopup .content .leftZone {
+        position: absolute;
+        left: 10%;
+        top: 15%;
+        height: 60%;
+        width: 35%;
+        border: 0.4vh solid white; }
+        tmfd-element #Electricity #LoadFrequencyPopup .content .leftZone .titleLeft {
+          position: absolute;
+          top: 0%;
+          height: 10%;
+          width: 100%;
+          text-align: center; }
+        tmfd-element #Electricity #LoadFrequencyPopup .content .leftZone .leftActiveBtn {
+          position: absolute;
+          top: 20%;
+          left: 10%;
+          right: 10%;
+          height: 30%;
+          width: auto; }
+        tmfd-element #Electricity #LoadFrequencyPopup .content .leftZone .leftStandbyBtn {
+          position: absolute;
+          bottom: 10%;
+          left: 10%;
+          right: 10%;
+          height: 30%;
+          width: auto; }
+      tmfd-element #Electricity #LoadFrequencyPopup .content .rigthZone {
+        position: absolute;
+        right: 10%;
+        top: 15%;
+        height: 60%;
+        width: 35%;
+        border: 0.4vh solid white; }
+        tmfd-element #Electricity #LoadFrequencyPopup .content .rigthZone .rightActiveBtn {
+          position: absolute;
+          top: 20%;
+          left: 10%;
+          right: 10%;
+          height: 30%;
+          width: auto; }
+        tmfd-element #Electricity #LoadFrequencyPopup .content .rigthZone .rightStandbyBtn {
+          position: absolute;
+          bottom: 10%;
+          left: 10%;
+          right: 10%;
+          height: 30%;
+          width: auto; }
+      tmfd-element #Electricity #LoadFrequencyPopup .content .addToFavorite {
+        position: absolute;
+        bottom: 5%;
+        left: 20%;
+        right: 20%;
+        height: 15%;
+        width: auto; }
+    tmfd-element #Electricity #WaypointInfo_WaypointOptions .content {
+      position: absolute;
+      background-color: black;
+      right: 5%;
+      top: 10%;
+      bottom: 2%;
+      height: auto;
+      width: 45vh;
+      border: 0.4vh solid white; }
+      tmfd-element #Electricity #WaypointInfo_WaypointOptions .content .title {
+        font-size: 4vh;
+        width: 100%;
+        text-align: center; }
+      tmfd-element #Electricity #WaypointInfo_WaypointOptions .content .drctButon {
+        position: absolute;
+        top: 10%;
+        height: 30%;
+        width: 43.8vh;
+        padding: 0.4vh;
+        border-top: 0.4vh solid white; }
+      tmfd-element #Electricity #WaypointInfo_WaypointOptions .content .flightPlanButon {
+        position: absolute;
+        top: 40%;
+        height: 30%;
+        width: 43.8vh;
+        padding: 0.4vh;
+        border-top: 0.4vh solid white; }
+      tmfd-element #Electricity #WaypointInfo_WaypointOptions .content .showOnMapButon {
+        position: absolute;
+        top: 70%;
+        height: 30%;
+        width: 43.8vh;
+        padding: 0.4vh;
+        border-top: 0.4vh solid white;
+        border-top: 0.4vh solid white; }
+    tmfd-element #Electricity #WaypointDuplicateWindow {
+      color: white;
+      font-size: 4.5vh;
+      position: relative; }
+      tmfd-element #Electricity #WaypointDuplicateWindow .WindowTitle {
+        width: 70%;
+        padding-left: 15%;
+        background-color: black; }
+      tmfd-element #Electricity #WaypointDuplicateWindow thead tr th:nth-child(1), tmfd-element #Electricity #WaypointDuplicateWindow tbody tr:first-child td:nth-child(1) {
+        width: 40vw; }
+      tmfd-element #Electricity #WaypointDuplicateWindow thead tr th:nth-child(2), tmfd-element #Electricity #WaypointDuplicateWindow tbody tr:first-child td:nth-child(2) {
+        width: 20vw; }
+      tmfd-element #Electricity #WaypointDuplicateWindow thead tr th:nth-child(3), tmfd-element #Electricity #WaypointDuplicateWindow tbody tr:first-child td:nth-child(3) {
+        width: 30vw; }
+      tmfd-element #Electricity #WaypointDuplicateWindow table {
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        top: 15%;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+        border: 0.4vh solid white;
+        border-collapse: collapse;
+        color: white;
+        text-align: center;
+        font-size: 4vh; }
+        tmfd-element #Electricity #WaypointDuplicateWindow table thead {
+          display: block;
+          color: white;
+          font-size: 4vh;
+          height: 7vh;
+          width: 97%;
+          border: 0.4vh solid white;
+          padding-right: 3%; }
+        tmfd-element #Electricity #WaypointDuplicateWindow table tbody {
+          display: block;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          height: 75vh;
+          width: 97%;
+          position: relative;
+          padding-right: 1.75%; }
+          tmfd-element #Electricity #WaypointDuplicateWindow table tbody::-webkit-scrollbar {
+            width: 0.5vw; }
+          tmfd-element #Electricity #WaypointDuplicateWindow table tbody::-webkit-scrollbar-track {
+            background: none; }
+          tmfd-element #Electricity #WaypointDuplicateWindow table tbody::-webkit-scrollbar-thumb {
+            background: white; }
+          tmfd-element #Electricity #WaypointDuplicateWindow table tbody #SizeSetter, tmfd-element #Electricity #WaypointDuplicateWindow table tbody #SizeSetter td {
+            border: none;
+            height: 0vh; }
+          tmfd-element #Electricity #WaypointDuplicateWindow table tbody tr, tmfd-element #Electricity #WaypointDuplicateWindow table tbody td {
+            height: 19vh;
+            position: relative; }
+            tmfd-element #Electricity #WaypointDuplicateWindow table tbody tr .gradientButton, tmfd-element #Electricity #WaypointDuplicateWindow table tbody td .gradientButton {
+              position: absolute;
+              top: 1vh;
+              left: 1vh;
+              right: 1vh;
+              bottom: 1vh;
+              width: auto;
+              height: auto; }
+              tmfd-element #Electricity #WaypointDuplicateWindow table tbody tr .gradientButton .Ident, tmfd-element #Electricity #WaypointDuplicateWindow table tbody td .gradientButton .Ident {
+                position: absolute;
+                top: 1vh;
+                left: 1vh;
+                font-size: 5vh; }
+              tmfd-element #Electricity #WaypointDuplicateWindow table tbody tr .gradientButton .Logo, tmfd-element #Electricity #WaypointDuplicateWindow table tbody td .gradientButton .Logo {
+                position: absolute;
+                top: 1vh;
+                right: 1vh;
+                height: 5vh; }
+              tmfd-element #Electricity #WaypointDuplicateWindow table tbody tr .gradientButton .Name, tmfd-element #Electricity #WaypointDuplicateWindow table tbody td .gradientButton .Name {
+                position: absolute;
+                top: 6.5vh;
+                left: 1vh;
+                font-size: 3.5vh;
+                white-space: pre-line;
+                text-align: left; }
+              tmfd-element #Electricity #WaypointDuplicateWindow table tbody tr .gradientButton .City, tmfd-element #Electricity #WaypointDuplicateWindow table tbody td .gradientButton .City {
+                position: absolute;
+                top: 10vh;
+                left: 1vh;
+                font-size: 3.5vh;
+                white-space: nowrap; }
+          tmfd-element #Electricity #WaypointDuplicateWindow table tbody tr[state=Inactive] {
+            display: none; }
+          tmfd-element #Electricity #WaypointDuplicateWindow table tbody td {
+            border-top: 0.4vh solid white;
+            border-bottom: 0.4vh solid white; }
+            tmfd-element #Electricity #WaypointDuplicateWindow table tbody td[state=Inactive] {
+              display: none; }
+          tmfd-element #Electricity #WaypointDuplicateWindow table tbody tr td:first-child {
+            border-left: 0.4vh solid white;
+            border-right: 0.4vh solid white; }
+      tmfd-element #Electricity #WaypointDuplicateWindow .BearingArrow {
+        position: absolute;
+        left: 10%;
+        top: 20%;
+        height: 6vh; }
+      tmfd-element #Electricity #WaypointDuplicateWindow .BearingText {
+        position: absolute;
+        top: 20%;
+        left: 50%; }
+      tmfd-element #Electricity #WaypointDuplicateWindow .Distance {
+        position: absolute;
+        top: 20%;
+        left: 30%; }
+    tmfd-element #Electricity #MapPointerControl #TouchPad {
+      position: absolute;
+      left: 5vh;
+      right: 5vh;
+      top: 15vh;
+      bottom: 5vh;
+      height: auto;
+      width: auto;
+      border: 0.4vh solid white;
+      border-radius: 3vh;
+      background-size: 10vh 10vh;
+      background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px); }
+    tmfd-element #Electricity #SelectionList .content {
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      width: auto;
+      top: 15%;
+      height: 85%;
+      overflow-y: scroll;
+      overflow-x: hidden; }
+      tmfd-element #Electricity #SelectionList .content::-webkit-scrollbar {
+        width: 0.5vw; }
+      tmfd-element #Electricity #SelectionList .content::-webkit-scrollbar-track {
+        background: none; }
+      tmfd-element #Electricity #SelectionList .content::-webkit-scrollbar-thumb {
+        background: white; }
+      tmfd-element #Electricity #SelectionList .content .gradientButton {
+        height: 20%;
+        width: 100%; }
+        tmfd-element #Electricity #SelectionList .content .gradientButton .value {
+          font-size: 4vh; }
+        tmfd-element #Electricity #SelectionList .content .gradientButton[state=Inactive] {
+          display: none; }
+    tmfd-element #Electricity .PopUpWindow {
+      position: absolute;
+      width: 100%;
+      height: 78%;
+      background-color: black;
+      z-index: 10; }
+      tmfd-element #Electricity .PopUpWindow[state=Inactive] {
+        display: none; }
+      tmfd-element #Electricity .PopUpWindow .WindowTitle {
+        color: white;
+        font-size: 5vh;
+        width: 100%;
+        text-align: center; }
+    tmfd-element #Electricity .Transparent {
+      background-color: rgba(0, 0, 0, 0.8); }
+  tmfd-element .line {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center; }
+  tmfd-element .gradientButton {
+    background: linear-gradient(#0093d0, rgba(0, 147, 208, 0) 60%);
+    position: relative;
+    width: 21vh;
+    height: 21vh;
+    max-height: 21vh;
+    margin: 0.5vh;
+    text-align: center; }
+    tmfd-element .gradientButton[state=Inactive] {
+      visibility: hidden; }
+    tmfd-element .gradientButton[state=Greyed] {
+      filter: grayscale(100%) brightness(40%); }
+      tmfd-element .gradientButton[state=Greyed]:Hover:Active {
+        background-color: black !important; }
+    tmfd-element .gradientButton[state=Hidden] {
+      display: none !important; }
+    tmfd-element .gradientButton[state=Invisible] {
+      visibility: hidden !important; }
+    tmfd-element .gradientButton .img {
+      height: 60%;
+      max-width: 60%;
+      margin-top: 5%;
+      display: inline-block; }
+    tmfd-element .gradientButton .img_small {
+      height: 40%;
+      max-width: 40%;
+      margin-top: 5%;
+      display: inline-block; }
+    tmfd-element .gradientButton .lowerImg {
+      height: 60%;
+      max-width: 60%;
+      display: inline-block;
+      margin-top: 20%; }
+    tmfd-element .gradientButton .centerImg {
+      height: 40%;
+      max-width: 60%;
+      display: inline-block;
+      margin-top: 14%; }
+    tmfd-element .gradientButton .lowerValue {
+      position: absolute;
+      top: 42%;
+      width: 90%;
+      left: 5%;
+      font-size: 4vh;
+      color: aqua; }
+    tmfd-element .gradientButton .title {
+      position: absolute;
+      height: 40%;
+      width: 100%;
+      bottom: 0%;
+      text-align: center;
+      color: white;
+      font-size: 3.5vh;
+      line-height: 3.5vh;
+      background: none;
+      vertical-align: bottom; }
+    tmfd-element .gradientButton .upperTitle {
+      position: absolute;
+      height: 40%;
+      width: 100%;
+      top: 5%;
+      text-align: center;
+      color: white;
+      font-size: 3.5vh;
+      line-height: 3.5vh;
+      background: none;
+      vertical-align: bottom; }
+    tmfd-element .gradientButton .topText {
+      color: white;
+      text-align: left;
+      font-size: 3vh;
+      margin-left: 8%; }
+    tmfd-element .gradientButton .mainNumber {
+      color: white;
+      text-align: justify;
+      font-size: 7vh;
+      margin-left: 8%; }
+    tmfd-element .gradientButton .mainText {
+      color: white;
+      text-align: center;
+      font-size: 4vh; }
+    tmfd-element .gradientButton .statusText {
+      color: aqua;
+      font-size: 5vh; }
+    tmfd-element .gradientButton .statusBar {
+      position: absolute;
+      width: 80%;
+      height: 5%;
+      background-color: grey;
+      left: 10%;
+      bottom: 30%; }
+    tmfd-element .gradientButton[state=Active] .mainNumber {
+      color: lawngreen; }
+    tmfd-element .gradientButton[state=Active] .statusBar {
+      background-color: lawngreen; }
+    tmfd-element .gradientButton[state=Selected] .mainNumber {
+      color: aqua; }
+      tmfd-element .gradientButton[state=Selected] .mainNumber .Writing {
+        color: dimgray;
+        min-width: 5px;
+        min-height: 7vh;
+        display: inline-block; }
+        tmfd-element .gradientButton[state=Selected] .mainNumber .Writing[state=Blink] {
+          background-color: aqua; }
+      tmfd-element .gradientButton[state=Selected] .mainNumber .ToWrite {
+        color: dimgray; }
+    tmfd-element .gradientButton[state=White] {
+      background: none;
+      background-color: white; }
+      tmfd-element .gradientButton[state=White] .mainText {
+        color: black; }
+    tmfd-element .gradientButton:Hover:Active {
+      background-color: #0093d0; }
+  tmfd-element .roundButton {
+    border-radius: 50%;
+    background: linear-gradient(#0093d0, rgba(0, 147, 208, 0) 60%);
+    color: white;
+    font-size: 10vh;
+    text-align: center;
+    width: 21vh;
+    height: 21vh; }
+    tmfd-element .roundButton:Hover:Active {
+      background-color: #0093d0; }
+  tmfd-element .DrctImg {
+    height: 8vh;
+    display: inline; }
+

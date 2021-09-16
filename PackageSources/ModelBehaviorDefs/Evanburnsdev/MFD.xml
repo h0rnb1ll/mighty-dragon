@@ -1,0 +1,424 @@
+﻿<ModelBehaviors>
+	<Include ModelBehaviorFile="Asobo\Common.xml"/>
+	<!-- <Include ModelBehaviorFile="Asobo\GlassCockpit\AS3X_Touch.xml"/> -->
+	<Include ModelBehaviorFile="Asobo\GlassCockpit\AS3000.xml"/>
+	<Include ModelBehaviorFile="Asobo\GlassCockpit\AS580.xml"/>
+	<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
+	<Include ModelBehaviorFile="Asobo\Misc\Clock.xml"/>
+	<Include ModelBehaviorFile="Asobo\Generic.xml"/>
+	
+	<Include ModelBehaviorFile="Asobo\Airliner\AirlinerCommon.xml"/>
+	<Include ModelBehaviorFile="Asobo\Airliner\FMC.xml"/>
+	<Include ModelBehaviorFile="Asobo\Airliner\GlassCockpit.xml"/>
+	<Include ModelBehaviorFile="Asobo\Airliner\Airbus.xml"/>
+	<Include ModelBehaviorFile="Evanburnsdev\Lighting.xml"/>
+		
+	<Template Name="EVANBURNSDEV_Softkey_Template">
+		<DefaultTemplateParameters>
+			<PREFIX>#DISPLAY#</PREFIX>
+			<DISPLAY_POS>L</DISPLAY_POS>
+			<KEY_PREFIX>#DISPLAY#_#ID#</KEY_PREFIX>
+			<Condition>
+				<Test>
+					<Lower>
+						<Value>KEY_ID</Value>
+						<Number>10</Number>
+					</Lower>
+				</Test>
+				<True>
+					<UID>00#KEY_ID#</UID>
+				</True>
+				<False>
+					<UID>0#KEY_ID#</UID>
+				</False>
+			</Condition>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_SubTemplate"></UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_Softkey_SubTemplate">
+		<DefaultTemplateParameters>
+			<NODE_ID>#DISPLAY#_#ID#_Button_#UID##SUFFIX_ID#</NODE_ID>
+			<ANIM_NAME>#DISPLAY#_#ID#_Button_#UID##SUFFIX_ID#</ANIM_NAME>
+			<PART_ID>#PREFIX#_Push_Softkey_#KEY_ID#</PART_ID>
+			<WWISE_EVENT_1>as3000_push_button_on</WWISE_EVENT_1>  
+			<NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
+			<WWISE_EVENT_2>as3000_push_button_off</WWISE_EVENT_2> 
+			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>	
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="EVANBURNSDEV_GT_Push_Button_Timed">
+				<REPEAT_FREQUENCY>50</REPEAT_FREQUENCY>
+				<LONG_CLICK_TIME>1</LONG_CLICK_TIME>
+				<LEFT_SINGLE_CODE>(&gt;H:#KEY_PREFIX#_SOFTKEYS_#KEY_ID#)</LEFT_SINGLE_CODE>
+				<!--<SHORT_CLICK_CODE>(&gt;H:#KEY_PREFIX#_SOFTKEYS_#KEY_ID#)</SHORT_CLICK_CODE>-->
+				<LONG_CLICK_CODE>(&gt;H:#KEY_PREFIX#_SOFTKEYS_#KEY_ID#)</LONG_CLICK_CODE>
+			</UseTemplate>
+		</Component>
+	</Template>
+	<Template Name="EVANBURNSDEV_20_Softkeys_Template">
+		<DefaultTemplateParameters>
+			<ID>1</ID>
+		</DefaultTemplateParameters>
+	
+		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+			<TEMPLATE_TO_CALL>EVANBURNSDEV_20_Softkeys_SubTemplate</TEMPLATE_TO_CALL>
+		</UseTemplate>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_20_Softkeys_SubTemplate">
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>1</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>2</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>3</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>4</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>5</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>6</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>7</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>8</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>9</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>10</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>11</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>12</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>13</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>14</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>15</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>16</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>17</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>18</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>19</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>20</KEY_ID></UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_4_Softkeys_Template">
+		<DefaultTemplateParameters>
+			<ID>1</ID>
+		</DefaultTemplateParameters>
+	
+		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+			<TEMPLATE_TO_CALL>EVANBURNSDEV_4_Softkeys_SubTemplate</TEMPLATE_TO_CALL>
+		</UseTemplate>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_4_Softkeys_SubTemplate">
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>1</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>2</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>3</KEY_ID></UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>4</KEY_ID></UseTemplate>
+	</Template>
+
+
+	<!-- Screen template -->
+	<Template Name="EVANBURNSDEV_Screen_Template">
+		<DefaultTemplateParameters>
+			<POTENTIOMETER>4</POTENTIOMETER>
+			<SCREEN_LIGHT_DIMMING_SCALE>0.5</SCREEN_LIGHT_DIMMING_SCALE>
+			<SCREEN_MIN_EMISSIVE_PERCENT>0.05</SCREEN_MIN_EMISSIVE_PERCENT>
+			<MIN_AMBIENT_EMISSIVE_PERCENT>0.1</MIN_AMBIENT_EMISSIVE_PERCENT>
+			<MAX_EMISSIVE_PERCENT>1</MAX_EMISSIVE_PERCENT>
+			<MAX_AMBIENT_EMISSIVE_PERCENT>1</MAX_AMBIENT_EMISSIVE_PERCENT>
+			<ID>1</ID>
+		</DefaultTemplateParameters>
+		<!--
+		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+			<TEMPLATE_TO_CALL>EVANBURNSDEV_Screen_SubTemplate</TEMPLATE_TO_CALL>
+		</UseTemplate>
+		-->
+		<UseTemplate Name="EVANBURNSDEV_Screen_SubTemplate"/>
+	</Template>
+	<Template Name="EVANBURNSDEV_Screen_SubTemplate">
+		<DefaultTemplateParameters>
+			<Condition Check="SCREEN_NODE_ID">
+				<True>
+					<NODE_ID>#SCREEN_NODE_ID#</NODE_ID>
+					<DISPLAY>Display</DISPLAY>
+					<KEY_PREFIX>Display_#ID#</KEY_PREFIX>
+				</True>
+				<False>
+					<Condition Check="DISPLAY">
+						<True>
+							<Switch Param="DISPLAY">
+								<Case Value="PMFD">
+									<INSTR_ID>PMFD</INSTR_ID>
+									<NODE_ID>PMFD_Screen</NODE_ID>
+									<KEY_PREFIX>PMFD_#ID#</KEY_PREFIX>
+								</Case>
+								<Case Value="SMFD">
+									<INSTR_ID>SMFD_#ID#</INSTR_ID>
+									<NODE_ID>SMFD_#ID#_Screen</NODE_ID>
+									<KEY_PREFIX>SMFD_#ID#</KEY_PREFIX>
+								</Case>
+								<Case Value="TMFD">
+									<INSTR_ID>TMFD_#ID#</INSTR_ID>
+									<NODE_ID>TMFD_#ID#_Screen</NODE_ID>
+									<KEY_PREFIX>TMFD_#ID#</KEY_PREFIX>
+								</Case>
+								<Case Value="HUD">
+									<INSTR_ID>HUD</INSTR_ID>
+									<NODE_ID>HUD_Screen</NODE_ID>
+									<KEY_PREFIX>HUD_#ID#</KEY_PREFIX>
+								</Case>
+								<Default>
+									<INSTR_ID>#DISPLAY#_#ID#</INSTR_ID>
+									<NODE_ID>#DISPLAY#_#ID#_Screen</NODE_ID>
+									<KEY_PREFIX>#DISPLAY#_#ID#</KEY_PREFIX>
+								</Default>
+							</Switch>
+						</True>
+						<False>
+							<INSTR_ID>Display_#ID#</INSTR_ID>
+							<DISPLAY>Display</DISPLAY>
+							<NODE_ID>Display_#ID#</NODE_ID>
+							<KEY_PREFIX>Display_#ID#</KEY_PREFIX>
+						</False>
+					</Condition>
+				</False>
+			</Condition>
+			<Condition Check="LOCAL_POTENTIOMETER">
+				<True>
+					<SCREEN_EMISSIVE_CODE>(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#_VALUE) 100 / #SCREEN_LIGHT_DIMMING_SCALE# * #MAX_EMISSIVE_PERCENT# #SCREEN_MIN_EMISSIVE_PERCENT# - * #SCREEN_MIN_EMISSIVE_PERCENT# +</SCREEN_EMISSIVE_CODE>
+				</True>
+				<False>
+					<SCREEN_EMISSIVE_CODE>(A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent over 100) #SCREEN_LIGHT_DIMMING_SCALE# * #MAX_EMISSIVE_PERCENT# #SCREEN_MIN_EMISSIVE_PERCENT# - * #SCREEN_MIN_EMISSIVE_PERCENT# +</SCREEN_EMISSIVE_CODE>
+				</False>
+			</Condition>
+			<Condition Check="CIRCUIT_ID">
+				<True>
+					<FAILURE>(A:CIRCUIT ON:#CIRCUIT_ID#, Bool)</FAILURE>
+				</True>
+				<False>
+					<FAILURE>(A:CIRCUIT AVIONICS ON, Bool)</FAILURE>
+				</False>
+			</Condition>
+		</DefaultTemplateParameters>
+		<Condition Check="AMBIENT_POTENTIOMETER">
+			<Component ID="#INSTR_ID#_Screen_Ambient">
+				<Component ID="Test">
+					<Update Frequency="20">
+						#FAILURE# (&gt;O:_Failure)
+						(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#_VALUE) 100 / (&gt;O:_SCALED_POT)
+						(O:_SCALED_POT) (L:#KEY_PREFIX#_ScreenLuminosity) * (&gt;O:_EMISSIVE_FACTOR)
+						(O:_EMISSIVE_FACTOR) #MAX_EMISSIVE_PERCENT# #SCREEN_MIN_EMISSIVE_PERCENT# - * (&gt;O:_CLIPPED_EMISSIVE)
+						(O:_CLIPPED_EMISSIVE) #MIN_AMBIENT_EMISSIVE_PERCENT# + (&gt;O:_CLIPPED_EMISSIVE_PLUS_MIN_AMB)
+						(O:_CLIPPED_EMISSIVE_PLUS_MIN_AMB) #FAILURE# (L:#KEY_PREFIX#_ScreenLuminosity) 0 &gt; and * 100 * (&gt;O:_EVERYTHING_ELSE)
+					</Update>
+				</Component>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Ambient_Template">
+					<Condition Check="LOCAL_POTENTIOMETER">
+						<True>
+							<BOUNCE_POTENTIOMETER_PERCENT>
+								(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#_VALUE) 100 / (L:#KEY_PREFIX#_ScreenLuminosity) * #MAX_AMBIENT_EMISSIVE_PERCENT# #SCREEN_MIN_EMISSIVE_PERCENT# - * #MIN_AMBIENT_EMISSIVE_PERCENT# + #FAILURE# (L:#KEY_PREFIX#_ScreenLuminosity) 0 &gt; and * 100 *
+							</BOUNCE_POTENTIOMETER_PERCENT>
+						</True>
+						<False>
+							<BOUNCE_POTENTIOMETER_PERCENT>
+								(L:#KEY_PREFIX#_ScreenLuminosity) (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent over 100) #MAX_AMBIENT_EMISSIVE_PERCENT# #SCREEN_MIN_EMISSIVE_PERCENT# - * * #MIN_AMBIENT_EMISSIVE_PERCENT# + #FAILURE# (L:#KEY_PREFIX#_ScreenLuminosity) 0 &gt; and * 100 *
+							</BOUNCE_POTENTIOMETER_PERCENT>
+						</False>
+					</Condition>
+					<POTENTIOMETER>#AMBIENT_POTENTIOMETER#</POTENTIOMETER>
+				</UseTemplate>
+			</Component>
+		</Condition>
+		<Component ID="#INSTR_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<PART_ID>#INSTR_ID#</PART_ID>
+				<EMISSIVE_CODE>#SCREEN_EMISSIVE_CODE#</EMISSIVE_CODE>
+			</UseTemplate>
+		</Component>
+	</Template>	
+	
+	<Template Name="EVANBURNSDEV_LIGHTING_Ambient_Template">
+		<DefaultTemplateParameters>
+			<NODE_ID>LIGHTING_Ambient</NODE_ID>
+			<ID>1</ID>
+			<Condition Check="FAILURE_CIRCUIT">
+				<False>
+					<FAILURE>(A:CIRCUIT AVIONICS ON, Bool)</FAILURE>
+				</False>
+				<True>
+					<FAILURE>(A:CIRCUIT ON:#FAILURE_CIRCUIT#, Bool)</FAILURE>
+				</True>
+			</Condition>
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#_#ID#_Screen">
+			<Update Frequency="20">
+				#BOUNCE_POTENTIOMETER_PERCENT# #FAILURE# * (&gt;O:_Bounce)
+					(O:_Bounce) (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent) != if{
+					(O:_Bounce) #POTENTIOMETER# (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+				}
+			</Update>
+		</Component>
+	</Template>
+
+	<Template Name="EVANBURNSDEV_20_SoftKeys_Emissive_Template">
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>001</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>002</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>003</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>004</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>005</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>006</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>007</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>008</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>009</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>010</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>011</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>012</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>013</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>014</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>015</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>016</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>017</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>018</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>019</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>020</BUTTON_ID>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_4_SoftKeys_Emissive_Template">
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>001</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>002</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>003</BUTTON_ID>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+			<BUTTON_ID>004</BUTTON_ID>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<DefaultTemplateParameters>
+			<PANEL_TYPE>PMFD</PANEL_TYPE>
+			<PANEL_ID>1</PANEL_ID>
+			<BUTTON_ID>001</BUTTON_ID>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+			<NODE_ID>#PANEL_TYPE#_#PANEL_ID#_Button_#BUTTON_ID#</NODE_ID> 
+			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
+		</UseTemplate>
+	</Template>
+	
+
+	<Template Name="EVANBURNSDEV_PMFD_Emissive_Template">
+		<DefaultTemplateParameters>
+			<POTENTIOMETER_ID>19</POTENTIOMETER_ID>
+			<EMISSIVE_CODE>0.25</EMISSIVE_CODE>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
+			<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
+			<INIT_VALUE>
+				(E:Time of Day,enum) 3 == 30 *
+			</INIT_VALUE>
+			<NODE_ID>PMFD_Cnt_Knob</NODE_ID>
+			<ANIM_NAME>PMFD_Cnt_Knob</ANIM_NAME>
+			<ANIMTIP_0>Decrease PFD Buttons Backlight Brightness</ANIMTIP_0>
+			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
+			<ANIMTIP_1>Increase PFD Buttons Backlight Brightness</ANIMTIP_1>
+			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+			<NODE_ID>PMFD_Lines</NODE_ID> 
+			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_20_SoftKeys_Emissive_Template">
+			<PANEL_TYPE>PMFD</PANEL_TYPE>
+			<EMISSIVE_CODE>0.125</EMISSIVE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_SMFD_Emissive_Template">
+		<DefaultTemplateParameters>
+			<MFD_TYPE>SMFD</MFD_TYPE>
+			<POTENTIOMETER_ID>20</POTENTIOMETER_ID>
+			<PANEL_ID>1</PANEL_ID>
+			<EMISSIVE_CODE>0.25</EMISSIVE_CODE>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
+			<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
+			<INIT_VALUE>
+				(E:Time of Day,enum) 3 == 30 *
+			</INIT_VALUE>
+			<NODE_ID>SMFD_#PANEL_ID#_Cnt_Knob</NODE_ID>
+			<ANIM_NAME>SMFD_#PANEL_ID#_Cnt_Knob</ANIM_NAME>
+			<ANIMTIP_0>Decrease MFD Buttons Backlight Brightness</ANIMTIP_0>
+			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
+			<ANIMTIP_1>Increase MFD Buttons Backlight Brightness</ANIMTIP_1>
+			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+			<NODE_ID>SMFD_#PANEL_ID#_Lines</NODE_ID> 
+			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_20_SoftKeys_Emissive_Template">
+			<PANEL_TYPE>SMFD</PANEL_TYPE>
+			<EMISSIVE_CODE>0.125</EMISSIVE_CODE>
+		</UseTemplate>
+	</Template>
+	<Template Name="EVANBURNSDEV_TMFD_Emissive_Template">
+		<DefaultTemplateParameters>
+			<POTENTIOMETER_ID>23</POTENTIOMETER_ID>
+			<PANEL_ID>1</PANEL_ID>
+			<EMISSIVE_CODE>0.25</EMISSIVE_CODE>
+		</DefaultTemplateParameters>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
+			<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
+			<INIT_VALUE>
+				(E:Time of Day,enum) 3 == 30 *
+			</INIT_VALUE>
+			<NODE_ID>TMFD_#PANEL_ID#_Cnt_Knob</NODE_ID>
+			<ANIM_NAME>TMFD_#PANEL_ID#_Cnt_Knob</ANIM_NAME>
+			<ANIMTIP_0>Decrease TMFD Buttons Backlight Brightness</ANIMTIP_0>
+			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
+			<ANIMTIP_1>Increase TMFD Buttons Backlight Brightness</ANIMTIP_1>
+			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+			<NODE_ID>TMFD_#PANEL_ID#_Lines</NODE_ID> 
+			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
+		</UseTemplate>
+		<UseTemplate Name="EVANBURNSDEV_4_SoftKeys_Emissive_Template">
+			<PANEL_TYPE>TMFD</PANEL_TYPE>
+			<EMISSIVE_CODE>0.125</EMISSIVE_CODE>
+		</UseTemplate>
+	</Template>
+</ModelBehaviors>
