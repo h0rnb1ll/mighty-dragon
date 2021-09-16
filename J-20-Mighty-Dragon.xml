@@ -1,0 +1,8 @@
+<Project Version="2" Name="J-20-Mighty-Dragon" FolderName="Packages">
+	<OutputDirectory>.</OutputDirectory>
+	<TemporaryOutputDirectory>_PackageInt</TemporaryOutputDirectory>
+	<Packages>
+		<Package>PackageDefinitions\h0rnb1ll-hbl-aircraft-j20.xml</Package>
+	</Packages>
+</Project>
+

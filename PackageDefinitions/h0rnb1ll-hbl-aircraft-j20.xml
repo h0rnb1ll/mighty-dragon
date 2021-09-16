@@ -1,0 +1,31 @@
+<AssetPackage Name="h0rnb1ll-hbl-aircraft-j20" Version="0.1.0">
+	<ItemSettings>
+		<ContentType>AIRCRAFT</ContentType>
+		<Title>J-20 Mighty Dragon</Title>
+		<Manufacturer>Chengdu Aerospace Corp</Manufacturer>
+		<Creator>h0rnb1ll</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\h0rnb1ll-hbl-aircraft-j20\ContentInfo</AssetDir>
+			<OutputDir>ContentInfo\h0rnb1ll-hbl-aircraft-j20</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="hbl-aircraft-j20">
+			<Type>SimObject</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\SimObjects\Airplanes\hbl-aircraft-j20</AssetDir>
+			<OutputDir>SimObjects\airplanes\hbl-aircraft-j20</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+
