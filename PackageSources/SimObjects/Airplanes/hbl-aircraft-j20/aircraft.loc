@@ -1,0 +1,52 @@
+{
+  "LocalisationFile": {
+    "Version": 2,
+    "UUID": "4c2283aa-fbb3-416a-941c-d715333e0381",
+    "Languages": [
+      "en-US"
+    ],
+    "Strings": {
+      "AIRCRAFT.DESCRIPTION": {
+        "UUID": "ece46fdc-70af-492e-838d-34d54ecd0402",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-09-17 23:59:59",
+        "LocalizationStatus": "TranslationNeeded",
+        "Languages": {
+          "en-US": {
+            "Text": "The Chengdu J-20 (Chinese: 歼-20; pinyin: Jiān-Èrlíng), also known as Mighty Dragon (Chinese: 威龙; pinyin: Wēilóng),is a single-seat, twinjet, all-weather, stealth, fifth-generation fighter aircraft developed by China's Chengdu Aerospace Corporation for the People's Liberation Army Air Force (PLAAF)."
+          }
+        }
+      },
+      "AIRCRAFT.UI_MANUFACTURER": {
+        "UUID": "0b1da911-71e4-4b9c-86e2-9a140e10d7e1",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-09-14 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Chendu Aerospace Corp."
+          }
+        }
+      },
+      "AIRCRAFT.UI_MODEL": {
+        "UUID": "ea9a2378-7418-4b07-b8af-93d1e35f194b",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-09-14 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "J-20 Mighty Dragon"
+          }
+        }
+      },
+      "AIRCRAFT.UI_VARIATION": {
+        "UUID": "4fbd6316-9e27-4fd1-b27c-e36ef5db2170",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-09-14 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "J-20 Mighty Dragon Hornbill"
+          }
+        }
+      }
+    }
+  }
+}
