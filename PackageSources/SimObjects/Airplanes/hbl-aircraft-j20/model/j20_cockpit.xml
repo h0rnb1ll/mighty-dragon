@@ -1,0 +1,563 @@
+<?xml version="1.0" ?>
+<ModelInfo version="1.1" guid="{1c6a5985-e151-406d-6ff4-9e9b99d7a6e5}">
+	<LODS>
+		<LOD ModelFile="j20_cockpit.gltf" minSize="50"/>
+		<LOD ModelFile="j20_cockpit.gltf" minSize="20"/>
+		<LOD ModelFile="j20_cockpit.gltf" minSize="10"/>
+		<LOD ModelFile="j20_cockpit.gltf" minSize="5"/>
+		<LOD ModelFile="j20_cockpit.gltf" minSize="1"/>
+	</LODS>
+	<Behaviors>
+		<Include ModelBehaviorFile="Asobo\Common.xml"/>
+		<Include ModelBehaviorFile="Asobo\GlassCockpit\AS3000.xml"/>
+		<Include ModelBehaviorFile="Asobo\GlassCockpit\AS580.xml"/>
+		<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
+		<Include ModelBehaviorFile="Asobo\Misc\Clock.xml"/>
+		<Include ModelBehaviorFile="Asobo\Generic.xml"/>
+		
+		<Include ModelBehaviorFile="Asobo\Airliner\AirlinerCommon.xml"/>
+		<Include ModelBehaviorFile="Asobo\Airliner\FMC.xml"/>
+		<Include ModelBehaviorFile="Asobo\Airliner\GlassCockpit.xml"/>
+		<Include ModelBehaviorFile="Asobo\Airliner\Airbus.xml"/>
+		
+		<Include ModelBehaviorFile="Evanburnsdev\Debug.xml"/>
+		<Include ModelBehaviorFile="Evanburnsdev\FlyByWire.xml"/>
+		<Include ModelBehaviorFile="Evanburnsdev\MFD.xml"/>
+		<Include ModelBehaviorFile="Evanburnsdev\Lighting.xml"/>
+		<Include ModelBehaviorFile="Evanburnsdev\Electrical.xml"/>
+		<Include ModelBehaviorFile="Evanburnsdev\PushButton.xml"/>
+
+		<!-- Used Potentiometers - 0-56 -->
+
+
+		<!-- GLASS_COCKPIT ##############################-->
+		<Component ID="NAVSYSTEMS">
+			<DefaultTemplateParameters>
+				<POTENTIOMETER>10</POTENTIOMETER>
+				<DONT_APPEND_ID>True</DONT_APPEND_ID>
+				<!--    Screens         -->
+				<SCREEN_LIGHT_DIMMING_SCALE>1</SCREEN_LIGHT_DIMMING_SCALE>
+				<SCREEN_MIN_EMISSIVE_PERCENT>0.0</SCREEN_MIN_EMISSIVE_PERCENT>
+				<MIN_AMBIENT_EMISSIVE_PERCENT>0</MIN_AMBIENT_EMISSIVE_PERCENT>
+				<MAX_EMISSIVE_PERCENT>1</MAX_EMISSIVE_PERCENT>
+				<!--    Keys            -->
+				<MIN_EMISSIVE_PERCENT>0</MIN_EMISSIVE_PERCENT>
+				<MAX_EMISSIVE_PERCENT>1</MAX_EMISSIVE_PERCENT>
+				<LIGHT_DIMMING_SCALE>1</LIGHT_DIMMING_SCALE>
+				<DISABLE_BUTTON_ANIMATIONS>True</DISABLE_BUTTON_ANIMATIONS>
+			</DefaultTemplateParameters>
+			<Component ID="PMFD_1">
+				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+					<AMBIENT_POTENTIOMETER>12</AMBIENT_POTENTIOMETER>
+					<POTENTIOMETER>50</POTENTIOMETER>
+					<DISPLAY>PMFD</DISPLAY>
+					<ID>1</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_20_Softkeys_Template">
+					<DISPLAY>PMFD</DISPLAY>
+					<ID>1</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<POTENTIOMETER>50</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == -60 *
+						90 +
+					</INIT_VALUE>
+					<NODE_ID>PMFD_Brt_Knob</NODE_ID>
+					<ANIM_NAME>PMFD_Brt_Knob</ANIM_NAME>
+					<ANIMTIP_0>Decrease PFD Screen Brightness</ANIMTIP_0>
+					<ANIMTIP_1>Increase PFD Screen Brightness</ANIMTIP_1>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_PMFD_Emissive_Template"/>
+			</Component>
+			
+			<Component ID="SMFD_1">
+				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+					<AMBIENT_POTENTIOMETER>13</AMBIENT_POTENTIOMETER>
+					<POTENTIOMETER>51</POTENTIOMETER>
+					<DISPLAY>SMFD</DISPLAY>
+					<ID>1</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_20_Softkeys_Template">
+					<DISPLAY>SMFD</DISPLAY>
+					<ID>1</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<POTENTIOMETER>51</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == -60 *
+						90 +
+					</INIT_VALUE>
+					<NODE_ID>SMFD_1_Brt_Knob</NODE_ID>
+					<ANIM_NAME>SMFD_1_Brt_Knob</ANIM_NAME>
+					<ANIMTIP_0>Decrease MFD Screen Brightness</ANIMTIP_0>
+					<ANIMTIP_1>Increase MFD Screen Brightness</ANIMTIP_1>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_SMFD_Emissive_Template">
+					<POTENTIOMETER_ID>20</POTENTIOMETER_ID>
+					<PANEL_ID>1</PANEL_ID>
+				</UseTemplate>
+			</Component>
+		
+			<Component ID="SMFD_2">
+				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+					<AMBIENT_POTENTIOMETER>14</AMBIENT_POTENTIOMETER>
+					<POTENTIOMETER>52</POTENTIOMETER>
+					<DISPLAY>SMFD</DISPLAY>
+					<ID>2</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_20_Softkeys_Template">
+					<DISPLAY>SMFD</DISPLAY>
+					<ID>2</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<POTENTIOMETER>52</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == -60 *
+						90 +
+					</INIT_VALUE>
+					<NODE_ID>SMFD_2_Brt_Knob</NODE_ID>
+					<ANIM_NAME>SMFD_2_Brt_Knob</ANIM_NAME>
+					<ANIMTIP_0>Decrease MFD Screen Brightness</ANIMTIP_0>
+					<ANIMTIP_1>Increase MFD Screen Brightness</ANIMTIP_1>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_SMFD_Emissive_Template">
+					<POTENTIOMETER_ID>21</POTENTIOMETER_ID>
+					<PANEL_ID>2</PANEL_ID>
+				</UseTemplate>
+			</Component>
+
+			<Component ID="SMFD_3">
+				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+					<AMBIENT_POTENTIOMETER>15</AMBIENT_POTENTIOMETER>
+					<POTENTIOMETER>53</POTENTIOMETER>
+					<DISPLAY>SMFD</DISPLAY>
+					<ID>3</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_20_Softkeys_Template">
+					<DISPLAY>SMFD</DISPLAY>
+					<ID>3</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<POTENTIOMETER>53</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == -60 *
+						90 +
+					</INIT_VALUE>
+					<NODE_ID>SMFD_3_Brt_Knob</NODE_ID>
+					<ANIM_NAME>SMFD_3_Brt_Knob</ANIM_NAME>
+					<ANIMTIP_0>Decrease MFD Screen Brightness</ANIMTIP_0>
+					<ANIMTIP_1>Increase MFD Screen Brightness</ANIMTIP_1>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_SMFD_Emissive_Template">
+					<POTENTIOMETER_ID>22</POTENTIOMETER_ID>
+					<PANEL_ID>3</PANEL_ID>
+				</UseTemplate>
+			</Component>
+
+			<Component ID="TMFD_1">
+				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+					<AMBIENT_POTENTIOMETER>17</AMBIENT_POTENTIOMETER>
+					<MAX_AMBIENT_EMISSIVE_PERCENT>0.1</MAX_AMBIENT_EMISSIVE_PERCENT>
+					<POTENTIOMETER>54</POTENTIOMETER>
+					<DISPLAY>TMFD</DISPLAY>
+					<ID>1</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_4_Softkeys_Template">
+					<DISPLAY>TMFD</DISPLAY>
+					<ID>1</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<POTENTIOMETER>54</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == -60 *
+						90 +
+					</INIT_VALUE>
+					<NODE_ID>TMFD_1_Brt_Knob</NODE_ID>
+					<ANIM_NAME>TMFD_1_Brt_Knob</ANIM_NAME>
+					<ANIMTIP_0>Decrease TMFD Screen Brightness</ANIMTIP_0>
+					<ANIMTIP_1>Increase TMFD Screen Brightness</ANIMTIP_1>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_TMFD_Emissive_Template"/>
+			</Component>
+
+			<Component ID="TMFD_2">
+				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+					<AMBIENT_POTENTIOMETER>18</AMBIENT_POTENTIOMETER>
+					<MAX_AMBIENT_EMISSIVE_PERCENT>0.1</MAX_AMBIENT_EMISSIVE_PERCENT>
+					<POTENTIOMETER>55</POTENTIOMETER>
+					<DISPLAY>TMFD</DISPLAY>
+					<ID>2</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_4_Softkeys_Template">
+					<DISPLAY>TMFD</DISPLAY>
+					<ID>2</ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<POTENTIOMETER>55</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == -60 *
+						90 +
+					</INIT_VALUE>
+					<NODE_ID>TMFD_2_Brt_Knob</NODE_ID>
+					<ANIM_NAME>TMFD_2_Brt_Knob</ANIM_NAME>
+					<ANIMTIP_0>Decrease TMFD Screen Brightness</ANIMTIP_0>
+					<ANIMTIP_1>Increase TMFD Screen Brightness</ANIMTIP_1>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_TMFD_Emissive_Template">
+					<POTENTIOMETER_ID>24</POTENTIOMETER_ID>
+					<PANEL_ID>2</PANEL_ID>
+				</UseTemplate>
+			</Component>
+
+			<Component ID="HUD">
+				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+					<AMBIENT_POTENTIOMETER>16</AMBIENT_POTENTIOMETER>
+					<!--<MAX_AMBIENT_EMISSIVE_PERCENT>0.25</MAX_AMBIENT_EMISSIVE_PERCENT>-->
+					<MAX_AMBIENT_EMISSIVE_PERCENT>8</MAX_AMBIENT_EMISSIVE_PERCENT>
+					<POTENTIOMETER>9</POTENTIOMETER>
+					<DISPLAY>HUD</DISPLAY>
+					<ID>1</ID>
+					
+					<LOCAL_POTENTIOMETER>True</LOCAL_POTENTIOMETER>
+					<MAX_EMISSIVE_PERCENT>8</MAX_EMISSIVE_PERCENT>
+					<CIRCUIT_ID>10</CIRCUIT_ID>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<SWITCH_DIRECTION>Vertical</SWITCH_DIRECTION>
+					<IS_WHEEL>True</IS_WHEEL>
+					<REV_POT>True</REV_POT>
+					<INVERT_ANIM>True</INVERT_ANIM>
+					<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
+					<POTENTIOMETER>9</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == -80 *
+						100 +
+					</INIT_VALUE>
+					<NODE_ID>HUD_Brt_Wheel</NODE_ID>
+					<ANIM_NAME>HUD_Brt_Wheel</ANIM_NAME>
+					<ANIMTIP_0>Decrease HUD Brightness</ANIMTIP_0>
+					<ANIMTIP_0_ON_CURSOR>DownArrow</ANIMTIP_0_ON_CURSOR>
+					<ANIMTIP_1>Increase HUD Brightness</ANIMTIP_1>
+					<ANIMTIP_1_ON_CURSOR>UpArrow</ANIMTIP_1_ON_CURSOR>
+				</UseTemplate>
+				<CameraTitle>HUD</CameraTitle>
+			</Component>
+
+			<Component ID="ICP">
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<SWITCH_DIRECTION>Vertical</SWITCH_DIRECTION>
+					<IS_WHEEL>True</IS_WHEEL>
+					<REV_POT>True</REV_POT>
+					<INVERT_ANIM>True</INVERT_ANIM>
+					<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
+					<POTENTIOMETER>56</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == 10 *
+					</INIT_VALUE>
+					<NODE_ID>ICP_Brt_Wheel</NODE_ID>
+					<ANIM_NAME>ICP_Brt_Wheel</ANIM_NAME>
+					<ANIMTIP_0>Decrease ICP Backlight</ANIMTIP_0>
+					<ANIMTIP_0_ON_CURSOR>DownArrow</ANIMTIP_0_ON_CURSOR>
+					<ANIMTIP_1>Increase ICP Backlight</ANIMTIP_1>
+					<ANIMTIP_1_ON_CURSOR>UpArrow</ANIMTIP_1_ON_CURSOR>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+					<NODE_ID>ICP_Text</NODE_ID> 
+					<POTENTIOMETER>56</POTENTIOMETER>
+				</UseTemplate>
+			</Component>
+
+			<Component ID="FBW_Switch">
+				<Update Once="True">
+					1 (&gt;L:XMLVAR_EBD_FBW_ENABLE)
+				</Update>
+				<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Generic">
+					<TOOLTIPID>%((L:XMLVAR_EBD_FBW_ENABLE, Bool) )%{if}WARNING! ☠Do not turn off☠ Causes degraded performance.%{end}</TOOLTIPID>
+					<NODE_ID>SWITCH_FBW</NODE_ID>
+					<SIMVAR>XMLVAR_EBD_FBW_ENABLE</SIMVAR>
+					<LOCAL_VAR>True</LOCAL_VAR>
+				</UseTemplate>
+			</Component>
+		</Component>
+		<Component ID="LIGHTING">
+			<Component ID="LIGHTING_Interior">
+				<!-- PILOT DISPLAYS -->
+				<Component ID="MASTER_POTS">
+					<!--
+					<UseTemplate Name="ASOBO_LIGHTING_Knob_Avionics_Template">
+						<ID>1</ID>
+						<POTENTIOMETER>10</POTENTIOMETER>
+						<CLOCKWISE_CODE>
+							(A:LIGHT POTENTIOMETER:50, Percent) 10 + 100 min 50 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:51, Percent) 10 + 100 min 51 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:52, Percent) 10 + 100 min 52 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:53, Percent) 10 + 100 min 53 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:54, Percent) 10 + 100 min 54 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:55, Percent) 10 + 100 min 55 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:19, Percent) 10 + 100 min 19 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:20, Percent) 10 + 100 min 20 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:21, Percent) 10 + 100 min 21 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:22, Percent) 10 + 100 min 22 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:23, Percent) 10 + 100 min 23 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:24, Percent) 10 + 100 min 24 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+						</CLOCKWISE_CODE>
+						<ANTICLOCKWISE_CODE>
+							(A:LIGHT POTENTIOMETER:50, Percent) 10 - 0 max 50 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:51, Percent) 10 - 0 max 51 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:52, Percent) 10 - 0 max 52 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:53, Percent) 10 - 0 max 53 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:54, Percent) 10 - 0 max 54 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:55, Percent) 10 - 0 max 55 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:19, Percent) 10 - 0 max 19 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:20, Percent) 10 - 0 max 20 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:21, Percent) 10 - 0 max 21 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:22, Percent) 10 - 0 max 22 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:23, Percent) 10 - 0 max 23 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:24, Percent) 10 - 0 max 24 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+						</ANTICLOCKWISE_CODE>
+						<INIT_VALUE>
+							(E:Time of Day,enum) 3 == -40 *
+							50 +
+						</INIT_VALUE>
+						<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LIGHTING_KNOB_LIGHT_PILOT_DISPLAYS_DECREASE</ANIMTIP_0>
+						<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LIGHTING_KNOB_LIGHT_PILOT_DISPLAYS_INCREASE</ANIMTIP_1>
+					</UseTemplate>
+					-->
+					<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+						<WWISE_EVENT>double_light_switch</WWISE_EVENT>
+						<POTENTIOMETER>10</POTENTIOMETER>
+						<CLOCKWISE_CODE>
+							(A:LIGHT POTENTIOMETER:50, Percent) 10 + 100 min 50 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:51, Percent) 10 + 100 min 51 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:52, Percent) 10 + 100 min 52 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:53, Percent) 10 + 100 min 53 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:54, Percent) 10 + 100 min 54 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:55, Percent) 10 + 100 min 55 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:19, Percent) 10 + 100 min 19 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:20, Percent) 10 + 100 min 20 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:21, Percent) 10 + 100 min 21 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:22, Percent) 10 + 100 min 22 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:23, Percent) 10 + 100 min 23 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+							(A:LIGHT POTENTIOMETER:24, Percent) 10 + 100 min 24 (&gt;K:2:LIGHT_POTENTIOMETER_SET) 
+						</CLOCKWISE_CODE>
+						<ANTICLOCKWISE_CODE>
+							(A:LIGHT POTENTIOMETER:50, Percent) 10 - 0 max 50 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:51, Percent) 10 - 0 max 51 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:52, Percent) 10 - 0 max 52 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:53, Percent) 10 - 0 max 53 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:54, Percent) 10 - 0 max 54 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:55, Percent) 10 - 0 max 55 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:19, Percent) 10 - 0 max 19 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:20, Percent) 10 - 0 max 20 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:21, Percent) 10 - 0 max 21 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:22, Percent) 10 - 0 max 22 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:23, Percent) 10 - 0 max 23 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(A:LIGHT POTENTIOMETER:24, Percent) 10 - 0 max 24 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+						</ANTICLOCKWISE_CODE>
+						<INIT_VALUE>
+							(E:Time of Day,enum) 3 == -60 *
+							90 +
+						</INIT_VALUE>
+						<NODE_ID>All_Brt_Knob</NODE_ID>
+						<ANIM_NAME>All_Brt_Knob</ANIM_NAME>
+						<ANIMTIP_0>Decrease Main Panel Brightness</ANIMTIP_0>
+						<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
+						<ANIMTIP_1>Increase Main Panel Brightness</ANIMTIP_1>
+						<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
+					</UseTemplate>
+				</Component>
+
+				<!-- Panel Brightness -->
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<WWISE_EVENT>double_light_switch</WWISE_EVENT>
+					<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
+					<POTENTIOMETER>11</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == 10 *
+					</INIT_VALUE>
+					<NODE_ID>LIGHTING_Knob_Panel_1</NODE_ID>
+					<ANIM_NAME>LIGHTING_Knob_Panel_1</ANIM_NAME>
+					<ANIMTIP_0>Decrease Console Backlighting</ANIMTIP_0>
+					<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
+					<ANIMTIP_1>Increase Console Backlighting</ANIMTIP_1>
+					<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
+				</UseTemplate>
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+					<NODE_ID>Panel_Text</NODE_ID> 
+					<POTENTIOMETER>11</POTENTIOMETER>
+					<EMISSIVE_CODE>1</EMISSIVE_CODE>
+				</UseTemplate>
+				<!-- Cabin 1 Brightness -->
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Cabin_Template">
+					<WWISE_EVENT>double_light_switch</WWISE_EVENT>
+					<ID>1</ID>
+					<SIMVAR_INDEX>1</SIMVAR_INDEX>
+					<POTENTIOMETER>7</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == 50 *
+					</INIT_VALUE>
+					<ANIMTIP_0>Decrease Console Floodlight</ANIMTIP_0>
+					<ANIMTIP_1>Increase Console Floodlight</ANIMTIP_1>
+				</UseTemplate>
+				<!-- Glareshield Brightness -->
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Glareshield_Template">
+					<WWISE_EVENT>double_light_switch</WWISE_EVENT>
+					<ID>1</ID>
+					<POTENTIOMETER>2</POTENTIOMETER>
+					<INIT_VALUE>
+						(E:Time of Day,enum) 3 == 50 *
+					</INIT_VALUE>
+					<ANIMTIP_0>Decrease Main Panel Floodlight</ANIMTIP_0>
+					<ANIMTIP_1>Increase Main Panel Floodlight</ANIMTIP_1>
+				</UseTemplate>
+			</Component>
+			<Component ID="Lighting_Exterior">
+				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Light_Double_Template">
+					<NODE_ID>Switch_Landing_Taxi</NODE_ID>
+					<ANIM_NAME>Switch_Landing_Taxi</ANIM_NAME>
+					<LIGHT_TYPE1>LANDING</LIGHT_TYPE1>
+					<KEY_ID1>LANDING_LIGHTS_TOGGLE</KEY_ID1>
+					<SIMVAR_INDEX1>0</SIMVAR_INDEX1>
+					<LIGHT_TYPE2>TAXI</LIGHT_TYPE2>
+					<SIMVAR_INDEX2>0</SIMVAR_INDEX2>
+					<GEAR_PROHIBITS>True</GEAR_PROHIBITS>
+				</UseTemplate>
+				<Component ID="Exterior_Light_Switch">
+					<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Exterior_Template">
+						<WWISE_EVENT>double_light_switch</WWISE_EVENT>
+						<NODE_ID>SWITCH_Exterior_Lights</NODE_ID>
+					</UseTemplate>
+				</Component>
+				<Component ID="Formation_Light_Switch">
+					<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Formation_Template">
+						<WWISE_EVENT>double_light_switch</WWISE_EVENT>
+						<NODE_ID>SWITCH_Formation_Coarse</NODE_ID>
+					</UseTemplate>
+				</Component>
+			</Component>
+		</Component>
+		<Component ID="GEAR">
+			<UseTemplate Name="ASOBO_LANDING_GEAR_Lever_Gear_Template">
+				<ANIM_NAME>Gear_Knob</ANIM_NAME>
+				<PART_ID>Gear_Knob</PART_ID>
+				<NODE_ID>Gear_Knob</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="EVANBURNSDEV_LIGHTING_Gear_Light_SubTemplate">
+				<ID>0</ID>
+				<GEAR_ID>0</GEAR_ID>
+			</UseTemplate>
+			<UseTemplate Name="EVANBURNSDEV_LIGHTING_Gear_Light_SubTemplate">
+				<ID>1</ID>
+				<GEAR_ID>1</GEAR_ID>
+			</UseTemplate>
+			<UseTemplate Name="EVANBURNSDEV_LIGHTING_Gear_Light_SubTemplate">
+				<ID>2</ID>
+				<GEAR_ID>2</GEAR_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_LANDING_GEAR_Switch_ParkingBrake_Template">
+				<NODE_ID>Switch_Parking_Brake</NODE_ID>
+				<ANIM_NAME>Switch_Parking_Brake</ANIM_NAME>
+			</UseTemplate>
+		</Component>
+		<Component ID="APU">
+			<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_APU_Starter_Template"/>
+		</Component>
+		<Component ID="Electrical">
+			<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Battery_Master_Template"/>
+			<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Double_Bus_Toggle">
+				<ID>ELEC_Switch_Gen1</ID>
+				<BUS_SRC1>13</BUS_SRC1>
+				<BUS_DEST1>1</BUS_DEST1>
+				<BUS_SRC2>5</BUS_SRC2>
+				<BUS_DEST2>3</BUS_DEST2>
+			</UseTemplate>
+			<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Double_Bus_Toggle">
+				<ID>ELEC_Switch_Gen2</ID>
+				<BUS_SRC1>6</BUS_SRC1>
+				<BUS_DEST1>4</BUS_DEST1>
+				<BUS_SRC2>14</BUS_SRC2>
+				<BUS_DEST2>2</BUS_DEST2>
+			</UseTemplate>
+		</Component>
+		<Component ID="Safety">
+			<Component ID="Pitot">
+				<UseTemplate Name="ASOBO_GT_Update">
+					<FREQUENCY>1</FREQUENCY>
+					<UPDATE_CODE>
+						(A:WINDSHIELD DEICE SWITCH, Enum) ! if{ 
+							(&gt;K:WINDSHIELD_DEICE_TOGGLE) 
+						}
+						(A:PITOT HEAT, Bool) ! if{
+							(&gt;K:PITOT_HEAT_TOGGLE)
+						}
+					</UPDATE_CODE>
+				</UseTemplate>
+			</Component>
+			<!--<UseTemplate Name="ASOBO_SAFETY_Push_WarningCaution_Template"/>-->
+		</Component>
+		<Component ID="Yoke">
+			<DefaultTemplateParameters>
+				<LEFT_SINGLE_CODE>(L:XMLVAR_YokeHidden1) ! (&gt;L:XMLVAR_YokeHidden1)</LEFT_SINGLE_CODE>
+			</DefaultTemplateParameters>
+			<Component ID="YokePlate">
+				<DefaultTemplateParameters>
+					<NODE_ID>Yoke_Plate</NODE_ID>
+				</DefaultTemplateParameters>	
+				<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
+					<UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
+						<TOOLTIPID>TT:COCKPIT.TOOLTIPS.YOKE_VISIBILITY</TOOLTIPID>
+					</UseTemplate>
+				</Component>
+			</Component>
+			<Component ID="VisibleYoke">
+				<DefaultTemplateParameters>
+					<NODE_ID>Yoke</NODE_ID>
+				</DefaultTemplateParameters>			
+				<Component ID="#NODE_ID#_VisibilityNode" Node="#NODE_ID#">
+					<UseTemplate Name="ASOBO_GT_Visibility_Code">
+						<VISIBILITY_CODE>(L:XMLVAR_YokeHidden1) !</VISIBILITY_CODE>
+					</UseTemplate>
+				</Component>
+				<!--
+				<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
+					<UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
+						<TOOLTIPID>TT:COCKPIT.TOOLTIPS.YOKE_VISIBILITY</TOOLTIPID>
+					</UseTemplate>
+				</Component>
+				-->
+			</Component>
+		</Component>
+
+		<Component ID="Throttle">
+			<DefaultTemplateParameters>
+				<LEFT_SINGLE_CODE>(L:XMLVAR_ThrottleHidden) ! (&gt;L:XMLVAR_ThrottleHidden)</LEFT_SINGLE_CODE>
+			</DefaultTemplateParameters>
+			<Component ID="ThrottleBase">
+				<DefaultTemplateParameters>
+					<NODE_ID>Throttle_Base</NODE_ID>
+				</DefaultTemplateParameters>	
+				<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
+					<UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
+						<TOOLTIPID>Toggle Throttle Visibility</TOOLTIPID>
+					</UseTemplate>
+				</Component>
+			</Component>
+			<Component ID="ThrottleNode">		
+				<Component ID="Throttle_Left_VisibilityNode" Node="Throttle_Left">
+					<UseTemplate Name="ASOBO_GT_Visibility_Code">
+						<NODE_ID>Throttle_Left</NODE_ID>
+						<VISIBILITY_CODE>(L:XMLVAR_ThrottleHidden) !</VISIBILITY_CODE>
+					</UseTemplate>
+				</Component>		
+				<Component ID="Throttle_Right_VisibilityNode" Node="Throttle_Right">
+					<UseTemplate Name="ASOBO_GT_Visibility_Code">
+						<NODE_ID>Throttle_Right</NODE_ID>
+						<VISIBILITY_CODE>(L:XMLVAR_ThrottleHidden) !</VISIBILITY_CODE>
+					</UseTemplate>
+				</Component>
+			</Component>
+		</Component>
+	</Behaviors>
+</ModelInfo>
+
