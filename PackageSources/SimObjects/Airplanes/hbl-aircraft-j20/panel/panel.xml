@@ -1,0 +1,818 @@
+﻿<PlaneHTMLConfig>
+	
+	<Instrument>
+		<Name>PMFD_1</Name>
+		<RadarAltitude>True</RadarAltitude>
+		<SyntheticVision>True</SyntheticVision>
+		<AltimeterIndex>0</AltimeterIndex>
+		<!-- <DisplayMode>PFD</DisplayMode> -->
+		<ReversionaryMode>False</ReversionaryMode>
+		<Electric>
+			<Simvar name="CIRCUIT ON:10" unit="Boolean"/>
+		</Electric>
+	</Instrument>
+
+	<Instrument>
+		<Name>SMFD_1</Name>
+		<Bing-ID>SMFD_1</Bing-ID>
+		<Electric>
+			<Simvar name="CIRCUIT ON:10" unit="Boolean"/>
+		</Electric>
+	</Instrument>
+
+	<Instrument>
+		<Name>SMFD_2</Name>
+		<Bing-ID>SMFD_2</Bing-ID>
+		<Electric>
+			<Simvar name="CIRCUIT ON:10" unit="Boolean"/>
+		</Electric>
+	</Instrument>
+
+	<Instrument>
+		<Name>SMFD_3</Name>
+		<Bing-ID>SMFD_3</Bing-ID>
+		<Electric>
+			<Simvar name="CIRCUIT ON:10" unit="Boolean"/>
+		</Electric>
+	</Instrument>
+
+	<Instrument>
+		<Name>TMFD_1</Name>
+		<Electric>
+			<Simvar name="CIRCUIT ON:10" unit="Boolean"/>
+		</Electric>
+	</Instrument>
+	
+    <!-- Engine Display -->
+	<EngineDisplay>
+		<ColumnsGroup id="eng">
+			<Column id="CAS" width="33.3">
+				<CAS nbMessages="10"/>
+			</Column>
+			<Column width="66.6">
+				<ColumnsGroup id="N1Data">
+					<Column id="N1_Left" width="40">
+						<Gauge>
+							<Type>Circular</Type>
+							<Style>
+								<SizePercent>100</SizePercent>
+								<BeginAngle>-45</BeginAngle>
+								<EndAngle>225</EndAngle>
+								<CursorType>Triangle</CursorType>
+								<ValuePos>End</ValuePos>
+							</Style>
+							<BeginText></BeginText>
+							<EndText></EndText>
+							<ID>Turbo_NgGauge</ID>
+							<Title></Title>
+							<Unit></Unit>
+							<Minimum>0</Minimum>
+							<Maximum>110</Maximum>
+							<Value>
+								<Simvar name="TURB ENG N1:1" unit="percent"/>
+							</Value>
+							<ColorZone>
+								<Color>green</Color>
+								<Begin>0</Begin>
+								<End>93</End>
+							</ColorZone>
+							<ColorLine>
+								<Color>red</Color>
+								<Position>93</Position>
+							</ColorLine>
+							<ColorZone>
+								<Color>red</Color>
+								<Begin>93</Begin>
+								<End>110</End>
+							</ColorZone>
+							<RedBlink>
+								<Greater>
+									<Simvar name="TURB ENG N1:1" unit="percent"/>
+									<Constant>97</Constant>
+								</Greater>
+							</RedBlink>
+						</Gauge>
+					</Column>
+					<Column id="N1_Text" width="20">
+						<Text>
+							<Center fontsize="36">
+								<Content>N1 %</Content>
+								<Color>white</Color>
+							</Center>
+						</Text>
+					</Column>
+					<Column id="N1_Right" width="40">
+						<Gauge>
+							<Type>Circular</Type>
+							<Style>
+								<!--<SizePercent>120</SizePercent>-->
+								<BeginAngle>-45</BeginAngle>
+								<EndAngle>225</EndAngle>
+								<CursorType>Triangle</CursorType>
+								<ValuePos>End</ValuePos>
+							</Style>
+							<BeginText></BeginText>
+							<EndText></EndText>
+							<ID>Turbo_NgGauge</ID>
+							<Title></Title>
+							<Unit></Unit>
+							<Minimum>0</Minimum>
+							<Maximum>110</Maximum>
+							<Value>
+								<Simvar name="TURB ENG N1:2" unit="percent"/>
+							</Value>
+							<ColorZone>
+								<Color>green</Color>
+								<Begin>0</Begin>
+								<End>93</End>
+							</ColorZone>
+							<ColorLine>
+								<Color>red</Color>
+								<Position>93</Position>
+							</ColorLine>
+							<ColorZone>
+								<Color>red</Color>
+								<Begin>93</Begin>
+								<End>110</End>
+							</ColorZone>
+							<RedBlink>
+								<Greater>
+									<Simvar name="TURB ENG N1:2" unit="percent"/>
+									<Constant>97</Constant>
+								</Greater>
+							</RedBlink>
+						</Gauge>
+					</Column>
+				</ColumnsGroup>
+				<ColumnsGroup id="N2Data">
+					<Column id="N2_Left" width="40">
+						<Gauge>
+							<Type>Circular</Type>
+							<Style>
+								<SizePercent>100</SizePercent>
+								<BeginAngle>-45</BeginAngle>
+								<EndAngle>225</EndAngle>
+								<CursorType>Triangle</CursorType>
+								<ValuePos>End</ValuePos>
+							</Style>
+							<BeginText></BeginText>
+							<EndText></EndText>
+							<ID>Turbo_NgGauge</ID>
+							<Title></Title>
+							<Unit></Unit>
+							<Minimum>0</Minimum>
+							<Maximum>110</Maximum>
+							<Value>
+								<Simvar name="TURB ENG N2:1" unit="percent"/>
+							</Value>
+							<ColorZone>
+								<Color>green</Color>
+								<Begin>0</Begin>
+								<End>100</End>
+							</ColorZone>
+							<ColorLine>
+								<Color>red</Color>
+								<Position>100</Position>
+							</ColorLine>
+							<ColorZone>
+								<Color>red</Color>
+								<Begin>100</Begin>
+								<End>110</End>
+							</ColorZone>
+							<RedBlink>
+								<Greater>
+									<Simvar name="TURB ENG N2:1" unit="percent"/>
+									<Constant>105</Constant>
+								</Greater>
+							</RedBlink>
+						</Gauge>
+					</Column>
+					<Column id="N2_Text" width="20">
+						<Text>
+							<Center fontsize="36">
+								<Content>N2 %</Content>
+								<Color>white</Color>
+							</Center>
+						</Text>
+					</Column>
+					<Column id="N2_Right" width="40">
+						<Gauge>
+							<Type>Circular</Type>
+							<Style>
+								<!--<SizePercent>120</SizePercent>-->
+								<BeginAngle>-45</BeginAngle>
+								<EndAngle>225</EndAngle>
+								<CursorType>Triangle</CursorType>
+								<ValuePos>End</ValuePos>
+							</Style>
+							<BeginText></BeginText>
+							<EndText></EndText>
+							<ID>Turbo_NgGauge</ID>
+							<Title></Title>
+							<Unit></Unit>
+							<Minimum>0</Minimum>
+							<Maximum>110</Maximum>
+							<Value>
+								<Simvar name="TURB ENG N2:2" unit="percent"/>
+							</Value>
+							<ColorZone>
+								<Color>green</Color>
+								<Begin>0</Begin>
+								<End>100</End>
+							</ColorZone>
+							<ColorLine>
+								<Color>red</Color>
+								<Position>100</Position>
+							</ColorLine>
+							<ColorZone>
+								<Color>red</Color>
+								<Begin>100</Begin>
+								<End>110</End>
+							</ColorZone>
+							<RedBlink>
+								<Greater>
+									<Simvar name="TURB ENG N2:2" unit="percent"/>
+									<Constant>105</Constant>
+								</Greater>
+							</RedBlink>
+						</Gauge>
+					</Column>
+				</ColumnsGroup>
+				
+				<ColumnsGroup id="ITTData">
+					<Column width="40">
+						<Gauge>
+							<Type>Circular</Type>
+							<Style>
+								<BeginAngle>-45</BeginAngle>
+								<EndAngle>225</EndAngle>
+								<CursorType>Triangle</CursorType>
+								<ValuePos>End</ValuePos>
+							</Style>
+							<BeginText></BeginText>
+							<EndText></EndText>
+							<ID>Turbo_IttGauge</ID>
+							<Title>ITT</Title>
+							<Unit>°C</Unit>
+							<Minimum>0</Minimum>
+							<Maximum>1400</Maximum>
+							<Value>
+								<Simvar name="TURB ENG1 ITT" unit="celsius"/>
+							</Value>
+							<ColorZone>
+								<Color>green</Color>
+								<Begin>400</Begin>
+								<End>1200</End>
+							</ColorZone>
+							<ColorLine>
+								<Color>red</Color>
+								<Position>1180</Position>
+							</ColorLine>
+							<ColorZone>
+								<Color>red</Color>
+								<Begin>1200</Begin>
+								<End>1400</End>
+							</ColorZone>
+						</Gauge>
+					</Column>
+					<Column width="20">
+						<Text>
+							<Center fontsize="36">ITT°C</Center>
+						</Text>
+					</Column>
+					<Column width="40">
+						<Gauge>
+							<Type>Circular</Type>
+							<Style>
+								<BeginAngle>-45</BeginAngle>
+								<EndAngle>225</EndAngle>
+								<CursorType>Triangle</CursorType>
+								<ValuePos>End</ValuePos>
+							</Style>
+							<BeginText></BeginText>
+							<EndText></EndText>
+							<ID>Turbo_IttGauge</ID>
+							<Title>ITT</Title>
+							<Unit>°C</Unit>
+							<Minimum>0</Minimum>
+							<Maximum>1400</Maximum>
+							<Value>
+								<Simvar name="TURB ENG2 ITT" unit="celsius"/>
+							</Value>
+							<ColorZone>
+								<Color>green</Color>
+								<Begin>400</Begin>
+								<End>1200</End>
+							</ColorZone>
+							<ColorLine>
+								<Color>red</Color>
+								<Position>1180</Position>
+							</ColorLine>
+							<ColorZone>
+								<Color>red</Color>
+								<Begin>1200</Begin>
+								<End>1400</End>
+							</ColorZone>
+						</Gauge>
+					</Column>
+				</ColumnsGroup>
+				
+				<ColumnsGroup id="EngineData">
+					<Column width="33.33">
+						<Text>
+							<Center fontsize="20">
+								<Content>
+									<ToFixed precision="0">
+										<Simvar name="TURB ENG1 FUEL FLOW PPH" unit="Pounds per hour"/>
+									</ToFixed>
+								</Content>
+								<Color>green</Color>
+							</Center>
+						</Text>
+						<Text>
+							<Center fontsize="20">
+								<Content>
+									<ToFixed precision="0">
+										<Simvar name="GENERAL ENG OIL PRESSURE:1" unit="psi"/>
+									</ToFixed>
+								</Content>
+								<Color>green</Color>
+							</Center>
+						</Text>
+						<Text>
+							<Center fontsize="20">
+								<Content>
+									<ToFixed precision="0">
+										<Simvar name="GENERAL ENG OIL TEMPERATURE:1" unit="celsius"/>
+									</ToFixed>
+								</Content>
+								<Color>green</Color>
+							</Center>
+						</Text>
+					</Column>
+					<Column width="33.33">
+						<Text>
+							<Center fontsize="20">
+								<Content>FUEL PPH</Content>
+								<Color>white</Color>
+							</Center>
+						</Text>
+						<Text>
+							<Center fontsize="20">
+								<Content>OIL PSI</Content>
+								<Color>white</Color>
+							</Center>
+						</Text>
+						<Text>
+							<Center fontsize="20">
+								<Content>OIL °C</Content>
+								<Color>white</Color>
+							</Center>
+						</Text>
+					</Column>
+					<Column width="33.33">
+						<Text>
+							<Center fontsize="20">
+								<Content>
+									<ToFixed precision="0">
+										<Simvar name="TURB ENG2 FUEL FLOW PPH" unit="Pounds per hour"/>
+									</ToFixed>
+								</Content>
+								<Color>green</Color>
+							</Center>
+						</Text>
+						<Text>
+							<Center fontsize="20">
+								<Content>
+									<ToFixed precision="0">
+										<Simvar name="GENERAL ENG OIL PRESSURE:1" unit="psi"/>
+									</ToFixed>
+								</Content>
+								<Color>green</Color>
+							</Center>
+						</Text>
+						<Text>
+							<Center fontsize="20">
+								<Content>
+									<ToFixed precision="0">
+										<Simvar name="GENERAL ENG OIL TEMPERATURE:1" unit="celsius"/>
+									</ToFixed>
+								</Content>
+								<Color>green</Color>
+							</Center>
+						</Text>
+					</Column>
+				</ColumnsGroup>
+			</Column>
+		</ColumnsGroup>
+	</EngineDisplay>
+	<FuelDisplay>
+		<ColumnsGroup id="fuel">
+			<Column id="CAS" width="33.3">
+				<CAS nbMessages="10"/>
+			</Column>
+			<Column width="66.6">
+				<Gauge>
+					<Type>LongitudeFuel</Type>
+					<Title>Test</Title>
+					<Unit>USG</Unit>
+					<Minimum>0</Minimum>
+					<Maximum>150</Maximum>
+					<Value>
+						<Simvar name="FUEL LEFT QUANTITY" unit="gallons"/>
+					</Value>
+					<Value2>
+						<Simvar name="FUEL RIGHT QUANTITY" unit="gallons"/>
+					</Value2>
+					<ColorLine>
+						<Color>red</Color>
+						<Position>0</Position>
+					</ColorLine>
+					<ColorZone>
+						<Color>yellow</Color>
+						<Begin>0</Begin>
+						<End>9</End>
+					</ColorZone>
+					<ColorZone>
+						<Color>green</Color>
+						<Begin>9</Begin>
+						<End>150</End>
+					</ColorZone>
+					<GraduationLength text="True">25</GraduationLength>
+					<EndText></EndText>
+				</Gauge>
+				
+				<Gauge>
+					<Type>FlapsSpeedbrakes</Type>
+					<Title>FLAPS</Title>
+					<ID>Turbo_Flaps</ID>
+					<Minimum>0</Minimum>
+					<Maximum>35</Maximum>
+					<TakeOff>10</TakeOff>
+					<Value>
+						<Simvar name="TRAILING EDGE FLAPS LEFT ANGLE" unit="degree"/>
+					</Value>
+					<Value2>
+						<Multiply>
+							<Simvar name="SPOILERS LEFT POSITION" unit="number"/>
+							<Constant>-100.0</Constant>
+						</Multiply>
+					</Value2>
+				</Gauge>
+				
+				<ColumnsGroup id="Trim and Gear">
+					<Column id="Trim" width="66.6">
+						<ColumnsGroup>
+							<Column id="Elev Trim">
+								<Gauge>
+									<Type>Vertical</Type>
+									<Style>
+										<CursorColor>aqua</CursorColor>
+										<ValuePos>None</ValuePos>
+									</Style>
+									<ID>Turbo_ElevTrim</ID>
+									<Title>ELEV</Title>
+									<Unit></Unit>
+									<Minimum>-100</Minimum>
+									<Maximum>100</Maximum>
+									<Value>
+										<Substract>
+											<Constant>0</Constant>
+											<Simvar name="ELEVATOR TRIM PCT" unit="percent"/>
+										</Substract>
+									</Value>
+									<ColorZone>
+										<Color>green</Color>
+										<Begin>
+											<Add>
+												<Substract>
+													<Constant>0</Constant>
+													<Gamevar name="AIRCRAFT ELEVATOR TRIM NEUTRAL" unit="percent"/>
+												</Substract>
+											<Constant>-15</Constant>
+											</Add>
+										</Begin>
+										<End>									
+											<Add>
+												<Substract>
+													<Constant>0</Constant>
+													<Gamevar name="AIRCRAFT ELEVATOR TRIM NEUTRAL" unit="percent"/>
+												</Substract>
+												<Constant>15</Constant>
+											</Add>
+										</End>
+									</ColorZone>
+									<BeginText>UP</BeginText>
+									<EndText>DN</EndText>
+								</Gauge>
+							</Column>
+							<Column id="Horiz Trim">
+								<Gauge>
+									<Type>Horizontal</Type>
+									<Style>
+										<CursorColor>aqua</CursorColor>
+										<Width>50</Width>
+									</Style>
+									<ID>Turbo_RudderTrim</ID>
+									<Title>RUD</Title>
+									<Unit></Unit>
+									<Minimum>-100</Minimum>
+									<Maximum>100</Maximum>
+									<Value>
+										<Simvar name="RUDDER TRIM PCT" unit="percent"/>
+									</Value>
+									<BeginText></BeginText>
+									<EndText></EndText>
+								</Gauge>
+								<Gauge>
+									<Type>Horizontal</Type>							
+									<Style>
+										<CursorColor>aqua</CursorColor>
+										<Width>50</Width>
+										<ReverseY>True</ReverseY>
+									</Style>
+									<ID>Turbo_AilTrim</ID>
+									<Title>AIL</Title>
+									<Unit></Unit>
+									<Minimum>-100</Minimum>
+									<Maximum>100</Maximum>
+									<Value>
+										<Simvar name="AILERON TRIM PCT" unit="percent"/>
+									</Value>
+									<ColorZone>
+										<Color>white</Color>
+										<Begin>-10</Begin>
+										<End>10</End>
+									</ColorZone>
+									<BeginText></BeginText>
+									<EndText></EndText>
+								</Gauge>
+							</Column>
+						</ColumnsGroup>
+					</Column>
+					<Column width="33.3">
+						<Text>
+							<Center fontsize="20">
+								<Content>Gear</Content>
+								<Color>white</Color>
+							</Center>
+						</Text>
+						<Text>
+							<Center fontsize="24">
+								<If>
+									<Condition>
+										<Lower>
+											<Simvar name="GEAR CENTER POSITION" unit="percent"/>
+											<Constant>100.0</Constant>
+										</Lower>
+									</Condition>
+									<Then>
+										<If>
+											<Condition>
+												<Greater>
+													<Simvar name="GEAR CENTER POSITION" unit="percent"/>
+													<Constant>0.0</Constant>
+												</Greater>
+											</Condition>
+											<Then>
+												<Constant>XIT</Constant>
+											</Then>
+											<Else>
+												<Constant>UP</Constant>
+											</Else>
+										</If>
+									</Then>
+									<Else>
+										<Constant>DOWN</Constant>
+									</Else>
+								</If>
+							</Center>
+						</Text>
+					</Column>
+				</ColumnsGroup>
+				<ColumnsGroup id="Elec">
+					<Column id="Bat" width="60">
+						<ColumnsGroup>
+							<Column id="LeftBatInfo" width="30">
+								<Text>
+									<Center fontsize="30">
+										<Content>
+											<ToFixed precision="0">
+												<Simvar name="ELECTRICAL BATTERY VOLTAGE:1" unit="Amperes"/>
+											</ToFixed>
+										</Content>
+										<Color>Green</Color>
+									</Center>
+								</Text>
+								<Text>
+									<Center fontsize="30">
+										<Content>
+											<ToFixed precision="0">
+												<Simvar name="ELECTRICAL BATTERY LOAD:1" unit="Amperes"/>
+											</ToFixed>
+										</Content>
+										<Color>Green</Color>
+									</Center>
+								</Text>
+							</Column>
+							<Column id="BatText" width="40">
+								<Text>
+									<Center fontsize="24">
+										<Content>BATT V</Content>
+										<Color>White</Color>
+									</Center>
+								</Text>
+								<Text>
+									<Center fontsize="24">
+										<Content>BATT A</Content>
+										<Color>White</Color>
+									</Center>
+								</Text>
+							</Column>
+
+							<Column id="RightBatInfo" width="30">
+								<Text>
+									<Center fontsize="30">
+										<Content>
+											<ToFixed precision="0">
+												<Simvar name="ELECTRICAL BATTERY VOLTAGE:2" unit="Amperes"/>
+											</ToFixed>
+										</Content>
+										<Color>Green</Color>
+									</Center>
+								</Text>
+								<Text>
+									<Center fontsize="30">
+										<Content>
+											<ToFixed precision="0">
+												<Simvar name="ELECTRICAL BATTERY LOAD:2" unit="Amperes"/>
+											</ToFixed>
+										</Content>
+										<Color>Green</Color>
+									</Center>
+								</Text>
+							</Column>
+						</ColumnsGroup>
+					</Column>
+					<Column id="APUnCAS" width="40">
+						<Text>
+							<Left fontsize="14">
+								<Content>APU</Content>
+							</Left>
+							<Center fontsize="16">
+								<Content>
+									<ToFixed precision="0">
+										<Simvar name="APU PCT RPM:1" unit="Percent"/>
+									</ToFixed>
+								</Content>
+								<Color>White</Color>
+							</Center>
+						</Text>
+					</Column>
+				</ColumnsGroup>
+				
+				<Text>
+					<Left>G-Force:</Left>
+					<Right>
+						<Content>
+							<ToFixed precision="2">
+								<Simvar name="G FORCE" unit="number"/>
+							</ToFixed>
+						</Content>
+					</Right>
+				</Text>
+			</Column>
+		</ColumnsGroup>
+	</FuelDisplay>
+	
+	<!-- Annunciations -->
+
+	<Annunciations>
+		<Annunciation>
+			<Type>Caution</Type>
+			<Text></Text>
+			<Condition>
+				<Simvar name="STALL WARNING" unit="Boolean"/>
+			</Condition>
+		</Annunciation>
+
+		<Annunciation>
+			<Type>Caution</Type>
+			<Text>Stress</Text>
+			<Condition>
+				<Greater>
+					<Simvar name="G FORCE" unit="number"/>
+					<Constant>9</Constant>
+				</Greater>
+			</Condition>
+		</Annunciation>
+
+		<Annunciation>
+			<Type>Warning</Type>
+			<Text>Stress</Text>
+			<Condition>
+				<Greater>
+					<Simvar name="G FORCE" unit="number"/>
+					<Constant>10</Constant>
+				</Greater>
+			</Condition>
+		</Annunciation>
+
+		<!--
+		<Annunciation>
+		  <Type>Warning</Type>
+		  <Text>L/G GEAR NOT DOWN</Text>
+		  <Condition>
+			<StateMachine>
+				<State id="Under" value="0">
+					<Transition to="Over">
+						<GreaterEqual>
+							<Simvar name="PLANE ALT ABOVE GROUND" unit="feet"/>
+							<Constant>1500</Constant>
+						</GreaterEqual>
+					</Transition>
+				</State>
+				<State id="Over" value="0">
+					<Transition to="Alerting">
+						<And>
+							<Lower>
+								<Simvar name="PLANE ALT ABOVE GROUND" unit="feet"/>
+								<Constant>750</Constant>
+							</Lower>
+							<Or>
+								<Lower>
+									<Simvar name="GEAR RIGHT POSITION" unit="Percent"/>
+									<Constant>100</Constant>
+								</Lower>
+								<Lower>
+									<Simvar name="GEAR CENTER POSITION" unit="Percent"/>
+									<Constant>100</Constant>
+								</Lower>
+								<Lower>
+									<Simvar name="GEAR LEFT POSITION" unit="Percent"/>
+									<Constant>100</Constant>
+								</Lower>
+							</Or>
+							<Or>
+								<GreaterEqual>
+									<Simvar name="FLAPS HANDLE INDEX" unit="number"/>
+									<Constant>3</Constant>
+								</GreaterEqual>
+								<LowerEqual>
+									<Simvar name="GENERAL ENG THROTTLE LEVER POSITION:1" unit="Percent"/>
+									<Constant>0</Constant>
+								</LowerEqual>
+							</Or>
+						</And>
+					</Transition>
+				</State>
+				<State id="Alerting" value="1">
+					<Transition to="Over">
+						<Or>
+							<GreaterEqual>
+								<Simvar name="PLANE ALT ABOVE GROUND" unit="feet"/>
+								<Constant>750</Constant>
+							</GreaterEqual>
+							<And>
+								<Equal>
+									<Simvar name="GEAR RIGHT POSITION" unit="Percent"/>
+									<Constant>100</Constant>
+								</Equal>
+								<Equal>
+									<Simvar name="GEAR CENTER POSITION" unit="Percent"/>
+									<Constant>100</Constant>
+								</Equal>
+								<Equal>
+									<Simvar name="GEAR LEFT POSITION" unit="Percent"/>
+									<Constant>100</Constant>
+								</Equal>
+							</And>
+						</Or>
+					</Transition>
+				</State>
+			</StateMachine>
+		  </Condition>
+		</Annunciation>
+		-->
+
+		<Annunciation>
+		  <Type>Advisory</Type>
+		  <Text>PARK BRAKE</Text>
+		  <Condition>
+			<Simvar name="BRAKE PARKING INDICATOR" unit="Bool"/>
+		  </Condition>
+		</Annunciation>
+		
+	</Annunciations>
+	
+	
+	<VoicesAlerts>
+		<Alert>
+			<Type>SoundOnly</Type>
+			<SoundEvent>aural_overspeed</SoundEvent>
+			<Condition>
+				<Simvar name="OVERSPEED WARNING" unit="bool"/>
+			</Condition>
+		</Alert>
+	</VoicesAlerts>
+</PlaneHTMLConfig>
