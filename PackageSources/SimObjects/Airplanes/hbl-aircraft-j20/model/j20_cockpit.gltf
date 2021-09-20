@@ -941,6 +941,25 @@
         },
         {
             "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.2528991401195526,
+                    0.2528991401195526,
+                    0.2528991401195526,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
             "name" : "Lower_Frame",
             "pbrMetallicRoughness" : {}
         },
@@ -996,17 +1015,49 @@
         },
         {
             "doubleSided" : true,
-            "name" : "Hud_and_Screws",
-            "pbrMetallicRoughness" : {}
-        },
-        {
-            "doubleSided" : true,
             "name" : "$TMFD_1_Screen",
             "pbrMetallicRoughness" : {}
         },
         {
             "doubleSided" : true,
             "name" : "$TMFD_2_Screen",
+            "pbrMetallicRoughness" : {}
+        },
+        {
+            "extras" : {
+                "msfs_material_mode" : 0,
+                "msfs_show_tint" : 0,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_glass_parameters" : 0,
+                "msfs_show_decal_parameters" : 0,
+                "msfs_show_fresnel_parameters" : 0,
+                "msfs_show_parallax_parameters" : 0,
+                "msfs_show_geo_decal_parameters" : 0,
+                "msfs_show_albedo" : 0,
+                "msfs_show_metallic" : 0,
+                "msfs_show_normal" : 0,
+                "msfs_show_emissive" : 0,
+                "msfs_show_detail_albedo" : 0,
+                "msfs_show_detail_metallic" : 0,
+                "msfs_show_detail_normal" : 0,
+                "msfs_show_blend_mask" : 0,
+                "msfs_show_anisotropic_direction" : 0,
+                "msfs_show_clearcoat" : 0,
+                "msfs_show_behind_glass" : 0,
+                "msfs_show_blend_mode" : 0,
+                "msfs_show_draworder" : 0,
+                "msfs_show_no_cast_shadow" : 0,
+                "msfs_show_double_sided" : 0,
+                "msfs_show_responsive_aa" : 0,
+                "msfs_show_day_night_cycle" : 0,
+                "msfs_show_collision_material" : 0,
+                "msfs_show_road_material" : 0,
+                "msfs_show_ao_use_uv2" : 0,
+                "msfs_show_uv_clamp" : 0,
+                "msfs_show_alpha_cutoff" : 0,
+                "msfs_show_blend_threshold" : 0
+            },
+            "name" : "Hud_and_Screws",
             "pbrMetallicRoughness" : {}
         },
         {
@@ -1234,7 +1285,7 @@
                         "TEXCOORD_1" : 22
                     },
                     "indices" : 23,
-                    "material" : 0
+                    "material" : 1
                 }
             ]
         },
@@ -1249,7 +1300,7 @@
                         "TEXCOORD_1" : 27
                     },
                     "indices" : 28,
-                    "material" : 1
+                    "material" : 2
                 }
             ]
         },
@@ -1264,7 +1315,7 @@
                         "TEXCOORD_1" : 32
                     },
                     "indices" : 33,
-                    "material" : 2
+                    "material" : 3
                 }
             ]
         },
@@ -1279,7 +1330,7 @@
                         "TEXCOORD_1" : 37
                     },
                     "indices" : 38,
-                    "material" : 3
+                    "material" : 4
                 }
             ]
         },
@@ -1294,7 +1345,7 @@
                         "TEXCOORD_1" : 42
                     },
                     "indices" : 43,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1309,7 +1360,7 @@
                         "TEXCOORD_1" : 47
                     },
                     "indices" : 48,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1324,7 +1375,7 @@
                         "TEXCOORD_1" : 52
                     },
                     "indices" : 48,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1339,7 +1390,7 @@
                         "TEXCOORD_1" : 56
                     },
                     "indices" : 57,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1354,7 +1405,7 @@
                         "TEXCOORD_1" : 61
                     },
                     "indices" : 43,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1369,7 +1420,7 @@
                         "TEXCOORD_1" : 65
                     },
                     "indices" : 43,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1384,7 +1435,7 @@
                         "TEXCOORD_1" : 69
                     },
                     "indices" : 43,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1399,7 +1450,7 @@
                         "TEXCOORD_1" : 73
                     },
                     "indices" : 74,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1414,7 +1465,7 @@
                         "TEXCOORD_1" : 78
                     },
                     "indices" : 79,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1429,7 +1480,7 @@
                         "TEXCOORD_1" : 83
                     },
                     "indices" : 48,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1444,7 +1495,7 @@
                         "TEXCOORD_1" : 87
                     },
                     "indices" : 43,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1459,7 +1510,7 @@
                         "TEXCOORD_1" : 91
                     },
                     "indices" : 92,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1474,7 +1525,7 @@
                         "TEXCOORD_1" : 96
                     },
                     "indices" : 97,
-                    "material" : 4
+                    "material" : 5
                 }
             ]
         },
@@ -1489,7 +1540,7 @@
                         "TEXCOORD_1" : 101
                     },
                     "indices" : 102,
-                    "material" : 1
+                    "material" : 2
                 }
             ]
         },
@@ -1504,7 +1555,7 @@
                         "TEXCOORD_1" : 106
                     },
                     "indices" : 107,
-                    "material" : 2
+                    "material" : 3
                 }
             ]
         },
@@ -1519,7 +1570,7 @@
                         "TEXCOORD_1" : 111
                     },
                     "indices" : 112,
-                    "material" : 5
+                    "material" : 6
                 }
             ]
         },
@@ -1534,7 +1585,7 @@
                         "TEXCOORD_1" : 116
                     },
                     "indices" : 112,
-                    "material" : 6
+                    "material" : 7
                 }
             ]
         },
@@ -1549,7 +1600,7 @@
                         "TEXCOORD_1" : 120
                     },
                     "indices" : 112,
-                    "material" : 7
+                    "material" : 8
                 }
             ]
         },
@@ -1564,7 +1615,7 @@
                         "TEXCOORD_1" : 124
                     },
                     "indices" : 112,
-                    "material" : 5
+                    "material" : 6
                 }
             ]
         },
@@ -1579,7 +1630,7 @@
                         "TEXCOORD_1" : 128
                     },
                     "indices" : 112,
-                    "material" : 6
+                    "material" : 7
                 }
             ]
         },
@@ -1594,7 +1645,7 @@
                         "TEXCOORD_1" : 132
                     },
                     "indices" : 112,
-                    "material" : 7
+                    "material" : 8
                 }
             ]
         },
@@ -1609,7 +1660,7 @@
                         "TEXCOORD_1" : 136
                     },
                     "indices" : 112,
-                    "material" : 5
+                    "material" : 6
                 }
             ]
         },
@@ -1624,7 +1675,7 @@
                         "TEXCOORD_1" : 140
                     },
                     "indices" : 112,
-                    "material" : 6
+                    "material" : 7
                 }
             ]
         },
@@ -1639,7 +1690,7 @@
                         "TEXCOORD_1" : 144
                     },
                     "indices" : 112,
-                    "material" : 7
+                    "material" : 8
                 }
             ]
         },
@@ -1654,7 +1705,7 @@
                         "TEXCOORD_1" : 148
                     },
                     "indices" : 149,
-                    "material" : 6
+                    "material" : 7
                 }
             ]
         },
@@ -1669,7 +1720,7 @@
                         "TEXCOORD_1" : 153
                     },
                     "indices" : 154,
-                    "material" : 8
+                    "material" : 9
                 }
             ]
         },
@@ -1684,7 +1735,7 @@
                         "TEXCOORD_1" : 158
                     },
                     "indices" : 159,
-                    "material" : 8
+                    "material" : 9
                 }
             ]
         },
@@ -1698,7 +1749,7 @@
                         "TEXCOORD_0" : 162
                     },
                     "indices" : 163,
-                    "material" : 9
+                    "material" : 10
                 }
             ]
         },
@@ -1711,7 +1762,8 @@
                         "NORMAL" : 165,
                         "TEXCOORD_0" : 166
                     },
-                    "indices" : 167
+                    "indices" : 167,
+                    "material" : 1
                 }
             ]
         },
@@ -1725,7 +1777,7 @@
                         "TEXCOORD_0" : 170
                     },
                     "indices" : 163,
-                    "material" : 10
+                    "material" : 11
                 }
             ]
         },
@@ -1739,7 +1791,7 @@
                         "TEXCOORD_0" : 173
                     },
                     "indices" : 163,
-                    "material" : 11
+                    "material" : 12
                 }
             ]
         },
@@ -1753,7 +1805,7 @@
                         "TEXCOORD_0" : 176
                     },
                     "indices" : 163,
-                    "material" : 10
+                    "material" : 11
                 }
             ]
         },
@@ -1768,7 +1820,7 @@
                         "TEXCOORD_1" : 180
                     },
                     "indices" : 181,
-                    "material" : 12
+                    "material" : 1
                 }
             ]
         },
@@ -1809,7 +1861,8 @@
                         "NORMAL" : 190,
                         "TEXCOORD_0" : 191
                     },
-                    "indices" : 192
+                    "indices" : 192,
+                    "material" : 1
                 }
             ]
         },
@@ -1824,7 +1877,7 @@
                         "TEXCOORD_1" : 196
                     },
                     "indices" : 197,
-                    "material" : 0
+                    "material" : 1
                 }
             ]
         },
@@ -1839,7 +1892,7 @@
                         "TEXCOORD_1" : 201
                     },
                     "indices" : 202,
-                    "material" : 12
+                    "material" : 15
                 }
             ]
         },
@@ -1853,7 +1906,7 @@
                         "TEXCOORD_0" : 205
                     },
                     "indices" : 206,
-                    "material" : 15
+                    "material" : 16
                 }
             ]
         },
@@ -1867,7 +1920,7 @@
                         "TEXCOORD_0" : 209
                     },
                     "indices" : 163,
-                    "material" : 16
+                    "material" : 17
                 }
             ]
         },
@@ -1880,7 +1933,8 @@
                         "NORMAL" : 211,
                         "TEXCOORD_0" : 212
                     },
-                    "indices" : 213
+                    "indices" : 213,
+                    "material" : 1
                 }
             ]
         }
@@ -3206,7 +3260,7 @@
                 -0.057725608348846436
             ],
             "min" : [
-                -0.9407098293304443,
+                -1.3891572952270508,
                 -0.6009449362754822,
                 -0.05772678554058075
             ],
@@ -3269,7 +3323,7 @@
             "componentType" : 5126,
             "count" : 4,
             "max" : [
-                -0.9407098293304443,
+                -1.3891572952270508,
                 0.43396925926208496,
                 -0.057725608348846436
             ],
