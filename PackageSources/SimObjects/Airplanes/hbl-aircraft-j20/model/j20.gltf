@@ -595,6 +595,63 @@
                     "output" : 108
                 }
             ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 14,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "Gear_FwdAction",
+            "samplers" : [
+                {
+                    "input" : 109,
+                    "interpolation" : "LINEAR",
+                    "output" : 110
+                }
+            ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 22,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "Gear_LeftAction.001",
+            "samplers" : [
+                {
+                    "input" : 109,
+                    "interpolation" : "LINEAR",
+                    "output" : 111
+                }
+            ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 30,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "Gear_RightAction.001",
+            "samplers" : [
+                {
+                    "input" : 109,
+                    "interpolation" : "LINEAR",
+                    "output" : 112
+                }
+            ]
         }
     ],
     "materials" : [
@@ -713,7 +770,7 @@
                     1,
                     1,
                     1,
-                    0.20000000298023224
+                    0.05000000074505806
                 ],
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -1989,6 +2046,36 @@
             "componentType" : 5126,
             "count" : 251,
             "type" : "VEC4"
+        },
+        {
+            "bufferView" : 109,
+            "componentType" : 5126,
+            "count" : 121,
+            "max" : [
+                7.5
+            ],
+            "min" : [
+                2.5
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 110,
+            "componentType" : 5126,
+            "count" : 121,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 111,
+            "componentType" : 5126,
+            "count" : 121,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 112,
+            "componentType" : 5126,
+            "count" : 121,
+            "type" : "VEC4"
         }
     ],
     "bufferViews" : [
@@ -2536,11 +2623,31 @@
             "buffer" : 0,
             "byteLength" : 4016,
             "byteOffset" : 2927808
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 484,
+            "byteOffset" : 2931824
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1936,
+            "byteOffset" : 2932308
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1936,
+            "byteOffset" : 2934244
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1936,
+            "byteOffset" : 2936180
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 2931824,
+            "byteLength" : 2938116,
             "uri" : "j20.bin"
         }
     ]
