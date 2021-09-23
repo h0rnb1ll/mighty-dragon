@@ -625,7 +625,7 @@
                     }
                 }
             ],
-            "name" : "Gear_LeftAction.001",
+            "name" : "Gear_LeftAction",
             "samplers" : [
                 {
                     "input" : 109,
@@ -770,7 +770,7 @@
                     1,
                     1,
                     1,
-                    0.05000000074505806
+                    0.20000000298023224
                 ],
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -797,8 +797,22 @@
         },
         {
             "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
             "name" : "Tires_Exhaust",
-            "pbrMetallicRoughness" : {}
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.027409367263317108,
+                    0.027409367263317108,
+                    0.027409367263317108,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
         },
         {
             "doubleSided" : true,
