@@ -15,7 +15,7 @@ html {
   overflow: hidden; }
   html body {
     -webkit-user-select: none;
-    font-family: Roboto-Regular;
+    font-family: FangSong;
     font-size: calc(var(--viewportHeightRatio) * (36px / 21.6) * var(--currentPageHeight) / 100);
     color: white;
     height: 100%;
@@ -34,6 +34,19 @@ html {
   height: 100%; }
   #Electricity[state=off] {
     display: none; }
+
+@font-face {
+  font-family: "FangSong";
+  src: url("/Fonts/stsong.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FangSong-Bold";
+  src: url("/Fonts/stzhongs.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 
 @font-face {
   font-family: "Roboto";
@@ -62,7 +75,7 @@ html {
     color: aqua; } }
 
 tmfd-element {
-  font-family: Roboto-Bold;
+  font-family: FangSong-Bold;
   width: 100%;
   height: 100%;
   position: fixed; }
