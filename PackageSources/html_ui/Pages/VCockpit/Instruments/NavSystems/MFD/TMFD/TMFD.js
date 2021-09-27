@@ -1,9 +1,61 @@
+var labels = {"zh_Hans": {
+    "pmfd_home": "PMFD主页",
+    "obs": "OBS",
+    "brg1": "方位1",
+    "brg2": "方位2",
+    "off": "关闭",
+    "cas_up": "CAS下",
+    "cas_down": "CAS上",
+    "spd_bugs": "速度误差",
+    "timers": "计时器",
+    "minimums": "最低高度",
+    "tfc_map": "交通地图",
+    "pfd_map_settings": "PFD地图设置",
+    "sensors": "传感器",
+    "cancel": "取消",
+    "home": "主页",
+    "back": "返回",
+    "up": "上",
+    "down": "下"
+}
+}
+
+var locale = 'zh_Hans';
+
+
+function setLocale(locale) {
+    this.locale = locale;
+}
+
+function getLabel(key, defVal) {
+    return labels[locale][key]?labels[locale][key]:defVal;
+}
+
+function initLabels(obj) {
+    //this.getChildById('').innerHTML(labels[locale]);
+    obj.getChildById('PageTitle').innerHTML(labels[locale].pmfd_home);
+    obj.getChildById('label_obs').innerHTML(labels[locale].obs);
+    obj.getChildById('label_cas_up').innerHTML(labels[locale].cas_up);
+    obj.getChildById('label_brg_1').innerHTML(labels[locale].brg1);
+    obj.getChildById('label_brg_1_off').innerHTML(labels[locale].off);
+    obj.getChildById('label_brg_2').innerHTML(labels[locale].brg2);
+    obj.getChildById('label_brg_2_off').innerHTML(labels[locale].off);
+    obj.getChildById('label_cas_down').innerHTML(labels[locale].cas_down);
+    obj.getChildById('label_spd_bugs').innerHTML(labels[locale].spd_bugs);
+    obj.getChildById('label_timers').innerHTML(labels[locale].timers);
+    obj.getChildById('label_minimums').innerHTML(labels[locale].minimums);
+    obj.getChildById('label_tfc_map').innerHTML(labels[locale].tfc_map);
+    obj.getChildById('label_pfd_map_settings').innerHTML(labels[locale].pfd_map_settings);
+    obj.getChildById('label_sensors').innerHTML(labels[locale].sensors);
+}
 class TMFD extends AS3000_TSC {
     
     constructor() {
         super();
         this.pfdPrefix = "PMFD_1";
     }
+
+
     get templateID() { return "TMFD"; }
     connectedCallback() {
         NavSystemTouch.prototype.connectedCallback.call(this);
@@ -11,10 +63,10 @@ class TMFD extends AS3000_TSC {
         this.pageTitle = this.getChildById("PageTitle");
         this.pageGroups = [
             new NavSystemPageGroup("PMFD", this, [
-                new NavSystemPage("PMFD Home", "PFDHome", new TMFD_PFDHome()),
-                new NavSystemPage("Speed Bugs", "SpeedBugs", this.speedBugs),
-                new NavSystemPage("Timers", "Timers", this.timer),
-                new NavSystemPage("Minimums", "Minimums", new TMFD_Minimums()),
+                new NavSystemPage(getLabel('pmfd_home','PMFD Home'), "PFDHome", new TMFD_PFDHome()),
+                new NavSystemPage(getLabel('spd_bugs','Speed Bugs'), "SpeedBugs", this.speedBugs),
+                new NavSystemPage(getLabel('timers',"Timers"), "Timers", this.timer),
+                new NavSystemPage(getLabel('minimums','Minimums'), "Minimums", new TMFD_Minimums()),
             ]),
             new NavSystemPageGroup("SMFD", this, [
                 new NavSystemPage("SMFD Home", "MFDHome", new TMFD_MFDHome()),
@@ -78,6 +130,7 @@ class TMFD extends AS3000_TSC {
         this.addIndependentElementContainer(new NavSystemElementContainer("Terrain Alert", "terrainAlert", this.terrainAlerts));
         this.addIndependentElementContainer(new NavSystemElementContainer("Confirmation Window", "ConfirmationWindow", this.confirmationWindow));
         SimVar.SetSimVarValue("L:AS3000_Brightness_Manual", "number", 1);
+        initLabels(this);
     }
     parseXMLConfig() {
         super.parseXMLConfig();
@@ -96,7 +149,7 @@ class TMFD extends AS3000_TSC {
 		console.log(_event);
         switch (_event) {
             case "SOFTKEYS_1":
-                this.SwitchToPageName("PMFD", "PMFD Home");
+                this.SwitchToPageName("PMFD", getLabel('pmfd_home','PMFD Home'));
                 this.closePopUpElement();
                 this.history = [];
                 break;
@@ -153,9 +206,9 @@ class TMFD_PFDHome extends AS3000_TSC_PFDHome {
         this.SensorsButton = this.gps.getChildById("SensorsButton");
         this.gps.makeButton(this.Bearing1Button, this.sendMouseEvent.bind(this.gps, this.gps.pfdPrefix + "_BRG1Switch"));
         this.gps.makeButton(this.Bearing2Button, this.sendMouseEvent.bind(this.gps, this.gps.pfdPrefix + "_BRG2Switch"));
-        this.gps.makeButton(this.SpeedBugsButton, this.gps.SwitchToPageName.bind(this.gps, "PMFD", "Speed Bugs"));
-        this.gps.makeButton(this.TimersButton, this.gps.SwitchToPageName.bind(this.gps, "PMFD", "Timers"));
-        this.gps.makeButton(this.MinimumsButton, this.gps.SwitchToPageName.bind(this.gps, "PMFD", "Minimums"));
+        this.gps.makeButton(this.SpeedBugsButton, this.gps.SwitchToPageName.bind(this.gps, "PMFD", getLabel('spd_bugs','Speed Bugs')));
+        this.gps.makeButton(this.TimersButton, this.gps.SwitchToPageName.bind(this.gps, "PMFD", getLabel('timers','Timers')));
+        this.gps.makeButton(this.MinimumsButton, this.gps.SwitchToPageName.bind(this.gps, "PMFD", getLabel('minimums','Minimums')));
     }
     onEnter() {
     }
@@ -163,7 +216,7 @@ class TMFD_PFDHome extends AS3000_TSC_PFDHome {
         let brg1Src = SimVar.GetSimVarValue("L:PFD_BRG1_Source", "number");
         switch (brg1Src) {
             case 0:
-                this.Bearing1Button_Value.textContent = "OFF";
+                this.Bearing1Button_Value.textContent = getLabel('off','OFF');
                 break;
             case 1:
                 this.Bearing1Button_Value.textContent = "NAV1";
@@ -181,7 +234,7 @@ class TMFD_PFDHome extends AS3000_TSC_PFDHome {
         let brg2Src = SimVar.GetSimVarValue("L:PFD_BRG2_Source", "number");
         switch (brg2Src) {
             case 0:
-                this.Bearing2Button_Value.textContent = "OFF";
+                this.Bearing2Button_Value.textContent = getLabel('off','OFF');
                 break;
             case 1:
                 this.Bearing2Button_Value.textContent = "NAV1";
@@ -221,6 +274,7 @@ class TMFD_MFDHome extends AS3000_TSC_MFDHome {
         this.gps.makeButton(this.speedBugsButton, this.gps.SwitchToPageName.bind(this.gps, "SMFD", "Speed Bugs"));
         this.gps.makeButton(this.WaypointsInfoButton, this.gps.SwitchToPageName.bind(this.gps, "SMFD", "Waypoint Info"));
         this.gps.makeButton(this.AircraftSystemsButton, this.gps.SwitchToPageName.bind(this.gps, "SMFD", "Aircraft Systems"));
+        initLabels(this.gps);
     }
     mapSwitch(_mapIndex) {
     }
@@ -233,8 +287,8 @@ class TMFD_WeatherSelection extends AS3000_TSC_WeatherSelection {
 class TMFD_DirectTo extends AS3000_TSC_DirectTo {
     onEnter() {
         super.onEnter();
-        this.gps.activateNavButton(1, "Cancel", this.gps.goBack.bind(this.gps), false, "Icons/ICON_MAP_BUTTONBAR_BACK_1.png");
-        this.gps.activateNavButton(2, "Home", this.backHome.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_HOME.png");
+        this.gps.activateNavButton(1, getLabel('cancel','Cancel'), this.gps.goBack.bind(this.gps), false, "Icons/ICON_MAP_BUTTONBAR_BACK_1.png");
+        this.gps.activateNavButton(2, getLabel('home','Home'), this.backHome.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_HOME.png");
     }
     backHome() {
         this.gps.SwitchToPageName("SMFD", "SMFD Home");
@@ -263,10 +317,10 @@ class TMFD_ActiveFPL extends AS3000_TSC_ActiveFPL {
     }
     onEnter() {
         super.onEnter();
-        this.gps.activateNavButton(1, "Back", this.back.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_BACK_1.png");
-        this.gps.activateNavButton(2, "Home", this.backHome.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_HOME.png");
-        this.gps.activateNavButton(5, "Up", this.scrollUp.bind(this), false, "Icons/ICON_MAP_CB_UP_ARROW_1.png");
-        this.gps.activateNavButton(6, "Down", this.scrollDown.bind(this), false, "Icons/ICON_MAP_CB_DOWN_ARROW_1.png");
+        this.gps.activateNavButton(1, getLabel('back','Back'), this.back.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_BACK_1.png");
+        this.gps.activateNavButton(2, getLabel('home',"Home"), this.backHome.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_HOME.png");
+        this.gps.activateNavButton(5, getLabel('up',"Up"), this.scrollUp.bind(this), false, "Icons/ICON_MAP_CB_UP_ARROW_1.png");
+        this.gps.activateNavButton(6, getLabel('down',"Down"), this.scrollDown.bind(this), false, "Icons/ICON_MAP_CB_DOWN_ARROW_1.png");
     }
     onExit() {
         super.onExit();
@@ -349,8 +403,8 @@ class TMFD_NRST extends AS3000_TSC_NRST {
         this.gps.makeButton(this.NDB, this.gps.SwitchToPageName.bind(this.gps, "SMFD", "Nearest NDB"));
     }
     onEnter() {
-        this.gps.activateNavButton(1, "Back", this.back.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_BACK_1.png");
-        this.gps.activateNavButton(2, "Home", this.backHome.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_HOME.png");
+        this.gps.activateNavButton(1, getLabel('back','Back'), this.back.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_BACK_1.png");
+        this.gps.activateNavButton(2, getLabel('home',"Home"), this.backHome.bind(this), false, "Icons/ICON_MAP_BUTTONBAR_HOME.png");
     }
     onUpdate(_deltaTime) {
     }
@@ -460,7 +514,7 @@ class TMFD_DuplicateWaypointSelection extends AS3000_TSC_DuplicateWaypointSelect
 }
 class TMFD_Minimums extends AS3000_TSC_Minimums {
     backHome() {
-        this.gps.SwitchToPageName("PMFD", "PMFD Home");
+        this.gps.SwitchToPageName("PMFD", getLabel('pmfd_home','PMFD Home'));
     }
 }
 class TMFD_WaypointOptions extends AS3000_TSC_WaypointOptions {

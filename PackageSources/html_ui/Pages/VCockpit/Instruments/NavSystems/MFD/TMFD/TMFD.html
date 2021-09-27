@@ -8,55 +8,55 @@
                     <div class="line">
                         <div class="gradientButton" id="OBSButton" state="Hidden">
                             <img class="lowerImg" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_OBS.png" />
-                            <div class="upperTitle">OBS</div>
+                            <div class="upperTitle" id="label_obs">OBS</div>
                         </div>
                         <div class="gradientButton" id="CasUp" state="Hidden">
                             <img class="lowerImg" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_CB_UP_ARROW_1.png" />
-                            <div class="upperTitle">CAS上</div>
+                            <div class="upperTitle" id="label_cas_up">CAS上</div>
                         </div>
                     </div>
                     <div class="line">
                         <div class="gradientButton" id="Bearing1Button">
                             <img class="centerImg" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_SMALL_BEARING_1.png" />
-                            <div class="upperTitle">方位1</div>
-                            <div class="lowerValue">关闭</div>
+                            <div class="upperTitle" id="label_brg_1">方位1</div>
+                            <div class="lowerValue" id="label_brg_1_off">关闭</div>
                         </div>
                         <div class="gradientButton" id="Bearing2Button">
                             <img class="centerImg" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_SMALL_BEARING_2_1.png" />
-                            <div class="upperTitle">方位2</div>
-                            <div class="lowerValue">关闭</div>
+                            <div class="upperTitle" id="label_brg_2">方位2</div>
+                            <div class="lowerValue" id="label_brg_2_off">关闭</div>
                         </div>
                         <div class="gradientButton" id="CasDown" state="Hidden">
                             <img class="img" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_CB_DOWN_ARROW_1.png" />
-                            <div class="title">CAS下</div>
+                            <div class="title" id="label_cas_down">CAS下</div>
                         </div>
                     </div>
                     <div class="line">
                         <div class="gradientButton" id="SpeedBugsButton_PFD">
                             <img class="img" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_SPEED_BUG.png" />
-                            <div class="title">Speed Bugs</div>
+                            <div class="title" id="label_spd_bugs">速度误差</div>
                         </div>
                         <div class="gradientButton" id="TimersButton">
                             <img class="img" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_SMALL_TIMERS.png" />
-                            <div class="title">计时器</div>
+                            <div class="title" id="label_timers">计时器</div>
                         </div>
                         <div class="gradientButton" id="MinimumsButton">
                             <img class="img" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_MINIMUMS.png" />
-                            <div class="title">Minimums</div>
+                            <div class="title" id="label_minimums">最低高度</div>
                         </div>
                         <div class="gradientButton" id="TrafficMapButton" state="Hidden">
                             <img class="img" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_TRAFFIC.png" />
-                            <div class="title">交通分布</div>
+                            <div class="title" id="label_tfc_map">交通分布</div>
                         </div>
                     </div>
                     <div class="line">
                         <div class="gradientButton" id="PFDMapSettingsButton" state="Hidden">
                             <img class="img" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_SMALL_INSET_SETTINGS_1.png" />
-                            <div class="title">PFD地图设置</div>
+                            <div class="title" id="label_pfd_map_settings">PFD地图设置</div>
                         </div>
                         <div class="gradientButton" id="SensorsButton" state="Hidden">
                             <img class="img" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/TSC/Icons/ICON_MAP_SMALL_SENSORS_1.png" />
-                            <div class="title">传感器</div>
+                            <div class="title" id="label_sensors">传感器</div>
                         </div>
                         <!--
                         <div class="gradientButton" id="PFDSettingsButton">
@@ -165,8 +165,8 @@
                 </div>
                 <div id="Minimums">
                     <div class="gradientButton" id="min_typeButton">
-                        <div class="upperTitle">Minimums</div>
-                        <div class="lowerValue">Baro</div>
+                        <div class="upperTitle">最低高度</div>
+                        <div class="lowerValue">气压</div>
                     </div>
                     <div class="gradientButton" id="min_tempAtDestButton" state="Inactive">
                         <div class="upperTitle">目的地气温</div>
