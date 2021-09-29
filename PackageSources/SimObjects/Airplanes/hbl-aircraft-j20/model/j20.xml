@@ -86,5 +86,82 @@
 			</Component>
 		</Component>
 	</Behaviors>
+
+	<Animation guid="52897438-edf8-4aa9-ad53-7b195466e5df" name="Elevators" type="Sim" typeParam="AutoPlay"/>
+	<Animation guid="33ed8718-5985-43f8-b991-fcf7ce82512b" name="Left_Aileron" type="Sim" typeParam="AutoPlay"/>
+	<Animation guid="4fa1a265-1f96-4064-87fa-7c9cc15ef8cf" name="Right_Aileron" type="Sim" typeParam="AutoPlay"/>
+	<Animation guid="7710bfc7-1973-47c6-aa07-f5f9821e17ac" name="Flaps_Left" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="2a59a922-3aae-4db9-b4f6-8cbaca89a197" name="Flaps_Right" type="Sim" typeparam="AutoPlay"/>
+	
+	<PartInfo>
+		<Name>Elevators</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>ELEVATOR DEFLECTION PCT</Variable>
+					<Scale>-0.5</Scale>
+					<Units>percent</Units>
+					<Bias>50</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Left_Aileron</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>AILERON LEFT DEFLECTION PCT</Variable>
+					<Scale>-0.5</Scale>
+					<Units>percent</Units>
+					<Bias>50</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Right_Aileron</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>AILERON RIGHT DEFLECTION PCT</Variable>
+					<Scale>0.5</Scale>
+					<Units>percent</Units>
+					<Bias>50</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Flaps_Left</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>TRAILING EDGE FLAPS LEFT PERCENT</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Flaps_Right</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>TRAILING EDGE FLAPS RIGHT PERCENT</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
 </ModelInfo>
 
