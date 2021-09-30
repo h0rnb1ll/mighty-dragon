@@ -93,6 +93,15 @@
 	<Animation guid="7710bfc7-1973-47c6-aa07-f5f9821e17ac" name="Flaps_Left" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="2a59a922-3aae-4db9-b4f6-8cbaca89a197" name="Flaps_Right" type="Sim" typeparam="AutoPlay"/>
 	
+	<Animation guid="b9db4c02-da7c-420d-814c-f01b0bfaaf51" name="Gear_Fwd" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="f88a4d05-c038-4d1a-9f2c-617a47933afd" name="Gear_Fwd_Door" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="45fe43ad-e6c4-44be-bc19-05c37fd729c7" name="Gear_Left" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="f163c296-eefa-4743-addf-f6718bc623cf" name="Gear_Left_Door_001" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="64d8edca-e0d2-4b5c-ae26-a9fab0453d09" name="Gear_Left_Door_002" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="27f2681a-65ff-4d04-80b2-90408e4f7033" name="Gear_Right" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="a564d9aa-c6f6-43d3-b092-0e7de038ce5f" name="Gear_Right_Door_001" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="be871073-ce9c-4cb6-b656-00ae8b6a7165" name="Gear_Right_Door_002" type="Sim" typeparam="AutoPlay"/>
+
 	<PartInfo>
 		<Name>Elevators</Name>
 		<AnimLength>100</AnimLength>
@@ -156,6 +165,119 @@
 			<Parameter>
 				<Sim>
 					<Variable>TRAILING EDGE FLAPS RIGHT PERCENT</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+
+	<PartInfo>
+		<Name>Gear_Fwd</Name>
+		<AnimLength>50</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:0</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Fwd_Door</Name>
+		<AnimLength>50</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:0</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Left</Name>
+		<AnimLength>50</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:1</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Left_Door_001</Name>
+		<AnimLength>50</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:1</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Left_Door_002</Name>
+		<AnimLength>50</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:1</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Right</Name>
+		<AnimLength>50</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:2</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Right_Door_001</Name>
+		<AnimLength>50</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:2</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Right_Door_002</Name>
+		<AnimLength>50</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:2</Variable>
 					<Units>percent</Units>
 					<Scale>1</Scale>
 					<Bias>0</Bias>
