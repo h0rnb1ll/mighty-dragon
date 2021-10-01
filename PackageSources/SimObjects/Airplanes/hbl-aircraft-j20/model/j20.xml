@@ -95,6 +95,7 @@
 	
 	<Animation guid="b9db4c02-da7c-420d-814c-f01b0bfaaf51" name="Gear_Fwd" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="f88a4d05-c038-4d1a-9f2c-617a47933afd" name="Gear_Fwd_Door" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="9dc51b87-c601-4e28-87a1-4f701a53a1d3" name="Gear_Fwd_Turn" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="45fe43ad-e6c4-44be-bc19-05c37fd729c7" name="Gear_Left" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="f163c296-eefa-4743-addf-f6718bc623cf" name="Gear_Left_Door_001" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="64d8edca-e0d2-4b5c-ae26-a9fab0453d09" name="Gear_Left_Door_002" type="Sim" typeparam="AutoPlay"/>
@@ -172,7 +173,20 @@
 			</Parameter>
 		</Animation>
 	</PartInfo>
-
+	<PartInfo>
+		<Name>Gear_Fwd_Turn</Name>
+		<AnimLength>360</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR STEER ANGLE:0</Variable>
+					<Units>number</Units>
+					<Scale>50</Scale>
+					<Bias>180</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Fwd</Name>
 		<AnimLength>50</AnimLength>
