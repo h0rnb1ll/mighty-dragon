@@ -175,27 +175,27 @@
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Fwd_Turn</Name>
-		<AnimLength>360</AnimLength>
+		<AnimLength>160</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR STEER ANGLE:0</Variable>
 					<Units>number</Units>
 					<Scale>50</Scale>
-					<Bias>180</Bias>
+					<Bias>80</Bias>
 				</Sim>
 			</Parameter>
 		</Animation>
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Fwd</Name>
-		<AnimLength>50</AnimLength>
+		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:0</Variable>
-					<Units>percent</Units>
-					<Scale>1</Scale>
+					<Units>number</Units>
+					<Scale>400</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
@@ -203,13 +203,13 @@
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Fwd_Door</Name>
-		<AnimLength>50</AnimLength>
+		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:0</Variable>
-					<Units>percent</Units>
-					<Scale>1</Scale>
+					<Units>number</Units>
+					<Scale>400</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
@@ -217,13 +217,13 @@
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Left</Name>
-		<AnimLength>50</AnimLength>
+		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:1</Variable>
-					<Units>percent</Units>
-					<Scale>1</Scale>
+					<Units>number</Units>
+					<Scale>400</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
@@ -231,13 +231,13 @@
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Left_Door_001</Name>
-		<AnimLength>50</AnimLength>
+		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:1</Variable>
-					<Units>percent</Units>
-					<Scale>1</Scale>
+					<Units>number</Units>
+					<Scale>400</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
@@ -245,13 +245,13 @@
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Left_Door_002</Name>
-		<AnimLength>50</AnimLength>
+		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:1</Variable>
-					<Units>percent</Units>
-					<Scale>1</Scale>
+					<Units>number</Units>
+					<Scale>400</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
@@ -259,13 +259,13 @@
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Right</Name>
-		<AnimLength>50</AnimLength>
+		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:2</Variable>
-					<Units>percent</Units>
-					<Scale>1</Scale>
+					<Units>number</Units>
+					<Scale>400</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
@@ -273,13 +273,13 @@
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Right_Door_001</Name>
-		<AnimLength>50</AnimLength>
+		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:2</Variable>
-					<Units>percent</Units>
-					<Scale>1</Scale>
+					<Units>number</Units>
+					<Scale>400</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
@@ -287,13 +287,13 @@
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Right_Door_002</Name>
-		<AnimLength>50</AnimLength>
+		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:2</Variable>
-					<Units>percent</Units>
-					<Scale>1</Scale>
+					<Units>number</Units>
+					<Scale>400</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
