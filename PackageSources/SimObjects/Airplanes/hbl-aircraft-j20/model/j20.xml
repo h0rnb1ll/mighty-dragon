@@ -12,9 +12,21 @@
 			<UseTemplate Name="EVANBURNSDEV_LIGHTING_Formation_Lights_Template"/>
 		</Component>
 		<Component ID="GEAR">
-			<UseTemplate Name="ASOBO_GEAR_Center_Tire_Template"/>
-			<UseTemplate Name="ASOBO_GEAR_Left_Tire_Template"/>
-			<UseTemplate Name="ASOBO_GEAR_Right_Tire_Template"/>
+			<UseTemplate Name="ASOBO_GEAR_Center_Tire_Template">
+				<ANIM_NAME>Gear_Fwd_Spin</ANIM_NAME>
+				<NODE_ID_STILL>GEAR_Center_Wheel</NODE_ID_STILL>
+				<NODE_ID_BLURRED>GEAR_Center_Wheel_Blurred</NODE_ID_BLURRED>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GEAR_Left_Tire_Template">
+				<ANIM_NAME>Gear_Left_Wheel_Spin</ANIM_NAME>
+				<NODE_ID_STILL>Gear_Left_Wheel_Tire</NODE_ID_STILL>
+				<NODE_ID_BLURRED>Gear_Left_Wheel_Tire_Blurred</NODE_ID_BLURRED>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GEAR_Right_Tire_Template">
+				<ANIM_NAME>Gear_Right_Wheel_Spin</ANIM_NAME>
+				<NODE_ID_STILL>Gear_Right_Wheel_Tire</NODE_ID_STILL>
+				<NODE_ID_BLURRED>Gear_Right_Wheel_Tire_Blurred</NODE_ID_BLURRED>
+			</UseTemplate>
 		</Component>
 		<Component ID="FX_CONTRAILS">
 			<Component ID="FX_CONTRAIL_QUAD_LEFT_OUT" Node="fx_contrail_left">
