@@ -54,10 +54,10 @@
             "mesh" : 0,
             "name" : "ELECTRICAL_Switch_Battery_Master_1",
             "rotation" : [
-                0.2663763761520386,
+                0.0949554294347763,
                 0,
                 0,
-                0.9638690948486328
+                0.995481550693512
             ],
             "translation" : [
                 -3.1057989597320557,
@@ -2146,6 +2146,25 @@
                 {
                     "sampler" : 0,
                     "target" : {
+                        "node" : 0,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "ELECTRICAL_Switch_Battery_Master_1",
+            "samplers" : [
+                {
+                    "input" : 510,
+                    "interpolation" : "LINEAR",
+                    "output" : 512
+                }
+            ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
                         "node" : 15,
                         "path" : "rotation"
                     }
@@ -2154,9 +2173,9 @@
             "name" : "Switch_Landing_Taxi",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 513
+                    "output" : 514
                 }
             ]
         },
@@ -2175,7 +2194,7 @@
                 {
                     "input" : 510,
                     "interpolation" : "LINEAR",
-                    "output" : 514
+                    "output" : 515
                 }
             ]
         },
@@ -2192,9 +2211,9 @@
             "name" : "ELECTRICAL_Switch_APU_Starter",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 515
+                    "output" : 516
                 }
             ]
         },
@@ -2213,7 +2232,7 @@
                 {
                     "input" : 510,
                     "interpolation" : "LINEAR",
-                    "output" : 516
+                    "output" : 517
                 }
             ]
         },
@@ -2232,7 +2251,7 @@
                 {
                     "input" : 510,
                     "interpolation" : "LINEAR",
-                    "output" : 517
+                    "output" : 518
                 }
             ]
         },
@@ -2249,9 +2268,9 @@
             "name" : "LIGHTING_Knob_Glareshield_1",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 518
+                    "output" : 519
                 }
             ]
         },
@@ -2268,9 +2287,9 @@
             "name" : "LIGHTING_Knob_Cabin_1",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 519
+                    "output" : 520
                 }
             ]
         },
@@ -2287,9 +2306,9 @@
             "name" : "LIGHTING_Knob_Panel_1",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 520
+                    "output" : 521
                 }
             ]
         },
@@ -2306,9 +2325,9 @@
             "name" : "All_Brt_Knob",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 521
+                    "output" : 522
                 }
             ]
         },
@@ -2325,9 +2344,9 @@
             "name" : "SWITCH_Exterior_Lights",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 522
+                    "output" : 523
                 }
             ]
         },
@@ -2344,9 +2363,9 @@
             "name" : "SWITCH_Formation_Coarse",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 523
+                    "output" : 524
                 }
             ]
         },
@@ -2363,9 +2382,9 @@
             "name" : "HUD_Brt_Wheel",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 524
+                    "output" : 525
                 }
             ]
         },
@@ -2384,7 +2403,7 @@
                 {
                     "input" : 510,
                     "interpolation" : "LINEAR",
-                    "output" : 525
+                    "output" : 526
                 }
             ]
         },
@@ -2401,9 +2420,9 @@
             "name" : "Rudder_Trim_Switch",
             "samplers" : [
                 {
-                    "input" : 512,
+                    "input" : 513,
                     "interpolation" : "LINEAR",
-                    "output" : 526
+                    "output" : 527
                 }
             ]
         }
@@ -9778,6 +9797,12 @@
         {
             "bufferView" : 512,
             "componentType" : 5126,
+            "count" : 11,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 513,
+            "componentType" : 5126,
             "count" : 21,
             "max" : [
                 0.8333333333333334
@@ -9788,27 +9813,21 @@
             "type" : "SCALAR"
         },
         {
-            "bufferView" : 513,
-            "componentType" : 5126,
-            "count" : 21,
-            "type" : "VEC4"
-        },
-        {
             "bufferView" : 514,
             "componentType" : 5126,
-            "count" : 11,
+            "count" : 21,
             "type" : "VEC4"
         },
         {
             "bufferView" : 515,
             "componentType" : 5126,
-            "count" : 21,
+            "count" : 11,
             "type" : "VEC4"
         },
         {
             "bufferView" : 516,
             "componentType" : 5126,
-            "count" : 11,
+            "count" : 21,
             "type" : "VEC4"
         },
         {
@@ -9820,7 +9839,7 @@
         {
             "bufferView" : 518,
             "componentType" : 5126,
-            "count" : 21,
+            "count" : 11,
             "type" : "VEC4"
         },
         {
@@ -9862,11 +9881,17 @@
         {
             "bufferView" : 525,
             "componentType" : 5126,
-            "count" : 11,
+            "count" : 21,
             "type" : "VEC4"
         },
         {
             "bufferView" : 526,
+            "componentType" : 5126,
+            "count" : 11,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 527,
             "componentType" : 5126,
             "count" : 21,
             "type" : "VEC4"
@@ -12435,28 +12460,28 @@
         },
         {
             "buffer" : 0,
-            "byteLength" : 84,
+            "byteLength" : 176,
             "byteOffset" : 14754204
         },
         {
             "buffer" : 0,
+            "byteLength" : 84,
+            "byteOffset" : 14754380
+        },
+        {
+            "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 14754288
+            "byteOffset" : 14754464
         },
         {
             "buffer" : 0,
             "byteLength" : 176,
-            "byteOffset" : 14754624
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 336,
             "byteOffset" : 14754800
         },
         {
             "buffer" : 0,
-            "byteLength" : 176,
-            "byteOffset" : 14755136
+            "byteLength" : 336,
+            "byteOffset" : 14754976
         },
         {
             "buffer" : 0,
@@ -12465,53 +12490,58 @@
         },
         {
             "buffer" : 0,
-            "byteLength" : 336,
+            "byteLength" : 176,
             "byteOffset" : 14755488
         },
         {
             "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 14755824
+            "byteOffset" : 14755664
         },
         {
             "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 14756160
+            "byteOffset" : 14756000
         },
         {
             "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 14756496
+            "byteOffset" : 14756336
         },
         {
             "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 14756832
+            "byteOffset" : 14756672
         },
         {
             "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 14757168
+            "byteOffset" : 14757008
         },
         {
             "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 14757504
+            "byteOffset" : 14757344
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 336,
+            "byteOffset" : 14757680
         },
         {
             "buffer" : 0,
             "byteLength" : 176,
-            "byteOffset" : 14757840
+            "byteOffset" : 14758016
         },
         {
             "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 14758016
+            "byteOffset" : 14758192
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 14758352,
+            "byteLength" : 14758528,
             "uri" : "j20_cockpit.bin"
         }
     ]
