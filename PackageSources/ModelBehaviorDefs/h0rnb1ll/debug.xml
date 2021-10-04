@@ -1,7 +1,7 @@
 <ModelBehaviors>
 	<Include ModelBehaviorFile="Asobo\Common.xml"/>
 	
-	<Template Name="EVANBURNSDEV_FUEL_Switch_Pump_SubTemplate">
+	<Template Name="HBL_FUEL_Switch_Pump_SubTemplate">
 		<DefaultTemplateParameters>
 			<ANIM_NAME>FUEL_#INTERACTION#_Pump_#ID#</ANIM_NAME>
 			<NODE_ID>FUEL_#INTERACTION#_Pump_#ID#</NODE_ID>
@@ -28,16 +28,16 @@
 			</Case>
 		</Switch>
 	</Template>
-	<Template Name="EVANBURNSDEV_FUEL_Switch_Pump_Template">
+	<Template Name="HBL_FUEL_Switch_Pump_Template">
 		<DefaultTemplateParameters>
 			<ID>1</ID>
 			<SWITCH_TYPE>ON_OFF</SWITCH_TYPE>
 			<INTERACTION>Switch</INTERACTION>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_FUEL_Switch_Pump_SubTemplate">
+		<UseTemplate Name="HBL_FUEL_Switch_Pump_SubTemplate">
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_DEBUG_ELEVATOR_DEFL">
+	<Template Name="HBL_DEBUG_ELEVATOR_DEFL">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>5</FREQUENCY>
 			<UPDATE_CODE>
@@ -52,7 +52,7 @@
 			</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_DEBUG_AOA">
+	<Template Name="HBL_DEBUG_AOA">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>10</FREQUENCY>
 			<UPDATE_CODE>
@@ -61,7 +61,7 @@
 			</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_DEBUG_TAT">
+	<Template Name="HBL_DEBUG_TAT">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>10</FREQUENCY>
 			<UPDATE_CODE>
@@ -69,7 +69,7 @@
 			</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_DEBUG_CN1">
+	<Template Name="HBL_DEBUG_CN1">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>10</FREQUENCY>
 			<UPDATE_CODE>
@@ -77,7 +77,7 @@
 			</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_DEBUG_CN2">
+	<Template Name="HBL_DEBUG_CN2">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>10</FREQUENCY>
 			<UPDATE_CODE>
@@ -85,7 +85,7 @@
 			</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_DEBUG_ENGINES">
+	<Template Name="HBL_DEBUG_ENGINES">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>10</FREQUENCY>
 			<UPDATE_CODE>(A:TURB ENG THROTTLE COMMANDED N1:1, percent) (&gt;L:XMLVAR_EBD_ENGINE_THROTTLE_TURB_ENG_COMMANDED_N1)</UPDATE_CODE>
@@ -132,7 +132,7 @@
 		</UseTemplate>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_DEBUG_FBW">
+	<Template Name="HBL_DEBUG_FBW">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>1</FREQUENCY>
 			<UPDATE_CODE>
@@ -250,7 +250,7 @@
 		</UseTemplate>
 	</Template>
 	
-	<Template Name="EVANBURNSDEV_DEBUG_LIGHTING_TAXI">		
+	<Template Name="HBL_DEBUG_LIGHTING_TAXI">		
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>1</FREQUENCY>
 			<UPDATE_CODE>
@@ -259,7 +259,7 @@
 			</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_DEBUG_POTENTIOMETER">
+	<Template Name="HBL_DEBUG_POTENTIOMETER">
 		<DefaultTemplateParameters>
 			<POTENTIOMETER>9</POTENTIOMETER>
 		</DefaultTemplateParameters>
@@ -272,7 +272,7 @@
 		</UseTemplate>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_THROTTLE_Commanded_N1">
+	<Template Name="HBL_THROTTLE_Commanded_N1">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>10</FREQUENCY>
 			<UPDATE_CODE>(A:TURB ENG THROTTLE COMMANDED N1:1, percent) (&gt;L:XMLVAR_THROTTLE_TURB_ENG_COMMANDED_N1)</UPDATE_CODE>
@@ -286,7 +286,7 @@
 			<UPDATE_CODE>(A:TURB ENG CORRECTED N1:1, percent) (&gt;L:XMLVAR_TURB_ENG_CORRECTED_N1)</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_DEBUG_ELEVATORS">
+	<Template Name="HBL_DEBUG_ELEVATORS">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>1</FREQUENCY>
 			<UPDATE_CODE>
@@ -294,7 +294,7 @@
 			</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_DEBUG_PITOT">
+	<Template Name="HBL_DEBUG_PITOT">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>1</FREQUENCY>
 			<UPDATE_CODE>

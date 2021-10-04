@@ -11,9 +11,9 @@
 	<Include ModelBehaviorFile="Asobo\Airliner\FMC.xml"/>
 	<Include ModelBehaviorFile="Asobo\Airliner\GlassCockpit.xml"/>
 	<Include ModelBehaviorFile="Asobo\Airliner\Airbus.xml"/>
-	<Include ModelBehaviorFile="Evanburnsdev\Lighting.xml"/>
+	<Include ModelBehaviorFile="h0rnb1ll\lights.xml"/>
 		
-	<Template Name="EVANBURNSDEV_Softkey_Template">
+	<Template Name="HBL_Softkey_Template">
 		<DefaultTemplateParameters>
 			<PREFIX>#DISPLAY#</PREFIX>
 			<DISPLAY_POS>L</DISPLAY_POS>
@@ -33,9 +33,9 @@
 				</False>
 			</Condition>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_SubTemplate"></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_SubTemplate"></UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_Softkey_SubTemplate">
+	<Template Name="HBL_Softkey_SubTemplate">
 		<DefaultTemplateParameters>
 			<NODE_ID>#DISPLAY#_#ID#_Button_#UID##SUFFIX_ID#</NODE_ID>
 			<ANIM_NAME>#DISPLAY#_#ID#_Button_#UID##SUFFIX_ID#</ANIM_NAME>
@@ -46,7 +46,7 @@
 			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>	
 		</DefaultTemplateParameters>
 		<Component ID="#NODE_ID#" Node="#NODE_ID#">
-			<UseTemplate Name="EVANBURNSDEV_GT_Push_Button_Timed">
+			<UseTemplate Name="HBL_GT_Push_Button_Timed">
 				<REPEAT_FREQUENCY>50</REPEAT_FREQUENCY>
 				<LONG_CLICK_TIME>1</LONG_CLICK_TIME>
 				<LEFT_SINGLE_CODE>(&gt;H:#KEY_PREFIX#_SOFTKEYS_#KEY_ID#)</LEFT_SINGLE_CODE>
@@ -55,58 +55,58 @@
 			</UseTemplate>
 		</Component>
 	</Template>
-	<Template Name="EVANBURNSDEV_20_Softkeys_Template">
+	<Template Name="HBL_20_Softkeys_Template">
 		<DefaultTemplateParameters>
 			<ID>1</ID>
 		</DefaultTemplateParameters>
 	
 		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
-			<TEMPLATE_TO_CALL>EVANBURNSDEV_20_Softkeys_SubTemplate</TEMPLATE_TO_CALL>
+			<TEMPLATE_TO_CALL>HBL_20_Softkeys_SubTemplate</TEMPLATE_TO_CALL>
 		</UseTemplate>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_20_Softkeys_SubTemplate">
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>1</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>2</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>3</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>4</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>5</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>6</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>7</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>8</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>9</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>10</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>11</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>12</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>13</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>14</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>15</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>16</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>17</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>18</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>19</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>20</KEY_ID></UseTemplate>
+	<Template Name="HBL_20_Softkeys_SubTemplate">
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>1</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>2</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>3</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>4</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>5</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>6</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>7</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>8</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>9</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>10</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>11</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>12</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>13</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>14</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>15</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>16</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>17</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>18</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>19</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>20</KEY_ID></UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_4_Softkeys_Template">
+	<Template Name="HBL_4_Softkeys_Template">
 		<DefaultTemplateParameters>
 			<ID>1</ID>
 		</DefaultTemplateParameters>
 	
 		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
-			<TEMPLATE_TO_CALL>EVANBURNSDEV_4_Softkeys_SubTemplate</TEMPLATE_TO_CALL>
+			<TEMPLATE_TO_CALL>HBL_4_Softkeys_SubTemplate</TEMPLATE_TO_CALL>
 		</UseTemplate>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_4_Softkeys_SubTemplate">
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>1</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>2</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>3</KEY_ID></UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_Softkey_Template"><KEY_ID>4</KEY_ID></UseTemplate>
+	<Template Name="HBL_4_Softkeys_SubTemplate">
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>1</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>2</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>3</KEY_ID></UseTemplate>
+		<UseTemplate Name="HBL_Softkey_Template"><KEY_ID>4</KEY_ID></UseTemplate>
 	</Template>
 
 
 	<!-- Screen template -->
-	<Template Name="EVANBURNSDEV_Screen_Template">
+	<Template Name="HBL_Screen_Template">
 		<DefaultTemplateParameters>
 			<POTENTIOMETER>4</POTENTIOMETER>
 			<SCREEN_LIGHT_DIMMING_SCALE>0.5</SCREEN_LIGHT_DIMMING_SCALE>
@@ -118,12 +118,12 @@
 		</DefaultTemplateParameters>
 		<!--
 		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
-			<TEMPLATE_TO_CALL>EVANBURNSDEV_Screen_SubTemplate</TEMPLATE_TO_CALL>
+			<TEMPLATE_TO_CALL>HBL_Screen_SubTemplate</TEMPLATE_TO_CALL>
 		</UseTemplate>
 		-->
-		<UseTemplate Name="EVANBURNSDEV_Screen_SubTemplate"/>
+		<UseTemplate Name="HBL_Screen_SubTemplate"/>
 	</Template>
-	<Template Name="EVANBURNSDEV_Screen_SubTemplate">
+	<Template Name="HBL_Screen_SubTemplate">
 		<DefaultTemplateParameters>
 			<Condition Check="SCREEN_NODE_ID">
 				<True>
@@ -200,7 +200,7 @@
 						(O:_CLIPPED_EMISSIVE_PLUS_MIN_AMB) #FAILURE# (L:#KEY_PREFIX#_ScreenLuminosity) 0 &gt; and * 100 * (&gt;O:_EVERYTHING_ELSE)
 					</Update>
 				</Component>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Ambient_Template">
+				<UseTemplate Name="HBL_LIGHTING_Ambient_Template">
 					<Condition Check="LOCAL_POTENTIOMETER">
 						<True>
 							<BOUNCE_POTENTIOMETER_PERCENT>
@@ -225,7 +225,7 @@
 		</Component>
 	</Template>	
 	
-	<Template Name="EVANBURNSDEV_LIGHTING_Ambient_Template">
+	<Template Name="HBL_LIGHTING_Ambient_Template">
 		<DefaultTemplateParameters>
 			<NODE_ID>LIGHTING_Ambient</NODE_ID>
 			<ID>1</ID>
@@ -248,101 +248,101 @@
 		</Component>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_20_SoftKeys_Emissive_Template">
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+	<Template Name="HBL_20_SoftKeys_Emissive_Template">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>001</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>002</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>003</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>004</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>005</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>006</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>007</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>008</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>009</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>010</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>011</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>012</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>013</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>014</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>015</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>016</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>017</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>018</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>019</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>020</BUTTON_ID>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_4_SoftKeys_Emissive_Template">
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+	<Template Name="HBL_4_SoftKeys_Emissive_Template">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>001</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>002</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>003</BUTTON_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+		<UseTemplate Name="HBL_SoftKeys_Emissive_SubTemplate">
 			<BUTTON_ID>004</BUTTON_ID>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_SoftKeys_Emissive_SubTemplate">
+	<Template Name="HBL_SoftKeys_Emissive_SubTemplate">
 		<DefaultTemplateParameters>
 			<PANEL_TYPE>PMFD</PANEL_TYPE>
 			<PANEL_ID>1</PANEL_ID>
 			<BUTTON_ID>001</BUTTON_ID>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+		<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
 			<NODE_ID>#PANEL_TYPE#_#PANEL_ID#_Button_#BUTTON_ID#</NODE_ID> 
 			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
 		</UseTemplate>
 	</Template>
 	
 
-	<Template Name="EVANBURNSDEV_PMFD_Emissive_Template">
+	<Template Name="HBL_PMFD_Emissive_Template">
 		<DefaultTemplateParameters>
 			<POTENTIOMETER_ID>19</POTENTIOMETER_ID>
 			<EMISSIVE_CODE>0.25</EMISSIVE_CODE>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+		<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
 			<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
 			<INIT_VALUE>
@@ -355,23 +355,23 @@
 			<ANIMTIP_1>Increase PFD Buttons Backlight Brightness</ANIMTIP_1>
 			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+		<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
 			<NODE_ID>PMFD_Lines</NODE_ID> 
 			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_20_SoftKeys_Emissive_Template">
+		<UseTemplate Name="HBL_20_SoftKeys_Emissive_Template">
 			<PANEL_TYPE>PMFD</PANEL_TYPE>
 			<EMISSIVE_CODE>0.125</EMISSIVE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_SMFD_Emissive_Template">
+	<Template Name="HBL_SMFD_Emissive_Template">
 		<DefaultTemplateParameters>
 			<MFD_TYPE>SMFD</MFD_TYPE>
 			<POTENTIOMETER_ID>20</POTENTIOMETER_ID>
 			<PANEL_ID>1</PANEL_ID>
 			<EMISSIVE_CODE>0.25</EMISSIVE_CODE>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+		<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
 			<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
 			<INIT_VALUE>
@@ -384,22 +384,22 @@
 			<ANIMTIP_1>Increase MFD Buttons Backlight Brightness</ANIMTIP_1>
 			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+		<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
 			<NODE_ID>SMFD_#PANEL_ID#_Lines</NODE_ID> 
 			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_20_SoftKeys_Emissive_Template">
+		<UseTemplate Name="HBL_20_SoftKeys_Emissive_Template">
 			<PANEL_TYPE>SMFD</PANEL_TYPE>
 			<EMISSIVE_CODE>0.125</EMISSIVE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_TMFD_Emissive_Template">
+	<Template Name="HBL_TMFD_Emissive_Template">
 		<DefaultTemplateParameters>
 			<POTENTIOMETER_ID>23</POTENTIOMETER_ID>
 			<PANEL_ID>1</PANEL_ID>
 			<EMISSIVE_CODE>0.25</EMISSIVE_CODE>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+		<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
 			<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
 			<INIT_VALUE>
@@ -412,11 +412,11 @@
 			<ANIMTIP_1>Increase TMFD Buttons Backlight Brightness</ANIMTIP_1>
 			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+		<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
 			<NODE_ID>TMFD_#PANEL_ID#_Lines</NODE_ID> 
 			<POTENTIOMETER>#POTENTIOMETER_ID#</POTENTIOMETER>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_4_SoftKeys_Emissive_Template">
+		<UseTemplate Name="HBL_4_SoftKeys_Emissive_Template">
 			<PANEL_TYPE>TMFD</PANEL_TYPE>
 			<EMISSIVE_CODE>0.125</EMISSIVE_CODE>
 		</UseTemplate>

@@ -2,7 +2,7 @@
 	<Include ModelBehaviorFile="Asobo\Common.xml"/>
 	<Include ModelBehaviorFile="Asobo\Generic.xml"/>
 	
-	<Template Name="EVANBURNSDEV_FlyByWire_Initialize">
+	<Template Name="HBL_FlyByWire_Initialize">
 		<DefaultTemplateParameters>
 			<!-- Pitch Rate PIDs(Elevators) -->
 			<REQ_PITCH_RATE>40</REQ_PITCH_RATE>
@@ -71,7 +71,7 @@
 			</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	<Template Name="EVANBURNSDEV_FlyByWire">
+	<Template Name="HBL_FlyByWire">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>60</FREQUENCY>
 			<UPDATE_CODE>

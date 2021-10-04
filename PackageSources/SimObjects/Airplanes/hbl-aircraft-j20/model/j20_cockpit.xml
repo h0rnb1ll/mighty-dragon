@@ -20,12 +20,12 @@
 		<Include ModelBehaviorFile="Asobo\Airliner\GlassCockpit.xml"/>
 		<Include ModelBehaviorFile="Asobo\Airliner\Airbus.xml"/>
 		
-		<Include ModelBehaviorFile="Evanburnsdev\Debug.xml"/>
-		<Include ModelBehaviorFile="Evanburnsdev\FlyByWire.xml"/>
-		<Include ModelBehaviorFile="Evanburnsdev\MFD.xml"/>
-		<Include ModelBehaviorFile="Evanburnsdev\Lighting.xml"/>
-		<Include ModelBehaviorFile="Evanburnsdev\Electrical.xml"/>
-		<Include ModelBehaviorFile="Evanburnsdev\PushButton.xml"/>
+		<Include ModelBehaviorFile="h0rnb1ll\debug.xml"/>
+		<Include ModelBehaviorFile="h0rnb1ll\fbw.xml"/>
+		<Include ModelBehaviorFile="h0rnb1ll\displays.xml"/>
+		<Include ModelBehaviorFile="h0rnb1ll\lights.xml"/>
+		<Include ModelBehaviorFile="h0rnb1ll\electrical.xml"/>
+		<Include ModelBehaviorFile="h0rnb1ll\buttons.xml"/>
 
 		<!-- Used Potentiometers - 0-56 -->
 
@@ -47,17 +47,17 @@
 				<DISABLE_BUTTON_ANIMATIONS>True</DISABLE_BUTTON_ANIMATIONS>
 			</DefaultTemplateParameters>
 			<Component ID="PMFD_1">
-				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+				<UseTemplate Name="HBL_Screen_Template">
 					<AMBIENT_POTENTIOMETER>12</AMBIENT_POTENTIOMETER>
 					<POTENTIOMETER>50</POTENTIOMETER>
 					<DISPLAY>PMFD</DISPLAY>
 					<ID>1</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_20_Softkeys_Template">
+				<UseTemplate Name="HBL_20_Softkeys_Template">
 					<DISPLAY>PMFD</DISPLAY>
 					<ID>1</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<POTENTIOMETER>50</POTENTIOMETER>
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == -60 *
@@ -68,21 +68,21 @@
 					<ANIMTIP_0>Decrease PFD Screen Brightness</ANIMTIP_0>
 					<ANIMTIP_1>Increase PFD Screen Brightness</ANIMTIP_1>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_PMFD_Emissive_Template"/>
+				<UseTemplate Name="HBL_PMFD_Emissive_Template"/>
 			</Component>
 			
 			<Component ID="SMFD_1">
-				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+				<UseTemplate Name="HBL_Screen_Template">
 					<AMBIENT_POTENTIOMETER>13</AMBIENT_POTENTIOMETER>
 					<POTENTIOMETER>51</POTENTIOMETER>
 					<DISPLAY>SMFD</DISPLAY>
 					<ID>1</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_20_Softkeys_Template">
+				<UseTemplate Name="HBL_20_Softkeys_Template">
 					<DISPLAY>SMFD</DISPLAY>
 					<ID>1</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<POTENTIOMETER>51</POTENTIOMETER>
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == -60 *
@@ -93,24 +93,24 @@
 					<ANIMTIP_0>Decrease MFD Screen Brightness</ANIMTIP_0>
 					<ANIMTIP_1>Increase MFD Screen Brightness</ANIMTIP_1>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_SMFD_Emissive_Template">
+				<UseTemplate Name="HBL_SMFD_Emissive_Template">
 					<POTENTIOMETER_ID>20</POTENTIOMETER_ID>
 					<PANEL_ID>1</PANEL_ID>
 				</UseTemplate>
 			</Component>
 		
 			<Component ID="SMFD_2">
-				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+				<UseTemplate Name="HBL_Screen_Template">
 					<AMBIENT_POTENTIOMETER>14</AMBIENT_POTENTIOMETER>
 					<POTENTIOMETER>52</POTENTIOMETER>
 					<DISPLAY>SMFD</DISPLAY>
 					<ID>2</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_20_Softkeys_Template">
+				<UseTemplate Name="HBL_20_Softkeys_Template">
 					<DISPLAY>SMFD</DISPLAY>
 					<ID>2</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<POTENTIOMETER>52</POTENTIOMETER>
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == -60 *
@@ -121,24 +121,24 @@
 					<ANIMTIP_0>Decrease MFD Screen Brightness</ANIMTIP_0>
 					<ANIMTIP_1>Increase MFD Screen Brightness</ANIMTIP_1>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_SMFD_Emissive_Template">
+				<UseTemplate Name="HBL_SMFD_Emissive_Template">
 					<POTENTIOMETER_ID>21</POTENTIOMETER_ID>
 					<PANEL_ID>2</PANEL_ID>
 				</UseTemplate>
 			</Component>
 
 			<Component ID="SMFD_3">
-				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+				<UseTemplate Name="HBL_Screen_Template">
 					<AMBIENT_POTENTIOMETER>15</AMBIENT_POTENTIOMETER>
 					<POTENTIOMETER>53</POTENTIOMETER>
 					<DISPLAY>SMFD</DISPLAY>
 					<ID>3</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_20_Softkeys_Template">
+				<UseTemplate Name="HBL_20_Softkeys_Template">
 					<DISPLAY>SMFD</DISPLAY>
 					<ID>3</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<POTENTIOMETER>53</POTENTIOMETER>
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == -60 *
@@ -149,25 +149,25 @@
 					<ANIMTIP_0>Decrease MFD Screen Brightness</ANIMTIP_0>
 					<ANIMTIP_1>Increase MFD Screen Brightness</ANIMTIP_1>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_SMFD_Emissive_Template">
+				<UseTemplate Name="HBL_SMFD_Emissive_Template">
 					<POTENTIOMETER_ID>22</POTENTIOMETER_ID>
 					<PANEL_ID>3</PANEL_ID>
 				</UseTemplate>
 			</Component>
 
 			<Component ID="TMFD_1">
-				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+				<UseTemplate Name="HBL_Screen_Template">
 					<AMBIENT_POTENTIOMETER>17</AMBIENT_POTENTIOMETER>
 					<MAX_AMBIENT_EMISSIVE_PERCENT>0.1</MAX_AMBIENT_EMISSIVE_PERCENT>
 					<POTENTIOMETER>54</POTENTIOMETER>
 					<DISPLAY>TMFD</DISPLAY>
 					<ID>1</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_4_Softkeys_Template">
+				<UseTemplate Name="HBL_4_Softkeys_Template">
 					<DISPLAY>TMFD</DISPLAY>
 					<ID>1</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<POTENTIOMETER>54</POTENTIOMETER>
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == -60 *
@@ -178,22 +178,22 @@
 					<ANIMTIP_0>Decrease TMFD Screen Brightness</ANIMTIP_0>
 					<ANIMTIP_1>Increase TMFD Screen Brightness</ANIMTIP_1>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_TMFD_Emissive_Template"/>
+				<UseTemplate Name="HBL_TMFD_Emissive_Template"/>
 			</Component>
 
 			<Component ID="TMFD_2">
-				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+				<UseTemplate Name="HBL_Screen_Template">
 					<AMBIENT_POTENTIOMETER>18</AMBIENT_POTENTIOMETER>
 					<MAX_AMBIENT_EMISSIVE_PERCENT>0.1</MAX_AMBIENT_EMISSIVE_PERCENT>
 					<POTENTIOMETER>55</POTENTIOMETER>
 					<DISPLAY>TMFD</DISPLAY>
 					<ID>2</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_4_Softkeys_Template">
+				<UseTemplate Name="HBL_4_Softkeys_Template">
 					<DISPLAY>TMFD</DISPLAY>
 					<ID>2</ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<POTENTIOMETER>55</POTENTIOMETER>
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == -60 *
@@ -204,14 +204,14 @@
 					<ANIMTIP_0>Decrease TMFD Screen Brightness</ANIMTIP_0>
 					<ANIMTIP_1>Increase TMFD Screen Brightness</ANIMTIP_1>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_TMFD_Emissive_Template">
+				<UseTemplate Name="HBL_TMFD_Emissive_Template">
 					<POTENTIOMETER_ID>24</POTENTIOMETER_ID>
 					<PANEL_ID>2</PANEL_ID>
 				</UseTemplate>
 			</Component>
 
 			<Component ID="HUD">
-				<UseTemplate Name="EVANBURNSDEV_Screen_Template">
+				<UseTemplate Name="HBL_Screen_Template">
 					<AMBIENT_POTENTIOMETER>16</AMBIENT_POTENTIOMETER>
 					<!--<MAX_AMBIENT_EMISSIVE_PERCENT>0.25</MAX_AMBIENT_EMISSIVE_PERCENT>-->
 					<MAX_AMBIENT_EMISSIVE_PERCENT>8</MAX_AMBIENT_EMISSIVE_PERCENT>
@@ -223,7 +223,7 @@
 					<MAX_EMISSIVE_PERCENT>8</MAX_EMISSIVE_PERCENT>
 					<CIRCUIT_ID>10</CIRCUIT_ID>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<SWITCH_DIRECTION>Vertical</SWITCH_DIRECTION>
 					<IS_WHEEL>True</IS_WHEEL>
 					<REV_POT>True</REV_POT>
@@ -245,7 +245,7 @@
 			</Component>
 
 			<Component ID="ICP">
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<SWITCH_DIRECTION>Vertical</SWITCH_DIRECTION>
 					<IS_WHEEL>True</IS_WHEEL>
 					<REV_POT>True</REV_POT>
@@ -262,7 +262,7 @@
 					<ANIMTIP_1>Increase ICP Backlight</ANIMTIP_1>
 					<ANIMTIP_1_ON_CURSOR>UpArrow</ANIMTIP_1_ON_CURSOR>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
 					<NODE_ID>ICP_Text</NODE_ID> 
 					<POTENTIOMETER>56</POTENTIOMETER>
 				</UseTemplate>
@@ -272,7 +272,7 @@
 				<Update Once="True">
 					1 (&gt;L:XMLVAR_EBD_FBW_ENABLE)
 				</Update>
-				<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Generic">
+				<UseTemplate Name="HBL_ELECTRICAL_Switch_Generic">
 					<TOOLTIPID>%((L:XMLVAR_EBD_FBW_ENABLE, Bool) )%{if}WARNING! ☠Do not turn off☠ Causes degraded performance.%{end}</TOOLTIPID>
 					<NODE_ID>SWITCH_FBW</NODE_ID>
 					<SIMVAR>XMLVAR_EBD_FBW_ENABLE</SIMVAR>
@@ -324,7 +324,7 @@
 						<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LIGHTING_KNOB_LIGHT_PILOT_DISPLAYS_INCREASE</ANIMTIP_1>
 					</UseTemplate>
 					-->
-					<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+					<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 						<WWISE_EVENT>double_light_switch</WWISE_EVENT>
 						<POTENTIOMETER>10</POTENTIOMETER>
 						<CLOCKWISE_CODE>
@@ -369,7 +369,7 @@
 				</Component>
 
 				<!-- Panel Brightness -->
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<WWISE_EVENT>double_light_switch</WWISE_EVENT>
 					<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
 					<POTENTIOMETER>11</POTENTIOMETER>
@@ -383,13 +383,13 @@
 					<ANIMTIP_1>Increase Console Backlighting</ANIMTIP_1>
 					<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 				</UseTemplate>
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
 					<NODE_ID>Panel_Text</NODE_ID> 
 					<POTENTIOMETER>11</POTENTIOMETER>
 					<EMISSIVE_CODE>1</EMISSIVE_CODE>
 				</UseTemplate>
 				<!-- Cabin 1 Brightness -->
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Cabin_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Cabin_Template">
 					<WWISE_EVENT>double_light_switch</WWISE_EVENT>
 					<ID>1</ID>
 					<SIMVAR_INDEX>1</SIMVAR_INDEX>
@@ -401,7 +401,7 @@
 					<ANIMTIP_1>Increase Console Floodlight</ANIMTIP_1>
 				</UseTemplate>
 				<!-- Glareshield Brightness -->
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_Glareshield_Template">
+				<UseTemplate Name="HBL_LIGHTING_Knob_Glareshield_Template">
 					<WWISE_EVENT>double_light_switch</WWISE_EVENT>
 					<ID>1</ID>
 					<POTENTIOMETER>2</POTENTIOMETER>
@@ -413,7 +413,7 @@
 				</UseTemplate>
 			</Component>
 			<Component ID="Lighting_Exterior">
-				<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Light_Double_Template">
+				<UseTemplate Name="HBL_LIGHTING_Switch_Light_Double_Template">
 					<NODE_ID>Switch_Landing_Taxi</NODE_ID>
 					<ANIM_NAME>Switch_Landing_Taxi</ANIM_NAME>
 					<LIGHT_TYPE1>LANDING</LIGHT_TYPE1>
@@ -424,13 +424,13 @@
 					<GEAR_PROHIBITS>True</GEAR_PROHIBITS>
 				</UseTemplate>
 				<Component ID="Exterior_Light_Switch">
-					<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Exterior_Template">
+					<UseTemplate Name="HBL_LIGHTING_Switch_Exterior_Template">
 						<WWISE_EVENT>double_light_switch</WWISE_EVENT>
 						<NODE_ID>SWITCH_Exterior_Lights</NODE_ID>
 					</UseTemplate>
 				</Component>
 				<Component ID="Formation_Light_Switch">
-					<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Formation_Template">
+					<UseTemplate Name="HBL_LIGHTING_Switch_Formation_Template">
 						<WWISE_EVENT>double_light_switch</WWISE_EVENT>
 						<NODE_ID>SWITCH_Formation_Coarse</NODE_ID>
 					</UseTemplate>
@@ -443,15 +443,15 @@
 				<PART_ID>Gear_Knob</PART_ID>
 				<NODE_ID>Gear_Knob</NODE_ID>
 			</UseTemplate>
-			<UseTemplate Name="EVANBURNSDEV_LIGHTING_Gear_Light_SubTemplate">
+			<UseTemplate Name="HBL_LIGHTING_Gear_Light_SubTemplate">
 				<ID>0</ID>
 				<GEAR_ID>0</GEAR_ID>
 			</UseTemplate>
-			<UseTemplate Name="EVANBURNSDEV_LIGHTING_Gear_Light_SubTemplate">
+			<UseTemplate Name="HBL_LIGHTING_Gear_Light_SubTemplate">
 				<ID>1</ID>
 				<GEAR_ID>1</GEAR_ID>
 			</UseTemplate>
-			<UseTemplate Name="EVANBURNSDEV_LIGHTING_Gear_Light_SubTemplate">
+			<UseTemplate Name="HBL_LIGHTING_Gear_Light_SubTemplate">
 				<ID>2</ID>
 				<GEAR_ID>2</GEAR_ID>
 			</UseTemplate>
@@ -461,18 +461,18 @@
 			</UseTemplate>
 		</Component>
 		<Component ID="APU">
-			<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_APU_Starter_Template"/>
+			<UseTemplate Name="HBL_ELECTRICAL_Switch_APU_Starter_Template"/>
 		</Component>
 		<Component ID="Electrical">
-			<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Battery_Master_Template"/>
-			<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Double_Bus_Toggle">
+			<UseTemplate Name="HBL_ELECTRICAL_Switch_Battery_Master_Template"/>
+			<UseTemplate Name="HBL_ELECTRICAL_Switch_Double_Bus_Toggle">
 				<ID>ELEC_Switch_Gen1</ID>
 				<BUS_SRC1>13</BUS_SRC1>
 				<BUS_DEST1>1</BUS_DEST1>
 				<BUS_SRC2>5</BUS_SRC2>
 				<BUS_DEST2>3</BUS_DEST2>
 			</UseTemplate>
-			<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Double_Bus_Toggle">
+			<UseTemplate Name="HBL_ELECTRICAL_Switch_Double_Bus_Toggle">
 				<ID>ELEC_Switch_Gen2</ID>
 				<BUS_SRC1>6</BUS_SRC1>
 				<BUS_DEST1>4</BUS_DEST1>

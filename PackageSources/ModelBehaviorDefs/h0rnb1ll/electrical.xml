@@ -1,7 +1,7 @@
 <ModelBehaviors>
 	<Include ModelBehaviorFile="Asobo\Common.xml"/>
 
-	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Generic">
+	<Template Name="HBL_ELECTRICAL_Switch_Generic">
 		<DefaultTemplateParameters>
 			<ANIM_NAME>#NODE_ID#</ANIM_NAME>
 			<WWISE_EVENT_1>parking_brake_switch_on</WWISE_EVENT_1>
@@ -24,7 +24,7 @@
 		</Component>
 	</Template>
 	
-	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Bus_Toggle">
+	<Template Name="HBL_ELECTRICAL_Switch_Bus_Toggle">
 		<Component ID="#ID#" Node="#ID#">
 			<DefaultTemplateParameters>
 				<BUS_SRC>11</BUS_SRC>
@@ -44,7 +44,7 @@
 			</UseTemplate>
 		</Component>
 	</Template>
-	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Double_Bus_Toggle">
+	<Template Name="HBL_ELECTRICAL_Switch_Double_Bus_Toggle">
 		<Component ID="#ID#" Node="#ID#">
 			<DefaultTemplateParameters>
 				<BUS_SRC1>11</BUS_SRC1>
@@ -71,7 +71,7 @@
 			</UseTemplate>
 		</Component>
 	</Template>
-	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_APU_Starter_Template">
+	<Template Name="HBL_ELECTRICAL_Switch_APU_Starter_Template">
 		<DefaultTemplateParameters>
 			<ANIM_NAME>ELECTRICAL_Switch_APU_Starter</ANIM_NAME>
 			<NODE_ID>ELECTRICAL_Switch_APU_Starter</NODE_ID>
@@ -102,7 +102,7 @@
 			<UseTemplate Name="ASOBO_GT_Switch_Code" />
 		</Component>
 	</Template>	
-	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_APU_Bleed_Template">
+	<Template Name="HBL_ELECTRICAL_Switch_APU_Bleed_Template">
 		<DefaultTemplateParameters>
 			<ANIM_NAME>ELECTRICAL_Switch_APU_Bleed</ANIM_NAME>
 			<NODE_ID>ELECTRICAL_Switch_APU_Bleed</NODE_ID>
@@ -117,7 +117,7 @@
 			<UseTemplate Name="ASOBO_GT_Switch_Code" />
 		</Component>
 	</Template>
-	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Engine_Bleed_Template">
+	<Template Name="HBL_ELECTRICAL_Switch_Engine_Bleed_Template">
 		<DefaultTemplateParameters>
 			<ANIM_NAME>ELECTRICAL_Switch_Engine_Bleed_#ID#</ANIM_NAME>
 			<NODE_ID>ELECTRICAL_Switch_Engine_Bleed_#ID#</NODE_ID>
@@ -132,7 +132,7 @@
 			<UseTemplate Name="ASOBO_GT_Switch_Code" />
 		</Component>
 	</Template>
-	<Template Name="EVANBURNSDEV_ELECTRICAL_Log_Bus_Vars">
+	<Template Name="HBL_ELECTRICAL_Log_Bus_Vars">
 		<UseTemplate Name="ASOBO_GT_Update">
 			<FREQUENCY>1</FREQUENCY>
 			<UPDATE_CODE>(A:ELECTRICAL MAIN BUS VOLTAGE:#ID#, volts) (&gt;L:XMLVAR_EBD_BUS_#ID#_VOLTS)</UPDATE_CODE>
@@ -143,15 +143,15 @@
 		</UseTemplate>
 	</Template>
 	
-	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Battery_Master_Template">
+	<Template Name="HBL_ELECTRICAL_Switch_Battery_Master_Template">
 		<DefaultTemplateParameters>
 			<ID>1</ID>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_ELECTRICAL_Switch_Battery_Master_SubTemplate">
+		<UseTemplate Name="HBL_ELECTRICAL_Switch_Battery_Master_SubTemplate">
 		</UseTemplate>
 	</Template>	
 	
-	<Template Name="EVANBURNSDEV_ELECTRICAL_Switch_Battery_Master_SubTemplate">
+	<Template Name="HBL_ELECTRICAL_Switch_Battery_Master_SubTemplate">
 		<DefaultTemplateParameters>
 			<ANIM_NAME>ELECTRICAL_Switch_Battery_Master_#ID#</ANIM_NAME>
 			<NODE_ID>ELECTRICAL_Switch_Battery_Master_#ID#</NODE_ID>

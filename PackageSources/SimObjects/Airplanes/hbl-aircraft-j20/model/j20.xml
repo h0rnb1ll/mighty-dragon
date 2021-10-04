@@ -6,10 +6,10 @@
 
 	<Behaviors>
 		<Include ModelBehaviorFile="Asobo\Exterior.xml"/>
-		<Include ModelBehaviorFile="Evanburnsdev\Lighting.xml"/>
+		<Include ModelBehaviorFile="h0rnb1ll\lights.xml"/>
     	<Include ModelBehaviorFile="Asobo\Generic\FX.xml"/>
 		<Component ID="Lighting">
-			<UseTemplate Name="EVANBURNSDEV_LIGHTING_Formation_Lights_Template"/>
+			<UseTemplate Name="HBL_LIGHTING_Formation_Lights_Template"/>
 		</Component>
 		<Component ID="GEAR">
 			<UseTemplate Name="ASOBO_GEAR_Center_Tire_Template">

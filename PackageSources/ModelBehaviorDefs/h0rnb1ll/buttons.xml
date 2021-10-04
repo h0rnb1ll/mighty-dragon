@@ -6,7 +6,7 @@
 			ANIM_NAME
 			LEFT_SINGLE_CODE
 	-->
-	<Template Name = "EVANBURNSDEV_GT_Push_Button">
+	<Template Name = "HBL_GT_Push_Button">
 		<DefaultTemplateParameters>
 			<ANIM_LENGTH>100</ANIM_LENGTH>
 			<ANIM_DURATION>0.5</ANIM_DURATION>
@@ -95,7 +95,7 @@
 			SHORT_CLICK_CODE
 			LONG_CLICK_CODE
 	-->
-	<Template Name = "EVANBURNSDEV_GT_Push_Button_Timed">
+	<Template Name = "HBL_GT_Push_Button_Timed">
 		<DefaultTemplateParameters>
 			<ANIM_LENGTH>100</ANIM_LENGTH>
 			<LEFT_SINGLE_CODE/>
@@ -125,7 +125,7 @@
 		</Condition>
 
 
-		<UseTemplate Name = "EVANBURNSDEV_GT_Interaction_Left_Timed_Code">
+		<UseTemplate Name = "HBL_GT_Interaction_Left_Timed_Code">
 		</UseTemplate>
 	</Template>
 	<!--
@@ -135,7 +135,7 @@
 			SHORT_CLICK_CODE
 			LONG_CLICK_CODE
 	-->
-	<Template Name = "EVANBURNSDEV_GT_Interaction_Left_Timed_Code">
+	<Template Name = "HBL_GT_Interaction_Left_Timed_Code">
 		<DefaultTemplateParameters>
 			<LONG_CLICK_TIME>2</LONG_CLICK_TIME>
 			<HELPID/>

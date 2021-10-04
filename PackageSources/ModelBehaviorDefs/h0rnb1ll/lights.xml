@@ -1,5 +1,5 @@
 <ModelBehaviors>
-	<Template Name="EVANBURNSDEV_LIGHTING_Formation_Lights_SubTemplate">
+	<Template Name="HBL_LIGHTING_Formation_Lights_SubTemplate">
 		<DefaultTemplateParameters>
 			<PART_ID>V_Tails</PART_ID>
 			<SCREEN_EMISSIVE_CODE>(L:XMLVAR_EBD_LIGHTING_FORMATION)</SCREEN_EMISSIVE_CODE>
@@ -13,19 +13,19 @@
 			</UseTemplate>
 		</Component>
 	</Template>
-	<Template Name="EVANBURNSDEV_LIGHTING_Formation_Lights_Template">
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Formation_Lights_SubTemplate">
+	<Template Name="HBL_LIGHTING_Formation_Lights_Template">
+		<UseTemplate Name="HBL_LIGHTING_Formation_Lights_SubTemplate">
 			<PART_ID>V_Tails</PART_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Formation_Lights_SubTemplate">
+		<UseTemplate Name="HBL_LIGHTING_Formation_Lights_SubTemplate">
 			<PART_ID>Fuselage_Top</PART_ID>
 		</UseTemplate>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Formation_Lights_SubTemplate">
+		<UseTemplate Name="HBL_LIGHTING_Formation_Lights_SubTemplate">
 			<PART_ID>Fuselage_Bottom</PART_ID>
 		</UseTemplate>
 	</Template>
 	
-	<Template Name="EVANBURNSDEV_LIGHTING_Generic_Emissive_Template">
+	<Template Name="HBL_LIGHTING_Generic_Emissive_Template">
 		<DefaultTemplateParameters>
 			<NODE_ID>LIGHTING_Generic_Emissive</NODE_ID>
 			<EMISSIVE_CODE>1</EMISSIVE_CODE>
@@ -38,7 +38,7 @@
 		</Component>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Knob_Cabin_Template">
+	<Template Name="HBL_LIGHTING_Knob_Cabin_Template">
 		<DefaultTemplateParameters>
 			<Condition Check="ID">
 				<True>
@@ -52,7 +52,7 @@
 			</Condition>
 			<POTENTIOMETER>4</POTENTIOMETER>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_SubTemplate">
+		<UseTemplate Name="HBL_LIGHTING_Knob_SubTemplate">
 			<LIGHT_SIMVAR>LIGHT CABIN</LIGHT_SIMVAR>
 			<LIGHT_EVENTID>CABIN_LIGHTS_SET</LIGHT_EVENTID>
 			<Condition Valid="USE_INTEGRATED_POWER_SETTING">
@@ -62,7 +62,7 @@
 		</UseTemplate>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Knob_Glareshield_Template">
+	<Template Name="HBL_LIGHTING_Knob_Glareshield_Template">
 		<DefaultTemplateParameters>
 			<Condition Check="ID">
 				<True>
@@ -82,7 +82,7 @@
 			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>		
 		</DefaultTemplateParameters>
 		
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_SubTemplate">
+		<UseTemplate Name="HBL_LIGHTING_Knob_SubTemplate">
 			<LIGHT_SIMVAR>LIGHT GLARESHIELD</LIGHT_SIMVAR>
 			<LIGHT_EVENTID>GLARESHIELD_LIGHTS_SET</LIGHT_EVENTID>
 			<Condition Valid="USE_INTEGRATED_POWER_SETTING">
@@ -92,7 +92,7 @@
 		</UseTemplate>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Knob_Template">
+	<Template Name="HBL_LIGHTING_Knob_Template">
 		<DefaultTemplateParameters>
 			<Condition Check="ID">
 				<True>
@@ -106,11 +106,11 @@
 			</Condition>
 			<POTENTIOMETER>9</POTENTIOMETER>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_SubTemplate">
+		<UseTemplate Name="HBL_LIGHTING_Knob_SubTemplate">
 		</UseTemplate>
 	</Template>
 	
-	<Template Name="EVANBURNSDEV_LIGHTING_Knob_SubTemplate">	
+	<Template Name="HBL_LIGHTING_Knob_SubTemplate">	
 		<DefaultTemplateParameters>
 			<CLOCKWISE_CODE/>
 			<ANTICLOCKWISE_CODE/>
@@ -125,7 +125,7 @@
 			</Condition>
 			<KNOB_TURN_SPEED>10</KNOB_TURN_SPEED>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Knob_SubSubTemplate">
+		<UseTemplate Name="HBL_LIGHTING_Knob_SubSubTemplate">
 			<CLOCKWISE_CODE>
 				#CLOCKWISE_CODE#
 				(L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) #KNOB_TURN_SPEED# + #MAX_VALUE# min (&gt;L:XMLVAR_EBD_POTENTIOMETER_#POTENTIOMETER#) 
@@ -149,7 +149,7 @@
 		</UseTemplate>
 	</Template>
 	
-	<Template Name="EVANBURNSDEV_LIGHTING_Knob_SubSubTemplate">
+	<Template Name="HBL_LIGHTING_Knob_SubSubTemplate">
 		<DefaultTemplateParameters>
 			<ANIMREF_ID>0</ANIMREF_ID>
 			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
@@ -263,7 +263,7 @@
 				</Condition>
 			</Condition>
 			
-			<UseTemplate Name="EVANBURNSDEV_GT_Knob_Finite_Simvar">
+			<UseTemplate Name="HBL_GT_Knob_Finite_Simvar">
 				<Condition Valid="USE_INTEGRATED_POWER_SETTING">
 					<True>
 						<ANIM_SIMVAR>#LIGHT_SIMVAR_POWER_SETTING#:#SIMVAR_INDEX#</ANIM_SIMVAR>
@@ -291,7 +291,7 @@
 		</Component>
 	</Template>
 
-	<Template Name = "EVANBURNSDEV_LIGHTING_Switch_Rotary_Template">
+	<Template Name = "HBL_LIGHTING_Switch_Rotary_Template">
 		<DefaultTemplateParameters>
 			<CLOCKWISE_CODE/>
 			<ANTICLOCKWISE_CODE/>
@@ -306,7 +306,7 @@
 			</Condition>
 			<KNOB_TURN_SPEED>25</KNOB_TURN_SPEED>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Rotary_SubTemplate">
+		<UseTemplate Name="HBL_LIGHTING_Switch_Rotary_SubTemplate">
 			<CLOCKWISE_CODE>
 				#CLOCKWISE_CODE#
 				(L:XMLVAR_EBD_SWITCH_#NODE_ID#) #KNOB_TURN_SPEED# + #MAX_VALUE# min (&gt;L:XMLVAR_EBD_SWITCH_#NODE_ID#) 
@@ -320,7 +320,7 @@
 			<SIMVAR_INDEX></SIMVAR_INDEX>
 		</UseTemplate>
 	</Template>
-	<Template Name = "EVANBURNSDEV_LIGHTING_Switch_Rotary_SubTemplate">
+	<Template Name = "HBL_LIGHTING_Switch_Rotary_SubTemplate">
 		<DefaultTemplateParameters>
 			<ANIMREF_ID>0</ANIMREF_ID>
 			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
@@ -335,14 +335,14 @@
 			0 (&gt;L:XMLVAR_EBD_SWITCH_#NODE_ID#)
 		</Update>
 		<Component ID="#NODE_ID#" Node="#NODE_ID#">
-			<UseTemplate Name="EVANBURNSDEV_GT_Knob_Finite_Simvar">
+			<UseTemplate Name="HBL_GT_Knob_Finite_Simvar">
 				<ANIM_SIMVAR>XMLVAR_EBD_SWITCH_#NODE_ID#</ANIM_SIMVAR>
 				<ANIM_SIMVAR_UNITS>Percent</ANIM_SIMVAR_UNITS>
 			</UseTemplate>
 		</Component>
 	</Template>
 
-	<Template Name = "EVANBURNSDEV_GT_Knob_Finite_Simvar">
+	<Template Name = "HBL_GT_Knob_Finite_Simvar">
 		<DefaultTemplateParameters>
 			<ANIM_SIMVAR_UNITS>percent</ANIM_SIMVAR_UNITS>
 			<Condition Check="REV_POT">
@@ -399,7 +399,7 @@
 		</Condition>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_Taxi_Template">
+	<Template Name="HBL_LIGHTING_Switch_Light_Taxi_Template">
 		<DefaultTemplateParameters>
 			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.TAXI_LIGHT_OFF</ANIMTIP_0>
 			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.TAXI_LIGHT_ON</ANIMTIP_1>
@@ -409,12 +409,12 @@
 			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
 			<GEAR_PROHIBITS>True</GEAR_PROHIBITS>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Light_Template">
+		<UseTemplate Name="HBL_LIGHTING_Switch_Light_Template">
 			<LIGHT_TYPE>TAXI</LIGHT_TYPE>
 		</UseTemplate>
 	</Template>
 	
-	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_Landing_Template">
+	<Template Name="HBL_LIGHTING_Switch_Light_Landing_Template">
 		<DefaultTemplateParameters>
 			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_OFF</ANIMTIP_0>
 			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LANDING_LIGHT_ON</ANIMTIP_1>
@@ -425,13 +425,13 @@
 			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
 			<GEAR_PROHIBITS>True</GEAR_PROHIBITS>
 		</DefaultTemplateParameters>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Light_Template">
+		<UseTemplate Name="HBL_LIGHTING_Switch_Light_Template">
 			<LIGHT_TYPE>LANDING</LIGHT_TYPE>
 			<KEY_ID>LANDING_LIGHTS_TOGGLE</KEY_ID>
 		</UseTemplate>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_Template">
+	<Template Name="HBL_LIGHTING_Switch_Light_Template">
 		<DefaultTemplateParameters>
 			<ID>1</ID>
 			<SIMVAR_INDEX>0</SIMVAR_INDEX>
@@ -469,11 +469,11 @@
 				</UseTemplate>
 			</True>
 		</Condition>
-		<UseTemplate Name="EVANBURNSDEV_LIGHTING_Switch_Light_SubTemplate">
+		<UseTemplate Name="HBL_LIGHTING_Switch_Light_SubTemplate">
 		</UseTemplate>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_SubTemplate">
+	<Template Name="HBL_LIGHTING_Switch_Light_SubTemplate">
 		<DefaultTemplateParameters>
 			<ANIM_NAME>LIGHTING_#INTERACTION#_Light_#LIGHT_TYPE#_#ID#</ANIM_NAME>
 			<PART_ID>LIGHTING_#INTERACTION#_Light_#LIGHT_TYPE#</PART_ID>
@@ -509,7 +509,7 @@
 		</Component>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Light_Double_Template">
+	<Template Name="HBL_LIGHTING_Switch_Light_Double_Template">
 		<DefaultTemplateParameters>
 			<GEAR_PROHIBITS>False</GEAR_PROHIBITS>
 			<ANIM_SIMVAR1>LIGHT #LIGHT_TYPE1#:#SIMVAR_INDEX1#</ANIM_SIMVAR1>
@@ -639,13 +639,13 @@
 		</Component>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Gear_Light_Template">
+	<Template Name="HBL_LIGHTING_Gear_Light_Template">
 		<DefaultTemplateParameters>
 			<ID>0</ID>
 			<GEAR_ID>0</GEAR_ID>
 		</DefaultTemplateParameters>
 	</Template>
-	<Template Name="EVANBURNSDEV_LIGHTING_Gear_Light_SubTemplate">
+	<Template Name="HBL_LIGHTING_Gear_Light_SubTemplate">
 		<DefaultTemplateParameters>
 			<NODE_ID>LANDING_GEAR_Light_#ID#</NODE_ID>
 			<SIMVAR>GEAR POSITION:#GEAR_ID#</SIMVAR>
@@ -669,7 +669,7 @@
 		</Component>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Exterior_Template">
+	<Template Name="HBL_LIGHTING_Switch_Exterior_Template">
 		<DefaultTemplateParameters>
 			<KNOB_POSITION_TYPE>L</KNOB_POSITION_TYPE>
 			<SWITCH_DIRECTION>Horizontal</SWITCH_DIRECTION>
@@ -722,7 +722,7 @@
 		</Component>
 	</Template>
 
-	<Template Name="EVANBURNSDEV_LIGHTING_Switch_Formation_Template">
+	<Template Name="HBL_LIGHTING_Switch_Formation_Template">
 		<DefaultTemplateParameters>
 			<KNOB_POSITION_TYPE>L</KNOB_POSITION_TYPE>
 			<SWITCH_DIRECTION>Horizontal</SWITCH_DIRECTION>
