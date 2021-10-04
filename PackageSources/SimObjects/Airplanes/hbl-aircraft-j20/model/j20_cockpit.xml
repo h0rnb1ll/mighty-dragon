@@ -236,9 +236,9 @@
 					</INIT_VALUE>
 					<NODE_ID>HUD_Brt_Wheel</NODE_ID>
 					<ANIM_NAME>HUD_Brt_Wheel</ANIM_NAME>
-					<ANIMTIP_0>Decrease HUD Brightness</ANIMTIP_0>
+					<ANIMTIP_0>HUD&#35843;&#26263;</ANIMTIP_0>
 					<ANIMTIP_0_ON_CURSOR>DownArrow</ANIMTIP_0_ON_CURSOR>
-					<ANIMTIP_1>Increase HUD Brightness</ANIMTIP_1>
+					<ANIMTIP_1>HUD&#35843;&#20142;</ANIMTIP_1>
 					<ANIMTIP_1_ON_CURSOR>UpArrow</ANIMTIP_1_ON_CURSOR>
 				</UseTemplate>
 				<CameraTitle>HUD</CameraTitle>
@@ -361,9 +361,9 @@
 						</INIT_VALUE>
 						<NODE_ID>All_Brt_Knob</NODE_ID>
 						<ANIM_NAME>All_Brt_Knob</ANIM_NAME>
-						<ANIMTIP_0>Decrease Main Panel Brightness</ANIMTIP_0>
+						<ANIMTIP_0>Display Dim</ANIMTIP_0>
 						<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
-						<ANIMTIP_1>Increase Main Panel Brightness</ANIMTIP_1>
+						<ANIMTIP_1>Display Bright</ANIMTIP_1>
 						<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 					</UseTemplate>
 				</Component>
@@ -378,9 +378,9 @@
 					</INIT_VALUE>
 					<NODE_ID>LIGHTING_Knob_Panel_1</NODE_ID>
 					<ANIM_NAME>LIGHTING_Knob_Panel_1</ANIM_NAME>
-					<ANIMTIP_0>Decrease Console Backlighting</ANIMTIP_0>
+					<ANIMTIP_0>Panel Text Light Dim</ANIMTIP_0>
 					<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
-					<ANIMTIP_1>Increase Console Backlighting</ANIMTIP_1>
+					<ANIMTIP_1>&#22686;&#21152;&#23383;&#20307;&#20142;&#24230;</ANIMTIP_1>
 					<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 				</UseTemplate>
 				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
@@ -397,8 +397,8 @@
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == 50 *
 					</INIT_VALUE>
-					<ANIMTIP_0>Decrease Console Floodlight</ANIMTIP_0>
-					<ANIMTIP_1>Increase Console Floodlight</ANIMTIP_1>
+					<ANIMTIP_0>Sidepanels Floodlight Dim</ANIMTIP_0>
+					<ANIMTIP_1>Sidepanels Floodlight Bright</ANIMTIP_1>
 				</UseTemplate>
 				<!-- Glareshield Brightness -->
 				<UseTemplate Name="HBL_LIGHTING_Knob_Glareshield_Template">
@@ -408,8 +408,8 @@
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == 50 *
 					</INIT_VALUE>
-					<ANIMTIP_0>Decrease Main Panel Floodlight</ANIMTIP_0>
-					<ANIMTIP_1>Increase Main Panel Floodlight</ANIMTIP_1>
+					<ANIMTIP_0>Frontpanel Floodlight Dim</ANIMTIP_0>
+					<ANIMTIP_1>Frontpanel Floodlight Bright</ANIMTIP_1>
 				</UseTemplate>
 			</Component>
 			<Component ID="Lighting_Exterior">
@@ -506,7 +506,7 @@
 				</DefaultTemplateParameters>	
 				<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
 					<UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
-						<TOOLTIPID>TT:COCKPIT.TOOLTIPS.YOKE_VISIBILITY</TOOLTIPID>
+						<TOOLTIPID>&#25671;&#26438;&#24320;&#21457;&#20013;</TOOLTIPID>
 					</UseTemplate>
 				</Component>
 			</Component>
@@ -539,7 +539,7 @@
 				</DefaultTemplateParameters>	
 				<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
 					<UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
-						<TOOLTIPID>Toggle Throttle Visibility</TOOLTIPID>
+						<TOOLTIPID>&#27833;&#38376;&#24320;&#21457;&#20013;</TOOLTIPID>
 					</UseTemplate>
 				</Component>
 			</Component>
