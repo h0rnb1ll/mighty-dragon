@@ -558,6 +558,29 @@
 				</Component>
 			</Component>
 		</Component>
+
+		<Component ID="HANDLING_RudderPedals">
+			<UseTemplate Name="ASOBO_HANDLING_RudderPedals_Template">
+				<RUDDERPEDALS_TYPE>MIXED</RUDDERPEDALS_TYPE>
+				<NODE_ID_L_BRAKE_1>HANDLING_RudderPedals_Brake_1_1</NODE_ID_L_BRAKE_1>
+				<NODE_ID_L_BRAKE_2>HANDLING_RudderPedals_Brake_2_1</NODE_ID_L_BRAKE_2>
+				<NODE_ID_R_BRAKE_1>HANDLING_RudderPedals_Brake_1_2</NODE_ID_R_BRAKE_1>
+				<NODE_ID_R_BRAKE_2>HANDLING_RudderPedals_Brake_2_2</NODE_ID_R_BRAKE_2>
+				<NODE_ID_L_RUDDER>HANDLING_RudderPedals_1_1</NODE_ID_L_RUDDER>
+				<NODE_ID_R_RUDDER>HANDLING_RudderPedals_1_2</NODE_ID_R_RUDDER>
+				<NODE_ID>HANDLING_RudderPedals_1_1</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Switch_RudderTrim_Template">
+				<ANIM_NAME>RUDDER_TRIM_control_wheel</ANIM_NAME>
+				<NODE_ID>knob_rudder_trim</NODE_ID>
+				<NEEDLE_NODE_ID>knob_rudder_trim_decal</NEEDLE_NODE_ID>
+				<NEEDLE_ANIM_NAME>RUDDER_TRIM_NEEDLE</NEEDLE_ANIM_NAME>
+				<NO_RESET_PUSH/>
+			</UseTemplate>
+			<CameraTitle>Pedestal_Fwd</CameraTitle>
+		</Component>
 	</Behaviors>
+
+	
 </ModelInfo>
 

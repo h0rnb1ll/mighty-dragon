@@ -42,7 +42,14 @@
 			<Simvar name="CIRCUIT ON:10" unit="Boolean"/>
 		</Electric>
 	</Instrument>
-	
+
+	<Instrument>
+		<Name>TMFD_2</Name>
+		<Electric>
+			<Simvar name="CIRCUIT ON:10" unit="Boolean"/>
+		</Electric>
+	</Instrument>
+
     <!-- Engine Display -->
 	<EngineDisplay>
 		<ColumnsGroup id="eng">
