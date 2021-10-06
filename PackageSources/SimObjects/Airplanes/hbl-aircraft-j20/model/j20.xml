@@ -312,7 +312,7 @@
 		</Animation>
 	</PartInfo>
 
-	<Animation name="Canopy" guid="bd1f7a56-130a-4e51-8d3a-ce24314c969a" length="100" type="Sim" typeparam2="canopyanimation" typeparam="AutoPlay" />
+	<Animation name="Canopy" guid="bd1f7a56-130a-4e51-8d3a-ce24314c969a" length="100" type="Sim" typeparam2="Canopy" typeparam="AutoPlay" />
     <PartInfo>
         <Name>Canopy</Name>
         <AnimLength>100</AnimLength>
