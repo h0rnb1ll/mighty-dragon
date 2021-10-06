@@ -311,5 +311,17 @@
 			</Parameter>
 		</Animation>
 	</PartInfo>
+
+	<Animation name="Canopy" guid="bd1f7a56-130a-4e51-8d3a-ce24314c969a" length="100" type="Sim" typeparam2="canopyanimation" typeparam="AutoPlay" />
+    <PartInfo>
+        <Name>Canopy</Name>
+        <AnimLength>100</AnimLength>
+        <Animation>
+            <Parameter>
+				 <Code>(L:DOORS_OPEN_ALL, bool) 100 *</Code>
+				<Lag>20</Lag>
+        </Parameter>
+        </Animation>
+    </PartInfo>
 </ModelInfo>
 

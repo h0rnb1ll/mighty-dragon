@@ -581,6 +581,29 @@
 		</Component>
 	</Behaviors>
 
-	
+	<Animation name="Canopy" guid="e3d4ab19-c882-4eb4-bfbb-4257d80a3353" length="100" type="Sim" typeparam2="Para door" typeparam="AutoPlay" />
+	<PartInfo>
+        <Name>Canopy</Name>
+        <AnimLength>100</AnimLength>
+        <Animation>
+            <Parameter>
+				 <Code>(L:DOORS_OPEN_ALL, bool) 100 *</Code>
+				<Lag>20</Lag>
+        </Parameter>
+        </Animation>
+        <MouseRect>
+            <Cursor>Hand</Cursor>
+            <HelpID>HELPID_CANOPY_HANDLE</HelpID>
+            <TooltipID>Open Canopy</TooltipID>
+            <CallbackCode>
+                (L:DOORS_LOCKED, bool) 0 &gt;
+                if{
+                    0
+                } els{ 
+                    (L:DOORS_OPEN_ALL, bool) ! (>L:DOORS_OPEN_ALL, bool)
+                 }
+            </CallbackCode>
+        </MouseRect>
+    </PartInfo>
 </ModelInfo>
 
