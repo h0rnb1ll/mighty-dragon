@@ -3762,7 +3762,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "$TMFD_2_Screen",
+            "name" : "$AttitudeDisplay",
             "pbrMetallicRoughness" : {}
         }
     ],
