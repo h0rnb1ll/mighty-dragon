@@ -536,7 +536,7 @@
                         1,
                         1
                     ],
-                    "intensity" : 3,
+                    "intensity" : 1,
                     "cone_angle" : 45.00000125223908,
                     "has_simmetry" : false,
                     "flash_frequency" : 0,
@@ -829,7 +829,7 @@
                         1,
                         1
                     ],
-                    "intensity" : 3,
+                    "intensity" : 1,
                     "cone_angle" : 45.00000125223908,
                     "has_simmetry" : false,
                     "flash_frequency" : 0,
@@ -1784,7 +1784,7 @@
                     1,
                     1
                 ],
-                "msfs_color_alpha_mix" : 0.5,
+                "msfs_color_alpha_mix" : 0.05000000074505806,
                 "msfs_glass_reflection_mask_factor" : 0.4000000059604645,
                 "msfs_show_wiper_mask" : 0,
                 "ASOBO_material_code" : "Windshield"
@@ -1795,7 +1795,7 @@
                     1,
                     1,
                     1,
-                    1
+                    0.05000000074505806
                 ],
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
