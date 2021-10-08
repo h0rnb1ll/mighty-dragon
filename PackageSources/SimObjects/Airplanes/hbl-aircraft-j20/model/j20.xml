@@ -7,6 +7,7 @@
 	<Behaviors>
 		<Include ModelBehaviorFile="Asobo\Exterior.xml"/>
 		<Include ModelBehaviorFile="h0rnb1ll\lights.xml"/>
+		<Include ModelBehaviorFile="h0rnb1ll\gears.xml"/>
     	<Include ModelBehaviorFile="Asobo\Generic\FX.xml"/>
 		<Component ID="Lighting">
 			<UseTemplate Name="HBL_LIGHTING_Formation_Lights_Template"/>
@@ -185,132 +186,17 @@
 			</Parameter>
 		</Animation>
 	</PartInfo>
-	<PartInfo>
-		<Name>Gear_Fwd_Turn</Name>
-		<AnimLength>160</AnimLength>
-		<Animation>
-			<Parameter>
-				<Sim>
-					<Variable>GEAR STEER ANGLE:0</Variable>
-					<Units>number</Units>
-					<Scale>50</Scale>
-					<Bias>80</Bias>
-				</Sim>
-			</Parameter>
-		</Animation>
-	</PartInfo>
-	<PartInfo>
-		<Name>Gear_Fwd</Name>
-		<AnimLength>200</AnimLength>
-		<Animation>
-			<Parameter>
-				<Sim>
-					<Variable>GEAR ANIMATION POSITION:0</Variable>
-					<Units>number</Units>
-					<Scale>400</Scale>
-					<Bias>0</Bias>
-				</Sim>
-			</Parameter>
-		</Animation>
-	</PartInfo>
-	<PartInfo>
-		<Name>Gear_Fwd_Door</Name>
-		<AnimLength>200</AnimLength>
-		<Animation>
-			<Parameter>
-				<Sim>
-					<Variable>GEAR ANIMATION POSITION:0</Variable>
-					<Units>number</Units>
-					<Scale>400</Scale>
-					<Bias>0</Bias>
-				</Sim>
-			</Parameter>
-		</Animation>
-	</PartInfo>
-	<PartInfo>
-		<Name>Gear_Left</Name>
-		<AnimLength>200</AnimLength>
-		<Animation>
-			<Parameter>
-				<Sim>
-					<Variable>GEAR ANIMATION POSITION:1</Variable>
-					<Units>number</Units>
-					<Scale>400</Scale>
-					<Bias>0</Bias>
-				</Sim>
-			</Parameter>
-		</Animation>
-	</PartInfo>
-	<PartInfo>
-		<Name>Gear_Left_Door_001</Name>
-		<AnimLength>200</AnimLength>
-		<Animation>
-			<Parameter>
-				<Sim>
-					<Variable>GEAR ANIMATION POSITION:1</Variable>
-					<Units>number</Units>
-					<Scale>400</Scale>
-					<Bias>0</Bias>
-				</Sim>
-			</Parameter>
-		</Animation>
-	</PartInfo>
-	<PartInfo>
-		<Name>Gear_Left_Door_002</Name>
-		<AnimLength>200</AnimLength>
-		<Animation>
-			<Parameter>
-				<Sim>
-					<Variable>GEAR ANIMATION POSITION:1</Variable>
-					<Units>number</Units>
-					<Scale>400</Scale>
-					<Bias>0</Bias>
-				</Sim>
-			</Parameter>
-		</Animation>
-	</PartInfo>
-	<PartInfo>
-		<Name>Gear_Right</Name>
-		<AnimLength>200</AnimLength>
-		<Animation>
-			<Parameter>
-				<Sim>
-					<Variable>GEAR ANIMATION POSITION:2</Variable>
-					<Units>number</Units>
-					<Scale>400</Scale>
-					<Bias>0</Bias>
-				</Sim>
-			</Parameter>
-		</Animation>
-	</PartInfo>
-	<PartInfo>
-		<Name>Gear_Right_Door_001</Name>
-		<AnimLength>200</AnimLength>
-		<Animation>
-			<Parameter>
-				<Sim>
-					<Variable>GEAR ANIMATION POSITION:2</Variable>
-					<Units>number</Units>
-					<Scale>400</Scale>
-					<Bias>0</Bias>
-				</Sim>
-			</Parameter>
-		</Animation>
-	</PartInfo>
-	<PartInfo>
-		<Name>Gear_Right_Door_002</Name>
-		<AnimLength>200</AnimLength>
-		<Animation>
-			<Parameter>
-				<Sim>
-					<Variable>GEAR ANIMATION POSITION:2</Variable>
-					<Units>number</Units>
-					<Scale>400</Scale>
-					<Bias>0</Bias>
-				</Sim>
-			</Parameter>
-		</Animation>
-	</PartInfo>
+	
+	<!--Landing Gear extend/retract animation-->
+	<UseTemplate Name="HBL_GEAR_nose"/>
+	<UseTemplate Name="HBL_GEAR_main">
+		<Position>Left</Position>
+		<PositionIndex>1</PositionIndex>
+	</UseTemplate>
+	<UseTemplate Name="HBL_GEAR_main">
+		<Position>Right</Position>
+		<PositionIndex>2</PositionIndex>
+	</UseTemplate>
 
 	<Animation name="Canopy" guid="bd1f7a56-130a-4e51-8d3a-ce24314c969a" length="100" type="Sim" typeparam2="Canopy" typeparam="AutoPlay" />
     <PartInfo>
