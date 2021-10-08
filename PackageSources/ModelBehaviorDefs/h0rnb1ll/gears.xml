@@ -1,92 +1,10 @@
 <ModelBehaviors>
     <Template Name="HBL_GEAR_nose">
-        <PartInfo>
-            <Name>Gear_Fwd_Turn</Name>
-            <AnimLength>160</AnimLength>
-            <Animation>
-                <Parameter>
-                    <Sim>
-                        <Variable>GEAR STEER ANGLE:0</Variable>
-                        <Units>number</Units>
-                        <Scale>50</Scale>
-                        <Bias>80</Bias>
-                    </Sim>
-                </Parameter>
-            </Animation>
-        </PartInfo>
-        <PartInfo>
-            <Name>Gear_Fwd</Name>
-            <AnimLength>200</AnimLength>
-            <Animation>
-                <Parameter>
-                    <Sim>
-                        <Variable>GEAR ANIMATION POSITION:0</Variable>
-                        <Units>number</Units>
-                        <Scale>400</Scale>
-                        <Bias>0</Bias>
-                    </Sim>
-                </Parameter>
-            </Animation>
-        </PartInfo>
-        <PartInfo>
-            <Name>Gear_Fwd_Door</Name>
-            <AnimLength>200</AnimLength>
-            <Animation>
-                <Parameter>
-                    <Sim>
-                        <Variable>GEAR ANIMATION POSITION:0</Variable>
-                        <Units>number</Units>
-                        <Scale>400</Scale>
-                        <Bias>0</Bias>
-                    </Sim>
-                </Parameter>
-            </Animation>
-        </PartInfo>
+        
     </Template>
     
     <Template Name="HBL_GEAR_main">
-        <PartInfo>
-            <Name>Gear_#Position#</Name>
-            <AnimLength>200</AnimLength>
-            <Animation>
-                <Parameter>
-                    <Sim>
-                        <Variable>GEAR ANIMATION POSITION:#PositionIndex#</Variable>
-                        <Units>number</Units>
-                        <Scale>400</Scale>
-                        <Bias>0</Bias>
-                    </Sim>
-                </Parameter>
-            </Animation>
-        </PartInfo>
-        <PartInfo>
-            <Name>Gear_#Position#_Door_001</Name>
-            <AnimLength>200</AnimLength>
-            <Animation>
-                <Parameter>
-                    <Sim>
-                        <Variable>GEAR ANIMATION POSITION:#PositionIndex#</Variable>
-                        <Units>number</Units>
-                        <Scale>400</Scale>
-                        <Bias>0</Bias>
-                    </Sim>
-                </Parameter>
-            </Animation>
-        </PartInfo>
-        <PartInfo>
-            <Name>Gear_#Position#_Door_002</Name>
-            <AnimLength>200</AnimLength>
-            <Animation>
-                <Parameter>
-                    <Sim>
-                        <Variable>GEAR ANIMATION POSITION:#PositionIndex#</Variable>
-                        <Units>number</Units>
-                        <Scale>400</Scale>
-                        <Bias>0</Bias>
-                    </Sim>
-                </Parameter>
-            </Animation>
-        </PartInfo>
+       
     </Template>
 
 </ModelBehaviors>
