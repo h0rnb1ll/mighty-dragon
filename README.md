@@ -8,7 +8,7 @@ Features included:
 * interior and exterior lightings
 * afterburners and engine animation will be added soon
 
-Known issues:
+Known issues:    
 Many performance information regarding the J-20 stealth fighter are still classified. This project takes heavy reference from its closest counterpart - Lockheed Martin F-22 Raptor. The flight model will be updated once more info becomes available. Cockpit and exterior model will continue to be improved over time.
 
 ![Startup](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/Microsoft%20Flight%20Simulator_2021.10.07-22.37_1.jpg)
