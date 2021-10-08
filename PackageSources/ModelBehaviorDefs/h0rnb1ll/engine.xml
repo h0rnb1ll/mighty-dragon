@@ -1,79 +1,83 @@
 <ModelBehaviors>
-    <Template Name="HBL_GT_Animation">
+    <Template Name="HBL_Eng_Afterburner_End_Subtemplate">
         <DefaultTemplateParameters>
-            <ANIM_GUID />
-            <ANIM_LAG>0</ANIM_LAG>
             <ANIM_LENGTH>100</ANIM_LENGTH>
-            <ANIM_WRAP>False</ANIM_WRAP>
-            <ANIM_DELTA>FALSE</ANIM_DELTA>
-            <ANIM_BLENDWEIGHT>1.0</ANIM_BLENDWEIGHT>
-            <ANIM_CODE />
+            <EngID>1</EngID>
         </DefaultTemplateParameters>
-        
-        <Animation Name = "#ANIM_NAME#" Guid = "#ANIM_GUID#" Length = "#ANIM_LENGTH#" Type = "Sim" TypeParam = "AutoPlay">
-            <Parameter>
-                <Code>#ANIM_CODE#</Code>
-                <Lag>#ANIM_LAG#</Lag>
-                <Wrap>#ANIM_WRAP#</Wrap>
-                <Delta>#ANIM_DELTA#</Delta>
-                <BlendWeight>#ANIM_BLENDWEIGHT#</BlendWeight>
-            </Parameter>
-        </Animation>
-    </Template>
-
-    <Template Name="HBL_Afterburner_l">
-        <UseTemplate Name="HBL_GT_Animation">
-            <ANIM_GUID>4f33c88c-52da-4770-957f-99355bd31461</ANIM_GUID>
-            <ANIM_NAME>eng_l_aftbrn_red</ANIM_NAME>
-            <ANIM_LENGTH>100</ANIM_LENGTH>
-            <ANIM_CODE>(A:GENERAL ENG RPM:1,degrees per second) (E:ABSOLUTE TIME, second) * 360 % 3.6 /</ANIM_CODE>
+        <UseTemplate Name = "ASOBO_GT_Anim_Code">
+            <ANIM_CODE>
+                (A:GENERAL ENG RPM:#EngID#,revolutions per minute) 17728 - 11272 / 100 *
+            </ANIM_CODE>
         </UseTemplate>
-        <UseTemplate Name="HBL_GT_Animation">
-            <ANIM_GUID>d6e41c3a-6971-4f52-bf71-e32ee08bd15b</ANIM_GUID>
-            <ANIM_NAME>eng_l_combust_red</ANIM_NAME>
-            <ANIM_LENGTH>100</ANIM_LENGTH>
-            <ANIM_CODE>(A:GENERAL ENG RPM:1,degrees per second) (E:ABSOLUTE TIME, second) * 360 % 3.6 /</ANIM_CODE>
-        </UseTemplate>
-        <UseTemplate Name="HBL_GT_Animation">
-            <ANIM_GUID>964fcb41-17c7-4ce1-9c0b-91d1fe1ba86b</ANIM_GUID>
-            <ANIM_NAME>eng_l_aftbrn_blue</ANIM_NAME>
-            <ANIM_LENGTH>100</ANIM_LENGTH>
-            <ANIM_CODE>(A:GENERAL ENG RPM:1,degrees per second) (E:ABSOLUTE TIME, second) * 360 % 3.6 /</ANIM_CODE>
-        </UseTemplate>
-        <UseTemplate Name="HBL_GT_Animation">
-            <ANIM_GUID>0c3facd0-2e5a-4476-a714-0a9f23920fd3</ANIM_GUID>
-            <ANIM_NAME>eng_l_combust_blue</ANIM_NAME>
-            <ANIM_LENGTH>100</ANIM_LENGTH>
-            <ANIM_CODE>(A:GENERAL ENG RPM:1,degrees per second) (E:ABSOLUTE TIME, second) * 360 % 3.6 /</ANIM_CODE>
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+            <VISIBILITY_CODE>(A:GENERAL ENG RPM:1,revolutions per minute) 25500 &gt;</VISIBILITY_CODE>
         </UseTemplate>
     </Template>
-
-    <Template Name="HBL_Afterburner_r">
-        <UseTemplate Name="HBL_GT_Animation">
-            <ANIM_GUID>17169c6e-094f-4fda-9eca-3b44e043d7a3</ANIM_GUID>
-            <ANIM_NAME>eng_r_aftbrn_red</ANIM_NAME>
+    <Template Name="HBL_Eng_Afterburner_Start_Subtemplate">
+        <DefaultTemplateParameters>
             <ANIM_LENGTH>100</ANIM_LENGTH>
-            <ANIM_CODE>(A:GENERAL ENG RPM:1,degrees per second) (E:ABSOLUTE TIME, second) * 360 % 3.6 /</ANIM_CODE>
+            <EngID>1</EngID>
+        </DefaultTemplateParameters>
+        <UseTemplate Name = "ASOBO_GT_Anim_Code">
+            <ANIM_CODE>
+                (A:GENERAL ENG RPM:#EngID#,revolutions per minute) 17728 - 11272 / 100 *
+            </ANIM_CODE>
         </UseTemplate>
-        <UseTemplate Name="HBL_GT_Animation">
-            <ANIM_GUID>41b8e7d0-8d7b-432b-9783-71b5c0dc05f6</ANIM_GUID>
-            <ANIM_NAME>eng_r_combust_red</ANIM_NAME>
-            <ANIM_LENGTH>100</ANIM_LENGTH>
-            <ANIM_CODE>(A:GENERAL ENG RPM:1,degrees per second) (E:ABSOLUTE TIME, second) * 360 % 3.6 /</ANIM_CODE>
-        </UseTemplate>
-        <UseTemplate Name="HBL_GT_Animation">
-            <ANIM_GUID>5638e7b6-87e1-4617-9ec3-69f87ffaf85e</ANIM_GUID>
-            <ANIM_NAME>eng_r_aftbrn_blue</ANIM_NAME>
-            <ANIM_LENGTH>100</ANIM_LENGTH>
-            <ANIM_CODE>(A:GENERAL ENG RPM:1,degrees per second) (E:ABSOLUTE TIME, second) * 360 % 3.6 /</ANIM_CODE>
-        </UseTemplate>
-        <UseTemplate Name="HBL_GT_Animation">
-            <ANIM_GUID>f934ffde-6dab-4506-83d0-628d83c99707</ANIM_GUID>
-            <ANIM_NAME>eng_r_combust_blue</ANIM_NAME>
-            <ANIM_LENGTH>100</ANIM_LENGTH>
-            <ANIM_CODE>(A:GENERAL ENG RPM:1,degrees per second) (E:ABSOLUTE TIME, second) * 360 % 3.6 /</ANIM_CODE>
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+            <VISIBILITY_CODE>(A:GENERAL ENG RPM:1,revolutions per minute) 26000 &lt;</VISIBILITY_CODE>
         </UseTemplate>
     </Template>
+    <Template Name="HBL_Eng_Afterburner">
+        <Component ID="eng_l_aftbrn_start" Node="eng_l_aftbrn_start">
+            <UseTemplate Name = "HBL_Eng_Afterburner_Start_Subtemplate">
+                <ANIM_NAME>eng_l_aftbrn_start</ANIM_NAME>
+                <EngID>1</EngID>
+            </UseTemplate>
+        </Component>
+        <Component ID="eng_l_aftbrn_start_ring" Node="eng_l_aftbrn_start_ring">
+            <UseTemplate Name = "HBL_Eng_Afterburner_Start_Subtemplate">
+                <ANIM_NAME>eng_l_aftbrn_start_ring</ANIM_NAME>
+                <EngID>1</EngID>
+            </UseTemplate>
+        </Component>
+        <Component ID="eng_r_aftbrn_start" Node="eng_r_aftbrn_start">
+            <UseTemplate Name = "HBL_Eng_Afterburner_Start_Subtemplate">
+                <ANIM_NAME>eng_r_aftbrn_start</ANIM_NAME>
+                <EngID>2</EngID>
+            </UseTemplate>
+        </Component>
+        <Component ID="eng_r_aftbrn_start_ring" Node="eng_r_aftbrn_start_ring">
+            <UseTemplate Name = "HBL_Eng_Afterburner_Start_Subtemplate">
+                <ANIM_NAME>eng_r_aftbrn_start_ring</ANIM_NAME>
+                <EngID>2</EngID>
+            </UseTemplate>
+        </Component>
 
+        <Component ID="eng_l_aftbrn_end" Node="eng_l_aftbrn_end">
+            <UseTemplate Name = "HBL_Eng_Afterburner_End_Subtemplate">
+                <ANIM_NAME>eng_l_aftbrn_end</ANIM_NAME>
+                <EngID>1</EngID>
+            </UseTemplate>
+        </Component>
+        <Component ID="eng_l_aftbrn_end_ring" Node="eng_l_aftbrn_end_ring">
+            <UseTemplate Name = "HBL_Eng_Afterburner_End_Subtemplate">
+                <ANIM_NAME>eng_l_aftbrn_end_ring</ANIM_NAME>
+                <EngID>1</EngID>
+            </UseTemplate>
+        </Component>
+        <Component ID="eng_r_aftbrn_end"  Node="eng_r_aftbrn_end">
+            <UseTemplate Name = "HBL_Eng_Afterburner_End_Subtemplate">
+                <ANIM_NAME>eng_r_aftbrn_end</ANIM_NAME>
+                <EngID>2</EngID>
+            </UseTemplate>
+        </Component>
+        <Component ID="eng_r_aftbrn_end_ring"  Node="eng_r_aftbrn_end_ring">
+            <UseTemplate Name = "HBL_Eng_Afterburner_End_Subtemplate">
+                <ANIM_NAME>eng_r_aftbrn_end_ring</ANIM_NAME>
+                <EngID>2</EngID>
+            </UseTemplate>
+        </Component>
+
+    </Template>
     
 </ModelBehaviors>
