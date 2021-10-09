@@ -344,7 +344,9 @@
         <AnimLength>100</AnimLength>
 		<Animation>
             <Parameter>
-				 <Code>(L:DOORS_OPEN_ALL, bool) 100 *</Code>
+				 <Code>
+				 	(L:DOORS_OPEN_ALL, bool) 100 *
+				</Code>
 				<Lag>20</Lag>
         </Parameter>
         </Animation>

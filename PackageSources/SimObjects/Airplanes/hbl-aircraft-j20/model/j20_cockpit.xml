@@ -594,7 +594,6 @@
 					} els{ 
 						(L:DOORS_OPEN_ALL, bool) ! (>L:DOORS_OPEN_ALL, bool)
 					}
-					(&gt;K:2:ELECTRICAL_BUS_TO_BUS_CONNECTION_TOGGLE)
 				</LEFT_SINGLE_CODE>
 				<ANIM_CODE>
 					(L:DOORS_OPEN_ALL, bool) 100 *

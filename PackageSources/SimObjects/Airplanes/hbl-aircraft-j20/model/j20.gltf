@@ -11,6 +11,7 @@
     },
     "extensionsUsed" : [
         "ASOBO_normal_map_convention",
+        "ASOBO_material_day_night_switch",
         "ASOBO_material_blend_gbuffer",
         "ASOBO_material_glass",
         "ASOBO_macro_light"
@@ -2126,11 +2127,14 @@
             "alphaMode" : "BLEND",
             "doubleSided" : true,
             "emissiveFactor" : [
-                0,
-                0,
-                0
+                0.10048136860132217,
+                0.10048136860132217,
+                0.10048136860132217
             ],
             "extensions" : {
+                "ASOBO_material_day_night_switch" : {
+                    "enabled" : true
+                },
                 "ASOBO_material_blend_gbuffer" : {
                     "enabled" : true,
                     "baseColorBlendFactor" : 1,
@@ -2181,10 +2185,11 @@
                 "msfs_double_sided" : 1,
                 "msfs_color_alpha_mix" : 1,
                 "msfs_color_emissive_mix" : [
-                    0.13284626603126526,
-                    0.13284626603126526,
-                    0.13284626603126526
-                ]
+                    0.10048136860132217,
+                    0.10048136860132217,
+                    0.10048136860132217
+                ],
+                "msfs_day_night_cycle" : 1
             },
             "name" : "eng_afterburner",
             "pbrMetallicRoughness" : {
