@@ -40,8 +40,7 @@
                 65,
                 66,
                 67,
-                68,
-                75
+                74
             ]
         }
     ],
@@ -1278,14 +1277,6 @@
             ]
         },
         {
-            "name" : "Empty",
-            "translation" : [
-                0.0006699897348880768,
-                3.0372936725616455,
-                -3.0708892345428467
-            ]
-        },
-        {
             "mesh" : 48,
             "name" : "eng_r_aftbrn_end",
             "rotation" : [
@@ -1376,7 +1367,7 @@
         },
         {
             "children" : [
-                73
+                72
             ],
             "mesh" : 53,
             "name" : "eng_r_turb_stationary",
@@ -1388,11 +1379,11 @@
         },
         {
             "children" : [
+                68,
                 69,
                 70,
                 71,
-                72,
-                74
+                73
             ],
             "mesh" : 54,
             "name" : "eng_r",
@@ -1819,7 +1810,7 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 74,
+                        "node" : 73,
                         "path" : "rotation"
                     }
                 }
@@ -1876,7 +1867,7 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 69,
+                        "node" : 68,
                         "path" : "translation"
                     }
                 }
@@ -1895,7 +1886,7 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 70,
+                        "node" : 69,
                         "path" : "translation"
                     }
                 }
@@ -1914,7 +1905,7 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 71,
+                        "node" : 70,
                         "path" : "translation"
                     }
                 }
@@ -1933,7 +1924,7 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 72,
+                        "node" : 71,
                         "path" : "translation"
                     }
                 }
