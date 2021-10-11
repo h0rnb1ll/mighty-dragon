@@ -26,6 +26,7 @@
 		<Include ModelBehaviorFile="h0rnb1ll\lights.xml"/>
 		<Include ModelBehaviorFile="h0rnb1ll\electrical.xml"/>
 		<Include ModelBehaviorFile="h0rnb1ll\buttons.xml"/>
+		<Include ModelBehaviorFile="h0rnb1ll\engine.xml"/>
 
 		<!-- Used Potentiometers - 0-56 -->
 
@@ -496,67 +497,17 @@
 			</Component>
 			<!--<UseTemplate Name="ASOBO_SAFETY_Push_WarningCaution_Template"/>-->
 		</Component>
-		<Component ID="Yoke">
-			<DefaultTemplateParameters>
-				<LEFT_SINGLE_CODE>(L:XMLVAR_YokeHidden1) ! (&gt;L:XMLVAR_YokeHidden1)</LEFT_SINGLE_CODE>
-			</DefaultTemplateParameters>
-			<Component ID="YokePlate">
-				<DefaultTemplateParameters>
-					<NODE_ID>Yoke_Plate</NODE_ID>
-				</DefaultTemplateParameters>	
-				<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
-					<UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
-						<TOOLTIPID>&#25671;&#26438;&#24320;&#21457;&#20013;</TOOLTIPID>
-					</UseTemplate>
-				</Component>
-			</Component>
-			<Component ID="VisibleYoke">
-				<DefaultTemplateParameters>
-					<NODE_ID>Yoke</NODE_ID>
-				</DefaultTemplateParameters>			
-				<Component ID="#NODE_ID#_VisibilityNode" Node="#NODE_ID#">
-					<UseTemplate Name="ASOBO_GT_Visibility_Code">
-						<VISIBILITY_CODE>(L:XMLVAR_YokeHidden1) !</VISIBILITY_CODE>
-					</UseTemplate>
-				</Component>
-				<!--
-				<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
-					<UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
-						<TOOLTIPID>TT:COCKPIT.TOOLTIPS.YOKE_VISIBILITY</TOOLTIPID>
-					</UseTemplate>
-				</Component>
-				-->
-			</Component>
+
+		<Component ID="HANDLING_Yokes">
+			<UseTemplate Name="ASOBO_HANDLING_Yoke_Template">
+				<NODE_ID>hotas_support</NODE_ID>
+				<ANIM_NAME_YOKE_X>hotas_support_x</ANIM_NAME_YOKE_X>
+				<ANIM_NAME_YOKE_Y>hotas_support_y</ANIM_NAME_YOKE_Y>
+			</UseTemplate>
 		</Component>
 
 		<Component ID="Throttle">
-			<DefaultTemplateParameters>
-				<LEFT_SINGLE_CODE>(L:XMLVAR_ThrottleHidden) ! (&gt;L:XMLVAR_ThrottleHidden)</LEFT_SINGLE_CODE>
-			</DefaultTemplateParameters>
-			<Component ID="ThrottleBase">
-				<DefaultTemplateParameters>
-					<NODE_ID>Throttle_Base</NODE_ID>
-				</DefaultTemplateParameters>	
-				<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
-					<UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
-						<TOOLTIPID>&#27833;&#38376;&#24320;&#21457;&#20013;</TOOLTIPID>
-					</UseTemplate>
-				</Component>
-			</Component>
-			<Component ID="ThrottleNode">		
-				<Component ID="Throttle_Left_VisibilityNode" Node="Throttle_Left">
-					<UseTemplate Name="ASOBO_GT_Visibility_Code">
-						<NODE_ID>Throttle_Left</NODE_ID>
-						<VISIBILITY_CODE>(L:XMLVAR_ThrottleHidden) !</VISIBILITY_CODE>
-					</UseTemplate>
-				</Component>		
-				<Component ID="Throttle_Right_VisibilityNode" Node="Throttle_Right">
-					<UseTemplate Name="ASOBO_GT_Visibility_Code">
-						<NODE_ID>Throttle_Right</NODE_ID>
-						<VISIBILITY_CODE>(L:XMLVAR_ThrottleHidden) !</VISIBILITY_CODE>
-					</UseTemplate>
-				</Component>
-			</Component>
+			<UseTemplate Name="HBL_Eng_Throttle"></UseTemplate>
 		</Component>
 
 		<Component ID="HANDLING_RudderPedals">
