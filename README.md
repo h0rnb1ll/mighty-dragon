@@ -1,6 +1,6 @@
 # J-20 Mighty-Dragon for MSFS
 ### Alpha release stage, Work In Progress. Click here for [alpha realeases download](https://github.com/h0rnb1ll/mighty-dragon/releases)
-Project repository for MSFS Chinese 5th generation fighter J20 (Mighty Dragon). It'll be free.
+Project repository for MSFS Chinese 5th generation fighter J20 (Mighty Dragon). This repository also serves as a resource for anyone desiring to have a hands-on in MSFS aircraft development.
 
 Features included:
 * working cockpit with animations
