@@ -107,6 +107,32 @@
             <!--<REVERSER_INVERT_IM_DRAG_INPUT_SCALAR>True</REVERSER_INVERT_IM_DRAG_INPUT_SCALAR>-->
         </UseTemplate>
 
+        <Component ID="ThrottleBase">
+            <DefaultTemplateParameters>
+                <NODE_ID>Throttle_Base</NODE_ID>
+                <LEFT_SINGLE_CODE>(L:XMLVAR_ThrottleHidden) ! (&gt;L:XMLVAR_ThrottleHidden)</LEFT_SINGLE_CODE>
+            </DefaultTemplateParameters>	
+            <Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
+                <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
+                    <TOOLTIPID>Toggle Throttle Visibility</TOOLTIPID>
+                </UseTemplate>
+            </Component>
+        </Component>
+        <Component ID="Throttle_Visibility_Node">		
+            <Component ID="Throttle_1_VisibilityNode" Node="Throttle_1">
+                <UseTemplate Name="ASOBO_GT_Visibility_Code">
+                    <NODE_ID>Throttle_1</NODE_ID>
+                    <VISIBILITY_CODE>(L:XMLVAR_ThrottleHidden) !</VISIBILITY_CODE>
+                </UseTemplate>
+            </Component>		
+            <Component ID="Throttle_2_VisibilityNode" Node="Throttle_2">
+                <UseTemplate Name="ASOBO_GT_Visibility_Code">
+                    <NODE_ID>Throttle_2</NODE_ID>
+                    <VISIBILITY_CODE>(L:XMLVAR_ThrottleHidden) !</VISIBILITY_CODE>
+                </UseTemplate>
+            </Component>
+        </Component>
+
     </Template>
     
 </ModelBehaviors>
