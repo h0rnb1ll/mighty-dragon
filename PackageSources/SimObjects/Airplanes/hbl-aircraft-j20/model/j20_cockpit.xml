@@ -504,12 +504,23 @@
 				<ANIM_NAME_YOKE_X>hotas_support_x</ANIM_NAME_YOKE_X>
 				<ANIM_NAME_YOKE_Y>hotas_support_y</ANIM_NAME_YOKE_Y>
 			</UseTemplate>
-			<Component ID="Yoke_Visibility" Node="hotas">
-				<UseTemplate Name="ASOBO_GT_Visibility_Code">
-					<NODE_ID>hotas_support</NODE_ID>
-					<VISIBILITY_CODE>(L:XMLVAR_YokeHidden1) !</VISIBILITY_CODE>
-				</UseTemplate> 
-			</Component>
+		</Component>
+		<Component ID="Yoke_Visibility" Node="hotas_visibility">
+			<DefaultTemplateParameters>
+                <NODE_ID>hotas_visibility</NODE_ID>
+                <LEFT_SINGLE_CODE>(L:XMLVAR_YokeHidden1) ! (&gt;L:XMLVAR_YokeHidden1)</LEFT_SINGLE_CODE>
+            </DefaultTemplateParameters>
+			<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
+                <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
+                    <TOOLTIPID>Toggle Yoke Visibility</TOOLTIPID>
+                </UseTemplate>
+            </Component>
+		</Component>
+		<Component ID="yoke_visibility_component" Node="hotas_support">
+			<UseTemplate Name="ASOBO_GT_Visibility_Code">
+				<NODE_ID>hotas_support</NODE_ID>
+				<VISIBILITY_CODE>(L:XMLVAR_YokeHidden1) !</VISIBILITY_CODE>
+			</UseTemplate> 
 		</Component>
 
 		<Component ID="Throttle">
