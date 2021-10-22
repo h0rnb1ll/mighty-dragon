@@ -2202,11 +2202,12 @@
                 "msfs_color_alpha_mix" : 0.009999999776482582,
                 "msfs_glass_reflection_mask_factor" : 0.4000000059604645,
                 "msfs_show_wiper_mask" : 0,
-                "msfs_double_sided" : 1,
-                "msfs_roughness_scale" : 0.6000000238418579,
+                "msfs_double_sided" : 0,
+                "msfs_roughness_scale" : 0,
                 "msfs_no_cast_shadow" : 0,
-                "msfs_metallic_scale" : 0.5,
+                "msfs_metallic_scale" : 0,
                 "msfs_color_base_mix" : 1,
+                "msfs_blend_threshold" : 0.009999999776482582,
                 "ASOBO_material_code" : "Windshield"
             },
             "name" : "canopy",
@@ -2218,7 +2219,7 @@
                     0.009999999776482582
                 ],
                 "metallicFactor" : 0,
-                "roughnessFactor" : 0.5
+                "roughnessFactor" : 0
             }
         },
         {
