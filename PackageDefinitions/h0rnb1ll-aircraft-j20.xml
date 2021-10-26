@@ -18,6 +18,14 @@
 			<AssetDir>PackageDefinitions\h0rnb1ll-aircraft-j20\ContentInfo\</AssetDir>
 			<OutputDir>ContentInfo\h0rnb1ll-aircraft-j20\</OutputDir>
 		</AssetGroup>
+		<AssetGroup Name="cockit-accent">
+			<Type>Copy</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\cockpit_accent\</AssetDir>
+			<OutputDir>cockit-accent\</OutputDir>
+		</AssetGroup>
 		<AssetGroup Name="effects">
 			<Type>Copy</Type>
 			<Flags>
