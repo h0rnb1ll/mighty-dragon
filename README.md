@@ -12,7 +12,7 @@ To change cockpit accent, select and copy your color of choice from [Community f
 
 Known issues:    
 Many performance information regarding the J-20 stealth fighter are still classified. This project takes heavy reference from its closest counterpart - Lockheed Martin F-22 Raptor. The flight model will be updated once more info becomes available. Cockpit and exterior model will continue to be improved over time.
-- cockpit seat not included, not much public information on which type of seat is being used in the J-20
+- cockpit seatfictional, not much public information on which type of seat is being used in the J-20
 - avionics are using generic MSFS templates at this moment
 - thrust vectors yet to be implemented
 
