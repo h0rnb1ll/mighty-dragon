@@ -4,6 +4,13 @@
  * Should be easier that way.
  *
 */
+const lbl_on = "开启";
+const lbl_off = "关闭";
+const lbl_open = "打开";
+const lbl_shut = "关闭";
+const lbl_auto = "自动";
+const lbl_mach = "MACH";
+const lbl_airspeed = "AIRSPD";
 class SMFD extends NavSystem {
     constructor() {
         super();
@@ -13,6 +20,7 @@ class SMFD extends NavSystem {
     get templateID() {
 		return "SMFD"; 
 	}
+
     connectedCallback() {
         super.connectedCallback();
         this.maxUpdateBudget = 12;
@@ -403,10 +411,10 @@ class SMFD_MainPage extends NavSystemPage {
 	fbwStatus(){
 		var fbwBool = SimVar.GetSimVarValue("L:XMLVAR_EBD_FBW_ENABLE", "Boolean");
 		if(fbwBool){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
 	fbwSet(){
@@ -520,10 +528,10 @@ class SMFD_MainPage extends NavSystemPage {
     vlvStatus(eng){
 		var vlvBool = SimVar.GetSimVarValue("A:GENERAL ENG FUEL VALVE:" + eng, "Bool");
 		if(vlvBool){
-			return "OPEN";
+			return lbl_open;
 		}
 		else {
-			return "SHUT";
+			return lbl_shut;
 		}
     }
     vlvSet(eng){
@@ -536,10 +544,10 @@ class SMFD_MainPage extends NavSystemPage {
     ignStatus(eng){
 		var ignBool = SimVar.GetSimVarValue("A:TURB ENG IGNITION SWITCH:" + eng, "Boolean");
 		if(ignBool){
-			return "AUTO";
+			return lbl_auto;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
     }
     ignSet(eng){
@@ -553,10 +561,10 @@ class SMFD_MainPage extends NavSystemPage {
     starterStatus(eng){
 		var starterBool = SimVar.GetSimVarValue("A:GENERAL ENG STARTER:" + eng, "Boolean");
 		if(starterBool){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
     }
     starterSet(eng){
@@ -571,10 +579,10 @@ class SMFD_MainPage extends NavSystemPage {
 	}
 	showRoadsStatus(){
 		if(this.map.showRoads){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
 	showBing(){
@@ -582,17 +590,17 @@ class SMFD_MainPage extends NavSystemPage {
 	}
 	showBingStatus(){
 		if(this.map.showBing){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
 	showTrafficStatus(){
 		if(this.map.showTraffic)
-			return "ON";
+			return lbl_on;
 		else
-			return "OFF";
+			return lbl_off;
 	}
 	toggleTraffic(){
 		this.map.toggleTraffic();
@@ -603,10 +611,10 @@ class SMFD_MainPage extends NavSystemPage {
 	apMasterStatus(){
 		var apMasBool = SimVar.GetSimVarValue("A:AUTOPILOT MASTER", "Boolean");
 		if(apMasBool){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
     toggleAPNav(){
@@ -615,10 +623,10 @@ class SMFD_MainPage extends NavSystemPage {
 	apNavStatus(){
 		var apNavBool = SimVar.GetSimVarValue("A:AUTOPILOT NAV1 LOCK", "Boolean");
 		if(apNavBool){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
     toggleAutoThrottle(){
@@ -627,10 +635,10 @@ class SMFD_MainPage extends NavSystemPage {
 	autoThrottleStatus(){
 		var statusBool = SimVar.GetSimVarValue("A:AUTOPILOT THROTTLE ARM", "Boolean");
 		if(statusBool){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
     toggleAPHdg(){
@@ -639,10 +647,10 @@ class SMFD_MainPage extends NavSystemPage {
 	apHdgStatus(){
 		var statusBool = SimVar.GetSimVarValue("A:AUTOPILOT HEADING LOCK", "Boolean");
 		if(statusBool){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
     toggleAPAlt(){
@@ -651,10 +659,10 @@ class SMFD_MainPage extends NavSystemPage {
 	apAltStatus(){
 		var statusBool = SimVar.GetSimVarValue("A:AUTOPILOT VERTICAL HOLD", "Boolean");
 		if(statusBool){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
     toggleAPSpd(){
@@ -667,10 +675,10 @@ class SMFD_MainPage extends NavSystemPage {
 	apSpdStatus(){
 		var statusBool = SimVar.GetSimVarValue("A:AUTOPILOT AIRSPEED HOLD", "Boolean");
 		if(SimVar.GetSimVarValue("AUTOPILOT MACH HOLD", "Boolean") || SimVar.GetSimVarValue("AUTOPILOT MANAGED SPEED IN MACH", "Boolean")){
-			return "MACH";
+			return lbl_mach;
 		}
 		else {
-			return "AIRSPEED";
+			return lbl_airspeed;
 		}
 	}
     toggleAPVS(){
@@ -679,10 +687,10 @@ class SMFD_MainPage extends NavSystemPage {
 	apVSStatus(){
 		var statusBool = SimVar.GetSimVarValue("A:AUTOPILOT ALTITUDE LOCK", "Boolean");
 		if(statusBool){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
     toggleAPApr(){
@@ -691,10 +699,10 @@ class SMFD_MainPage extends NavSystemPage {
 	apAprStatus(){
 		var statusBool = SimVar.GetSimVarValue("A:AUTOPILOT APPROACH HOLD", "Boolean");
 		if(statusBool){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
 
@@ -739,9 +747,9 @@ class SMFD_MainPage extends NavSystemPage {
     getAirbrakeStatus(){
 		this.airbrakeStatus = SimVar.GetSimVarValue("A:SPOILERS LEFT POSITION", "number");
         if(this.airbrakeStatus > 0){
-            return "ON";
+            return lbl_on;
         } else {
-            return "OFF";
+            return lbl_off;
         }
     }
     setAirbrakes(){

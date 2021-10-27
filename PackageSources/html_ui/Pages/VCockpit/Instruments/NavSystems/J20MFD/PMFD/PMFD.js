@@ -1,3 +1,17 @@
+const lbl_on = "开启";
+const lbl_off = "关闭";
+const lbl_open = "打开";
+const lbl_shut = "关闭";
+const lbl_auto = "自动";
+const lbl_mach = "MACH";
+const lbl_airspeed = "AIRSPD";
+const lbl_full = "全面";
+const lbl_low = "低";
+const lbl_medium = "中";
+const lbl_high = "高";
+const lbl_ultra = "超";
+const lbl_hidden = "隐藏";
+const lbl_disabled = "禁用";
 class PMFD extends NavSystem {
     constructor() {
         super();
@@ -279,7 +293,7 @@ class PMFD_MainPage extends NavSystemPage {
                 new PMFD_SoftKeyElement(""),
                 new PMFD_SoftKeyElement(""),
                 
-                new PMFD_SoftKeyElement("PFD模式e", null, null, this.constElement.bind(this, "FULL")),
+                new PMFD_SoftKeyElement("PFD模式e", null, null, this.constElement.bind(this, lbl_full)),
                 new PMFD_SoftKeyElement("其他PFD选项", this.switchToMenu.bind(this, this.otherPfdMenu)),
                 new PMFD_SoftKeyElement("方位1", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG1"), null, this.bearing1Status.bind(this)),
                 new PMFD_SoftKeyElement("方位2", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG2"), null, this.bearing2Status.bind(this)),
@@ -307,8 +321,8 @@ class PMFD_MainPage extends NavSystemPage {
                     
                     new PMFD_SoftKeyElement("关闭", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_Off"), this.windModeCompare.bind(this, "0")),
                     new PMFD_SoftKeyElement("选项1", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O1"), this.windModeCompare.bind(this, "1")),
-                    new PMFD_SoftKeyElement("选项12", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O2"), this.windModeCompare.bind(this, "2")),
-                    new PMFD_SoftKeyElement("选项13", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O3"), this.windModeCompare.bind(this, "3")),
+                    new PMFD_SoftKeyElement("选项2", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O2"), this.windModeCompare.bind(this, "2")),
+                    new PMFD_SoftKeyElement("选项3", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O3"), this.windModeCompare.bind(this, "3")),
                     new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.otherPfdMenu))
                 ];
         }
@@ -517,7 +531,7 @@ class PMFD_MainPage extends NavSystemPage {
             return this.hsi.getAttribute("bearing1_source");
         }
         else {
-            return "OFF";
+            return lbl_off;
         }
     }
     bearing2Status() {
@@ -525,7 +539,7 @@ class PMFD_MainPage extends NavSystemPage {
             return this.hsi.getAttribute("bearing2_source");
         }
         else {
-            return "OFF";
+            return lbl_off;
         }
     }
     navStatus() {
@@ -538,18 +552,18 @@ class PMFD_MainPage extends NavSystemPage {
     aoaStatus() {
         switch (this.aoaIndicator.AoaMode) {
             case 0:
-                return "OFF";
+                return lbl_off;
             case 1:
-                return "ON";
+                return lbl_on;
             case 2:
-                return "AUTO";
+                return lbl_auto;
         }
     }
     hudFdStatus(){
         var fdisOn = SimVar.GetSimVarValue("L:XMLVAR_EBD_HUD_FD", "boolean");
         if(fdisOn)
-            return "ON";
-        return "OFF";
+            return lbl_on;
+        return lbl_off;
     }
     toggleHudFD(){
         var fdisOn = SimVar.GetSimVarValue("L:XMLVAR_EBD_HUD_FD", "boolean");
@@ -560,22 +574,22 @@ class PMFD_MainPage extends NavSystemPage {
         var qualityString;
         switch (qualityInt) {
             case 5:
-                qualityString = "Ultra";
+                qualityString = lbl_ultra;
                 break;
             case 4:
-                qualityString = "High";
+                qualityString = lbl_high;
                 break;
             case 3:
-                qualityString = "Medium";
+                qualityString = lbl_medium;
                 break;
             case 2:
-                qualityString = "Low";
+                qualityString = lbl_low;
                 break;
             case 1:
-                qualityString = "Hidden";
+                qualityString = lbl_hidden;
                 break;
             case 0:
-                qualityString = "Disabled";
+                qualityString = lbl_disabled;
                 break;
         }
         return qualityString;
@@ -590,10 +604,10 @@ class PMFD_MainPage extends NavSystemPage {
 	}
 	showRoadsStatus(){
 		if(this.topMapInstrument && this.topMapInstrument.showRoads){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
 	showBing(){
@@ -601,17 +615,17 @@ class PMFD_MainPage extends NavSystemPage {
 	}
 	showBingStatus(){
 		if(this.topMapInstrument && this.topMapInstrument.showBing){
-			return "ON";
+			return lbl_on;
 		}
 		else {
-			return "OFF";
+			return lbl_off;
 		}
 	}
 	showTrafficStatus(){
 		if(this.topMapInstrument && this.topMapInstrument.showTraffic)
-			return "ON";
+			return lbl_on;
 		else
-			return "OFF";
+			return lbl_off;
 	}
 	toggleTraffic(){
 		this.topMapInstrument.toggleTraffic();

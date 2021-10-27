@@ -1,5 +1,5 @@
 var labels = {"zh_Hans": {
-    "pmfd_home": "PMFD主页",
+    "pmfd_home": "PMFD页面",
     "obs": "OBS",
     "brg1": "方位1",
     "brg2": "方位2",
@@ -86,7 +86,7 @@ class TMFD extends AS3000_TSC {
                 new NavSystemPage("Speed Bugs", "SpeedBugs", this.speedBugs),
             ]),
             new NavSystemPageGroup("NavCom", this, [
-                new NavSystemPage("NAV/COM Home", "NavComHome", new TMFD_NavComHome()),
+                new NavSystemPage("通讯页面", "NavComHome", new TMFD_NavComHome()),
             ]),
         ];
         this.navButtons = [
