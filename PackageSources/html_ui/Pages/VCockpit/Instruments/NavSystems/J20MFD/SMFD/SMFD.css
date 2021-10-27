@@ -113,13 +113,13 @@ smfd-element {
 					width: 100%;
 					height: 100%;
 					bottom: 0%;
-					font-size: 2vh;
+					font-size: 3vh;
 					text-align: center; }
 					smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey {
 						position: relative;
 						width: 20%;
 						height: 100%;
-						border-right: 0.6vh solid;
+						border-right: 0.6vh solid lawngreen;
 						padding-top: calc(var(--viewportHeightRatio) * (8px / 21.6) * var(--currentPageHeight) / 100); }
 						smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys .SoftKey[state=White] {
 							color: #070708; /*#1a1d21;*/
@@ -166,10 +166,10 @@ smfd-element {
 						width: 80%;
 						height: 12.5%;
 						Top: 0%;
-						font-size: 2vh;
+						font-size: 3vh;
 						text-align: center;
-						border-bottom: 0.4vh solid white;
-						border-left: 0.4vh solid white; }
+						border-bottom: 0.4vh solid lawngreen;
+						border-left: 0.4vh solid lawngreen; }
 					smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Bottom {
 						position: absolute;
 						Left: 10%;
@@ -178,10 +178,10 @@ smfd-element {
 						width: 80%;
 						height: 12.5%;
 						Bottom: 0%;
-						font-size: 2vh;
+						font-size: 3vh;
 						text-align: center;
-						border-top: 0.4vh solid white;
-						border-left: 0.4vh solid white; }
+						border-top: 0.4vh solid   lawngreen;
+						border-left: 0.4vh solid  lawngreen}
           smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Left {
             position: absolute;
             Left: 0%;
@@ -191,10 +191,10 @@ smfd-element {
             width: 12.5%;
             height: 83.5%;
             Bottom: -0.6vh;
-            font-size: 2vh;
+            font-size: 3vh;
             text-align: center;
-            border-right: 0.4vh solid white;
-            border-top: 0.4vh solid white; }
+            border-right: 0.4vh solid lawngreen;
+            border-top: 0.4vh solid   lawngreen;}
             smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Left .SoftKey {
               position: relative;
               width: 100%;
@@ -211,10 +211,10 @@ smfd-element {
             width: 12.5%;
             height: 83.5%;
             Bottom: -0.6vh;
-            font-size: 2vh;
+            font-size: 3vh;
             text-align: center;
-            border-left: 0.4vh solid white;
-            border-top: 0.4vh solid white; }
+            border-left: 0.4vh solid lawngreen;
+            border-top: 0.4vh solid  lawngreen; }
             smfd-element #Mainframe #Electricity #MainDisplay #SoftKeys #Right .SoftKey {
               position: relative;
               width: 100%;

@@ -246,17 +246,17 @@ class PMFD_MainPage extends NavSystemPage {
         }
         */
         this.attitude_rootMenu.elements = [
-            new PMFD_SoftKeyElement("Test"),
-            new PMFD_SoftKeyElement("Test"),
-            new PMFD_SoftKeyElement("Test"),
-            new PMFD_SoftKeyElement("Test"),
-            new PMFD_SoftKeyElement("Test"),
+            new PMFD_SoftKeyElement("测试"),
+            new PMFD_SoftKeyElement("测试"),
+            new PMFD_SoftKeyElement("测试"),
+            new PMFD_SoftKeyElement("测试"),
+            new PMFD_SoftKeyElement("测试"),
 			
-            new PMFD_SoftKeyElement("Active&nbsp;NAV", this.gps.computeEvent.bind(this.gps, "SoftKey_CDI"), null, this.navStatus.bind(this)),
-            new PMFD_SoftKeyElement("Traffic Inset", null, this.constElement.bind(this, false)),
-            new PMFD_SoftKeyElement("Page", this.switchToMenu.bind(this, this.pageMenu)),
-            new PMFD_SoftKeyElement("HUD Settings", this.switchToMenu.bind(this, this.hudMenu)),
-            new PMFD_SoftKeyElement("PFD Settings", this.switchToMenu.bind(this, this.pfdMenu))
+            new PMFD_SoftKeyElement("现行NAV", this.gps.computeEvent.bind(this.gps, "SoftKey_CDI"), null, this.navStatus.bind(this)),
+            new PMFD_SoftKeyElement("空中交通", null, this.constElement.bind(this, false)),
+            new PMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu)),
+            new PMFD_SoftKeyElement("HUD设置", this.switchToMenu.bind(this, this.hudMenu)),
+            new PMFD_SoftKeyElement("PFD设置", this.switchToMenu.bind(this, this.pfdMenu))
         ];
         {
             this.hudMenu.elements = [
@@ -270,7 +270,7 @@ class PMFD_MainPage extends NavSystemPage {
                 new PMFD_SoftKeyElement(""),
                 new PMFD_SoftKeyElement(""),
                 new PMFD_SoftKeyElement(""),
-                new PMFD_SoftKeyElement("Back", this.switchToMenu.bind(this, this.attitude_rootMenu))
+                new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.attitude_rootMenu))
             ];
             this.pfdMenu.elements = [
                 new PMFD_SoftKeyElement(""),
@@ -279,11 +279,11 @@ class PMFD_MainPage extends NavSystemPage {
                 new PMFD_SoftKeyElement(""),
                 new PMFD_SoftKeyElement(""),
                 
-                new PMFD_SoftKeyElement("PFD Mode", null, null, this.constElement.bind(this, "FULL")),
-                new PMFD_SoftKeyElement("Other PFD Settings", this.switchToMenu.bind(this, this.otherPfdMenu)),
-                new PMFD_SoftKeyElement("Bearing 1", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG1"), null, this.bearing1Status.bind(this)),
-                new PMFD_SoftKeyElement("Bearing 2", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG2"), null, this.bearing2Status.bind(this)),
-                new PMFD_SoftKeyElement("Back", this.switchToMenu.bind(this, this.attitude_rootMenu))
+                new PMFD_SoftKeyElement("PFD模式e", null, null, this.constElement.bind(this, "FULL")),
+                new PMFD_SoftKeyElement("其他PFD选项", this.switchToMenu.bind(this, this.otherPfdMenu)),
+                new PMFD_SoftKeyElement("方位1", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG1"), null, this.bearing1Status.bind(this)),
+                new PMFD_SoftKeyElement("方位2", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG2"), null, this.bearing2Status.bind(this)),
+                new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.attitude_rootMenu))
             ];
             this.otherPfdMenu.elements = [
                 new PMFD_SoftKeyElement(""),
@@ -292,11 +292,11 @@ class PMFD_MainPage extends NavSystemPage {
                 new PMFD_SoftKeyElement(""),
                 new PMFD_SoftKeyElement(""),
                 
-                new PMFD_SoftKeyElement("Wind", this.switchToMenu.bind(this, this.windMenu)),
+                new PMFD_SoftKeyElement("风姿", this.switchToMenu.bind(this, this.windMenu)),
                 new PMFD_SoftKeyElement("AOA", this.gps.computeEvent.bind(this.gps, "SoftKey_PFD_AoAMode"), null, this.aoaStatus.bind(this)),
-                new PMFD_SoftKeyElement("R. Rate", this.setRefreshRate.bind(this), null, this.getRefreshRate.bind(this)),
+                new PMFD_SoftKeyElement("更新率", this.setRefreshRate.bind(this), null, this.getRefreshRate.bind(this)),
                 new PMFD_SoftKeyElement("COM1 121.5", null, this.constElement.bind(this, false)),
-                new PMFD_SoftKeyElement("Back", this.switchToMenu.bind(this, this.pfdMenu))
+                new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.pfdMenu))
             ];
                 this.windMenu.elements = [
                     new PMFD_SoftKeyElement(""),
@@ -305,25 +305,25 @@ class PMFD_MainPage extends NavSystemPage {
                     new PMFD_SoftKeyElement(""),
                     new PMFD_SoftKeyElement(""),
                     
-                    new PMFD_SoftKeyElement("Off", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_Off"), this.windModeCompare.bind(this, "0")),
-                    new PMFD_SoftKeyElement("Option 1", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O1"), this.windModeCompare.bind(this, "1")),
-                    new PMFD_SoftKeyElement("Option 2", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O2"), this.windModeCompare.bind(this, "2")),
-                    new PMFD_SoftKeyElement("Option 3", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O3"), this.windModeCompare.bind(this, "3")),
-                    new PMFD_SoftKeyElement("Back", this.switchToMenu.bind(this, this.otherPfdMenu))
+                    new PMFD_SoftKeyElement("关闭", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_Off"), this.windModeCompare.bind(this, "0")),
+                    new PMFD_SoftKeyElement("选项1", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O1"), this.windModeCompare.bind(this, "1")),
+                    new PMFD_SoftKeyElement("选项12", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O2"), this.windModeCompare.bind(this, "2")),
+                    new PMFD_SoftKeyElement("选项13", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O3"), this.windModeCompare.bind(this, "3")),
+                    new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.otherPfdMenu))
                 ];
         }
         this.map_rootMenu.elements = [
-            new PMFD_SoftKeyElement("Roads", this.showRoads.bind(this), null, this.showRoadsStatus.bind(this)),
-            new PMFD_SoftKeyElement("Terrain", this.showBing.bind(this), null, this.showBingStatus.bind(this)),
-            new PMFD_SoftKeyElement("Traffic", this.toggleTraffic.bind(this), null, this.showTrafficStatus.bind(this)),
+            new PMFD_SoftKeyElement("道路", this.showRoads.bind(this), null, this.showRoadsStatus.bind(this)),
+            new PMFD_SoftKeyElement("地形", this.showBing.bind(this), null, this.showBingStatus.bind(this)),
+            new PMFD_SoftKeyElement("空中交通", this.toggleTraffic.bind(this), null, this.showTrafficStatus.bind(this)),
             new PMFD_SoftKeyElement(""),
             new PMFD_SoftKeyElement(""),
 			
-            new PMFD_SoftKeyElement("Map Range<br/>In", this.gps.computeEvent.bind(this.gps, "RANGE_DEC")),
-            new PMFD_SoftKeyElement("Map Range<br/>Out", this.gps.computeEvent.bind(this.gps, "RANGE_INC")),
+            new PMFD_SoftKeyElement("地图<br/>放大", this.gps.computeEvent.bind(this.gps, "RANGE_DEC")),
+            new PMFD_SoftKeyElement("地图<br/>缩小", this.gps.computeEvent.bind(this.gps, "RANGE_INC")),
             new PMFD_SoftKeyElement(""),
             new PMFD_SoftKeyElement(""),
-            new PMFD_SoftKeyElement("Page", this.switchToMenu.bind(this, this.pageMenu))
+            new PMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu))
         ];
 		switch(this.menuIndex) {
             case "1":
@@ -340,11 +340,11 @@ class PMFD_MainPage extends NavSystemPage {
             new PMFD_SoftKeyElement(""),
             new PMFD_SoftKeyElement(""),
 			
-            new PMFD_SoftKeyElement("Attitude", this.newPage.bind(this, 1)),
-            new PMFD_SoftKeyElement("Map", this.newPage.bind(this, 2)),
+            new PMFD_SoftKeyElement("姿态", this.newPage.bind(this, 1)),
+            new PMFD_SoftKeyElement("地图", this.newPage.bind(this, 2)),
             new PMFD_SoftKeyElement(""),
             new PMFD_SoftKeyElement(""),
-            new PMFD_SoftKeyElement("Back", this.backToRootMenu.bind(this))
+            new PMFD_SoftKeyElement("返回", this.backToRootMenu.bind(this))
         ];
         this.softKeys = this.rootMenu;
         this.topKeys.style.visibility = "hidden";

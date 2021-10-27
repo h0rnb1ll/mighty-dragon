@@ -200,8 +200,8 @@ class SMFD_MainPage extends NavSystemPage {
         this.rightMenuElem.style.display = "none";
 		
         this.engine_rootMenu.elements = [
-            new SMFD_SoftKeyElement("ENG CTRL", this.switchToMenu.bind(this, this.engineMenu)),
-            new SMFD_SoftKeyElement("AUTOPILOT", this.switchToMenu.bind(this, this.autopilotMenu)),
+            new SMFD_SoftKeyElement("发动机", this.switchToMenu.bind(this, this.engineMenu)),
+            new SMFD_SoftKeyElement("自飞控", this.switchToMenu.bind(this, this.autopilotMenu)),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
@@ -210,7 +210,7 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
-            new SMFD_SoftKeyElement("Page", this.switchToMenu.bind(this, this.pageMenu)),
+            new SMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu)),
 			
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
@@ -226,8 +226,8 @@ class SMFD_MainPage extends NavSystemPage {
         ];
         {
             this.engineMenu.elements = [
-                new SMFD_SoftKeyElement("ENG 1<br>CNTL", this.switchToMenu.bind(this, this.eng1Menu)),
-                new SMFD_SoftKeyElement("ENG 2<br>CNTL", this.switchToMenu.bind(this, this.eng2Menu)),
+                new SMFD_SoftKeyElement("发动机1<br>控制", this.switchToMenu.bind(this, this.eng1Menu)),
+                new SMFD_SoftKeyElement("发动机2<br>控制", this.switchToMenu.bind(this, this.eng2Menu)),
                 new SMFD_SoftKeyElement(""),
                 new SMFD_SoftKeyElement(""),
                 new SMFD_SoftKeyElement(""),
@@ -236,13 +236,13 @@ class SMFD_MainPage extends NavSystemPage {
                 new SMFD_SoftKeyElement(""),
                 new SMFD_SoftKeyElement(""),
                 new SMFD_SoftKeyElement(""),
-                new SMFD_SoftKeyElement("Back", this.backToRootMenu.bind(this))
+                new SMFD_SoftKeyElement("返回", this.backToRootMenu.bind(this))
             ];
             {
                 this.eng1Menu.elements = [
-                    new SMFD_SoftKeyElement("FUEL<BR>VALVE", this.vlvSet.bind(this, "1"), null, this.vlvStatus.bind(this, "1")),
-                    new SMFD_SoftKeyElement("IGN", this.ignSet.bind(this, "1"), null, this.ignStatus.bind(this, "1")),
-                    new SMFD_SoftKeyElement("STARTER", this.starterSet.bind(this, "1"), null, this.starterStatus.bind(this, "1")),
+                    new SMFD_SoftKeyElement("燃料阀", this.vlvSet.bind(this, "1"), null, this.vlvStatus.bind(this, "1")),
+                    new SMFD_SoftKeyElement("点火", this.ignSet.bind(this, "1"), null, this.ignStatus.bind(this, "1")),
+                    new SMFD_SoftKeyElement("启动", this.starterSet.bind(this, "1"), null, this.starterStatus.bind(this, "1")),
                     new SMFD_SoftKeyElement(""),
                     new SMFD_SoftKeyElement(""),
                     
@@ -250,12 +250,12 @@ class SMFD_MainPage extends NavSystemPage {
                     new SMFD_SoftKeyElement(""),
                     new SMFD_SoftKeyElement(""),
                     new SMFD_SoftKeyElement(""),
-                    new SMFD_SoftKeyElement("Back", this.switchToMenu.bind(this, this.engineMenu))
+                    new SMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.engineMenu))
                 ];
                 this.eng2Menu.elements = [
-                    new SMFD_SoftKeyElement("FUEL<BR>VALVE", this.vlvSet.bind(this, "2"), null, this.vlvStatus.bind(this, "2")),
-                    new SMFD_SoftKeyElement("IGN", this.ignSet.bind(this, "2"), null, this.ignStatus.bind(this, "2")),
-                    new SMFD_SoftKeyElement("STARTER", this.starterSet.bind(this, "2"), null, this.starterStatus.bind(this, "2")),
+                    new SMFD_SoftKeyElement("燃料阀", this.vlvSet.bind(this, "2"), null, this.vlvStatus.bind(this, "2")),
+                    new SMFD_SoftKeyElement("点火", this.ignSet.bind(this, "2"), null, this.ignStatus.bind(this, "2")),
+                    new SMFD_SoftKeyElement("启动", this.starterSet.bind(this, "2"), null, this.starterStatus.bind(this, "2")),
                     new SMFD_SoftKeyElement(""),
                     new SMFD_SoftKeyElement(""),
                     
@@ -263,23 +263,23 @@ class SMFD_MainPage extends NavSystemPage {
                     new SMFD_SoftKeyElement(""),
                     new SMFD_SoftKeyElement(""),
                     new SMFD_SoftKeyElement(""),
-                    new SMFD_SoftKeyElement("Back", this.switchToMenu.bind(this, this.engineMenu))
+                    new SMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.engineMenu))
                 ];
             }
         }
         this.fuel_rootMenu.elements = [
-            new SMFD_SoftKeyElement("AUTOPILOT", this.switchToMenu.bind(this, this.autopilotMenu)),
+            new SMFD_SoftKeyElement("自飞控", this.switchToMenu.bind(this, this.autopilotMenu)),
             //new SMFD_SoftKeyElement("Fly By<br/>Wire", this.fbwSet.bind(this), null, this.fbwStatus.bind(this)),
             new SMFD_SoftKeyElement(""),
-            new SMFD_SoftKeyElement("AIRBRAKES", this.setAirbrakes.bind(this), null, this.getAirbrakeStatus.bind(this)),
-            new SMFD_SoftKeyElement("EXT FLAPS", this.extFlaps.bind(this)),
-            new SMFD_SoftKeyElement("RET FLAPS", this.retFlaps.bind(this)),
+            new SMFD_SoftKeyElement("空气刹", this.setAirbrakes.bind(this), null, this.getAirbrakeStatus.bind(this)),
+            new SMFD_SoftKeyElement("伸展襟翼", this.extFlaps.bind(this)),
+            new SMFD_SoftKeyElement("收回襟翼", this.retFlaps.bind(this)),
 			
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
-            new SMFD_SoftKeyElement("Page", this.switchToMenu.bind(this, this.pageMenu)),
+            new SMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu)),
 			
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
@@ -294,17 +294,17 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement("")
         ];
         this.map_rootMenu.elements = [
-            new SMFD_SoftKeyElement("Roads", this.showRoads.bind(this), null, this.showRoadsStatus.bind(this)),
-            new SMFD_SoftKeyElement("Terrain", this.showBing.bind(this), null, this.showBingStatus.bind(this)),
-            new SMFD_SoftKeyElement("Traffic", this.toggleTraffic.bind(this), null, this.showTrafficStatus.bind(this)),
+            new SMFD_SoftKeyElement("道路", this.showRoads.bind(this), null, this.showRoadsStatus.bind(this)),
+            new SMFD_SoftKeyElement("地形", this.showBing.bind(this), null, this.showBingStatus.bind(this)),
+            new SMFD_SoftKeyElement("空中交通", this.toggleTraffic.bind(this), null, this.showTrafficStatus.bind(this)),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
 			
-            new SMFD_SoftKeyElement("Map Range<br/>In", this.gps.computeEvent.bind(this.gps, "RANGE_DEC")),
-            new SMFD_SoftKeyElement("Map Range<br/>Out", this.gps.computeEvent.bind(this.gps, "RANGE_INC")),
+            new SMFD_SoftKeyElement("地图<br/>放大", this.gps.computeEvent.bind(this.gps, "RANGE_DEC")),
+            new SMFD_SoftKeyElement("地图<br/>缩小", this.gps.computeEvent.bind(this.gps, "RANGE_INC")),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
-            new SMFD_SoftKeyElement("Page", this.switchToMenu.bind(this, this.pageMenu))
+            new SMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu))
         ];
 		switch(this.menuIndex) {
             case "1":
@@ -322,30 +322,30 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement("NAV", this.toggleAPNav.bind(this), null, this.apNavStatus.bind(this)),
             new SMFD_SoftKeyElement("APPROACH", this.toggleAPApr.bind(this), null, this.apAprStatus.bind(this)),
-            new SMFD_SoftKeyElement("AUTOTHROTTLE", this.toggleAutoThrottle.bind(this), null, this.autoThrottleStatus.bind(this)),
+            new SMFD_SoftKeyElement("自动油门", this.toggleAutoThrottle.bind(this), null, this.autoThrottleStatus.bind(this)),
 			
-            new SMFD_SoftKeyElement("HDG", this.toggleAPHdg.bind(this), null, this.apHdgStatus.bind(this)),
-            new SMFD_SoftKeyElement("ALT", this.toggleAPAlt.bind(this), null, this.apAltStatus.bind(this)),
+            new SMFD_SoftKeyElement("方位", this.toggleAPHdg.bind(this), null, this.apHdgStatus.bind(this)),
+            new SMFD_SoftKeyElement("高度", this.toggleAPAlt.bind(this), null, this.apAltStatus.bind(this)),
             new SMFD_SoftKeyElement("VS", this.toggleAPVS.bind(this), null, this.apVSStatus.bind(this)),
-            new SMFD_SoftKeyElement("SPD HOLD<br>MODE", this.toggleAPSpd.bind(this), null, this.apSpdStatus.bind(this)),
-            new SMFD_SoftKeyElement("Back", this.backToRootMenu.bind(this)),
+            new SMFD_SoftKeyElement("速控<br>模式", this.toggleAPSpd.bind(this), null, this.apSpdStatus.bind(this)),
+            new SMFD_SoftKeyElement("返回", this.backToRootMenu.bind(this)),
 			
-            new SMFD_SoftKeyElement("<br><br>SPD +", this.speedDecInc.bind(this, 1)),
-            new SMFD_SoftKeyElement("<br><br>SPD -", this.speedDecInc.bind(this, -1)),
-            new SMFD_SoftKeyElement("<br><br>HDG +", this.hdgDecInc.bind(this, 1)),
-            new SMFD_SoftKeyElement("<br><br>HDG -", this.hdgDecInc.bind(this, -1)),
+            new SMFD_SoftKeyElement("<br><br>速度 +", this.speedDecInc.bind(this, 1)),
+            new SMFD_SoftKeyElement("<br><br>速度 -", this.speedDecInc.bind(this, -1)),
+            new SMFD_SoftKeyElement("<br><br>方位 +", this.hdgDecInc.bind(this, 1)),
+            new SMFD_SoftKeyElement("<br><br>方位 -", this.hdgDecInc.bind(this, -1)),
             new SMFD_SoftKeyElement(""),
 			
-            new SMFD_SoftKeyElement("<br><br>ALT +", this.altDecInc.bind(this, 1)),
-            new SMFD_SoftKeyElement("<br><br>ALT -", this.altDecInc.bind(this, -1)),
+            new SMFD_SoftKeyElement("<br><br>高度 +", this.altDecInc.bind(this, 1)),
+            new SMFD_SoftKeyElement("<br><br>高度 -", this.altDecInc.bind(this, -1)),
             new SMFD_SoftKeyElement("<br><br>VS +", this.vsDecInc.bind(this, 1)),
             new SMFD_SoftKeyElement("<br><br>VS -", this.vsDecInc.bind(this, -1)),
             new SMFD_SoftKeyElement("")
         ];
         this.pageMenu.elements = [
-            new SMFD_SoftKeyElement("Map", this.newPage.bind(this, 1)),
-            new SMFD_SoftKeyElement("Engines", this.newPage.bind(this, 2)),
-            new SMFD_SoftKeyElement("Fuel", this.newPage.bind(this, 3)),
+            new SMFD_SoftKeyElement("地图", this.newPage.bind(this, 1)),
+            new SMFD_SoftKeyElement("发动机", this.newPage.bind(this, 2)),
+            new SMFD_SoftKeyElement("燃料", this.newPage.bind(this, 3)),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
 			
@@ -353,7 +353,7 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
-            new SMFD_SoftKeyElement("Back", this.backToRootMenu.bind(this))
+            new SMFD_SoftKeyElement("返回", this.backToRootMenu.bind(this))
         ];
         this.softKeys = this.rootMenu;
     }

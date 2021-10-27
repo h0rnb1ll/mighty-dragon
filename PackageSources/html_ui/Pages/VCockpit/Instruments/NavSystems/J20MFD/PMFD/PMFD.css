@@ -855,13 +855,13 @@ pmfd-element {
       width: 100%;
       height: 100%;
       bottom: 0%;
-      font-size: 2vh;
+      font-size: 3vh;
       text-align: center; }
       pmfd-element #Mainframe #SoftKeys .SoftKey {
         position: relative;
         width: 20%;
         height: 100%;
-        border-right: 0.6vh solid;
+        border-right: 0.6vh solid lawngreen;
         padding-top: calc(var(--viewportHeightRatio) * (8px / 21.6) * var(--currentPageHeight) / 100); }
         pmfd-element #Mainframe #SoftKeys .SoftKey[state=White] {
           color: #1a1d21;
@@ -908,10 +908,10 @@ pmfd-element {
         width: 80%;
         height: 7.5%;
         Top: 0%;
-        font-size: 2vh;
+        font-size: 3vh;
         text-align: center;
-        border-bottom: 0.4vh solid white;
-        border-left: 0.4vh solid white; }
+        border-bottom: 0.4vh solid lawngreen;
+        border-left: 0.4vh solid   lawngreen; }
       pmfd-element #Mainframe #SoftKeys #Bottom {
         position: absolute;
         Left: 10%;
@@ -920,16 +920,16 @@ pmfd-element {
         width: 80%;
         height: 7.5%;
         Bottom: 0%;
-        font-size: 2vh;
+        font-size: 3vh;
         text-align: center;
-        border-top: 0.4vh solid white;
-        border-left: 0.4vh solid white; }
+        border-top: 0.4vh solid  lawngreen;
+        border-left: 0.4vh solid lawngreen; }
     pmfd-element #Mainframe #StatusAlert {
       position: absolute;
       background-color: rgba(var(--color_rgb), 0);
       width: 100%;
       height: 100%;
-      font-size: 2vh;
+      font-size: 3vh;
       text-align: center;
       align-items: center;
       justify-content: center;
