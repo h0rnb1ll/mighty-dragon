@@ -2,7 +2,7 @@
     <glasscockpit-highlight id="highlight"></glasscockpit-highlight>
     <div id="Mainframe">
         <div id="Electricity" state="off">
-            <div id="Console">Initializing System...</div>
+            <div id="Console">系统初始化...</div>
             <img id="Splash" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/Logo/Garmin.svg" />
 			<div id="SoftKeys">
 				<div id="Top">
@@ -62,7 +62,7 @@
 			</div>
             <div id="HorizonContainer">
                 <div id="StatusAlert">
-                    <div>Left SMFD has map control.<br>Change Left SMFD Page to display map here.</div>
+                    <div>左SMFD正显示地图<br>更换左SMFD页面，以在此屏幕显示地图</div>
                 </div>
                 <!--<map-instrument id="SyntheticVision" bing-mode="horizon" bing-id="PFD_SyntheticVision" show-overlay="false" config-path="/Pages/VCockpit/Instruments/NavSystems/AS3000/PFD/"></map-instrument>-->
                 <glasscockpit-attitude-indicator id="Horizon" background="false"></glasscockpit-attitude-indicator>
@@ -82,7 +82,7 @@
 
                 <div id="MarkerBeacon">M</div>
                 <div id="Warnings" state="Hidden">
-                    <span id="WarningsContent">PULL UP</span>
+                    <span id="WarningsContent">立即拉上</span>
                 </div>
                 <div id="Annunciations" state="Hidden">
                     <div id="newAnnunciations"></div>
@@ -127,7 +127,6 @@
                         <div class="title">DIS</div>
                         <div class="value" id="DisValue"></div>
                         <div class="title">BRG</div>
-                        <div class="value" id="BrgValue"></div>
                     </div>
                 </div>
                 <div id="Minimums" state="Inactive">
@@ -208,8 +207,8 @@
 <!--<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/Templates/VerticalSpeedIndicator/VerticalSpeedIndicator.js"></script>-->
 
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js"></script>
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/TwentySoftKeys.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/J20TwentySoftKeys.js"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/CommonPFD_MFD.js"></script>
 
 <!--<script type="text/html" import-script="/JS/debug.js"></script>-->
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/MFD/PMFD/PMFD.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/J20MFD/PMFD/PMFD.js"></script>
