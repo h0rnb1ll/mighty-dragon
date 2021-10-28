@@ -293,7 +293,7 @@ class PMFD_MainPage extends NavSystemPage {
                 new PMFD_SoftKeyElement(""),
                 new PMFD_SoftKeyElement(""),
                 
-                new PMFD_SoftKeyElement("PFD模式e", null, null, this.constElement.bind(this, lbl_full)),
+                new PMFD_SoftKeyElement("PFD模式", null, null, this.constElement.bind(this, lbl_full)),
                 new PMFD_SoftKeyElement("其他PFD选项", this.switchToMenu.bind(this, this.otherPfdMenu)),
                 new PMFD_SoftKeyElement("方位1", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG1"), null, this.bearing1Status.bind(this)),
                 new PMFD_SoftKeyElement("方位2", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG2"), null, this.bearing2Status.bind(this)),
