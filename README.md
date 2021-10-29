@@ -19,7 +19,7 @@ Many performance information regarding the J-20 stealth fighter are still classi
 - avionics are using generic MSFS templates at this moment
 - thrust vectors yet to be implemented
 
-["Buy Me A Coffee"](https://www.buymeacoffee.com/hornbill)
+<a href="https://www.buymeacoffee.com/hornbill" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ![Startup](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/Microsoft%20Flight%20Simulator_2021.10.07-22.37_1.jpg)
 ![J20 Mighty Dragon](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot_tool_base3.jpg)
