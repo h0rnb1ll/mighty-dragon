@@ -128,6 +128,8 @@
 	<Animation guid="4fa1a265-1f96-4064-87fa-7c9cc15ef8cf" name="Right_Aileron" type="Sim" typeParam="AutoPlay"/>
 	<Animation guid="7710bfc7-1973-47c6-aa07-f5f9821e17ac" name="Flaps_Left" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="2a59a922-3aae-4db9-b4f6-8cbaca89a197" name="Flaps_Right" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="24b45c88-9773-4d7a-b4dc-cb024419a0ad" name="Slats_Left" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="3a946506-43a1-4e78-893b-5e5d0153059f" name="Slats_Right" type="Sim" typeparam="AutoPlay"/>
 	
 	<Animation guid="b9db4c02-da7c-420d-814c-f01b0bfaaf51" name="Gear_Fwd" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="f88a4d05-c038-4d1a-9f2c-617a47933afd" name="Gear_Fwd_Door" type="Sim" typeparam="AutoPlay"/>
@@ -202,6 +204,34 @@
 			<Parameter>
 				<Sim>
 					<Variable>TRAILING EDGE FLAPS RIGHT PERCENT</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Slats_Left</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>LEADING EDGE FLAPS LEFT PERCENT</Variable>
+					<Units>percent</Units>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Slats_Right</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>LEADING EDGE FLAPS RIGHT PERCENT</Variable>
 					<Units>percent</Units>
 					<Scale>1</Scale>
 					<Bias>0</Bias>
