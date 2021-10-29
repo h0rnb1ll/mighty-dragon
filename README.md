@@ -19,11 +19,13 @@ Many performance information regarding the J-20 stealth fighter are still classi
 - avionics are using generic MSFS templates at this moment
 - thrust vectors yet to be implemented
 
-![Startup](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/Microsoft%20Flight%20Simulator_2021.10.07-22.37_1.jpg)
-![J20 Mighty Dragon](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot_tool_base3.jpg)
-![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(5).jpg)
-![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(1).jpg)
-![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(2).jpg)
-![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(3).jpg)
-![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/mashup.jpg)
-![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/mashup2.jpg)
+["Buy Me A Coffee"](https://www.buymeacoffee.com/hornbill){:target="_blank" rel="noopener"}
+
+![Startup](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/Microsoft%20Flight%20Simulator_2021.10.07-22.37_1.jpg)]
+![J20 Mighty Dragon](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot_tool_base3.jpg)]
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(5).jpg)]
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(1).jpg)]
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(2).jpg)]
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(3).jpg)]
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/mashup.jpg)]
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/mashup2.jpg)]
