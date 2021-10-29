@@ -21,7 +21,7 @@ Many performance information regarding the J-20 stealth fighter are still classi
 
 ![Startup](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/Microsoft%20Flight%20Simulator_2021.10.07-22.37_1.jpg)
 ![J20 Mighty Dragon](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot_tool_base3.jpg)
-![J20 Mighty Dragon](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot_tool_base1.jpg)
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(5).jpg)
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(1).jpg)
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(2).jpg)
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/screenshot%20(3).jpg)
