@@ -2441,7 +2441,7 @@
                 "msfs_show_blend_threshold" : 1,
                 "msfs_blend_mode" : 2,
                 "msfs_double_sided" : 1,
-                "msfs_color_alpha_mix" : 1,
+                "msfs_color_alpha_mix" : 0.6000000238418579,
                 "msfs_color_emissive_mix" : [
                     0.10048136860132217,
                     0.10048136860132217,
