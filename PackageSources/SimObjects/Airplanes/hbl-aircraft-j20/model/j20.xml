@@ -121,6 +121,21 @@
 		<Component ID="afterburners">
 			<UseTemplate Name="HBL_Eng_Afterburner"></UseTemplate>
 		</Component>
+
+		<Component ID="Canopy_Visibility">
+			<Component ID="Canopy_Int" Node="Canopy_Int">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>Canopy_Int</NODE_ID>
+					<VISIBILITY_CODE>(A:CAMERA STATE, number) 2 ==</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+			<Component ID="Canopy_Ext" Node="Canopy_Ext">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>Canopy_Ext</NODE_ID>
+					<VISIBILITY_CODE>(A:CAMERA STATE, number) 2 !=</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+		</Component>
 	</Behaviors>
 
 	<Animation guid="52897438-edf8-4aa9-ad53-7b195466e5df" name="Elevators" type="Sim" typeParam="AutoPlay"/>
