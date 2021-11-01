@@ -2115,7 +2115,7 @@
             "extras" : {
                 "msfs_material_mode" : 1,
                 "msfs_albedo_texture" : {
-                    "name" : "j20.png.001",
+                    "name" : "j20.png",
                     "type" : "Image"
                 },
                 "msfs_show_tint" : 1,
@@ -2380,7 +2380,7 @@
                 "msfs_show_blend_threshold" : 1,
                 "msfs_blend_mode" : 2,
                 "msfs_double_sided" : 1,
-                "msfs_color_alpha_mix" : 0.6000000238418579,
+                "msfs_color_alpha_mix" : 1,
                 "msfs_color_emissive_mix" : [
                     0.10048136860132217,
                     0.10048136860132217,
