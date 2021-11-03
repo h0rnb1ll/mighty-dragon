@@ -10,7 +10,7 @@
             </ANIM_CODE>
         </UseTemplate>
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-            <VISIBILITY_CODE>(A:GENERAL ENG RPM:#EngID#,revolutions per minute) 25500 &gt;</VISIBILITY_CODE>
+            <VISIBILITY_CODE>(A:GENERAL ENG RPM:#EngID#,revolutions per minute) 26600 &gt;</VISIBILITY_CODE>
         </UseTemplate>
     </Template>
     <Template Name="HBL_Eng_Afterburner_Start_Subtemplate">
