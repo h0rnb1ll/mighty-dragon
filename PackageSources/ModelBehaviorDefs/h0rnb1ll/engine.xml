@@ -25,10 +25,11 @@
         </UseTemplate>
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
             <VISIBILITY_CODE>
-                (A:GENERAL ENG RPM:#EngID#,revolutions per minute) 26000 &lt; 
-                (A:GENERAL ENG RPM:#EngID#,revolutions per minute) 18500 &gt; and
+                (A:GENERAL ENG RPM:#EngID#,revolutions per minute) 18500 &gt;
             </VISIBILITY_CODE>
         </UseTemplate>
+        <!--
+        -->
     </Template>
     <Template Name="HBL_Eng_Afterburner">
         <Component ID="eng_l_aftbrn_start" Node="eng_l_aftbrn_start">
