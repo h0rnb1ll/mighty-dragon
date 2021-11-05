@@ -151,7 +151,10 @@
 	<Animation guid="9dc51b87-c601-4e28-87a1-4f701a53a1d3" name="Gear_Fwd_Turn" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="45fe43ad-e6c4-44be-bc19-05c37fd729c7" name="Gear_Left" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="27f2681a-65ff-4d04-80b2-90408e4f7033" name="Gear_Right" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="a564d9aa-c6f6-43d3-b092-0e7de038ce5f" name="Gear_Doors" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="a564d9aa-c6f6-43d3-b092-0e7de038ce5f" name="Gear_Door_Left_1" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="50707fe9-a8b2-4aed-9035-37e2270e54c5" name="Gear_Door_Left_2" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="64771a03-9b4d-423d-ba27-a87a42984bc4" name="Gear_Door_Right_1" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="c8c3b0bd-02a6-44a6-8ee5-f47df9801584" name="Gear_Door_Right_2" type="Sim" typeparam="AutoPlay"/>
 
 	<PartInfo>
 		<Name>Elevators</Name>
@@ -310,7 +313,21 @@
 		</Animation>
 	</PartInfo>
 	<PartInfo>
-		<Name>Gear_Doors</Name>
+		<Name>Gear_Door_Left_1</Name>
+		<AnimLength>200</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:1</Variable>
+					<Units>number</Units>
+					<Scale>400</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Door_Left_2</Name>
 		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
@@ -325,6 +342,34 @@
 	</PartInfo>
 	<PartInfo>
 		<Name>Gear_Right</Name>
+		<AnimLength>200</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:2</Variable>
+					<Units>number</Units>
+					<Scale>400</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Door_Right_1</Name>
+		<AnimLength>200</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:2</Variable>
+					<Units>number</Units>
+					<Scale>400</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Gear_Door_Right_2</Name>
 		<AnimLength>200</AnimLength>
 		<Animation>
 			<Parameter>
