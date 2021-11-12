@@ -27,7 +27,7 @@
                     "export_extras" : 1,
                     "export_materials" : "EXPORT",
                     "export_morph" : 1,
-                    "export_skins" : 1,
+                    "export_skins" : 0,
                     "export_tangents" : 1,
                     "export_texture_dir" : "..\\Texture",
                     "use_mesh_edges" : 1,
