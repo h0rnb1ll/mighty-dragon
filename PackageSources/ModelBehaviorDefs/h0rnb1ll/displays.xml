@@ -155,6 +155,11 @@
 									<NODE_ID>HUD_Screen</NODE_ID>
 									<KEY_PREFIX>HUD_#ID#</KEY_PREFIX>
 								</Case>
+								<Case Value="HMD">
+									<INSTR_ID>HUD</INSTR_ID>
+									<NODE_ID>HMD</NODE_ID>
+									<KEY_PREFIX>HMD_#ID#</KEY_PREFIX>
+								</Case>
 								<Default>
 									<INSTR_ID>#DISPLAY#_#ID#</INSTR_ID>
 									<NODE_ID>#DISPLAY#_#ID#_Screen</NODE_ID>
