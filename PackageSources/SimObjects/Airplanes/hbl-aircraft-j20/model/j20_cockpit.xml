@@ -647,6 +647,46 @@
 				</ANIM_CODE>
 			</UseTemplate>
 		</Component>
+
+		<Component ID="Baro">
+			<UseTemplate Name="ASOBO_AUTOPILOT_Knob_Baro_Template">
+				<ANIM_NAME_KNOB>Knob_Baro</ANIM_NAME_KNOB>
+				<ANIM_NAME_PUSH>Knob_Baro_PushPull</ANIM_NAME_PUSH>
+				<NODE_ID>Knob_Baro</NODE_ID>
+				<ID>1</ID>
+				<BARO_ID>1</BARO_ID>
+				<PUSH/>
+				<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_BARO_KNOB_INCREASE</ANIMTIP_0>
+				<ANIMTIP_0_ON_CURSOR>TurnRight</ANIMTIP_0_ON_CURSOR>
+				<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_BARO_KNOB_DECREASE</ANIMTIP_1>
+				<ANIMTIP_1_ON_CURSOR>TurnLeft</ANIMTIP_1_ON_CURSOR>
+				<ANIMTIP_3>TT:COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_BARO_KNOB_PUSH</ANIMTIP_3>
+				<ANIMTIP_3_ON_CURSOR>Hand</ANIMTIP_3_ON_CURSOR>
+			</UseTemplate>
+		</Component>
+
+		<Component ID="Baro_Standby">
+			<UseTemplate Name="ASOBO_AUTOPILOT_Knob_Baro_Template">
+				<ANIM_NAME>Knob_Baro_Stby</ANIM_NAME>
+				<NODE_ID>Knob_Baro_Stby</NODE_ID>
+				<ID>2</ID>
+				<BARO_ID>2</BARO_ID>
+				<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.STBY_TUNING_KNOB_INCREASE</ANIMTIP_0>
+				<ANIMTIP_0_ON_CURSOR>TurnRight</ANIMTIP_0_ON_CURSOR>
+				<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.STBY_TUNING_KNOB_DECREASE</ANIMTIP_1>
+				<ANIMTIP_1_ON_CURSOR>TurnLeft</ANIMTIP_1_ON_CURSOR>
+
+
+			</UseTemplate>
+		</Component>
+
+		<Component ID="Baro_Selector">
+			<UseTemplate Name="ASOBO_AIRLINER_Switch_Baro_Selector_Template">
+				<NODE_ID>Knob_Baro_Select</NODE_ID>
+				<ANIM_NAME>Knob_Baro_Select</ANIM_NAME>
+				<AXIS>X</AXIS>
+			</UseTemplate>
+		</Component>
 	</Behaviors>
 
 </ModelInfo>
