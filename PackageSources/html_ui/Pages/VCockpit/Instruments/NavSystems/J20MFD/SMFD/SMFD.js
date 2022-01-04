@@ -27,6 +27,7 @@ class SMFD extends NavSystem {
 		this.fuelElement = this.getChildById("FuelPage");
         this.EnginesElement = this.getChildById("EnginePage");
         this.mapElem = this.getChildById("Map");
+        this.weaponsElement = this.getChildById("WeaponsPage");
 		
 		this.windHtmlElem = document.createElement("glasscockpit-wind-data");
 		this.windHtmlElem.setAttribute("id", "WindData");
@@ -34,6 +35,7 @@ class SMFD extends NavSystem {
         
         this.engines = new SMFD_Engine("Engine", "EnginePage");
 		this.fuel = new SMFD_Fuel("Fuel", "FuelPage");
+        this.weapons = new SMFD_Weapons("Weapons", "WeaponsPage");
 		
 		// Set up initial Pages
         this.parsedUrl = new URL(this.getAttribute("Url").toLowerCase());
@@ -55,6 +57,7 @@ class SMFD extends NavSystem {
                 this.mapHtmlElem.setAttribute("config-path", "/Pages/VCockpit/Instruments/NavSystems/MFD/SMFD/");
                 this.mapHtmlElem.setAttribute("hide-flightplan-if-bushtrip", "true");
                 this.mapElem.appendChild(this.mapHtmlElem);
+                this.weaponsElement.style.display="none";
                 //this.fuel.enabled = false;
                 //this.engines.enabled = false;
                 break;
@@ -62,12 +65,21 @@ class SMFD extends NavSystem {
                 this.EnginesElement.style.display = "block";
                 this.fuelElement.style.display = "none";
                 this.mapElem.style.display = "none";
+                this.weaponsElement.style.display="none";
                 //this.fuel.enabled = false;
                 break;
             case "3":
                 this.EnginesElement.style.display = "none";
                 this.fuelElement.style.display = "block";
                 this.mapElem.style.display = "none";
+                this.weaponsElement.style.display="none";
+                //this.engines.enabled = false;
+                break;
+            case "4":
+                this.EnginesElement.style.display = "none";
+                this.fuelElement.style.display = "none";
+                this.mapElem.style.display = "none";
+                this.weaponsElement.style.display="block";
                 //this.engines.enabled = false;
                 break;
 		}
@@ -95,6 +107,7 @@ class SMFD extends NavSystem {
         this.addIndependentElementContainer(new NavSystemElementContainer("SoftKeys", "SoftKeys", new TwentySoftKeys(SMFD_SoftKeyHtmlElement)));
         this.addIndependentElementContainer(this.engines);
         this.addIndependentElementContainer(this.fuel);
+        this.addIndependentElementContainer(this.weapons);
     }
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -143,7 +156,7 @@ class SMFD extends NavSystem {
     }
 }
 class SMFD_MainPage extends NavSystemPage {
-    constructor() {
+     constructor() {
         super("Main", "Mainframe", new SMFD_MainElement());
 		this.page = "EnginePage";
         this.rootMenu = new SoftKeysMenu();
@@ -154,6 +167,7 @@ class SMFD_MainPage extends NavSystemPage {
         this.fuel_rootMenu = new SoftKeysMenu();
         this.map_rootMenu = new SoftKeysMenu();
         this.autopilotMenu = new SoftKeysMenu();
+        this.weapons_rootMenu = new SoftKeysMenu();
         this.pageMenu = new SoftKeysMenu();
         this.EnginesElement = document.getElementById("EnginePage");
 		this.index = null;
@@ -189,6 +203,10 @@ class SMFD_MainPage extends NavSystemPage {
                 break;
             case "3":  // Fuel
                 this.gps.computeEvent("ENABLE_FUEL_PAGE");
+                this.gps.computeEvent("DISABLE_ENGINE_PAGE");
+                break;
+            case "4":  // Weapons
+                this.gps.computeEvent("DISABLE_FUEL_PAGE");
                 this.gps.computeEvent("DISABLE_ENGINE_PAGE");
                 break;
 		}
@@ -314,6 +332,19 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu))
         ];
+        this.weapons_rootMenu.elements = [
+            new SMFD_SoftKeyElement("主发射"),
+            new SMFD_SoftKeyElement("左发射"),
+            new SMFD_SoftKeyElement("右发射"),
+            new SMFD_SoftKeyElement("电子干扰"),
+            new SMFD_SoftKeyElement(""),
+
+            new SMFD_SoftKeyElement(""),
+            new SMFD_SoftKeyElement(""),
+            new SMFD_SoftKeyElement(""),
+            new SMFD_SoftKeyElement(""),
+            new SMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu))
+        ]
 		switch(this.menuIndex) {
             case "1":
 				this.rootMenu = this.map_rootMenu;
@@ -324,6 +355,10 @@ class SMFD_MainPage extends NavSystemPage {
             case "3":
 				this.rootMenu = this.fuel_rootMenu;
                 break;
+            case "4":
+                this.rootMenu = this.weapons_rootMenu;
+                break;
+               
 		}
         this.autopilotMenu.elements = [
             new SMFD_SoftKeyElement("MASTER", this.toggleAPMaster.bind(this), null, this.apMasterStatus.bind(this)),
@@ -350,11 +385,12 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement("<br><br>VS -", this.vsDecInc.bind(this, -1)),
             new SMFD_SoftKeyElement("")
         ];
+        
         this.pageMenu.elements = [
             new SMFD_SoftKeyElement("地图", this.newPage.bind(this, 1)),
             new SMFD_SoftKeyElement("发动机", this.newPage.bind(this, 2)),
             new SMFD_SoftKeyElement("燃料", this.newPage.bind(this, 3)),
-            new SMFD_SoftKeyElement(""),
+            new SMFD_SoftKeyElement("武器", this.newPage.bind(this, 4)),
             new SMFD_SoftKeyElement(""),
 			
             new SMFD_SoftKeyElement(""),
@@ -390,6 +426,9 @@ class SMFD_MainPage extends NavSystemPage {
                 break;
             case "3":
 				this.rootMenu = this.fuel_rootMenu;
+                break;
+            case "4":
+                this.rootMenu = this.weapons_rootMenu;
                 break;
 		}
 		this.softKeys = this.rootMenu;
@@ -452,6 +491,7 @@ class SMFD_MainPage extends NavSystemPage {
                 this.EnginesElement.style.display = "none";
                 this.fuelElement.style.display = "none";
                 this.mapElem.style.display = "block";
+                this.weaponsElement.style.display="none";
 
                 // Add and start ebd-map-instrument class
                 //if(document.getElementsByTagName("map-instrument").length == 0){
@@ -482,6 +522,7 @@ class SMFD_MainPage extends NavSystemPage {
                 this.EnginesElement.style.display = "block";
                 this.fuelElement.style.display = "none";
                 this.mapElem.style.display = "none";
+                this.weaponsElement.style.display="none";
 
                 // Stop and remove ebd-map-instrument class
                 this.mapHtmlElems = document.getElementsByTagName("ebd-map-instrument");
@@ -504,6 +545,7 @@ class SMFD_MainPage extends NavSystemPage {
                 this.EnginesElement.style.display = "none";
                 this.fuelElement.style.display = "block";
                 this.mapElem.style.display = "none";
+                this.weaponsElement.style.display="none";
 
                 // Stop and remove ebd-map-instrument class
                 this.mapHtmlElems = document.getElementsByTagName("ebd-map-instrument");
@@ -521,6 +563,28 @@ class SMFD_MainPage extends NavSystemPage {
 
                 // Update Menu
 				this.rootMenu = this.fuel_rootMenu;
+                break;
+            case 4:
+                this.EnginesElement.style.display = "none";
+                this.fuelElement.style.display = "none";
+                this.mapElem.style.display = "none";
+                this.weaponsElement.style.display="block";
+                
+                // Stop and remove ebd-map-instrument class
+                this.mapHtmlElems = document.getElementsByTagName("ebd-map-instrument");
+                //this.mapHtmlElems = document.getElementsByTagName("map-instrument");
+                for(let i = 0; i < this.mapHtmlElems.length; i++){
+                    this.mapHtmlElems[i].parentNode.removeChild(this.mapHtmlElems[i]);
+                    this.map = null;
+                    this.windData = null;
+                    this.element = null;
+                }
+                
+                // Enable Engine Page and Disable Fuel Page
+                this.gps.computeEvent("DISABLE_FUEL_PAGE");
+                this.gps.computeEvent("DISABLE_ENGINE_PAGE");
+
+                this.rootMenu = this.weapons_rootMenu;
                 break;
         }
 		this.softKeys = this.rootMenu;
@@ -1790,6 +1854,11 @@ class SMFD_Fuel extends NavSystemElementContainer {
     }
     getOxyPressure() {
         return "----";
+    }
+}
+class SMFD_Weapons extends NavSystemPage {
+    constructor(_name, _root) {
+        super(_name, _root, null);
     }
 }
 class SMFD_Page_Display extends NavSystemElement {
