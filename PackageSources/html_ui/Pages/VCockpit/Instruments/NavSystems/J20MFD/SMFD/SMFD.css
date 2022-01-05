@@ -39,7 +39,7 @@ html {
   height: 80%;
 }
 
-#WeaponsPage .weaponPL10 {
+.weaponPL10 {
   background-image: url("./res/pl10.png");
   background-repeat: no-repeat;
   background-size: auto 80%;
@@ -47,12 +47,12 @@ html {
   background-color: rgba(0, 0, 0, 0.5);
   height: 600px;
   width: auto;
-  margin:20px;
+  margin:10px;
   display: inline-block;
   font-size: 25pt;
 }
 
-#WeaponsPage .weaponPL15 {
+.weaponPL15 {
   background-image: url("./res/pl15.png");
   background-repeat: no-repeat;
   background-size: auto 90%;
@@ -60,7 +60,7 @@ html {
   background-color: rgba(0, 0, 0, 0.5);
   height: 650px;
   width: auto;
-  margin: 20px;
+  margin: 10px;
   display: inline-block;
   font-size: 30pt;
 }
@@ -69,12 +69,16 @@ html {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.sideContainer {
+#WeaponsPage .sideContainer {
   display: inline-block;
 }
 
-.mainContainer {
+#WeaponsPage .mainContainer {
   display: inline-block;
+}
+
+#WeaponsPage .text {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #highlight {

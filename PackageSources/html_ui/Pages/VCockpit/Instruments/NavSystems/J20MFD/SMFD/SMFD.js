@@ -11,6 +11,23 @@ const lbl_shut = "关闭";
 const lbl_auto = "自动";
 const lbl_mach = "MACH";
 const lbl_airspeed = "AIRSPD";
+const lbl_ready = "已就绪";
+const lbl_loading = "准备中";
+const simvar_wpn_door_main = "Z:J20_WPN_DOOR_MAIN";
+const simvar_wpn_door_l = "Z:J20_WPN_DOOR_L";
+const simvar_wpn_door_r = "Z:J20_WPN_DOOR_R";
+const simvar_wpn_l1 = "Z:J20_WPN_L1";
+const simvar_wpn_l2 = "Z:J20_WPN_L2";
+const simvar_wpn_m1 = "Z:J20_WPN_M1";
+const simvar_wpn_m2 = "Z:J20_WPN_M2";
+const simvar_wpn_m3 = "Z:J20_WPN_M3";
+const simvar_wpn_m4 = "Z:J20_WPN_M4";
+const simvar_wpn_r2 = "Z:J20_WPN_R2";
+const simvar_wpn_r1 = "Z:J20_WPN_R1";
+const simvar_wpn_jammer = "Z:J20_WPN_JAMMER";
+const simvar_wpn_flare = "Z:J20_WPN_FLARE";
+
+
 class SMFD extends NavSystem {
     constructor() {
         super();
@@ -49,6 +66,7 @@ class SMFD extends NavSystem {
             case "1":
                 this.EnginesElement.style.display = "none";
                 this.fuelElement.style.display = "none";
+                this.weaponsElement.style.display="none";
                 this.mapElem.style.display = "block";
                 this.mapElem = this.getChildById("Map");
                 this.mapHtmlElem = document.createElement("ebd-map-instrument");
@@ -57,7 +75,6 @@ class SMFD extends NavSystem {
                 this.mapHtmlElem.setAttribute("config-path", "/Pages/VCockpit/Instruments/NavSystems/MFD/SMFD/");
                 this.mapHtmlElem.setAttribute("hide-flightplan-if-bushtrip", "true");
                 this.mapElem.appendChild(this.mapHtmlElem);
-                this.weaponsElement.style.display="none";
                 //this.fuel.enabled = false;
                 //this.engines.enabled = false;
                 break;
@@ -107,7 +124,6 @@ class SMFD extends NavSystem {
         this.addIndependentElementContainer(new NavSystemElementContainer("SoftKeys", "SoftKeys", new TwentySoftKeys(SMFD_SoftKeyHtmlElement)));
         this.addIndependentElementContainer(this.engines);
         this.addIndependentElementContainer(this.fuel);
-        this.addIndependentElementContainer(this.weapons);
     }
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -337,7 +353,7 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement("左发射"),
             new SMFD_SoftKeyElement("右发射"),
             new SMFD_SoftKeyElement("电子干扰"),
-            new SMFD_SoftKeyElement(""),
+            new SMFD_SoftKeyElement("干扰弹"),
 
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
@@ -1859,6 +1875,11 @@ class SMFD_Fuel extends NavSystemElementContainer {
 class SMFD_Weapons extends NavSystemPage {
     constructor(_name, _root) {
         super(_name, _root, null);
+        this.mainDoorStatus = lbl_shut;
+        this.leftDoorStatus = lbl_shut;
+        this.rightDoorStatus = lbl_shut;
+        this.jammerStatus = lbl_shut;
+        this.flareStatus = lbl_shut;
     }
 }
 class SMFD_Page_Display extends NavSystemElement {
