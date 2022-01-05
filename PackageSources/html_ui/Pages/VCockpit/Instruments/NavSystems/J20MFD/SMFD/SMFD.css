@@ -23,63 +23,7 @@ html {
     margin: 0;
     padding: 0; }
 
-#WeaponsPage {
-  background-image: url("./res/j20_rendered.png");
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center center;
-  height: 100%;
-  width: 100%;
-}
-#WeaponsPage .title {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-#WeaponsPage .weapon1 {
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 80%;
-}
 
-.weaponPL10 {
-  background-image: url("./res/pl10.png");
-  background-repeat: no-repeat;
-  background-size: auto 80%;
-  background-position: center bottom;
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 600px;
-  width: auto;
-  margin:10px;
-  display: inline-block;
-  font-size: 25pt;
-}
-
-.weaponPL15 {
-  background-image: url("./res/pl15.png");
-  background-repeat: no-repeat;
-  background-size: auto 90%;
-  background-position: center bottom;
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 650px;
-  width: auto;
-  margin: 10px;
-  display: inline-block;
-  font-size: 30pt;
-}
-
-#WeaponsPage .weapon:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-#WeaponsPage .sideContainer {
-  display: inline-block;
-}
-
-#WeaponsPage .mainContainer {
-  display: inline-block;
-}
-
-#WeaponsPage .text {
-  background-color: rgba(0, 0, 0, 0.5);
-}
 
 #highlight {
   position: absolute;
@@ -399,4 +343,63 @@ smfd-element {
     left: 0;
     top: -11.5%;
     width: 100%; }
+
+    smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage {
+      background-image: url("./res/j20_rendered.png");
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center center;
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+    smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage .title {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage .weapon1 {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 80%;
+    }
+    
+    smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage .weaponPL10 {
+      background-image: url("./res/pl10.png");
+      background-repeat: no-repeat;
+      background-size: auto 80%;
+      background-position: center bottom;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 600px;
+      width: auto;
+      margin:10px;
+      display: inline-block;
+      font-size: 25pt;
+    }
+    
+    smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage .weaponPL15 {
+      background-image: url("./res/pl15.png");
+      background-repeat: no-repeat;
+      background-size: auto 90%;
+      background-position: center bottom;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 650px;
+      width: auto;
+      margin: 10px;
+      display: inline-block;
+      font-size: 30pt;
+    }
+    
+    smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage .weapon:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage .sideContainer {
+      display: inline-block;
+    }
+    
+    smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage .mainContainer {
+      display: inline-block;
+    }
+    
+    smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage .text {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 

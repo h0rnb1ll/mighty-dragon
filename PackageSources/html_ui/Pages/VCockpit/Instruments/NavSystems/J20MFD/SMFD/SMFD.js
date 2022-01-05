@@ -1872,7 +1872,7 @@ class SMFD_Fuel extends NavSystemElementContainer {
         return "----";
     }
 }
-class SMFD_Weapons extends NavSystemPage {
+class SMFD_Weapons extends NavSystemElementContainer {
     constructor(_name, _root) {
         super(_name, _root, null);
         this.mainDoorStatus = lbl_shut;
