@@ -351,7 +351,7 @@ smfd-element {
       background-position: center center;
       height: 100%;
       width: 100%;
-      display: block;
+      display: none;
     }
     smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage .title {
       background-color: rgba(0, 0, 0, 0.5);
