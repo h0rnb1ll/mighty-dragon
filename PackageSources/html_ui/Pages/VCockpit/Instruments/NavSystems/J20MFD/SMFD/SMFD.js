@@ -13,19 +13,19 @@ const lbl_mach = "MACH";
 const lbl_airspeed = "AIRSPD";
 const lbl_ready = "已就绪";
 const lbl_loading = "准备中";
-const simvar_wpn_door_main = "Z:J20_WPN_DOOR_MAIN";
-const simvar_wpn_door_l = "Z:J20_WPN_DOOR_L";
-const simvar_wpn_door_r = "Z:J20_WPN_DOOR_R";
-const simvar_wpn_l1 = "Z:J20_WPN_L1";
-const simvar_wpn_l2 = "Z:J20_WPN_L2";
-const simvar_wpn_m1 = "Z:J20_WPN_M1";
-const simvar_wpn_m2 = "Z:J20_WPN_M2";
-const simvar_wpn_m3 = "Z:J20_WPN_M3";
-const simvar_wpn_m4 = "Z:J20_WPN_M4";
-const simvar_wpn_r2 = "Z:J20_WPN_R2";
-const simvar_wpn_r1 = "Z:J20_WPN_R1";
-const simvar_wpn_jammer = "Z:J20_WPN_JAMMER";
-const simvar_wpn_flare = "Z:J20_WPN_FLARE";
+const simvar_wpn_door_main  = "L:J20 WPN DOOR MAIN";
+const simvar_wpn_door_l     = "L:J20 WPN DOOR L";
+const simvar_wpn_door_r     = "L:J20 WPN DOOR R";
+const simvar_wpn_l1         = "L:J20 WPN L1";
+const simvar_wpn_l2         = "L:J20 WPN L2";
+const simvar_wpn_m1         = "L:J20 WPN M1";
+const simvar_wpn_m2         = "L:J20 WPN M2";
+const simvar_wpn_m3         = "L:J20 WPN M3";
+const simvar_wpn_m4         = "L:J20 WPN M4";
+const simvar_wpn_r2         = "L:J20 WPN R2";
+const simvar_wpn_r1         = "L:J20 WPN R1";
+const simvar_wpn_jammer     = "L:J20 WPN JAMMER";
+const simvar_wpn_flare      = "L:J20 WPN FLARE";
 
 class SMFD extends NavSystem {
     constructor() {
@@ -216,6 +216,7 @@ class SMFD_MainPage extends NavSystemPage {
                 this.gps.computeEvent("DISABLE_ENGINE_PAGE");
                 break;
             case "4":  // Weapons
+                this.weapons = new SMFD_Weapons("Weapons","WeaponsPage");
                 this.gps.computeEvent("DISABLE_ENGINE_PAGE");
                 this.gps.computeEvent("DISABLE_ENGINE_PAGE");
                 break;
@@ -342,12 +343,13 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu))
         ];
+        SimVar.SetSimVarValue(simvar_wpn_door_main,"number", 0);
         this.weaponsMenu.elements = [
-            new SMFD_SoftKeyElement("主发射"),
-            new SMFD_SoftKeyElement("左发射"),
-            new SMFD_SoftKeyElement("右发射"),
-            new SMFD_SoftKeyElement("电子干扰"),
-            new SMFD_SoftKeyElement("干扰弹"),
+            new SMFD_SoftKeyElement("主发射",() => {this.weapons.updateReadiness(simvar_wpn_door_main)},   null,()=>{return this.weapons.getReadiness(simvar_wpn_door_main)}),
+            new SMFD_SoftKeyElement("左发射",() => {this.weapons.updateReadiness(simvar_wpn_door_l)},      null,()=>{return this.weapons.getReadiness(simvar_wpn_door_l)}),
+            new SMFD_SoftKeyElement("右发射",() => {this.weapons.updateReadiness(simvar_wpn_door_r)},      null,()=>{return this.weapons.getReadiness(simvar_wpn_door_r)}),
+            new SMFD_SoftKeyElement("电子干扰",() => {this.weapons.updateReadiness(simvar_wpn_jammer)},    null,()=>{return this.weapons.getReadiness(simvar_wpn_jammer)}),
+            new SMFD_SoftKeyElement("干扰弹",() => {this.weapons.updateReadiness(simvar_wpn_flare)},       null,()=>{return this.weapons.getReadiness(simvar_wpn_flare)}),
 			
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
@@ -1885,6 +1887,38 @@ class SMFD_Weapons extends NavSystemElementContainer {
         this.rightDoorStatus = lbl_shut;
         this.jammerStatus = lbl_shut;
         this.flareStatus = lbl_shut;
+    }
+
+    init() {
+        super.init();
+        SimVar.SetSimVarValue(simvar_wpn_door_main,"number",0);
+        SimVar.SetSimVarValue(simvar_wpn_door_l,"number",0);
+        SimVar.SetSimVarValue(simvar_wpn_door_r,"number",0);
+        SimVar.SetSimVarValue(simvar_wpn_jammer,"number",0);
+        SimVar.SetSimVarValue(simvar_wpn_flare,"number",0);
+    }
+
+    updateReadiness(simvarName) {
+        var doorStatus = SimVar.GetSimVarValue(simvar, "number");
+        switch(doorStatus) {
+            case 0:
+                SimVar.SetSimVarValue(simvarName,"number", 1);
+                SimVar.SetSimVarValue(simvarName,"number", 2);
+                break;
+            case 2:
+                SimVar.SetSimVarValue(simvarName,"number", 0);
+                break;
+        }
+    }
+
+    getReadiness(simvarName) {
+        var status = SimVar.GetSimVarValue(simvarName, "number");
+        switch (status) {
+            case 0: return lbl_shut;
+            case 1: return lbl_loading;
+            case 2: return lbl_ready;
+        }
+        return lbl_shut;
     }
 }
 class SMFD_Page_Display extends NavSystemElement {
