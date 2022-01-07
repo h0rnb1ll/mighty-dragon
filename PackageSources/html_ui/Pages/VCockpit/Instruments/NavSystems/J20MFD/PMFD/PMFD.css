@@ -354,6 +354,7 @@ pmfd-element #Mainframe #Electricity #RightContainer #MessagesContainer {
   border-radius: 10px;
   border: 3px solid lawngreen;
   margin: 5px;
+  position: relative;
 }
 pmfd-element #Mainframe #Electricity #RightContainer #Messages {
   font-size: 12pt;

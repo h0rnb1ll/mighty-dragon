@@ -245,6 +245,9 @@ class PMFD_MainPage extends NavSystemPage {
             this.attitude.svg.setAttribute("background", "true");
         }
         */
+        this.j20Systems = new J20_Systems();
+        this.j20Systems.checkAllSystems();
+
         this.attitude_rootMenu.elements = [
             new PMFD_SoftKeyElement("测试"),
             new PMFD_SoftKeyElement("测试"),
@@ -256,7 +259,10 @@ class PMFD_MainPage extends NavSystemPage {
             new PMFD_SoftKeyElement("空中交通", null, this.constElement.bind(this, false)),
             new PMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu)),
             new PMFD_SoftKeyElement("HUD设置", this.switchToMenu.bind(this, this.hudMenu)),
-            new PMFD_SoftKeyElement("PFD设置", this.switchToMenu.bind(this, this.pfdMenu))
+            new PMFD_SoftKeyElement("PFD设置", this.switchToMenu.bind(this, this.pfdMenu)),
+
+            new PMFD_SoftKeyElement("",()=>{this.j20Systems.checkAllSystems()}),
+            new PMFD_SoftKeyElement("",()=>{this.j20Systems.clearMessages()}),
         ];
         {
             this.hudMenu.elements = [
@@ -270,7 +276,10 @@ class PMFD_MainPage extends NavSystemPage {
                 new PMFD_SoftKeyElement(""),
                 new PMFD_SoftKeyElement(""),
                 new PMFD_SoftKeyElement(""),
-                new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.attitude_rootMenu))
+                new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.attitude_rootMenu)),
+
+                new PMFD_SoftKeyElement("",()=>{this.j20Systems.checkAllSystems()}),
+                new PMFD_SoftKeyElement("",()=>{this.j20Systems.clearMessages()})
             ];
             this.pfdMenu.elements = [
                 new PMFD_SoftKeyElement(""),
@@ -283,7 +292,10 @@ class PMFD_MainPage extends NavSystemPage {
                 new PMFD_SoftKeyElement("其他PFD选项", this.switchToMenu.bind(this, this.otherPfdMenu)),
                 new PMFD_SoftKeyElement("方位1", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG1"), null, this.bearing1Status.bind(this)),
                 new PMFD_SoftKeyElement("方位2", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_BRG2"), null, this.bearing2Status.bind(this)),
-                new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.attitude_rootMenu))
+                new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.attitude_rootMenu)),
+
+                new PMFD_SoftKeyElement("",()=>{this.j20Systems.checkAllSystems()}),
+                new PMFD_SoftKeyElement("",()=>{this.j20Systems.clearMessages()})
             ];
             this.otherPfdMenu.elements = [
                 new PMFD_SoftKeyElement(""),
@@ -296,7 +308,10 @@ class PMFD_MainPage extends NavSystemPage {
                 new PMFD_SoftKeyElement("AOA", this.gps.computeEvent.bind(this.gps, "SoftKey_PFD_AoAMode"), null, this.aoaStatus.bind(this)),
                 new PMFD_SoftKeyElement("更新率", this.setRefreshRate.bind(this), null, this.getRefreshRate.bind(this)),
                 new PMFD_SoftKeyElement("COM1 121.5", null, this.constElement.bind(this, false)),
-                new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.pfdMenu))
+                new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.pfdMenu)),
+
+                new PMFD_SoftKeyElement("",()=>{this.j20Systems.checkAllSystems()}),
+                new PMFD_SoftKeyElement("",()=>{this.j20Systems.clearMessages()})
             ];
                 this.windMenu.elements = [
                     new PMFD_SoftKeyElement(""),
@@ -309,7 +324,10 @@ class PMFD_MainPage extends NavSystemPage {
                     new PMFD_SoftKeyElement("选项1", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O1"), this.windModeCompare.bind(this, "1")),
                     new PMFD_SoftKeyElement("选项2", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O2"), this.windModeCompare.bind(this, "2")),
                     new PMFD_SoftKeyElement("选项3", this.gps.computeEvent.bind(this.gps, "SoftKeys_Wind_O3"), this.windModeCompare.bind(this, "3")),
-                    new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.otherPfdMenu))
+                    new PMFD_SoftKeyElement("返回", this.switchToMenu.bind(this, this.otherPfdMenu)),
+
+                    new PMFD_SoftKeyElement("",()=>{this.j20Systems.checkAllSystems()}),
+                    new PMFD_SoftKeyElement("",()=>{this.j20Systems.clearMessages()})
                 ];
         }
         this.map_rootMenu.elements = [
@@ -323,7 +341,10 @@ class PMFD_MainPage extends NavSystemPage {
             new PMFD_SoftKeyElement("地图<br/>缩小", this.gps.computeEvent.bind(this.gps, "RANGE_INC")),
             new PMFD_SoftKeyElement(""),
             new PMFD_SoftKeyElement(""),
-            new PMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu))
+            new PMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu)),
+
+            new PMFD_SoftKeyElement("",()=>{this.j20Systems.checkAllSystems()}),
+            new PMFD_SoftKeyElement("",()=>{this.j20Systems.clearMessages()})
         ];
 		switch(this.menuIndex) {
             case "1":
@@ -344,13 +365,13 @@ class PMFD_MainPage extends NavSystemPage {
             new PMFD_SoftKeyElement("地图", this.newPage.bind(this, 2)),
             new PMFD_SoftKeyElement(""),
             new PMFD_SoftKeyElement(""),
-            new PMFD_SoftKeyElement("返回", this.backToRootMenu.bind(this))
+            new PMFD_SoftKeyElement("返回", this.backToRootMenu.bind(this)),
+
+            new PMFD_SoftKeyElement("",()=>{this.j20Systems.checkAllSystems()}),
+            new PMFD_SoftKeyElement("",()=>{this.j20Systems.clearMessages()})
         ];
         this.softKeys = this.rootMenu;
         this.topKeys.style.visibility = "hidden";
-
-        this.j20Systems = new J20_Systems();
-        this.j20Systems.checkAllSystems();
     }
     reset() {
         if (this.annunciations)

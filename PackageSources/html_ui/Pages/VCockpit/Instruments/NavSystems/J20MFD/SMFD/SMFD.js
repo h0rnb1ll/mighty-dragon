@@ -22,7 +22,7 @@ class SMFD extends NavSystem {
         
         this.engines = new SMFD_Engine("Engine", "EnginePage");
 		this.fuel = new SMFD_Fuel("Fuel", "FuelPage");
-        this.weapons = new SMFD_Weapons("Weapons","WeaponsPage");
+        this.weapons = new J20_Weapons("Weapons","WeaponsPage");
 		
 		// Set up initial Pages
         this.parsedUrl = new URL(this.getAttribute("Url").toLowerCase());
@@ -157,7 +157,7 @@ class SMFD_MainPage extends NavSystemPage {
         this.leftMenuElem = null;
         this.rightMenuElem = null;
         this.airbrakeStatus = null;
-        this.weapons = new SMFD_Weapons("Weapons","WeaponsPage");
+        this.weapons = new J20_Weapons("Weapons","WeaponsPage");
         this.weaponsMenu = new SoftKeysMenu();
     }
     connectedCallback() {
@@ -320,7 +320,7 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement("电子干扰",() => {this.weapons.updateReadiness(simvar_wpn_jammer)},    null,()=>{return this.weapons.getReadiness(simvar_wpn_jammer)}),
             new SMFD_SoftKeyElement("干扰弹",() => {this.weapons.updateReadiness(simvar_wpn_flare)},       null,()=>{return this.weapons.getReadiness(simvar_wpn_flare)}),
 			
-            new SMFD_SoftKeyElement(""),
+            new SMFD_SoftKeyElement("检测",() => {this.weapons.checkAllWeapons()}),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement(""),
@@ -1848,48 +1848,7 @@ class SMFD_Fuel extends NavSystemElementContainer {
         return "----";
     }
 }
-class SMFD_Weapons extends NavSystemElementContainer {
-    constructor(_name, _root) {
-        super(_name, _root, null);
-        this.mainDoorStatus = lbl_shut;
-        this.leftDoorStatus = lbl_shut;
-        this.rightDoorStatus = lbl_shut;
-        this.jammerStatus = lbl_shut;
-        this.flareStatus = lbl_shut;
-    }
 
-    init() {
-        super.init();
-        SimVar.SetSimVarValue(simvar_wpn_door_main,"number",0);
-        SimVar.SetSimVarValue(simvar_wpn_door_l,"number",0);
-        SimVar.SetSimVarValue(simvar_wpn_door_r,"number",0);
-        SimVar.SetSimVarValue(simvar_wpn_jammer,"number",0);
-        SimVar.SetSimVarValue(simvar_wpn_flare,"number",0);
-    }
-
-    updateReadiness(simvarName) {
-        var doorStatus = SimVar.GetSimVarValue(simvar, "number");
-        switch(doorStatus) {
-            case 0:
-                SimVar.SetSimVarValue(simvarName,"number", 1);
-                SimVar.SetSimVarValue(simvarName,"number", 2);
-                break;
-            case 2:
-                SimVar.SetSimVarValue(simvarName,"number", 0);
-                break;
-        }
-    }
-
-    getReadiness(simvarName) {
-        var status = SimVar.GetSimVarValue(simvarName, "number");
-        switch (status) {
-            case 0: return lbl_shut;
-            case 1: return lbl_loading;
-            case 2: return lbl_ready;
-        }
-        return lbl_shut;
-    }
-}
 class SMFD_Page_Display extends NavSystemElement {
     constructor() {
         super(...arguments);
