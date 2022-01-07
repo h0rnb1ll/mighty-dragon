@@ -183,8 +183,67 @@
             <div id="RightContainer">
                 <glasscockpit-hsi id="Compass"></glasscockpit-hsi>
                 <div id="PlaneStatus">
-                    <h1>机体状态</h1>
-                    <img src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20_tb.png" />
+                    <h1 style="text-decoration: underline;">机体状态</h1>
+                    
+                    <img class="j20body" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20_tb.png" />
+                    <!--status ok-->
+                    <img id="stat_ok_aileron_l"  class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/aileron_l.png"/>
+                    <img id="stat_ok_aileron_r"  class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/aileron_r.png"/>
+                    <img id="stat_ok_canard_l"   class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/canard_l.png"/>
+                    <img id="stat_ok_canard_r"   class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/canard_r.png"/>
+                    <img id="stat_ok_eng_l"      class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/eng_l.png"/>
+                    <img id="stat_ok_eng_r"      class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/eng_r.png"/>
+                    <img id="stat_ok_flaps_l"    class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/flaps_l.png"/>
+                    <img id="stat_ok_flaps_r"    class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/flaps_r.png"/>
+                    <img id="stat_ok_fuse_aft_b" class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/fuse_aft_b.png"/>
+                    <img id="stat_ok_fuse_aft"   class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/fuse_aft.png"/>
+                    <img id="stat_ok_fuse_mid"   class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/fuse_mid.png"/>
+                    <img id="stat_ok_fuse_mid_b" class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/fuse_mid_b.png"/>
+                    <img id="stat_ok_gear_fwd"   class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/gear_fwd.png"/>
+                    <img id="stat_ok_gear_l"     class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/gear_l.png"/>
+                    <img id="stat_ok_gear_r"     class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/gear_r.png"/>
+                    <img id="stat_ok_nose"       class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/nose.png"/>
+                    <img id="stat_ok_nose_b"     class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/nose_b.png"/>
+                    <img id="stat_ok_slat_l"     class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/slat_l.png"/>
+                    <img id="stat_ok_slat_r"     class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/slat_r.png"/>
+                    <img id="stat_ok_stab_l"     class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/stab_l.png"/>
+                    <img id="stat_ok_stab_r"     class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/stab_r.png"/>
+                    <img id="stat_ok_wing_l"     class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/wing_l.png"/>
+                    <img id="stat_ok_wing_r"     class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/wing_r.png"/>
+                    <img id="stat_ok_wpn_door_m" class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/wpn_door_m.png"/>
+                    <img id="stat_ok_wpn_door_l" class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/wpn_door_l.png"/>
+                    <img id="stat_ok_wpn_door_r" class="statGood" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/good/wpn_door_r.png"/>
+
+                    <!--status error-->
+                    <img id="stat_err_aileron_l"  class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/aileron_l.png"/>
+                    <img id="stat_err_aileron_r"  class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/aileron_r.png"/>
+                    <img id="stat_err_canard_l"   class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/canard_l.png"/>
+                    <img id="stat_err_canard_r"   class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/canard_r.png"/>
+                    <img id="stat_err_eng_l"      class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/eng_l.png"/>
+                    <img id="stat_err_eng_r"      class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/eng_r.png"/>
+                    <img id="stat_err_flaps_l"    class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/flaps_l.png"/>
+                    <img id="stat_err_flaps_r"    class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/flaps_r.png"/>
+                    <img id="stat_err_fuse_aft_b" class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/fuse_aft_b.png"/>
+                    <img id="stat_err_fuse_aft"   class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/fuse_aft.png"/>
+                    <img id="stat_err_fuse_mid"   class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/fuse_mid.png"/>
+                    <img id="stat_err_fuse_mid_b" class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/fuse_mid_b.png"/>
+                    <img id="stat_err_gear_fwd"   class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/gear_fwd.png"/>
+                    <img id="stat_err_gear_l"     class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/gear_l.png"/>
+                    <img id="stat_err_gear_r"     class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/gear_r.png"/>
+                    <img id="stat_err_nose"       class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/nose.png"/>
+                    <img id="stat_err_nose_b"     class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/nose_b.png"/>
+                    <img id="stat_err_slat_l"     class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/slat_l.png"/>
+                    <img id="stat_err_slat_r"     class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/slat_r.png"/>
+                    <img id="stat_err_stab_l"     class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/stab_l.png"/>
+                    <img id="stat_err_stab_r"     class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/stab_r.png"/>
+                    <img id="stat_err_wing_l"     class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/wing_l.png"/>
+                    <img id="stat_err_wing_r"     class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/wing_r.png"/>
+                    <img id="stat_err_wpn_door_m" class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/wpn_door_m.png"/>
+                    <img id="stat_err_wpn_door_l" class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/wpn_door_l.png"/>
+                    <img id="stat_err_wpn_door_r" class="statError" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20status/error/wpn_door_r.png"/>
+                    <div style="position:absolute;bottom:10px;right:10px">
+                        <div class="pressable">检测</div>
+                    </div>
                 </div>
                 <div id="MessagesContainer">
                     <h1 style="text-decoration: underline">系统信息</h1>
@@ -223,4 +282,5 @@
 
 <!--<script type="text/html" import-script="/JS/debug.js"></script>-->
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/labels.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/J20MFD/j20Systems.js"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/J20MFD/PMFD/PMFD.js"></script>

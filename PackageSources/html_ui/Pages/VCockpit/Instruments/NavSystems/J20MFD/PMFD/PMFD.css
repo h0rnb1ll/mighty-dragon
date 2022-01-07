@@ -309,13 +309,44 @@ pmfd-element #Mainframe #Electricity #RightContainer {
 }
 pmfd-element #Mainframe #Electricity #RightContainer #Compass {
   width:100%;
-  height: 33%;
+  height: 25%;
   display:block;
 }
 pmfd-element #Mainframe #Electricity #RightContainer #PlaneStatus {
   width:100%;
-  height: 33%;
+  height: 40%;
   text-align:center;
+  position: relative;
+}
+pmfd-element #Mainframe #Electricity #RightContainer .pressable {
+  border-radius: 5px;
+  border: 1px solid lawngreen;
+  color: lawngreen;
+  font-size: 20pt;
+  display: inline-block;
+}
+pmfd-element #Mainframe #Electricity #RightContainer #PlaneStatus .j20body {
+  width:80%;
+  height: 90%;
+  position:absolute;
+  top: 20px;
+  left: 10px;
+}
+pmfd-element #Mainframe #Electricity #RightContainer #PlaneStatus .statGood{
+  width:80%;
+  height: 90%;
+  position:absolute;
+  top: 20px;
+  left: 10px;
+  display: none;
+}
+pmfd-element #Mainframe #Electricity #RightContainer #PlaneStatus .statError{
+  width:80%;
+  height: 90%;
+  position:absolute;
+  top: 20px;
+  left: 10px;
+  display: none;
 }
 pmfd-element #Mainframe #Electricity #RightContainer #MessagesContainer {
   width:95%;
@@ -326,10 +357,7 @@ pmfd-element #Mainframe #Electricity #RightContainer #MessagesContainer {
 }
 pmfd-element #Mainframe #Electricity #RightContainer #Messages {
   font-size: 12pt;
-}
-pmfd-element #Mainframe #Electricity #RightContainer #PlaneStatus img {
-  width:80%;
-  height: 100%;
+  margin: 5px;
 }
 @keyframes RedWarning {
   0%, 45% {

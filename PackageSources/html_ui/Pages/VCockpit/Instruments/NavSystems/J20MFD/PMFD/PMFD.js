@@ -348,6 +348,9 @@ class PMFD_MainPage extends NavSystemPage {
         ];
         this.softKeys = this.rootMenu;
         this.topKeys.style.visibility = "hidden";
+
+        this.j20Systems = new J20_Systems();
+        this.j20Systems.checkAllSystems();
     }
     reset() {
         if (this.annunciations)
