@@ -60,31 +60,37 @@ const simvar_messages = "L:J20_MESSAGES";
 
 class J20_Systems {
     constructor() {
+        this.isCheckingSystems = false;
     }
     
     checkAllSystems() {
-        errorElements.forEach((key,i,arr)=>{
-            var errElement = document.getElementById(key);
-            var okElement = document.getElementById(key.replace('_err_','_ok_'));
-            okElement.style.display = "none";
-            errElement.style.display = "block";
-        });
-        this.showMessage({text:'系统检测中...'},true);
-        okElements.forEach((key,i,arr)=>{
-            var errKey = key.replace('_ok_','_err_');
-            var element = document.getElementById(key);
-            var errElement = document.getElementById(errKey);
-            setTimeout(()=>{
-                errElement.style.display = "none";
-                element.style.display = "block";
-            },1000);
-        });
-        setTimeout(()=>{
-            okElements.forEach((key,i,arr)=>{
-                document.getElementById(key).style.display="none";
+        if(!this.isCheckingSystems) {
+            this.isCheckingSystems = true;
+            errorElements.forEach((key,i,arr)=>{
+                var errElement = document.getElementById(key);
+                var okElement = document.getElementById(key.replace('_err_','_ok_'));
+                okElement.style.display = "none";
+                errElement.style.display = "block";
             });
-            this.showMessage({text:'系统检测完毕 无异常',color:'lawngreen'});
-        },5000);
+            this.showMessage({text:'系统检测中...'},true);
+            var delayed = this.delay(()=>{},0);
+            okElements.forEach((key,i,arr)=>{
+                var errKey = key.replace('_ok_','_err_');
+                var element = document.getElementById(key);
+                var errElement = document.getElementById(errKey);
+                delayed = delayed.delay(()=>{
+                    errElement.style.display = "none";
+                    element.style.display = "block";
+                },500);
+            });
+            delayed.delay(()=>{
+                okElements.forEach((key,i,arr)=>{
+                    document.getElementById(key).style.display="none";
+                });
+                this.showMessage({text:'系统检测完毕 无异常',color:'lawngreen'});
+                this.isCheckingSystems = false;
+            },500);
+        }
     }
 
     showMessage(message, clearPrevious) {
@@ -97,5 +103,40 @@ class J20_Systems {
 
     clearMessages() {
         document.getElementById("Messages").innerHTML = '';
+    }
+
+    delay(fn, t) {
+        // private instance variables
+        var queue = [], self, timer;
+        
+        function schedule(fn, t) {
+            timer = setTimeout(function() {
+                timer = null;
+                fn();
+                if (queue.length) {
+                    var item = queue.shift();
+                    schedule(item.fn, item.t);
+                }
+            }, t);            
+        }
+        self = {
+            delay: function(fn, t) {
+                // if already queuing things or running a timer, 
+                //   then just add to the queue
+                  if (queue.length || timer) {
+                    queue.push({fn: fn, t: t});
+                } else {
+                    // no queue or timer yet, so schedule the timer
+                    schedule(fn, t);
+                }
+                return self;
+            },
+            cancel: function() {
+                clearTimeout(timer);
+                queue = [];
+                return self;
+            }
+        };
+        return self.delay(fn, t);
     }
 }
