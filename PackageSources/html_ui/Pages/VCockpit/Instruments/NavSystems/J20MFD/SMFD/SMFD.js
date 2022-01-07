@@ -1,32 +1,3 @@
-/*
- * Include Style Info in softkeys via
- * javascript and not css.
- * Should be easier that way.
- *
-*/
-const lbl_on = "开启";
-const lbl_off = "关闭";
-const lbl_open = "打开";
-const lbl_shut = "关闭";
-const lbl_auto = "自动";
-const lbl_mach = "MACH";
-const lbl_airspeed = "AIRSPD";
-const lbl_ready = "已就绪";
-const lbl_loading = "准备中";
-const simvar_wpn_door_main  = "L:J20 WPN DOOR MAIN";
-const simvar_wpn_door_l     = "L:J20 WPN DOOR L";
-const simvar_wpn_door_r     = "L:J20 WPN DOOR R";
-const simvar_wpn_l1         = "L:J20 WPN L1";
-const simvar_wpn_l2         = "L:J20 WPN L2";
-const simvar_wpn_m1         = "L:J20 WPN M1";
-const simvar_wpn_m2         = "L:J20 WPN M2";
-const simvar_wpn_m3         = "L:J20 WPN M3";
-const simvar_wpn_m4         = "L:J20 WPN M4";
-const simvar_wpn_r2         = "L:J20 WPN R2";
-const simvar_wpn_r1         = "L:J20 WPN R1";
-const simvar_wpn_jammer     = "L:J20 WPN JAMMER";
-const simvar_wpn_flare      = "L:J20 WPN FLARE";
-
 class SMFD extends NavSystem {
     constructor() {
         super();
@@ -186,7 +157,7 @@ class SMFD_MainPage extends NavSystemPage {
         this.leftMenuElem = null;
         this.rightMenuElem = null;
         this.airbrakeStatus = null;
-
+        this.weapons = new SMFD_Weapons("Weapons","WeaponsPage");
         this.weaponsMenu = new SoftKeysMenu();
     }
     connectedCallback() {
@@ -216,7 +187,6 @@ class SMFD_MainPage extends NavSystemPage {
                 this.gps.computeEvent("DISABLE_ENGINE_PAGE");
                 break;
             case "4":  // Weapons
-                this.weapons = new SMFD_Weapons("Weapons","WeaponsPage");
                 this.gps.computeEvent("DISABLE_ENGINE_PAGE");
                 this.gps.computeEvent("DISABLE_ENGINE_PAGE");
                 break;
@@ -343,7 +313,6 @@ class SMFD_MainPage extends NavSystemPage {
             new SMFD_SoftKeyElement(""),
             new SMFD_SoftKeyElement("页面", this.switchToMenu.bind(this, this.pageMenu))
         ];
-        SimVar.SetSimVarValue(simvar_wpn_door_main,"number", 0);
         this.weaponsMenu.elements = [
             new SMFD_SoftKeyElement("主发射",() => {this.weapons.updateReadiness(simvar_wpn_door_main)},   null,()=>{return this.weapons.getReadiness(simvar_wpn_door_main)}),
             new SMFD_SoftKeyElement("左发射",() => {this.weapons.updateReadiness(simvar_wpn_door_l)},      null,()=>{return this.weapons.getReadiness(simvar_wpn_door_l)}),
