@@ -3,7 +3,7 @@
     <div id="Mainframe">
         <div id="Electricity" state="off">
             <div id="Console">系统初始化...</div>
-            <img id="Splash" src="/Pages/VCockpit/Instruments/NavSystems/Shared/Images/Logo/Garmin.svg" />
+            <img id="Splash" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/hornbill.png" />
 			<div id="SoftKeys">
 				<div id="Top">
 					<div id="Key1" class="SoftKey">
@@ -73,7 +73,7 @@
                 <glasscockpit-altimeter id="Altimeter"></glasscockpit-altimeter>
                 <glasscockpit-airspeed-indicator id="Airspeed"></glasscockpit-airspeed-indicator>
 
-                <glasscockpit-hsi id="Compass"></glasscockpit-hsi>
+                <!--<glasscockpit-hsi id="Compass"></glasscockpit-hsi>-->
 
                 <glasscockpit-wind-data id="WindData"></glasscockpit-wind-data>
                 <glasscockpit-aoa-indicator id="AoA" displayed="true"></glasscockpit-aoa-indicator>
@@ -180,6 +180,17 @@
                 </div>
 
             </div>
+            <div id="RightContainer">
+                <glasscockpit-hsi id="Compass"></glasscockpit-hsi>
+                <div id="PlaneStatus">
+                    <h1>机体状态</h1>
+                    <img src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20_tb.png" />
+                </div>
+                <div id="MessagesContainer">
+                    <h1 style="text-decoration: underline">系统信息</h1>
+                    <div id="Messages"></div>
+                </div>
+            </div>
         </div>
     </div>
 </script>
@@ -211,4 +222,5 @@
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/CommonPFD_MFD.js"></script>
 
 <!--<script type="text/html" import-script="/JS/debug.js"></script>-->
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/labels.js"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/J20MFD/PMFD/PMFD.js"></script>

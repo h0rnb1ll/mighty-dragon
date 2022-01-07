@@ -345,7 +345,7 @@ smfd-element {
     width: 100%; }
 
     smfd-element #Mainframe #Electricity #MainDisplay #CenterDisplay #WeaponsPage {
-      background-image: url("./res/j20_rendered.png");
+      background-image: url("/Pages/VCockpit/Instruments/NavSystems/Shared/res/j20_rendered.png");
       background-repeat: no-repeat;
       background-size: auto 100%;
       background-position: center center;
