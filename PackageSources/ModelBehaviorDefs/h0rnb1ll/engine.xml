@@ -86,24 +86,34 @@
 
     <Template Name="HBL_Eng_Throttle">
         <UseTemplate Name="ASOBO_ENGINE_Lever_Throttle_Template">
+            <TT_DESCRIPTION_ID>@TT_Package.ENGINE_THROTTLE_ACTION</TT_DESCRIPTION_ID>
+            <TT_DESCRIPTION_INDEX>1</TT_DESCRIPTION_INDEX>
             <NODE_ID>Throttle_1</NODE_ID>
             <ANIM_NAME>Throttle_1</ANIM_NAME>
+            <PART_ID>Throttle_1</PART_ID>
             <!--<ANIM_NAME_REVERSE_LOCK>Throttle_1_Rev</ANIM_NAME_REVERSE_LOCK>-->
             <!--<AIRBUS_TYPE/>-->
-            <DRAG_SPEED>-10</DRAG_SPEED>
-            <POSITION_TYPE>L</POSITION_TYPE>
-            <POSITION_VAR>XMLVAR_Throttle1Position</POSITION_VAR>
+            <!--<DRAG_SPEED>-10</DRAG_SPEED>-->
+            <DRAG_AXIS_SCALE>-10</DRAG_AXIS_SCALE>
+            <ID>1</ID>
+            <!--<POSITION_TYPE>L</POSITION_TYPE>-->
+            <!--<POSITION_VAR>XMLVAR_Throttle1Position</POSITION_VAR>-->
             <TOOLTIPID>TT:COCKPIT.TOOLTIPS.ENG1_THROTTLE_CONTROL</TOOLTIPID>
             <!--<REVERSER_INVERT_IM_DRAG_INPUT_SCALAR>True</REVERSER_INVERT_IM_DRAG_INPUT_SCALAR>-->
         </UseTemplate>
         <UseTemplate Name="ASOBO_ENGINE_Lever_Throttle_Template">
+            <TT_DESCRIPTION_ID>@TT_Package.ENGINE_THROTTLE_ACTION</TT_DESCRIPTION_ID>
+            <TT_DESCRIPTION_INDEX>2</TT_DESCRIPTION_INDEX>
             <NODE_ID>Throttle_2</NODE_ID>
             <ANIM_NAME>Throttle_2</ANIM_NAME>
+            <PART_ID>Throttle_2</PART_ID>
             <!--<ANIM_NAME_REVERSE_LOCK>Throttle_1_Rev</ANIM_NAME_REVERSE_LOCK>-->
             <!--<AIRBUS_TYPE/>-->
-            <DRAG_SPEED>-10</DRAG_SPEED>
-            <POSITION_TYPE>L</POSITION_TYPE>
-            <POSITION_VAR>XMLVAR_Throttle1Position</POSITION_VAR>
+            <!--<DRAG_SPEED>-10</DRAG_SPEED>-->
+            <DRAG_AXIS_SCALE>-10</DRAG_AXIS_SCALE>
+            <ID>2</ID>
+            <!--<POSITION_TYPE>L</POSITION_TYPE>-->
+            <!--<POSITION_VAR>XMLVAR_Throttle1Position</POSITION_VAR>-->
             <TOOLTIPID>TT:COCKPIT.TOOLTIPS.ENG2_THROTTLE_CONTROL</TOOLTIPID>
             <!--<REVERSER_INVERT_IM_DRAG_INPUT_SCALAR>True</REVERSER_INVERT_IM_DRAG_INPUT_SCALAR>-->
         </UseTemplate>
