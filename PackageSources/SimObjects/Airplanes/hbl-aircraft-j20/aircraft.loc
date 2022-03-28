@@ -6,6 +6,17 @@
       "en-US"
     ],
     "Strings": {
+      "AIRCRAFT.ATC_MODEL": {
+        "UUID": "beca6af3-8e5d-485f-a094-58af0f6a4237",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2022-03-25 23:59:59",
+        "LocalizationStatus": "TranslationNeeded",
+        "Languages": {
+          "en-US": {
+            "Text": "J-20威龍"
+          }
+        }
+      },
       "AIRCRAFT.DESCRIPTION": {
         "UUID": "ece46fdc-70af-492e-838d-34d54ecd0402",
         "LastModifiedBy": "h0rnb1ll",
@@ -23,7 +34,7 @@
         "LastModifiedDate": "2021-09-14 23:59:59",
         "Languages": {
           "en-US": {
-            "Text": "Chengdu Aerospace Corp."
+            "Text": "CAIG"
           }
         }
       },
