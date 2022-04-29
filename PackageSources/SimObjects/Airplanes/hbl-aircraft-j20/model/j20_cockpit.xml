@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <ModelInfo version="1.1" guid="{1c6a5985-e151-406d-6ff4-9e9b99d7a6e5}">
 	<LODS>
-		<LOD ModelFile="j20_cockpit.gltf" minSize="50"/>
-		<LOD ModelFile="j20_cockpit.gltf" minSize="20"/>
-		<LOD ModelFile="j20_cockpit.gltf" minSize="10"/>
-		<LOD ModelFile="j20_cockpit.gltf" minSize="5"/>
-		<LOD ModelFile="j20_cockpit.gltf" minSize="1"/>
+		<LOD ModelFile="J20.2204.vc.gltf" minSize="50"/>
+		<LOD ModelFile="J20.2204.vc.gltf" minSize="20"/>
+		<LOD ModelFile="J20.2204.vc.gltf" minSize="10"/>
+		<LOD ModelFile="J20.2204.vc.gltf" minSize="5"/>
+		<LOD ModelFile="J20.2204.vc.gltf" minSize="1"/>
 	</LODS>
 	<Behaviors>
 		<Include ModelBehaviorFile="Asobo\Common.xml"/>

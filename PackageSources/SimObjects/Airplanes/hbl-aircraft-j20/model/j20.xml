@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <ModelInfo guid="{2bdfeef1-2298-4510-9185-415944d6674e}" version="1.1">
 	<LODS>
-		<LOD ModelFile="J20.gltf" minSize="1"/>
+		<LOD ModelFile="J20.2204.gltf" minSize="1"/>
 	</LODS>
 
 	<Behaviors>
