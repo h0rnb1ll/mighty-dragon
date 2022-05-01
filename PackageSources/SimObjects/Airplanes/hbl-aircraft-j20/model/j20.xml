@@ -136,6 +136,15 @@
 				</UseTemplate> 
 			</Component>
 		</Component>
+
+		<Component ID="Pilot_Visibility">
+			<Component ID="Pilot" Node="Pilot">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>Pilot</NODE_ID>
+					<VISIBILITY_CODE>(A:CAMERA STATE, number) 2 !=</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+		</Component>
 	</Behaviors>
 
 	<Animation guid="52897438-edf8-4aa9-ad53-7b195466e5df" name="Elevators" type="Sim" typeParam="AutoPlay"/>

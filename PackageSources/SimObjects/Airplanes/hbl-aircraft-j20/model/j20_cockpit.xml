@@ -418,7 +418,42 @@
 					<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 				</UseTemplate>
 				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
-					<NODE_ID>Panel_Text</NODE_ID> 
+					<NODE_ID>Panel_Text</NODE_ID>
+					<POTENTIOMETER>11</POTENTIOMETER>
+					<EMISSIVE_CODE>1</EMISSIVE_CODE>
+				</UseTemplate>
+				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
+					<NODE_ID>Panel_Text.001</NODE_ID>
+					<POTENTIOMETER>11</POTENTIOMETER>
+					<EMISSIVE_CODE>1</EMISSIVE_CODE>
+				</UseTemplate>
+				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
+					<NODE_ID>Panel_Text.002</NODE_ID>
+					<POTENTIOMETER>11</POTENTIOMETER>
+					<EMISSIVE_CODE>1</EMISSIVE_CODE>
+				</UseTemplate>
+				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
+					<NODE_ID>Panel_Text.003</NODE_ID>
+					<POTENTIOMETER>11</POTENTIOMETER>
+					<EMISSIVE_CODE>1</EMISSIVE_CODE>
+				</UseTemplate>
+				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
+					<NODE_ID>Panel_Text.004</NODE_ID>
+					<POTENTIOMETER>11</POTENTIOMETER>
+					<EMISSIVE_CODE>1</EMISSIVE_CODE>
+				</UseTemplate>
+				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
+					<NODE_ID>Panel_Text.005</NODE_ID>
+					<POTENTIOMETER>11</POTENTIOMETER>
+					<EMISSIVE_CODE>1</EMISSIVE_CODE>
+				</UseTemplate>
+				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
+					<NODE_ID>Panel_Text.006</NODE_ID>
+					<POTENTIOMETER>11</POTENTIOMETER>
+					<EMISSIVE_CODE>1</EMISSIVE_CODE>
+				</UseTemplate>
+				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
+					<NODE_ID>Panel_Text.007</NODE_ID>
 					<POTENTIOMETER>11</POTENTIOMETER>
 					<EMISSIVE_CODE>1</EMISSIVE_CODE>
 				</UseTemplate>
@@ -627,11 +662,11 @@
 			</Component>
 		</Component>
 
-		<Component ID="Canopy" Node="Canopy">
+		<Component ID="Canopy_Switch" Node="Canopy_Switch">
 			<UseTemplate Name="ASOBO_GT_Switch_Code">
-				<ANIM_NAME>Canopy</ANIM_NAME>
-				<NODE_ID>Canopy</NODE_ID>
-				<PART_ID>Canopy</PART_ID>
+				<ANIM_NAME>Canopy_Switch</ANIM_NAME>
+				<NODE_ID>Canopy_Switch</NODE_ID>
+				<PART_ID>Canopy_Switch</PART_ID>
 				<ANIMTIP_0>Open Canopy</ANIMTIP_0>
 				<ANIMTIP_1>Close Canopy</ANIMTIP_1>
 				<LEFT_SINGLE_CODE>
