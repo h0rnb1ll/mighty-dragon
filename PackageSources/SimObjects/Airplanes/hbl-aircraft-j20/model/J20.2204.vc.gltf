@@ -509,7 +509,7 @@
         },
         {
             "mesh" : 28,
-            "name" : "Panel_Text.002",
+            "name" : "Panel_Text_002",
             "translation" : [
                 0,
                 -0.048581838607788086,
@@ -554,7 +554,7 @@
         },
         {
             "mesh" : 30,
-            "name" : "Panel_Text.004",
+            "name" : "Panel_Text_004",
             "rotation" : [
                 0.44141221046447754,
                 0,
@@ -870,7 +870,7 @@
         },
         {
             "mesh" : 44,
-            "name" : "Panel_Text.005",
+            "name" : "Panel_Text_005",
             "rotation" : [
                 0.46185487508773804,
                 0,
@@ -915,7 +915,7 @@
         },
         {
             "mesh" : 45,
-            "name" : "Panel_Text.003",
+            "name" : "Panel_Text_003",
             "rotation" : [
                 0.4414122700691223,
                 0,
@@ -1023,7 +1023,7 @@
         },
         {
             "mesh" : 50,
-            "name" : "Panel_Text.007",
+            "name" : "Panel_Text_007",
             "translation" : [
                 0,
                 0.00089263916015625,
@@ -1311,7 +1311,7 @@
         },
         {
             "mesh" : 64,
-            "name" : "Panel_Text.006",
+            "name" : "Panel_Text_006",
             "translation" : [
                 -0.0049974918365478516,
                 0.026893973350524902,
@@ -1408,7 +1408,7 @@
         },
         {
             "mesh" : 70,
-            "name" : "Panel_Text.001",
+            "name" : "Panel_Text_001",
             "translation" : [
                 0.0007639974355697632,
                 -0.0010769367218017578,
@@ -1592,7 +1592,7 @@
                 0.08206365257501602
             ],
             "translation" : [
-                0.005498469341546297,
+                0.0019461873453110456,
                 1.0252989530563354,
                 6.769637584686279
             ]
@@ -4706,7 +4706,11 @@
                     0.5520114302635193,
                     0.5520114898681641
                 ],
-                "msfs_color_alpha_mix" : 0.009999999776482582
+                "msfs_color_alpha_mix" : 0.009999999776482582,
+                "msfs_detail_color_texture" : {},
+                "msfs_detail_normal_texture" : {},
+                "msfs_detail_occlusion_metallic_roughness_texture" : {},
+                "msfs_blend_mask_texture" : {}
             },
             "name" : "$HUD_GLASS",
             "pbrMetallicRoughness" : {
@@ -4722,6 +4726,12 @@
         },
         {
             "doubleSided" : true,
+            "extras" : {
+                "msfs_detail_color_texture" : {},
+                "msfs_detail_normal_texture" : {},
+                "msfs_detail_occlusion_metallic_roughness_texture" : {},
+                "msfs_blend_mask_texture" : {}
+            },
             "name" : "$HUD_FACE",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
@@ -4736,6 +4746,12 @@
         },
         {
             "doubleSided" : true,
+            "extras" : {
+                "msfs_detail_color_texture" : {},
+                "msfs_detail_normal_texture" : {},
+                "msfs_detail_occlusion_metallic_roughness_texture" : {},
+                "msfs_blend_mask_texture" : {}
+            },
             "name" : "panel.002",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
@@ -5445,7 +5461,7 @@
             ]
         },
         {
-            "name" : "Panel_Text.002",
+            "name" : "Panel_Text_002",
             "primitives" : [
                 {
                     "attributes" : {
@@ -5477,7 +5493,7 @@
             ]
         },
         {
-            "name" : "Panel_Text.004",
+            "name" : "Panel_Text_004",
             "primitives" : [
                 {
                     "attributes" : {
@@ -5700,7 +5716,7 @@
             ]
         },
         {
-            "name" : "Panel_Text.005",
+            "name" : "Panel_Text_005",
             "primitives" : [
                 {
                     "attributes" : {
@@ -5716,7 +5732,7 @@
             ]
         },
         {
-            "name" : "Panel_Text.003",
+            "name" : "Panel_Text_003",
             "primitives" : [
                 {
                     "attributes" : {
@@ -5805,7 +5821,7 @@
             ]
         },
         {
-            "name" : "Panel_Text.007",
+            "name" : "Panel_Text_007",
             "primitives" : [
                 {
                     "attributes" : {
@@ -6065,7 +6081,7 @@
             ]
         },
         {
-            "name" : "Panel_Text.006",
+            "name" : "Panel_Text_006",
             "primitives" : [
                 {
                     "attributes" : {
@@ -6203,7 +6219,7 @@
             ]
         },
         {
-            "name" : "Panel_Text.001",
+            "name" : "Panel_Text_001",
             "primitives" : [
                 {
                     "attributes" : {
@@ -7862,15 +7878,15 @@
         },
         {
             "sampler" : 0,
-            "source" : 6
+            "source" : 4
         },
         {
             "sampler" : 0,
-            "source" : 6
+            "source" : 4
         },
         {
             "sampler" : 0,
-            "source" : 6
+            "source" : 4
         }
     ],
     "images" : [
@@ -7903,11 +7919,6 @@
             "mimeType" : "image/png",
             "name" : "J20_VC_LEATHER_NORM",
             "uri" : "J20_VC_LEATHER_NORM.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "Image_0",
-            "uri" : "Image_0.png"
         }
     ],
     "accessors" : [
