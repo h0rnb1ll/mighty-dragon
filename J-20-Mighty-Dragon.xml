@@ -1,4 +1,5 @@
-<Project Version="2" Name="J-20-Mighty-Dragon" FolderName="Packages">
+<?xml version="1.0" encoding="utf-8"?>
+<Project Version="2" Name="J-20-Mighty-Dragon" FolderName="Packages" MetadataFolderName="PackagesMetadata">
 	<OutputDirectory>.</OutputDirectory>
 	<TemporaryOutputDirectory>_PackageInt</TemporaryOutputDirectory>
 	<Packages>

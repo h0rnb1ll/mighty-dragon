@@ -34,19 +34,19 @@
 
 		<Component ID="GEAR">
 			<UseTemplate Name="ASOBO_GEAR_Center_Tire_Template">
-				<ANIM_NAME>Gear_Fwd_Spin</ANIM_NAME>
-				<NODE_ID_STILL>GEAR_Center_Wheel</NODE_ID_STILL>
-				<NODE_ID_BLURRED>GEAR_Center_Wheel_Blurred</NODE_ID_BLURRED>
+				<ANIM_NAME>GEAR_N_SPIN</ANIM_NAME>
+				<NODE_ID_STILL>GEAR_N_Wheel</NODE_ID_STILL>
+				<NODE_ID_BLURRED>GEAR_N_Wheel</NODE_ID_BLURRED>
 			</UseTemplate>
 			<UseTemplate Name="ASOBO_GEAR_Left_Tire_Template">
-				<ANIM_NAME>Gear_Left_Wheel_Spin</ANIM_NAME>
-				<NODE_ID_STILL>Gear_Left_Wheel_Tire</NODE_ID_STILL>
-				<NODE_ID_BLURRED>Gear_Left_Wheel_Tire_Blurred</NODE_ID_BLURRED>
+				<ANIM_NAME>GEAR_L_SPIN</ANIM_NAME>
+				<NODE_ID_STILL>GEAR_L_WHEEL</NODE_ID_STILL>
+				<NODE_ID_BLURRED>GEAR_L_WHEEL</NODE_ID_BLURRED>
 			</UseTemplate>
 			<UseTemplate Name="ASOBO_GEAR_Right_Tire_Template">
-				<ANIM_NAME>Gear_Right_Wheel_Spin</ANIM_NAME>
-				<NODE_ID_STILL>Gear_Right_Wheel_Tire</NODE_ID_STILL>
-				<NODE_ID_BLURRED>Gear_Right_Wheel_Tire_Blurred</NODE_ID_BLURRED>
+				<ANIM_NAME>GEAR_R_SPIN</ANIM_NAME>
+				<NODE_ID_STILL>GEAR_R_WHEEL</NODE_ID_STILL>
+				<NODE_ID_BLURRED>GEAR_R_WHEEL</NODE_ID_BLURRED>
 			</UseTemplate>
 		</Component>
 		<Component ID="FX_CONTRAILS">
@@ -155,16 +155,10 @@
 	<Animation guid="24b45c88-9773-4d7a-b4dc-cb024419a0ad" name="Slats_Left" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="3a946506-43a1-4e78-893b-5e5d0153059f" name="Slats_Right" type="Sim" typeparam="AutoPlay"/>
 	
-	<Animation guid="b9db4c02-da7c-420d-814c-f01b0bfaaf51" name="Gear_Fwd" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="22f8c46e-7ad2-491f-975f-c6b5dac1e3aa" name="Gear_Fwd_Hyd_Arm" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="f88a4d05-c038-4d1a-9f2c-617a47933afd" name="Gear_Fwd_Door" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="9dc51b87-c601-4e28-87a1-4f701a53a1d3" name="Gear_Fwd_Turn" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="45fe43ad-e6c4-44be-bc19-05c37fd729c7" name="Gear_Left" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="27f2681a-65ff-4d04-80b2-90408e4f7033" name="Gear_Right" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="a564d9aa-c6f6-43d3-b092-0e7de038ce5f" name="Gear_Door_Left_1" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="50707fe9-a8b2-4aed-9035-37e2270e54c5" name="Gear_Door_Left_2" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="64771a03-9b4d-423d-ba27-a87a42984bc4" name="Gear_Door_Right_1" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="c8c3b0bd-02a6-44a6-8ee5-f47df9801584" name="Gear_Door_Right_2" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="b9db4c02-da7c-420d-814c-f01b0bfaaf51" name="GEAR_NOSE" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="9dc51b87-c601-4e28-87a1-4f701a53a1d3" name="GEAR_NOSE_TURN" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="45fe43ad-e6c4-44be-bc19-05c37fd729c7" name="Gear_L" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="27f2681a-65ff-4d04-80b2-90408e4f7033" name="Gear_R" type="Sim" typeparam="AutoPlay"/>
 
 	<PartInfo>
 		<Name>Elevators</Name>
@@ -267,28 +261,28 @@
 	
 	<!--Landing Gear extend/retract animation-->
 	<PartInfo>
-		<Name>Gear_Fwd_Turn</Name>
-		<AnimLength>160</AnimLength>
+		<Name>GEAR_NOSE_TURN</Name>
+		<AnimLength>100</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR STEER ANGLE:0</Variable>
 					<Units>number</Units>
-					<Scale>50</Scale>
-					<Bias>80</Bias>
+					<Scale>1</Scale>
+					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
 		</Animation>
 	</PartInfo>
 	<PartInfo>
-		<Name>Gear_Fwd</Name>
-		<AnimLength>200</AnimLength>
+		<Name>GEAR_NOSE</Name>
+		<AnimLength>100</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:0</Variable>
 					<Units>number</Units>
-					<Scale>400</Scale>
+					<Scale>1</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
@@ -323,14 +317,14 @@
 		</Animation>
 	</PartInfo>
 	<PartInfo>
-		<Name>Gear_Left</Name>
-		<AnimLength>200</AnimLength>
+		<Name>Gear_L</Name>
+		<AnimLength>100</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:1</Variable>
 					<Units>number</Units>
-					<Scale>400</Scale>
+					<Scale>1</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>
@@ -365,14 +359,14 @@
 		</Animation>
 	</PartInfo>
 	<PartInfo>
-		<Name>Gear_Right</Name>
-		<AnimLength>200</AnimLength>
+		<Name>Gear_R</Name>
+		<AnimLength>100</AnimLength>
 		<Animation>
 			<Parameter>
 				<Sim>
 					<Variable>GEAR ANIMATION POSITION:2</Variable>
 					<Units>number</Units>
-					<Scale>400</Scale>
+					<Scale>1</Scale>
 					<Bias>0</Bias>
 				</Sim>
 			</Parameter>

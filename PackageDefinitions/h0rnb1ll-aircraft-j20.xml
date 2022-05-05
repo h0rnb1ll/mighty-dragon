@@ -1,9 +1,10 @@
-<AssetPackage Name="h0rnb1ll-aircraft-j20" Version="0.1.0">
+<?xml version="1.0" encoding="utf-8"?>
+<AssetPackage Version="0.1.0">
 	<ItemSettings>
 		<ContentType>AIRCRAFT</ContentType>
 		<Title>J-20 Mighty Dragon</Title>
 		<Manufacturer>Chengdu Aerospace Corp</Manufacturer>
-		<Creator>h0rnb1ll</Creator>
+		<Creator>Hornbill Simulations</Creator>
 	</ItemSettings>
 	<Flags>
 		<VisibleInStore>false</VisibleInStore>
