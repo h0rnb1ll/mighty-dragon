@@ -7,7 +7,7 @@ Priority=0
 [Properties]
 
 [Emitter.0]
-Lifetime=1.0, 1.0
+Lifetime=0.3, 0.3
 Delay=0.0, 0.0
 Bounce=0.0
 Light=1
@@ -20,7 +20,7 @@ Drag=0.0, 0.0
 X Particle Velocity=0.0, 0.0
 Y Particle Velocity=0.0, 0.0
 Z Particle Velocity=0.0, 0.0
-X Rotation=20.0, 20.0
+X Rotation=0.0, 0.0
 Y Rotation=0.0, 0.0
 Z Rotation=0.0, 0.0
 X Offset=0.0, 0.0
@@ -30,8 +30,8 @@ Z Offset=0.0, 0.0
 [Particle.0]
 Lifetime=0.0, 0.0
 Type=19
-X Scale=0.3, 0.3
-Y Scale=0.3, 0.3
+X Scale=0.4, 0.4
+Y Scale=0.4, 0.4
 Z Scale=0.0, 0.0
 X Scale Rate=0.0, 0.0
 Y Scale Rate=0.0, 0.0
@@ -62,15 +62,15 @@ Y Scale Goal=0.0
 Z Scale Goal=0.0
 NearEndFade= 5.0
 NearFade= 10.0
-MinProjSize= 0.4
+MinProjSize= 0.4				
 
 [LightAttributes.0]
 Type=spot
 Size=0.1
-Range=2100.0
-Intensity=70.0
+Range=2500
+Intensity=200
 Softness=0.0
-SpotInner=60.0
-SpotOuter=90.0
+SpotInner=8
+SpotOuter=30
 Volumetric=0
 ScatDir=0.0
