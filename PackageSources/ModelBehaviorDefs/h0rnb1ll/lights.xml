@@ -1,8 +1,8 @@
 <ModelBehaviors>
 	<Template Name="HBL_LIGHTING_Formation_Lights_SubTemplate">
 		<DefaultTemplateParameters>
-			<PART_ID>Formation_Rudder_Left</PART_ID>
-			<PART_ID>Formation_Rudder_Right</PART_ID>
+			<PART_ID>Formation_Rudder_L</PART_ID>
+			<PART_ID>Formation_Rudder_R</PART_ID>
 			<SCREEN_EMISSIVE_CODE>(L:XMLVAR_EBD_LIGHTING_FORMATION)</SCREEN_EMISSIVE_CODE>
 			<EMISSIVE_CODE_FACTOR>1</EMISSIVE_CODE_FACTOR>
 			<FAILURE>(A:CIRCUIT AVIONICS ON, Bool)</FAILURE>
@@ -16,16 +16,13 @@
 	</Template>
 	<Template Name="HBL_LIGHTING_Formation_Lights_Template">
 		<UseTemplate Name="HBL_LIGHTING_Formation_Lights_SubTemplate">
-			<PART_ID>Formation_Rudder_Left</PART_ID>
+			<PART_ID>Formation_Rudder_L</PART_ID>
 		</UseTemplate>
 		<UseTemplate Name="HBL_LIGHTING_Formation_Lights_SubTemplate">
-			<PART_ID>Formation_Rudder_Right</PART_ID>
+			<PART_ID>Formation_Rudder_R</PART_ID>
 		</UseTemplate>
 		<UseTemplate Name="HBL_LIGHTING_Formation_Lights_SubTemplate">
-			<PART_ID>Formation_Wing</PART_ID>
-		</UseTemplate>a
-		<UseTemplate Name="HBL_LIGHTING_Formation_Lights_SubTemplate">
-			<PART_ID>Formation_Fuse</PART_ID>
+			<PART_ID>Formation</PART_ID>
 		</UseTemplate>
 	</Template>
 	
