@@ -3,3 +3,4 @@ _PackageInt
 
 ## ignore blend1 files
 *.blend1
+*.emb.gltf
