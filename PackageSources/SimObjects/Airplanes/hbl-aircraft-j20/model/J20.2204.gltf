@@ -1807,7 +1807,7 @@
                 "msfs_detail_occlusion_metallic_roughness_texture" : {},
                 "msfs_blend_mask_texture" : {}
             },
-            "name" : "NAV_REFLECTIVE",
+            "name" : "LIGHTS",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.46720150113105774,
@@ -1815,8 +1815,8 @@
                     0.46720150113105774,
                     1
                 ],
-                "metallicFactor" : 0.8999999761581421,
-                "roughnessFactor" : 0.4000000059604645
+                "metallicFactor" : 0.5,
+                "roughnessFactor" : 0
             }
         },
         {
