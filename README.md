@@ -1,6 +1,6 @@
 # J-20 Mighty-Dragon for MSFS
 ### Alpha release stage, Work In Progress. 
-[alpha realease download](https://github.com/h0rnb1ll/mighty-dragon/releases/download/0.3.0/hbl-aircraft-j20-0.3.0.zip)
+[alpha realease download](https://github.com/h0rnb1ll/mighty-dragon/releases/download/0.3.0/hbl-aircraft-j20-0.3.0.zip) 
 [other versions](https://github.com/h0rnb1ll/mighty-dragon/releases)
 
 Tested on SU7
