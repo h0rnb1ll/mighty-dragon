@@ -3946,10 +3946,9 @@
                 "msfs_detail_color_texture" : {},
                 "msfs_detail_normal_texture" : {},
                 "msfs_detail_occlusion_metallic_roughness_texture" : {},
-                "msfs_blend_mask_texture" : {},
                 "msfs_material_type" : 2,
                 "msfs_base_color_texture" : {
-                    "name" : "panel_text.png",
+                    "name" : "J20_VC_DECAL_ALBD",
                     "type" : "Image"
                 },
                 "msfs_occlusion_metallic_roughness_texture" : {},
@@ -8111,32 +8110,32 @@
         {
             "mimeType" : "image/png",
             "name" : "J20_VC_HOTAS_NORM",
-            "uri" : "J20_VC_HOTAS_NORM.png"
+            "uri" : "J20_VC_HOTAS_NORM.PNG"
         },
         {
             "mimeType" : "image/png",
             "name" : "J20_VC_HOTAS_ALBD",
-            "uri" : "J20_VC_HOTAS_ALBD.png"
+            "uri" : "J20_VC_HOTAS_ALBD.PNG"
         },
         {
             "mimeType" : "image/png",
             "name" : "J20_VC_HOTAS_COMP",
-            "uri" : "J20_VC_HOTAS_COMP.png"
+            "uri" : "J20_VC_HOTAS_COMP.PNG"
         },
         {
             "mimeType" : "image/png",
             "name" : "J20_VC_ACCENT",
-            "uri" : "J20_VC_ACCENT.png"
+            "uri" : "J20_VC_ACCENT.PNG"
         },
         {
             "mimeType" : "image/png",
             "name" : "J20_VC_DECAL_ALBD",
-            "uri" : "J20_VC_DECAL_ALBD.png"
+            "uri" : "J20_VC_DECAL_ALBD.PNG"
         },
         {
             "mimeType" : "image/png",
             "name" : "J20_VC_LEATHER_NORM",
-            "uri" : "J20_VC_LEATHER_NORM.png"
+            "uri" : "J20_VC_LEATHER_NORM.PNG"
         }
     ],
     "accessors" : [
