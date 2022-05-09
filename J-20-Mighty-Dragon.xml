@@ -3,7 +3,7 @@
 	<OutputDirectory>.</OutputDirectory>
 	<TemporaryOutputDirectory>_PackageInt</TemporaryOutputDirectory>
 	<Packages>
-		<Package>PackageDefinitions\h0rnb1ll-aircraft-j20.xml</Package>
+		<Package>PackageDefinitions\hbl-aircraft-j20.xml</Package>
 	</Packages>
 </Project>
 

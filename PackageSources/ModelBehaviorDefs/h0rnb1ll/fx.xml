@@ -1,0 +1,194 @@
+<ModelBehaviors>
+    <Template Name="HBL_FX">
+        <Component ID="VapourCone_FX">
+            <UseTemplate Name="ASOBO_SKY_NODE_VAPOURCONE_FX">
+                <FX_NODE>fx_vapourCone_01</FX_NODE>
+                <FX_CODE>(A:AIRSPEED MACH, mach) 0.97 &gt; (A:AIRSPEED MACH, mach) 0.977 &lt; and (A:PLANE ALT ABOVE GROUND, feet) 15000 &lt; and (A:AMBIENT TEMPERATURE, celsius) 30 &lt; and</FX_CODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID="LowAltitudeWater_FX">
+            <UseTemplate Name="ASOBO_WATER_NODE_LOWALTWATER_FX">
+                <FX_NODE>fx_vapourCone_01</FX_NODE>
+                <FX_CODE>(A:PLANE ALT ABOVE GROUND, Feet) 150 &lt; (A:GROUND VELOCITY, knot) 300 &gt; and</FX_CODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID="LowAltitudeDust_SuperSonic_FX">
+            <UseTemplate Name="ASOBO_GROUND_CP_LOWALTITUDEDUST_SUPERSONIC_FX">
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "PressTrail_Left_FX">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>Side, 1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_PRESSURETRAIL">
+                <FX_NODE>fx_presstrail_01</FX_NODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "PressTrail_Right_FX">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>Side, -1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_PRESSURETRAIL">
+                <FX_NODE>fx_presstrail_02</FX_NODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "PressTrail_Canard_Left_FX">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>Side, 1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_PRESSURETRAIL">
+                <FX_NODE>fx_presstrail_canard_01</FX_NODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "PressTrail_Canard_Right_FX">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>Side, -1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_PRESSURETRAIL">
+                <FX_NODE>fx_presstrail_canard_02</FX_NODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "WingVapour_Left_FX">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>Side, 1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_WINGVAPOUR">
+                <FX_NODE>fx_presstrail_01</FX_NODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "WingVapour_Right_FX">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>Side, -1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_WINGVAPOUR">
+                <FX_NODE>fx_presstrail_02</FX_NODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "DragTrail_Left_FX">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>DT_Side, 1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_DRAGTRAIL">
+                <FX_NODE>fx_vorttrail_01</FX_NODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "DragTrail_Right_FX">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>DT_Side, -1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_DRAGTRAIL">
+                <FX_NODE>fx_vorttrail_02</FX_NODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "FX1_LOW_ALTITUDE">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>part_size_clamp, 28</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_LOW_ALTITUDE_DUST">
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "FX_LOW_ALTITUDE_VORTEX_RIGHT">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>GP_Side, 0</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_GROUND_CP_LOWALTITUDEDUSTFX2_FX">
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "FX_LOW_ALTITUDE_VORTEX_LEFT">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>GP_Side, 1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_GROUND_CP_LOWALTITUDEDUSTFX2_FX">
+            </UseTemplate>
+        </Component>
+
+        <Component ID="LANDING_FX">
+            <UseTemplate Name="ASOBO_LANDING_FX"/>
+        </Component>
+        
+        
+        <Component ID="AFTERBURNER_FX_LEFT">
+            <UseTemplate Name="ASOBO_FX_AFTERBURNER">
+                <FX_NODE>fx_afterburner_left</FX_NODE>
+                <FX_GRAPH_PARAM_0>power, (A:TURB ENG AFTERBURNER PCT ACTIVE:1, Percent) 100 /</FX_GRAPH_PARAM_0>
+                <FX_CODE>(A:TURB ENG AFTERBURNER PCT ACTIVE:1, Percent) 0 &gt;</FX_CODE>
+            </UseTemplate>
+        </Component>
+        
+        <Component ID="AFTERBURNER_FX_RIGHT">
+            <UseTemplate Name="ASOBO_FX_AFTERBURNER">
+                <FX_NODE>fx_afterburner_right</FX_NODE>
+                <FX_GRAPH_PARAM_0>power, (A:TURB ENG AFTERBURNER PCT ACTIVE:2, Percent) 100 /</FX_GRAPH_PARAM_0>
+                <FX_CODE>(A:TURB ENG AFTERBURNER PCT ACTIVE:2, Percent) 0 &gt;</FX_CODE>
+            </UseTemplate>
+        </Component>
+        
+        <Component ID="AFTERBURNER_HEAT_FX_LEFT">
+            <UseTemplate Name="ASOBO_FX_AFTERBURNER_HEAT">
+                <FX_NODE>fx_afterburner_left</FX_NODE>
+                <FX_CODE>(A:TURB ENG AFTERBURNER PCT ACTIVE:1, Percent)</FX_CODE>
+            </UseTemplate>
+        </Component>
+        
+        <Component ID="AFTERBURNER_HEAT_FX_RIGHT">
+            <UseTemplate Name="ASOBO_FX_AFTERBURNER_HEAT">
+                <FX_NODE>fx_afterburner_right</FX_NODE>
+                <FX_CODE>(A:TURB ENG AFTERBURNER PCT ACTIVE:2, Percent)</FX_CODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID="FX_CONTRAILS">
+            <Component ID="FX_CONTRAIL_QUAD_LEFT_OUT" Node="fx_contrail_left">
+                <UseTemplate Name="ASOBO_GT_FX">
+                    <FX_CODE>(A:CONTRAILS CONDITIONS MET:1, Keyframe) 0 &gt;</FX_CODE>
+                    <FX_OFFSET_X>0</FX_OFFSET_X>
+                    <FX_OFFSET_Y>0</FX_OFFSET_Y>
+                    <FX_OFFSET_Z>-0</FX_OFFSET_Z>
+                    <FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
+                    <FX_NAME>FX_CONTRAILS</FX_NAME>
+                </UseTemplate>
+            </Component>
+            <Component ID="FX_CONTRAIL_QUAD_RIGHT_OUT" Node="fx_contrail_right">
+                <UseTemplate Name="ASOBO_GT_FX">
+                    <FX_CODE>(A:CONTRAILS CONDITIONS MET:1, Keyframe) 0 &gt;</FX_CODE>
+                    <FX_OFFSET_X>0</FX_OFFSET_X>
+                    <FX_OFFSET_Y>0</FX_OFFSET_Y>
+                    <FX_OFFSET_Z>-0</FX_OFFSET_Z>
+                    <FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
+                    <FX_NAME>FX_CONTRAILS</FX_NAME>
+                </UseTemplate>
+            </Component>
+        </Component>
+        <Component ID="FX_CONTRAIL_RIBBON">
+            <OverrideTemplateParameters>
+                    <FX_CODE>(A:CONTRAILS CONDITIONS MET:1, Keyframe) 0 &gt;</FX_CODE>
+                    <FX_OFFSET_X>0</FX_OFFSET_X>
+                    <FX_OFFSET_Y>0</FX_OFFSET_Y>
+                    <FX_OFFSET_Z>0</FX_OFFSET_Z>
+                    <FX_GUID>{904EC2CE-F8DD-4480-99E7-B33F7CF6E114}</FX_GUID>
+                    <FX_NAME>FX_CONTRAILS_RIBBON</FX_NAME>
+            </OverrideTemplateParameters>
+            <Component ID="FX_CONTRAIL_RIBBON_LEFT_OUT" Node="fx_contrail_left">
+                <UseTemplate Name="ASOBO_GT_FX">
+                </UseTemplate>
+            </Component>
+            <Component ID="FX_CONTRAIL_RIBBON_RIGHT_OUT" Node="fx_contrail_right">
+                <UseTemplate Name="ASOBO_GT_FX">
+                </UseTemplate>
+            </Component>
+        </Component>
+    </Template>
+</ModelBehaviors>
