@@ -20,40 +20,235 @@
 		</Component>
 		
 		<Component ID="ENGINE">
-			<UseTemplate Name="ASOBO_ENGINE_Turbine_Template">
+			<!--<UseTemplate Name="ASOBO_ENGINE_Turbine_Template">
 				<ID>1</ID>
-				<ANIM_NODE_ID>eng_l_turb_stationary</ANIM_NODE_ID>
-				<ANIM_NAME>eng_l_turb_stationary</ANIM_NAME>
-				<STILL_NODE_ID>eng_l_turb_stationary</STILL_NODE_ID>
-				<SLOW_NODE_ID>eng_l_turb_stationary</SLOW_NODE_ID>
-				<BLURRED_NODE_ID>eng_l_turb_fast</BLURRED_NODE_ID>
+				<ANIM_NODE_ID>fanblade_l</ANIM_NODE_ID>
+				<ANIM_NAME>fanblade_l</ANIM_NAME>
+				<STILL_NODE_ID>fuselage_engine_L</STILL_NODE_ID>
+				<SLOW_NODE_ID>fuselage_engine_L</SLOW_NODE_ID>
+				<BLURRED_NODE_ID>fuselage_engine_L</BLURRED_NODE_ID>
 			</UseTemplate>
 			<UseTemplate Name="ASOBO_ENGINE_Turbine_Template">
 				<ID>2</ID>
-				<ANIM_NODE_ID>eng_r_turb_stationary</ANIM_NODE_ID>
-				<ANIM_NAME>eng_r_turb_stationary</ANIM_NAME>
-				<STILL_NODE_ID>eng_r_turb_stationary</STILL_NODE_ID>
-				<SLOW_NODE_ID>eng_r_turb_stationary</SLOW_NODE_ID>
-				<BLURRED_NODE_ID>eng_r_turb_fast</BLURRED_NODE_ID>
+				<ANIM_NODE_ID>fanblade_r</ANIM_NODE_ID>
+				<ANIM_NAME>fanblade_r</ANIM_NAME>
+				<STILL_NODE_ID>fuselage_engine_R</STILL_NODE_ID>
+				<SLOW_NODE_ID>fuselage_engine_R</SLOW_NODE_ID>
+				<BLURRED_NODE_ID>fuselage_engine_R</BLURRED_NODE_ID>
 			</UseTemplate>
+			-->
+			<UseTemplate Name="ASOBO_Nozzle_Template">
+				<ANIM_NAME>EXHAUSTS_LEFT</ANIM_NAME>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_Nozzle_Template">
+				<ANIM_NAME>EXHAUSTS_RIGHT</ANIM_NAME>
+				<ID>2</ID>
+			</UseTemplate>
+			
+			<Component ID="Engines_Emissive">
+				<Parameters Type="Default">
+					<EMISSIVE_FACTOR>150</EMISSIVE_FACTOR>
+					<SMOOTH_INC_DELTA_PER_SEC>2</SMOOTH_INC_DELTA_PER_SEC><!--#Stage changed per sec-->
+					<SMOOTH_DEC_DELTA_PER_SEC>4</SMOOTH_DEC_DELTA_PER_SEC><!--#Stage changed per sec-->
+					<STAGE_COUNT>6</STAGE_COUNT>
+				</Parameters>
+				<Parameters Type="Override">
+					<EMISSIVE_FACTOR_LEFT>#EMISSIVE_FACTOR#</EMISSIVE_FACTOR_LEFT>
+					<EMISSIVE_FACTOR_RIGHT>#EMISSIVE_FACTOR#</EMISSIVE_FACTOR_RIGHT>
+				</Parameters>
+				<Parameters Type="Override">
+					<EMISSIVE_CODE_LEFT>(I:XMLVAR_AB_L_Emissive)</EMISSIVE_CODE_LEFT>
+					<EMISSIVE_CODE_RIGHT>(I:XMLVAR_AB_R_Emissive)</EMISSIVE_CODE_RIGHT>
+				</Parameters>
+				
+				<Component ID="fuselage_engine_L" Node="fuselage_engine_L">
+					<UseTemplate Name="ASOBO_GT_Material_Emissive_Code">
+						<EMISSIVE_CODE>
+							(A:TURB ENG AFTERBURNER STAGE ACTIVE:1, Number) sp0
+							l0 (L:XMLVAR_AB_L_Current_Stage) != if{
+								l0 (L:XMLVAR_AB_L_Current_Stage) - sp1
+								l1 0 &gt; if{ #SMOOTH_INC_DELTA_PER_SEC# sp5 } els{ #SMOOTH_DEC_DELTA_PER_SEC# sp5 } 
+								(L:XMLVAR_AB_L_Current_Stage) l5 (A:ANIMATION DELTA TIME, seconds) * l1 abs min l1 sign * + (&gt;L:XMLVAR_AB_L_Current_Stage)
+							}
+							(L:XMLVAR_AB_L_Current_Stage) #STAGE_COUNT# / s1 100 * s0 23 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(L:XMLVAR_AB_L_Current_Stage) 1 &lt; if{ 0.02 #EMISSIVE_FACTOR_LEFT# * (L:XMLVAR_AB_L_Current_Stage) * }
+							els{
+							l1 0 == if{ 0 } els{ 0.02 (L:XMLVAR_AB_L_Current_Stage) 1 - #STAGE_COUNT# 1 - / 0.98 * + #EMISSIVE_FACTOR_LEFT# * }
+							}  (&gt;I:XMLVAR_AB_L_Emissive)
+							
+							(A:TURB ENG AFTERBURNER STAGE ACTIVE:2, Number) sp2
+							l2 (L:XMLVAR_AB_R_Current_Stage) != if{
+								l2 (L:XMLVAR_AB_R_Current_Stage) - sp3
+								l3 0 &gt; if{ #SMOOTH_INC_DELTA_PER_SEC# sp5 } els{ #SMOOTH_DEC_DELTA_PER_SEC# sp5 } 
+								(L:XMLVAR_AB_R_Current_Stage) l5 (A:ANIMATION DELTA TIME, seconds) * l3 abs min l3 sign * + (&gt;L:XMLVAR_AB_R_Current_Stage)
+							}
+							(L:XMLVAR_AB_R_Current_Stage) #STAGE_COUNT# / s3 100 * s2 24 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							(L:XMLVAR_AB_R_Current_Stage) 1 &lt; if{ 0.02 #EMISSIVE_FACTOR_RIGHT# * (L:XMLVAR_AB_R_Current_Stage) * }
+							els{
+							l3 0 == if{ 0 } els{ 0.02 (L:XMLVAR_AB_R_Current_Stage) 1 - #STAGE_COUNT# 1 - /  0.98 * + #EMISSIVE_FACTOR_RIGHT# * } 
+							} (&gt;I:XMLVAR_AB_R_Emissive)
+							
+							l0 l2 + 0.5 * 25 (&gt;K:2:LIGHT_POTENTIOMETER_SET)
+							#EMISSIVE_CODE_LEFT#
+						</EMISSIVE_CODE>
+					</UseTemplate>
+				</Component>
+				
+				<Component ID="fuselage_engine_R" Node="fuselage_engine_R">
+					<UseTemplate Name="ASOBO_GT_Material_Emissive_Code">
+						<EMISSIVE_CODE>
+							#EMISSIVE_CODE_RIGHT#
+						</EMISSIVE_CODE>
+					</UseTemplate>
+				</Component>
+				
+				<Loop>
+					<Setup>
+						<Param>CUR_ID</Param>
+						<From>0</From>
+						<Inc>1</Inc>
+						<To>16</To>
+					</Setup>
+					<Do>
+						<Parameters Type="Override" LifeTime="Iteration">
+							<Condition>
+								<Test>
+									<Lower>
+										<Value>CUR_ID</Value>
+										<Number>10</Number>
+									</Lower>
+								</Test>
+								<True>
+									<LEADING_ZERO>0</LEADING_ZERO>
+								</True>
+								<False>
+									<LEADING_ZERO></LEADING_ZERO>
+								</False>
+							</Condition>
+						</Parameters>
+						
+						<Parameters Type="Override" LifeTime="Iteration">
+							<Condition>
+								<Test>
+									<And>
+										<Greater>
+											<Value>CUR_ID</Value>
+											<Number>0</Number>
+										</Greater>
+										<LowerOrEqual>
+											<Value>CUR_ID</Value>
+											<Number>28</Number>
+										</LowerOrEqual>
+									</And>
+								</Test>
+								<True>
+									<NODE_ID_LEFT>ENG_L_Duct_#LEADING_ZERO##CUR_ID#_Inner</NODE_ID_LEFT>
+								</True>
+							</Condition>
+							<Condition>
+								<Test>
+									<LowerOrEqual>
+										<Value>CUR_ID</Value>
+										<Number>23</Number>
+									</LowerOrEqual>
+								</Test>
+								<True>
+									<NODE_ID_RIGHT>ENG_R_Duct_#LEADING_ZERO##CUR_ID#_Inner</NODE_ID_RIGHT>
+								</True>
+							</Condition>
+						</Parameters>
+						
+						<Condition NotEmpty="NODE_ID_LEFT">
+							<Component ID="#NODE_ID_LEFT#" Node="#NODE_ID_LEFT#">
+								<UseTemplate Name="ASOBO_GT_Material_Emissive_Code">
+									<EMISSIVE_CODE>#EMISSIVE_CODE_LEFT#</EMISSIVE_CODE>
+								</UseTemplate>
+							</Component>
+						</Condition>
+						<Condition NotEmpty="NODE_ID_RIGHT">
+							<Component ID="#NODE_ID_RIGHT#" Node="#NODE_ID_RIGHT#">
+								<UseTemplate Name="ASOBO_GT_Material_Emissive_Code">
+									<EMISSIVE_CODE>#EMISSIVE_CODE_RIGHT#</EMISSIVE_CODE>
+								</UseTemplate>
+							</Component>
+						</Condition>
+					</Do>
+				</Loop>
+			</Component>
 		</Component>
 
 		<Component ID="GEAR">
 			<UseTemplate Name="ASOBO_GEAR_Center_Tire_Template">
 				<ANIM_NAME>GEAR_N_SPIN</ANIM_NAME>
 				<NODE_ID_STILL>GEAR_N_Wheel</NODE_ID_STILL>
-				<NODE_ID_BLURRED>GEAR_N_Wheel</NODE_ID_BLURRED>
+				<NODE_ID_BLURRED>GEAR_N_Wheel_Blur</NODE_ID_BLURRED>
 			</UseTemplate>
 			<UseTemplate Name="ASOBO_GEAR_Left_Tire_Template">
 				<ANIM_NAME>GEAR_L_SPIN</ANIM_NAME>
 				<NODE_ID_STILL>GEAR_L_WHEEL</NODE_ID_STILL>
-				<NODE_ID_BLURRED>GEAR_L_WHEEL</NODE_ID_BLURRED>
+				<NODE_ID_BLURRED>GEAR_L_WHEEL_BLUR</NODE_ID_BLURRED>
 			</UseTemplate>
 			<UseTemplate Name="ASOBO_GEAR_Right_Tire_Template">
 				<ANIM_NAME>GEAR_R_SPIN</ANIM_NAME>
 				<NODE_ID_STILL>GEAR_R_WHEEL</NODE_ID_STILL>
-				<NODE_ID_BLURRED>GEAR_R_WHEEL</NODE_ID_BLURRED>
+				<NODE_ID_BLURRED>GEAR_R_WHEEL_BLUR</NODE_ID_BLURRED>
 			</UseTemplate>
+		</Component>
+		<Component ID="GearDoorVisibility">
+			<Component ID="DOORCL" Node="DOORCL">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>DOORCL</NODE_ID>
+					<VISIBILITY_CODE>(A:GEAR POSITION:1, percent) 10 &lt;</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+			<Component ID="GEAR_N_ARM" Node="GEAR_N_ARM">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>GEAR_N_ARM</NODE_ID>
+					<VISIBILITY_CODE>(A:GEAR POSITION:0, percent) 90 &gt;</VISIBILITY_CODE>
+				</UseTemplate>
+			</Component>
+			<Component ID="GEAR_L_STRUT_ARM" Node="GEAR_L_STRUT_ARM">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>GEAR_L_STRUT_ARM</NODE_ID>
+					<VISIBILITY_CODE>(A:GEAR POSITION:1, percent) 90 &gt;</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+			<Component ID="GEAR_R_STRUT_ARM" Node="GEAR_R_STRUT_ARM">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>GEAR_R_STRUT_ARM</NODE_ID>
+					<VISIBILITY_CODE>(A:GEAR POSITION:2, percent) 90 &gt;</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+			<Component ID="GEAR_N_DOOR" Node="GEAR_N_DOOR">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>GEAR_N_DOOR</NODE_ID>
+					<VISIBILITY_CODE>(A:GEAR POSITION:0, percent) 0 &gt;</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+			<Component ID="GEAR_L_DOOR" Node="GEAR_L_DOOR">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>GEAR_L_DOOR</NODE_ID>
+					<VISIBILITY_CODE>(A:GEAR POSITION:1, percent) 0 &gt;</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+			<Component ID="GEAR_L_DOOR2" Node="GEAR_L_DOOR2">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>GEAR_L_DOOR2</NODE_ID>
+					<VISIBILITY_CODE>(A:GEAR POSITION:1, percent) 0 &gt;</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+			<Component ID="GEAR_R_DOOR" Node="GEAR_R_DOOR">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>GEAR_R_DOOR</NODE_ID>
+					<VISIBILITY_CODE>(A:GEAR POSITION:2, percent) 0 &gt;</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
+			<Component ID="GEAR_R_DOOR2" Node="GEAR_R_DOOR2">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>GEAR_R_DOOR2</NODE_ID>
+					<VISIBILITY_CODE>(A:GEAR POSITION:2, percent) 0 &gt;</VISIBILITY_CODE>
+				</UseTemplate> 
+			</Component>
 		</Component>
 
 		<Component ID="RUDDER">
@@ -121,11 +316,6 @@
 	<Animation guid="24b45c88-9773-4d7a-b4dc-cb024419a0ad" name="Slats_Left" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="3a946506-43a1-4e78-893b-5e5d0153059f" name="Slats_Right" type="Sim" typeparam="AutoPlay"/>
 	
-	<Animation guid="b9db4c02-da7c-420d-814c-f01b0bfaaf51" name="GEAR_NOSE" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="9dc51b87-c601-4e28-87a1-4f701a53a1d3" name="GEAR_NOSE_TURN" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="45fe43ad-e6c4-44be-bc19-05c37fd729c7" name="Gear_L" type="Sim" typeparam="AutoPlay"/>
-	<Animation guid="27f2681a-65ff-4d04-80b2-90408e4f7033" name="Gear_R" type="Sim" typeparam="AutoPlay"/>
-
 	<PartInfo>
 		<Name>Elevators</Name>
 		<AnimLength>100</AnimLength>
@@ -238,6 +428,144 @@
         </Parameter>
         </Animation>
     </PartInfo>
+
+	<!--Landing Gear extend/retract animation-->
+	<Animation guid="b9db4c02-da7c-420d-814c-f01b0bfaaf51"  name="GEAR_N" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="9dc51b87-c601-4e28-87a1-4f701a53a1d3"  name="GEAR_N_TURN" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="cd1d1836-397f-4076-969e-628b7376ac60"  name="GEAR_N_DOOR" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="45fe43ad-e6c4-44be-bc19-05c37fd729c7"  name="GEAR_L_STRUT" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="7fb35dfd-a531-455a-9bff-9aa2b48048a1"  name="GEAR_L_DOOR" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="8fbc7e65-3ded-43a3-b1b6-5b8046e89023"  name="GEAR_L_DOOR2" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="27f2681a-65ff-4d04-80b2-90408e4f7033"  name="GEAR_R_STRUT" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="d129191e-cf25-4aae-a2e4-4c13f7b61e5f"  name="GEAR_R_DOOR" type="Sim" typeparam="AutoPlay"/>
+	<Animation guid="2a92db1a-4c3a-4fad-aa96-2385f07ab987"  name="GEAR_R_DOOR2" type="Sim" typeparam="AutoPlay"/>
+	
+	<PartInfo>
+		<Name>GEAR_N_TURN</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR STEER ANGLE:0</Variable>
+					<Units>number</Units>
+					<Scale>50</Scale>
+					<Bias>50</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>GEAR_N</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:0</Variable>
+					<Units>number</Units>
+					<Scale>200</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>GEAR_N_DOOR</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:0</Variable>
+					<Units>number</Units>
+					<Scale>200</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>GEAR_L_STRUT</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:1</Variable>
+					<Units>number</Units>
+					<Scale>200</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>GEAR_L_DOOR</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:1</Variable>
+					<Units>number</Units>
+					<Scale>200</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>GEAR_L_DOOR_2</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:1</Variable>
+					<Units>number</Units>
+					<Scale>200</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>GEAR_R_STRUT</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:2</Variable>
+					<Units>number</Units>
+					<Scale>200</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>GEAR_R_DOOR</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:2</Variable>
+					<Units>number</Units>
+					<Scale>200</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>GEAR_R_DOOR2</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>GEAR ANIMATION POSITION:2</Variable>
+					<Units>number</Units>
+					<Scale>200</Scale>
+					<Bias>0</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
 
 </ModelInfo>
 
