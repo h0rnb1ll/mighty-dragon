@@ -13,8 +13,6 @@ Features included:
 * animated flight control surfaces
 * interior and exterior lightings
 * engine animation with afterburners
-* cockpit lighting with color accent.
-To change cockpit accent, select and copy your color of choice from [Community folder]/h0rnb1ll-aircraft-j20/cockpit-accent, replace default COCKPIT_ACCENT.PNG.DDS file in [Community folder]\h0rnb1ll-aircraft-j20\SimObjects\airplanes\hbl-aircraft-j20\texture. Make sure the new file is also named COCKPIT_ACCENT.PNG.DDS. You may also create your own color scheme.
 
 Known issues:    
 Many performance information on the J-20 stealth fighter are still classified. This project takes heavy reference from its closest counterpart - Lockheed Martin F-22 Raptor. The flight model will be updated, once more info becomes available. Cockpit and exterior model will continue to be improved over time.
