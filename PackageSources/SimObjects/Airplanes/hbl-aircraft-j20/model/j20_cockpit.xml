@@ -515,7 +515,7 @@
 					<SIMVAR_INDEX1>0</SIMVAR_INDEX1>
 					<LIGHT_TYPE2>TAXI</LIGHT_TYPE2>
 					<SIMVAR_INDEX2>0</SIMVAR_INDEX2>
-					<GEAR_PROHIBITS>False</GEAR_PROHIBITS>
+					<GEAR_PROHIBITS>True</GEAR_PROHIBITS>
 				</UseTemplate>
 				<Component ID="Exterior_Light_Switch">
 					<UseTemplate Name="HBL_LIGHTING_Switch_Exterior_Template">
