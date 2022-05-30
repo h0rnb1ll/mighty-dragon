@@ -21,15 +21,6 @@
 
         <Component ID = "PressTrail_Left_FX">
             <Parameters Type="Override">
-                <FX_GRAPH_PARAM_0>Side, 1</FX_GRAPH_PARAM_0>
-            </Parameters>
-            <UseTemplate Name="ASOBO_FX_PRESSURETRAIL">
-                <FX_NODE>fx_presstrail_01</FX_NODE>
-            </UseTemplate>
-        </Component>
-
-        <Component ID = "PressTrail_Right_FX">
-            <Parameters Type="Override">
                 <FX_GRAPH_PARAM_0>Side, -1</FX_GRAPH_PARAM_0>
             </Parameters>
             <UseTemplate Name="ASOBO_FX_PRESSURETRAIL">
@@ -37,16 +28,16 @@
             </UseTemplate>
         </Component>
 
-        <Component ID = "PressTrail_Canard_Left_FX">
+        <Component ID = "PressTrail_Right_FX">
             <Parameters Type="Override">
                 <FX_GRAPH_PARAM_0>Side, 1</FX_GRAPH_PARAM_0>
             </Parameters>
             <UseTemplate Name="ASOBO_FX_PRESSURETRAIL">
-                <FX_NODE>fx_presstrail_canard_01</FX_NODE>
+                <FX_NODE>fx_presstrail_01</FX_NODE>
             </UseTemplate>
         </Component>
 
-        <Component ID = "PressTrail_Canard_Right_FX">
+        <Component ID = "PressTrail_Canard_Left_FX">
             <Parameters Type="Override">
                 <FX_GRAPH_PARAM_0>Side, -1</FX_GRAPH_PARAM_0>
             </Parameters>
@@ -55,16 +46,16 @@
             </UseTemplate>
         </Component>
 
-        <Component ID = "WingVapour_Left_FX">
+        <Component ID = "PressTrail_Canard_Right_FX">
             <Parameters Type="Override">
                 <FX_GRAPH_PARAM_0>Side, 1</FX_GRAPH_PARAM_0>
             </Parameters>
-            <UseTemplate Name="ASOBO_FX_WINGVAPOUR">
-                <FX_NODE>fx_presstrail_01</FX_NODE>
+            <UseTemplate Name="ASOBO_FX_PRESSURETRAIL">
+                <FX_NODE>fx_presstrail_canard_01</FX_NODE>
             </UseTemplate>
         </Component>
 
-        <Component ID = "WingVapour_Right_FX">
+        <Component ID = "WingVapour_Left_FX">
             <Parameters Type="Override">
                 <FX_GRAPH_PARAM_0>Side, -1</FX_GRAPH_PARAM_0>
             </Parameters>
@@ -73,21 +64,30 @@
             </UseTemplate>
         </Component>
 
-        <Component ID = "DragTrail_Left_FX">
+        <Component ID = "WingVapour_Right_FX">
             <Parameters Type="Override">
-                <FX_GRAPH_PARAM_0>DT_Side, 1</FX_GRAPH_PARAM_0>
+                <FX_GRAPH_PARAM_0>Side, 1</FX_GRAPH_PARAM_0>
             </Parameters>
-            <UseTemplate Name="ASOBO_FX_DRAGTRAIL">
-                <FX_NODE>fx_vorttrail_01</FX_NODE>
+            <UseTemplate Name="ASOBO_FX_WINGVAPOUR">
+                <FX_NODE>fx_presstrail_01</FX_NODE>
             </UseTemplate>
         </Component>
 
-        <Component ID = "DragTrail_Right_FX">
+        <Component ID = "DragTrail_Left_FX">
             <Parameters Type="Override">
                 <FX_GRAPH_PARAM_0>DT_Side, -1</FX_GRAPH_PARAM_0>
             </Parameters>
             <UseTemplate Name="ASOBO_FX_DRAGTRAIL">
                 <FX_NODE>fx_vorttrail_02</FX_NODE>
+            </UseTemplate>
+        </Component>
+
+        <Component ID = "DragTrail_Right_FX">
+            <Parameters Type="Override">
+                <FX_GRAPH_PARAM_0>DT_Side, 1</FX_GRAPH_PARAM_0>
+            </Parameters>
+            <UseTemplate Name="ASOBO_FX_DRAGTRAIL">
+                <FX_NODE>fx_vorttrail_01</FX_NODE>
             </UseTemplate>
         </Component>
 
