@@ -1,6 +1,6 @@
 # J-20 Mighty-Dragon for MSFS
 ### Alpha release stage, Work In Progress. 
-[alpha realease download](https://github.com/h0rnb1ll/mighty-dragon/releases/download/0.3.1/hbl-aircraft-j20-0.3.1.zip)    
+[alpha realease download](https://github.com/h0rnb1ll/mighty-dragon/releases/download/0.3.2/hbl-aircraft-j20.zip)    
 [other versions](https://github.com/h0rnb1ll/mighty-dragon/releases)    
 [paintkit](https://github.com/h0rnb1ll/mighty-dragon/releases/download/Paintkit/paintkit.zip)
 
@@ -24,4 +24,5 @@ Many performance information on the J-20 stealth fighter are still classified. T
 
 ![Startup](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/Microsoft%20Flight%20Simulator_2021.10.07-22.37_1.jpg)
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.2204.01.jpg)
-![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.2204.02.jpg)
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.2204.02.jpg)    
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.2205.02.jpg)
