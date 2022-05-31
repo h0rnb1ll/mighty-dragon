@@ -284,12 +284,12 @@
 		</Component>
 
 		<Component ID="Canopy_Visibility">
-			<Component ID="Canopy_Int" Node="Canopy_Int">
+			<!--<Component ID="Canopy_Int" Node="Canopy_Int">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
 					<NODE_ID>Canopy_Int</NODE_ID>
 					<VISIBILITY_CODE>(A:CAMERA STATE, number) 2 ==</VISIBILITY_CODE>
 				</UseTemplate> 
-			</Component>
+			</Component>-->
 			<Component ID="Canopy_Ext" Node="Canopy_Ext">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
 					<NODE_ID>Canopy_Ext</NODE_ID>
