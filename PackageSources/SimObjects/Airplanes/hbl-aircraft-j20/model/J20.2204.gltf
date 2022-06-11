@@ -3794,6 +3794,22 @@
             "extras" : {
                 "msfs_material_type" : 1,
                 "msfs_blend_mask_texture" : {},
+                "msfs_base_color_texture" : {
+                    "name" : "J20_ENG_ALBD",
+                    "type" : "Image"
+                },
+                "msfs_occlusion_metallic_roughness_texture" : {
+                    "name" : "J20_ENG_COMP",
+                    "type" : "Image"
+                },
+                "msfs_normal_texture" : {
+                    "name" : "J20_ENG_NORM",
+                    "type" : "Image"
+                },
+                "msfs_emissive_texture" : {
+                    "name" : "J20_ENG_EMIS",
+                    "type" : "Image"
+                },
                 "msfs_detail_color_texture" : {},
                 "msfs_detail_normal_texture" : {},
                 "msfs_detail_occlusion_metallic_roughness_texture" : {},
@@ -3819,6 +3835,9 @@
                 "index" : 9
             },
             "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 10
+                },
                 "metallicRoughnessTexture" : {
                     "index" : 9
                 }
@@ -3892,7 +3911,7 @@
             "name" : "GEAR",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 10
+                    "index" : 11
                 }
             }
         },
@@ -3997,7 +4016,7 @@
             "name" : "BODY_DECAL",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 11
+                    "index" : 12
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -5852,11 +5871,15 @@
         },
         {
             "sampler" : 0,
+            "source" : 7
+        },
+        {
+            "sampler" : 0,
             "source" : 2
         },
         {
             "sampler" : 0,
-            "source" : 7
+            "source" : 8
         }
     ],
     "images" : [
@@ -5894,6 +5917,11 @@
             "mimeType" : "image/png",
             "name" : "J20_ENG_COMP",
             "uri" : "J20_ENG_COMP.PNG"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "J20_ENG_ALBD",
+            "uri" : "J20_ENG_ALBD.PNG"
         },
         {
             "mimeType" : "image/png",
