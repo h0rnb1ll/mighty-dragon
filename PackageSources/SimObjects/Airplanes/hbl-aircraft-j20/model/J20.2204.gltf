@@ -139,6 +139,7 @@
     "nodes" : [
         {
             "name" : "fx_vorttrail_01",
+            "rotation":[-0.5,-0.5,0.5,0.5],
             "translation" : [
                 1.0109047889709473,
                 -0.0332646369934082,
@@ -165,6 +166,7 @@
         },
         {
             "name" : "fx_vorttrail_02",
+            "rotation":[-0.5,-0.5,0.5,0.5],
             "translation" : [
                 -1.026038646697998,
                 -0.032996177673339844,
@@ -252,6 +254,7 @@
         },
         {
             "name" : "fx_presstrail_canard_01",
+            "rotation":[-0.5,-0.5,0.5,0.5],
             "translation" : [
                 2.1301217079162598,
                 -0.07717156410217285,
@@ -260,6 +263,7 @@
         },
         {
             "name" : "fx_presstrail_canard_02",
+            "rotation":[-0.5,-0.5,0.5,0.5],
             "translation" : [
                 -2.1344335079193115,
                 -0.0809057354927063,
@@ -1547,6 +1551,7 @@
         },
         {
             "name" : "fx_presstrail_01",
+            "rotation":[-0.5,-0.5,0.5,0.5],
             "translation" : [
                 2.4923481941223145,
                 0.16979193687438965,
@@ -1555,6 +1560,7 @@
         },
         {
             "name" : "fx_presstrail_02",
+            "rotation":[-0.5,-0.5,0.5,0.5],
             "translation" : [
                 -2.4760351181030273,
                 0.1702105849981308,
@@ -4326,10 +4332,11 @@
                 "baseColorTexture" : {
                     "index" : 15
                 },
-                "metallicFactor" : 0.800000011920929,
+                "metallicFactor" : 0.5,
                 "metallicRoughnessTexture" : {
                     "index" : 14
-                }
+                },
+                "roughnessFactor" : 0.5
             }
         }
     ],
