@@ -1,4 +1,4 @@
-class EBDLiveryRegistration extends TemplateElement {
+class HBLRegistration extends TemplateElement {
     constructor() {
         super();
         this.textScale = 1.0;
@@ -8,7 +8,7 @@ class EBDLiveryRegistration extends TemplateElement {
         this._isConnected = false;
         this.tailNumberCleared = false;
     }
-    get templateID() { return "EBDLiveryRegistration"; }
+    get templateID() { return "HBLRegistration"; }
     connectedCallback() {
         super.connectedCallback();
         this.bg = this.querySelector("#background");
@@ -152,5 +152,5 @@ class EBDLiveryRegistration extends TemplateElement {
         }
     }
 }
-registerLivery("livery-registration-element", EBDLiveryRegistration);
+registerLivery("livery-registration-element", HBLRegistration);
 //# sourceMappingURL=Registration.js.map

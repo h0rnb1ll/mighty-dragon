@@ -24,23 +24,29 @@
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: "simhei";
+   src: url("/Fonts/simhei.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; } 
+
 livery-registration-element {
   width: 100%;
   height: 100%;
   overflow: hidden; }
-  livery-registration-element #Mainframe {
+  livery-registration-element #Main {
     position: absolute;
     top: 100;
     left: 0;
     width: 100%;
     height: 100%; }
-    livery-registration-element #Mainframe #background {
+    livery-registration-element #Main #background {
       display: none;
       width: 100%;
       height: 100%;
       position: absolute; }
-    livery-registration-element #Mainframe #text {
-      font-family: Font-Medium;
+    livery-registration-element #Main #text {
+      font-family: simhei;
       font-size: 1px;
       white-space: nowrap;
       position: absolute;
