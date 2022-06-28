@@ -5112,9 +5112,9 @@
             "name" : "$PMFD_Screen",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.7991021275520325,
-                    0.799102246761322,
-                    0.7991028428077698,
+                    0,
+                    0,
+                    0,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -5132,9 +5132,9 @@
             "name" : "$SMFD_1_Screen",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
+                    0,
+                    0,
+                    0,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -5152,9 +5152,9 @@
             "name" : "$SMFD_2_Screen",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
+                    0,
+                    0,
+                    0,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -5172,9 +5172,9 @@
             "name" : "$SMFD_3_Screen",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
+                    0,
+                    0,
+                    0,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -5192,9 +5192,9 @@
             "name" : "$TMFD_1_Screen",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
+                    0,
+                    0,
+                    0,
                     1
                 ],
                 "metallicFactor" : 0,

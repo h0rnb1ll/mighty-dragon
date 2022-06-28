@@ -84,7 +84,7 @@ pmfd-element {
     visibility: hidden;
     width: 100%;
     height: auto;
-    top:40%;
+    top:0%;
     background-color: black;
     z-index: 1000; }
   pmfd-element #Electricity {
@@ -307,10 +307,23 @@ pmfd-element #Mainframe #Electricity #RightContainer {
   height:100%;
   float:right;
 }
-pmfd-element #Mainframe #Electricity #RightContainer #Compass {
-  width:100%;
+pmfd-element #Mainframe #Electricity #RightContainer #InfoPanel {
+  width:95%;
   height: 25%;
   display:block;
+  font-size: 15pt;
+  margin:3px;
+  border-radius: 5px;
+  border: 1px solid lawngreen;
+  color: lawngreen;
+}
+pmfd-element #Mainframe #Electricity #RightContainer #InfoPanel #baroMillibars{
+  width:100%;
+  display:block;
+  font-size: 25pt;
+  font-weight: bold;
+  text-align: center;
+  color: aqua;
 }
 pmfd-element #Mainframe #Electricity #RightContainer #PlaneStatus {
   width:100%;

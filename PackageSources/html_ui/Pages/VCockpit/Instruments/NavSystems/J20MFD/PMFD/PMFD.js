@@ -680,29 +680,42 @@ class PMFD_Compass extends PFD_Compass {
 }
 class PMFD_BottomInfos extends NavSystemElement {
     init(root) {
-        this.tas = this.gps.getChildById("TAS_Value");
-        this.oat = this.gps.getChildById("OAT_Value");
-        this.gs = this.gps.getChildById("GS_Value");
-        this.isa = this.gps.getChildById("ISA_Value");
-        this.timer = this.gps.getChildById("TMR_Value");
-        this.utcTime = this.gps.getChildById("UTC_Value");
+        //this.tas = this.gps.getChildById("TAS_Value");
+        //this.oat = this.gps.getChildById("OAT_Value");
+        //this.gs = this.gps.getChildById("GS_Value");
+        //this.isa = this.gps.getChildById("ISA_Value");
+        //this.timer = this.gps.getChildById("TMR_Value");
+        //this.utcTime = this.gps.getChildById("UTC_Value");
+
+        this.tas2 = this.gps.getChildById("TAS_Value_2");
+        this.oat2 = this.gps.getChildById("OAT_Value_2");
+        this.gs2 = this.gps.getChildById("GS_Value_2");
+        this.isa2 = this.gps.getChildById("ISA_Value_2");
+        this.timer2 = this.gps.getChildById("TMR_Value_2");
+        this.utcTime2 = this.gps.getChildById("UTC_Value_2");
     }
     onEnter() {
     }
     onUpdate(_deltaTime) {
         //Avionics.Utils.diffAndSet(this.tas, fastToFixed(Simplane.getMachSpeed(), 2));
-        this.tas.textContent = fastToFixed(Simplane.getMachSpeed(), 2);
         //Avionics.Utils.diffAndSet(this.oat, fastToFixed(SimVar.GetSimVarValue("AMBIENT TEMPERATURE", "celsius"), 0) + "°C");
-        this.oat.textContent = fastToFixed(SimVar.GetSimVarValue("AMBIENT TEMPERATURE", "celsius"), 0) + "°C";
         //diffAndSetText(this.oat, fastToFixed(SimVar.GetSimVarValue("AMBIENT TEMPERATURE", "celsius"), 0) + "°C");
         //Avionics.Utils.diffAndSet(this.gs, fastToFixed(SimVar.GetSimVarValue("GPS GROUND SPEED", "knots"), 0) + "KT");
-        this.gs.textContent = fastToFixed(SimVar.GetSimVarValue("GPS GROUND SPEED", "knots"), 0) + "KT";
         //Avionics.Utils.diffAndSet(this.isa, fastToFixed(SimVar.GetSimVarValue("STANDARD ATM TEMPERATURE", "celsius"), 0) + "°C");
-        this.isa.textContent = fastToFixed(SimVar.GetSimVarValue("STANDARD ATM TEMPERATURE", "celsius"), 0) + "°C";
         //Avionics.Utils.diffAndSet(this.utcTime, Utils.SecondsToDisplayTime(SimVar.GetGlobalVarValue("ZULU TIME", "seconds"), true, true, false));
-        this.utcTime.textContent = Utils.SecondsToDisplayTime(SimVar.GetGlobalVarValue("ZULU TIME", "seconds"), true, true, false);
         //Avionics.Utils.diffAndSet(this.timer, Utils.SecondsToDisplayTime(SimVar.GetSimVarValue("L:AS3000_" + this.gps.urlConfig.index + "_Timer_Value", "number") / 1000, true, true, false));
-        this.timer.textContent = Utils.SecondsToDisplayTime(SimVar.GetSimVarValue("L:AS3000_" + this.gps.urlConfig.index + "_Timer_Value", "number") / 1000, true, true, false);
+        //this.tas.textContent = fastToFixed(Simplane.getMachSpeed(), 2);
+        //this.oat.textContent = fastToFixed(SimVar.GetSimVarValue("AMBIENT TEMPERATURE", "celsius"), 0) + "°C";
+        //this.gs.textContent = fastToFixed(SimVar.GetSimVarValue("GPS GROUND SPEED", "knots"), 0) + "KT";
+        //this.isa.textContent = fastToFixed(SimVar.GetSimVarValue("STANDARD ATM TEMPERATURE", "celsius"), 0) + "°C";
+        //this.utcTime.textContent = Utils.SecondsToDisplayTime(SimVar.GetGlobalVarValue("ZULU TIME", "seconds"), true, true, false);
+        //this.timer.textContent = Utils.SecondsToDisplayTime(SimVar.GetSimVarValue("L:AS3000_" + this.gps.urlConfig.index + "_Timer_Value", "number") / 1000, true, true, false);
+        this.tas2.textContent = fastToFixed(Simplane.getMachSpeed(), 2);
+        this.oat2.textContent = fastToFixed(SimVar.GetSimVarValue("AMBIENT TEMPERATURE", "celsius"), 0) + "°C";
+        this.gs2.textContent = fastToFixed(SimVar.GetSimVarValue("GPS GROUND SPEED", "knots"), 0) + "节";
+        this.isa2.textContent = fastToFixed(SimVar.GetSimVarValue("STANDARD ATM TEMPERATURE", "celsius"), 0) + "°C";
+        this.utcTime2.textContent = Utils.SecondsToDisplayTime(SimVar.GetGlobalVarValue("ZULU TIME", "seconds"), true, true, false);
+        this.timer2.textContent = Utils.SecondsToDisplayTime(SimVar.GetSimVarValue("L:AS3000_" + this.gps.urlConfig.index + "_Timer_Value", "number") / 1000, true, true, false);
     }
     onExit() {
     }
@@ -1114,6 +1127,7 @@ class PMFD_Altimeter extends NavSystemElement {
                 this.altimeterIndex = parseInt(altimeterIndexElems[0].textContent) + 1;
             }
         }
+        this.baroMillibars =  this.gps.getChildById("baroMillibars");
     }
     onEnter() {
     }
@@ -1260,6 +1274,9 @@ class PMFD_Altimeter extends NavSystemElement {
             this.altimeterElement.setAttribute("pressure", pressure);
             this.lastPressure = pressure;
         }
+        this.baroMillibars.textContent = fastToFixed(SimVar.GetSimVarValue("KOHLSMAN SETTING MB:" + this.altimeterIndex, "millibars"), 0) + "hPa";
+        
+        
     }
     onExit() {
     }

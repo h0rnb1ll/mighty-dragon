@@ -3,7 +3,7 @@
     <div id="Mainframe">
         <div id="Electricity" state="off">
             <div id="Console">系统初始化...</div>
-            <img id="Splash" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/hornbill.png" />
+            <img id="Splash" src="/Pages/VCockpit/Instruments/NavSystems/Shared/res/splash.png" />
 			<div id="SoftKeys">
 				<div id="Top">
 					<div id="Key1" class="SoftKey">
@@ -72,7 +72,7 @@
 			</div>
             <div id="HorizonContainer">
                 <div id="StatusAlert">
-                    <div>左SMFD正显示地图<br>更换左SMFD页面，以在此屏幕显示地图</div>
+                    <div>左副屏正显示地图<br>更换左副屏页面，以在此屏幕显示地图</div>
                 </div>
                 <!--<map-instrument id="SyntheticVision" bing-mode="horizon" bing-id="PFD_SyntheticVision" show-overlay="false" config-path="/Pages/VCockpit/Instruments/NavSystems/AS3000/PFD/"></map-instrument>-->
                 <glasscockpit-attitude-indicator id="Horizon" background="false"></glasscockpit-attitude-indicator>
@@ -83,7 +83,7 @@
                 <glasscockpit-altimeter id="Altimeter"></glasscockpit-altimeter>
                 <glasscockpit-airspeed-indicator id="Airspeed"></glasscockpit-airspeed-indicator>
 
-                <!--<glasscockpit-hsi id="Compass"></glasscockpit-hsi>-->
+                <glasscockpit-hsi id="Compass"></glasscockpit-hsi>
 
                 <glasscockpit-wind-data id="WindData"></glasscockpit-wind-data>
                 <glasscockpit-aoa-indicator id="AoA" displayed="true"></glasscockpit-aoa-indicator>
@@ -155,43 +155,80 @@
                         1080
                     </div>
                 </div>
-                <div id="BottomBar">
-                    <svg id="Background" width="100%" viewBox="0 0 1500 90">
-                        <path d="M0 0 L0 120 L1500 120 L1500 0 L910 0 Q750 165 590 0 Z" fill="#1a1d21"></path>
-                    </svg>
-                    <div class="LeftGroup">
-                        <div id="TAS">
-                            <div id="TAS_Title" class="left">MACH</div>
-                            <div id="TAS_Value" class="right">0.00</div>
+                <!--
+                    <div id="BottomBar">
+                        <svg id="Background" width="100%" viewBox="0 0 1500 90">
+                            <path d="M0 0 L0 120 L1500 120 L1500 0 L910 0 Q750 165 590 0 Z" fill="#1a1d21"></path>
+                        </svg>
+                        <div class="LeftGroup">
+                            <div id="TAS">
+                                <div id="TAS_Title" class="left">马赫值</div>
+                                <div id="TAS_Value" class="right">0.00</div>
+                            </div>
+                            <div id="OAT">
+                                <div id="OAT_Title" class="left">外温</div>
+                                <div id="OAT_Value" class="right"></div>
+                            </div>
+                            <div id="GS">
+                                <div id="GS_Title" class="left">地面飞速</div>
+                                <div id="GS_Value" class="right"></div>
+                            </div>
+                            <div id="ISA">
+                                <div id="ISA_Title" class="left">ISA</div>
+                                <div id="ISA_Value" class="right"></div>
+                            </div>
                         </div>
-                        <div id="OAT">
-                            <div id="OAT_Title" class="left">OAT</div>
-                            <div id="OAT_Value" class="right"></div>
-                        </div>
-                        <div id="GS">
-                            <div id="GS_Title" class="left">GS</div>
-                            <div id="GS_Value" class="right"></div>
-                        </div>
-                        <div id="ISA">
-                            <div id="ISA_Title" class="left">ISA</div>
-                            <div id="ISA_Value" class="right"></div>
+                        <div class="RightGroup">
+                            <div id="TMR">
+                                <div id="TMR_Title" class="left">计时器</div>
+                                <div id="TMR_Value" class="right">__:__:__</div>
+                            </div>
+                            <div id="UTC">
+                                <div id="UTC_Title" class="left">UTC</div>
+                                <div id="UTC_Value" class="right">00:00:00</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="RightGroup">
-                        <div id="TMR">
-                            <div id="TMR_Title" class="left">TMR</div>
-                            <div id="TMR_Value" class="right">__:__:__</div>
-                        </div>
-                        <div id="UTC">
-                            <div id="UTC_Title" class="left">UTC</div>
-                            <div id="UTC_Value" class="right">00:00:00</div>
-                        </div>
-                    </div>
-                </div>
+
+                -->
 
             </div>
             <div id="RightContainer">
-                <glasscockpit-hsi id="Compass"></glasscockpit-hsi>
+                <div id="InfoPanel">
+                    <table>
+                        <tr>
+                          <td id="TAS_Title">马赫值</td>
+                          <td>&nbsp;&nbsp;&nbsp;</td>
+                          <td id="TAS_Value_2">0.00</td>
+                        </tr>
+                        <tr>
+                            <td id="OAT_Title">外温</td>
+                            <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td id="OAT_Value_2"></td>
+                        </tr>
+                        <tr>
+                            <td id="GS_Title">地面飞速</td>
+                            <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td id="GS_Value_2">0KT</td>
+                        </tr>
+                        <tr>
+                            <td id="ISA_Title">ISA</td>
+                            <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td id="ISA_Value_2"></td>
+                        </tr>
+                        <tr>
+                            <td id="TMR_Title">计时器</td>
+                            <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td id="TMR_Value_2">__:__:__</td>
+                        </tr>
+                        <tr>
+                            <td id="UTC_Title">UTC</td>
+                            <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td id="UTC_Value_2">00:00:00</td>
+                        </tr>
+                    </table>
+                    <div id="baroMillibars"></div>
+                </div>
                 <div id="PlaneStatus">
                     <h1 style="text-decoration: underline;">机体状态</h1>
                     
