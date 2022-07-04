@@ -24,4 +24,5 @@ Many performance information on the J-20 stealth fighter are still classified. T
 
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.220601.jpg)
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.2204.02.jpg)    
+![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.2205.03.jpg)    
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.220602.jpg)
