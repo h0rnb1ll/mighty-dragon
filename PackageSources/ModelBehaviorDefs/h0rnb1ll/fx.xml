@@ -78,7 +78,7 @@
                 <FX_GRAPH_PARAM_0>DT_Side, -1</FX_GRAPH_PARAM_0>
             </Parameters>
             <UseTemplate Name="ASOBO_FX_DRAGTRAIL">
-                <FX_NODE>fx_vorttrail_02</FX_NODE>
+                <FX_NODE>fx_vorttrail_01</FX_NODE>
             </UseTemplate>
         </Component>
 
@@ -87,7 +87,7 @@
                 <FX_GRAPH_PARAM_0>DT_Side, 1</FX_GRAPH_PARAM_0>
             </Parameters>
             <UseTemplate Name="ASOBO_FX_DRAGTRAIL">
-                <FX_NODE>fx_vorttrail_01</FX_NODE>
+                <FX_NODE>fx_vorttrail_02</FX_NODE>
             </UseTemplate>
         </Component>
 
