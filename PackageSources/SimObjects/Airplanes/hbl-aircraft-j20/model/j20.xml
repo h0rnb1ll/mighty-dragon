@@ -260,7 +260,7 @@
 				<UseTemplate Name = "ASOBO_GT_Anim_Code">
 					<ANIM_CODE>
 						(A:RUDDER DEFLECTION PCT, percent) 0.5 * 50 +
-						(A:SPOILERS LEFT POSITION, percent) 0.5 *
+						(A:SPOILERS LEFT POSITION, percent) -0.5 *
 						+
 					</ANIM_CODE>
 				</UseTemplate>
@@ -273,12 +273,13 @@
 				<UseTemplate Name = "ASOBO_GT_Anim_Code">
 					<ANIM_CODE>
 						(A:RUDDER DEFLECTION PCT, percent) 0.5 * 50 +
-						(A:SPOILERS RIGHT POSITION, percent) -0.5 *
+						(A:SPOILERS RIGHT POSITION, percent) 0.5 *
 						+
 					</ANIM_CODE>
 				</UseTemplate>
 			</Component>
 		</Component>
+
 		<Component ID="afterburners">
 			<UseTemplate Name="HBL_Eng_Afterburner"></UseTemplate>
 		</Component>
@@ -309,6 +310,7 @@
 	</Behaviors>
 
 	<Animation guid="52897438-edf8-4aa9-ad53-7b195466e5df" name="Elevators" type="Sim" typeParam="AutoPlay"/>
+	<Animation guid="0977d800-2904-4b63-ad86-048e949a1b2b" name="Elevators.Airbrake" type="Sim" typeParam="AutoPlay"/>
 	<Animation guid="33ed8718-5985-43f8-b991-fcf7ce82512b" name="Left_Aileron" type="Sim" typeParam="AutoPlay"/>
 	<Animation guid="4fa1a265-1f96-4064-87fa-7c9cc15ef8cf" name="Right_Aileron" type="Sim" typeParam="AutoPlay"/>
 	<Animation guid="7710bfc7-1973-47c6-aa07-f5f9821e17ac" name="Flaps_Left" type="Sim" typeparam="AutoPlay"/>
@@ -323,9 +325,23 @@
 			<Parameter>
 				<Sim>
 					<Variable>ELEVATOR DEFLECTION PCT</Variable>
-					<Scale>-0.5</Scale>
+					<Scale>-1</Scale>
 					<Units>percent</Units>
 					<Bias>50</Bias>
+				</Sim>
+			</Parameter>
+		</Animation>
+	</PartInfo>
+	<PartInfo>
+		<Name>Elevators.Airbrake</Name>
+		<AnimLength>100</AnimLength>
+		<Animation>
+			<Parameter>
+				<Sim>
+					<Variable>SPOILERS LEFT POSITION</Variable>
+					<Scale>-1</Scale>
+					<Units>percent</Units>
+					<Bias>100</Bias>
 				</Sim>
 			</Parameter>
 		</Animation>
