@@ -4,7 +4,7 @@
 [other versions](https://github.com/h0rnb1ll/mighty-dragon/releases)    
 [paintkit](https://github.com/h0rnb1ll/mighty-dragon/releases/download/Paintkit/paintkit.zip)
 
-Tested on SU10
+Compiled and tested on SU11
 
 Project repository for MSFS Chinese 5th generation fighter J20 (Mighty Dragon). This project is primarily meant to be a study platform for MSFS aircraft development, exact replication of the J20 aircraft is non-essential at this moment. This repository serves as a resource for anyone desiring to have a hands-on in MSFS aircraft development.
 
