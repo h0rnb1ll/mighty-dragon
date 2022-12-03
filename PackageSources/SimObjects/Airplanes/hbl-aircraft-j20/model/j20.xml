@@ -177,6 +177,15 @@
 			</Component>
 		</Component>
 
+		<Component ID="LDG" Node="Taxi_Lamp">
+			<UseTemplate Name="ASOBO_GT_Material_Emissive_Code">
+				<EMISSIVE_CODE>
+					(A:LIGHT LANDING,bool) (A:LIGHT TAXI,bool) or (A:ELECTRICAL MASTER BATTERY, bool) and
+					if{ 5 } els{ 0 }
+				</EMISSIVE_CODE>
+			</UseTemplate>
+		  </Component>
+
 		<Component ID="GEAR">
 			<UseTemplate Name="ASOBO_GEAR_Center_Tire_Template">
 				<ANIM_NAME>GEAR_N_SPIN</ANIM_NAME>
