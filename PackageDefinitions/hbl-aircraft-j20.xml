@@ -42,11 +42,6 @@
 			</Flags>
 			<AssetDir>PackageSources\SimObjects\Airplanes\hbl-aircraft-j20\</AssetDir>
 			<OutputDir>SimObjects\airplanes\hbl-aircraft-j20\</OutputDir>
-			<Config>
-				<Extras>
-					<File>aircraft.loc</File>
-				</Extras>
-			</Config>
 		</AssetGroup>
 		<AssetGroup Name="html_ui">
 			<Type>Copy</Type>

@@ -1,0 +1,4 @@
+2022-12-05:
+added Asobo's animated F-18 pilot
+Added zh-CN localisations
+minor texture debug

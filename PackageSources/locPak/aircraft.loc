@@ -3,7 +3,7 @@
     "Version": 2,
     "UUID": "4c2283aa-fbb3-416a-941c-d715333e0381",
     "Languages": [
-      "en-US"
+      "en-US", "zh-CN"
     ],
     "Strings": {
       "AIRCRAFT.ATC_MODEL": {
@@ -13,6 +13,9 @@
         "LocalizationStatus": "TranslationNeeded",
         "Languages": {
           "en-US": {
+            "Text": "J-20威龍"
+          },
+          "zh-CN": {
             "Text": "J-20威龍"
           }
         }
@@ -25,6 +28,9 @@
         "Languages": {
           "en-US": {
             "Text": "The Chengdu J-20 (殲-20; Jiān-Èrlíng), also known as Mighty Dragon (威龍; Wēilóng),is a single-seat, twinjet, all-weather, stealth, fifth-generation fighter aircraft developed by China's Chengdu Aerospace Corporation for the People's Liberation Army Air Force (PLAAF)."
+          },
+          "zh-CN": {
+            "Text": "成飞 歼-20, 又称威龙, 乃成飞集团为中国人民解放军空军研制的第5代隐身战斗机"
           }
         }
       },
@@ -35,6 +41,9 @@
         "Languages": {
           "en-US": {
             "Text": "CAIG"
+          },
+          "zh-CN": {
+            "Text": "成都飞机工业"
           }
         }
       },
@@ -45,6 +54,9 @@
         "Languages": {
           "en-US": {
             "Text": "J-20 Mighty Dragon"
+          },
+          "zh-CN": {
+            "Text": "J-20威龍"
           }
         }
       },
@@ -54,7 +66,75 @@
         "LastModifiedDate": "2021-09-14 23:59:59",
         "Languages": {
           "en-US": {
-            "Text": "J-20 Mighty Dragon"
+            "Text": "PLAAF"
+          },
+          "zh-CN": {
+            "Text": "中国人民解放军空军"
+          }
+        }
+      },
+      "AIRCRAFT.LOADING.TIPS0": {
+        "UUID": "7d76a200-7525-417f-9727-98ccc4168a53",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Chengdu J-20 is the 5th Gen stealth fighter aircraft developed for PLAAF"
+          },
+          "zh-CN": {
+            "Text": "成飞歼-20是为中国人民解放军空军研制的第五代隐身战斗机"
+          }
+        }
+      },
+      "AIRCRAFT.LOADING.TIPS1": {
+        "UUID": "0702d472-b588-4b92-af42-0248ffbe47a9",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "The J-20 is also known as the Mighty Dragon 威龍"
+          },
+          "zh-CN": {
+            "Text": "歼-20的别名——威龙"
+          }
+        }
+      },
+      "AIRCRAFT.LOADING.TIPS2": {
+        "UUID": "b09cbbac-50ab-449e-acce-9f7ad524bad4",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "J-20's main weapon bay is capable of carrying both short and long range missiles."
+          },
+          "zh-CN": {
+            "Text": "歼-20的弹仓可同时装载短程与远程导弹"
+          }
+        }
+      },
+      "AIRCRAFT.LOADING.TIPS3": {
+        "UUID": "2702e0b8-b05b-4a50-8577-735233804bd1",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "The J-20 was first introduced with Russian Saturn AL-31FM2 engines."
+          },
+          "zh-CN": {
+            "Text": "歼-20在开发初期使用了俄制AL-31FM2发动机"
+          }
+        }
+      },
+      "AIRCRAFT.LOADING.TIPS4": {
+        "UUID": "ff4d09d6-9e66-4452-8f89-ea503dc8ce87",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Current J-20 models feature indigenous WS-10C engines with thrust of 142 kN"
+          },
+          "zh-CN": {
+            "Text": "现役歼-20大致已换装沈飞涡扇-10C发动机"
           }
         }
       }
