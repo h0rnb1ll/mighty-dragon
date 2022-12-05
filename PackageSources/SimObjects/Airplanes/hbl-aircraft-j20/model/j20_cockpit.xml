@@ -9,11 +9,12 @@
 	</LODS>
 	<Behaviors>
 		<Include ModelBehaviorFile="Asobo\Common.xml"/>
+		<Include ModelBehaviorFile="Asobo\Exterior.xml"/>
+		<Include ModelBehaviorFile="Asobo\Generic.xml"/>
 		<Include ModelBehaviorFile="Asobo\GlassCockpit\AS3000.xml"/>
 		<Include ModelBehaviorFile="Asobo\GlassCockpit\AS580.xml"/>
 		<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
 		<Include ModelBehaviorFile="Asobo\Misc\Clock.xml"/>
-		<Include ModelBehaviorFile="Asobo\Generic.xml"/>
 		
 		<Include ModelBehaviorFile="Asobo\Airliner\AirlinerCommon.xml"/>
 		<Include ModelBehaviorFile="Asobo\Airliner\FMC.xml"/>
@@ -601,7 +602,7 @@
 				<NODE_ID>hotas_support</NODE_ID>
 				<ANIM_NAME_YOKE_X>hotas_support_x</ANIM_NAME_YOKE_X>
 				<ANIM_NAME_YOKE_Y>hotas_support_y</ANIM_NAME_YOKE_Y>
-			</UseTemplate>
+			</UseTemplate>Exterior
 		</Component>
 		<Component ID="Yoke_Visibility" Node="hotas_visibility">
 			<DefaultTemplateParameters>
@@ -619,6 +620,17 @@
 				<NODE_ID>hotas_support</NODE_ID>
 				<VISIBILITY_CODE>(L:XMLVAR_YokeHidden1) !</VISIBILITY_CODE>
 			</UseTemplate> 
+		</Component>
+		<Component ID="Pilot_Int_Visibility" Node="Seat">
+			<DefaultTemplateParameters>
+                <NODE_ID>Seat</NODE_ID>
+                <LEFT_SINGLE_CODE>(L:PILOT_0_VIS) ! (&gt;L:PILOT_0_VIS)</LEFT_SINGLE_CODE>
+            </DefaultTemplateParameters>
+			<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
+                <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
+                    <TOOLTIPID>Toggle Pilot Visibility</TOOLTIPID>
+                </UseTemplate>
+            </Component>
 		</Component>
 
 		<Component ID="Throttle">

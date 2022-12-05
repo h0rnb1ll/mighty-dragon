@@ -1,4 +1,5 @@
 2022-12-05:
 added Asobo's animated F-18 pilot
+click on seat to toggle pilot visibility
 Added zh-CN localisations
 minor texture debug

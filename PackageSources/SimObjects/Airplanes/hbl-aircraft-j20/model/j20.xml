@@ -6,6 +6,7 @@
 
 	<Behaviors>
 		<Include ModelBehaviorFile="Asobo\Exterior.xml"/>
+		<Include ModelBehaviorFile="Asobo\Common.xml"/>
 		<Include ModelBehaviorFile="h0rnb1ll\lights.xml"/>
 		<Include ModelBehaviorFile="h0rnb1ll\engine.xml"/>
     	<Include ModelBehaviorFile="Asobo\Generic\FX.xml"/>
@@ -308,11 +309,11 @@
 			</Component>
 		</Component>
 
-		<Component ID="Pilot_Visibility">
-			<Component ID="Pilot" Node="Pilot">
+		<Component ID="Pilot_Ext_Visibility">
+			<Component ID="Pilot0" Node="PILOT_0">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
-					<NODE_ID>Pilot</NODE_ID>
-					<VISIBILITY_CODE>(A:CAMERA STATE, number) 2 !=</VISIBILITY_CODE>
+					<NODE_ID>PILOT_0</NODE_ID>
+					<VISIBILITY_CODE>(L:PILOT_0_VIS) !</VISIBILITY_CODE>
 				</UseTemplate> 
 			</Component>
 		</Component>

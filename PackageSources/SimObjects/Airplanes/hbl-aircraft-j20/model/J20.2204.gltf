@@ -127,6 +127,7 @@
             },
             "name" : "Scene",
             "nodes" : [
+                150,
                 151
             ]
         }
@@ -2080,14 +2081,6 @@
             ]
         },
         {
-            "name" : "PILOT_0",
-            "translation" : [
-                -0.007508762180805206,
-                0.3831702470779419,
-                6.129171371459961
-            ]
-        },
-        {
             "mesh" : 96,
             "name" : "Rivets"
         },
@@ -2121,9 +2114,9 @@
         },
         {
             "children" : [
+                137,
                 138,
-                139,
-                140
+                139
             ],
             "mesh" : 100,
             "name" : "Rudder_Left",
@@ -2185,9 +2178,9 @@
         },
         {
             "children" : [
+                141,
                 142,
-                143,
-                144
+                143
             ],
             "mesh" : 104,
             "name" : "Rudder_Right",
@@ -2205,8 +2198,8 @@
         },
         {
             "children" : [
-                141,
-                145
+                140,
+                144
             ],
             "name" : "RUDDER"
         },
@@ -2234,8 +2227,8 @@
         },
         {
             "children" : [
-                148,
-                149
+                147,
+                148
             ],
             "name" : "SLATS"
         },
@@ -2270,13 +2263,20 @@
                 134,
                 135,
                 136,
-                137,
+                145,
                 146,
-                147,
-                150
+                149
             ],
             "mesh" : 108,
             "name" : "J20"
+        },
+        {
+            "name" : "PILOT_0",
+            "translation" : [
+                -0.007508762180805206,
+                0.3831702470779419,
+                6.129171371459961
+            ]
         }
     ],
     "animations" : [
@@ -2404,21 +2404,21 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 148,
+                        "node" : 147,
                         "path" : "translation"
                     }
                 },
                 {
                     "sampler" : 1,
                     "target" : {
-                        "node" : 148,
+                        "node" : 147,
                         "path" : "rotation"
                     }
                 },
                 {
                     "sampler" : 2,
                     "target" : {
-                        "node" : 148,
+                        "node" : 147,
                         "path" : "scale"
                     }
                 }
@@ -2447,21 +2447,21 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 149,
+                        "node" : 148,
                         "path" : "translation"
                     }
                 },
                 {
                     "sampler" : 1,
                     "target" : {
-                        "node" : 149,
+                        "node" : 148,
                         "path" : "rotation"
                     }
                 },
                 {
                     "sampler" : 2,
                     "target" : {
-                        "node" : 149,
+                        "node" : 148,
                         "path" : "scale"
                     }
                 }
@@ -2566,7 +2566,7 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 141,
+                        "node" : 140,
                         "path" : "rotation"
                     }
                 }
@@ -2585,7 +2585,7 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 145,
+                        "node" : 144,
                         "path" : "rotation"
                     }
                 }
