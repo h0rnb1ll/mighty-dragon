@@ -602,7 +602,7 @@
 				<NODE_ID>hotas_support</NODE_ID>
 				<ANIM_NAME_YOKE_X>hotas_support_x</ANIM_NAME_YOKE_X>
 				<ANIM_NAME_YOKE_Y>hotas_support_y</ANIM_NAME_YOKE_Y>
-			</UseTemplate>Exterior
+			</UseTemplate>
 		</Component>
 		<Component ID="Yoke_Visibility" Node="hotas_visibility">
 			<DefaultTemplateParameters>
@@ -611,7 +611,7 @@
             </DefaultTemplateParameters>
 			<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
                 <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
-                    <TOOLTIPID>Toggle Yoke Visibility</TOOLTIPID>
+                    <TOOLTIPID>TT:VC.YOKE.SHOWHIDE</TOOLTIPID>
                 </UseTemplate>
             </Component>
 		</Component>
@@ -628,7 +628,7 @@
             </DefaultTemplateParameters>
 			<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
                 <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
-                    <TOOLTIPID>Toggle Pilot Visibility</TOOLTIPID>
+                    <TOOLTIPID>TT:VC.PILOT.SHOWHIDE</TOOLTIPID>
                 </UseTemplate>
             </Component>
 		</Component>
@@ -689,8 +689,8 @@
 				<ANIM_NAME>Canopy_Switch</ANIM_NAME>
 				<NODE_ID>Canopy_Switch</NODE_ID>
 				<PART_ID>Canopy_Switch</PART_ID>
-				<ANIMTIP_0>Open Canopy</ANIMTIP_0>
-				<ANIMTIP_1>Close Canopy</ANIMTIP_1>
+				<ANIMTIP_0>TT:VC.CANOPY.OPEN</ANIMTIP_0>
+				<ANIMTIP_1>TT:VC.CANOPY.CLOSE</ANIMTIP_1>
 				<LEFT_SINGLE_CODE>
 					(L:DOORS_LOCKED, bool) 0 &gt;
 					if{

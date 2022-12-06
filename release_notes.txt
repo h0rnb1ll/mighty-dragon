@@ -1,3 +1,7 @@
+2022-12-06:
+Pilot visibility debug
+VC localisations
+
 2022-12-05:
 added Asobo's animated F-18 pilot
 click on seat to toggle pilot visibility

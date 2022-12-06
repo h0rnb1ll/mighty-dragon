@@ -313,7 +313,7 @@
 			<Component ID="Pilot0" Node="PILOT_0">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
 					<NODE_ID>PILOT_0</NODE_ID>
-					<VISIBILITY_CODE>(L:PILOT_0_VIS) !</VISIBILITY_CODE>
+					<VISIBILITY_CODE>(A:CAMERA STATE, number) 2 != (L:PILOT_0_VIS) ! or</VISIBILITY_CODE>
 				</UseTemplate> 
 			</Component>
 		</Component>

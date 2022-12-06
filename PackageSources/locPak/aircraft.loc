@@ -137,6 +137,71 @@
             "Text": "现役歼-20大致已换装沈飞涡扇-10C发动机"
           }
         }
+      },
+      "VC.CANOPY.OPEN": {
+        "UUID": "d7e50feb-ac71-43c0-b565-4e0af5f73087",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Open Canopy"
+          },
+          "zh-CN": {
+            "Text": "打开舱门"
+          }
+        }
+      },
+      "VC.CANOPY.CLOSE": {
+        "UUID": "296b1187-e762-434e-b475-821bbd0cbc34",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Close Canopy"
+          },
+          "zh-CN": {
+            "Text": "关闭舱门"
+          }
+        }
+      },
+      "VC.YOKE.SHOWHIDE": {
+        "UUID": "6303da24-5de6-4eea-a860-4244aa646ef7",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Show/Hide Yoke"
+          },
+          "zh-CN": {
+            "Text": "显示/隐藏摇杆"
+          }
+        }
+      },
+      "VC.PILOT.SHOWHIDE": {
+        "UUID": "ca5809ee-0323-405c-97f7-116e46489b37",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Show/Hide Pilot"
+          },
+          "zh-CN": {
+            "Text": "显示/隐藏飞行员"
+          }
+        }
+      },
+      "VC.THROTTLE.SHOWHIDE": {
+        "UUID": "0731fe0f-19cf-420a-a155-2c28b736d455",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Show/Hide Throttle"
+          },
+          "zh-CN": {
+            "Text": "显示/隐藏油门"
+          }
+        }
       }
     }
   }

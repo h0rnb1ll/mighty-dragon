@@ -125,7 +125,7 @@
             </DefaultTemplateParameters>	
             <Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
                 <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
-                    <TOOLTIPID>Toggle Throttle Visibility</TOOLTIPID>
+                    <TOOLTIPID>TT:VC.THROTTLE.SHOWHIDE</TOOLTIPID>
                 </UseTemplate>
             </Component>
         </Component>
