@@ -21,8 +21,8 @@
 						<ANIMREF_ID>0</ANIMREF_ID>
 						<ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
 						<ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
-						<ANIMTIP_0>Turn Pump #ID# On</ANIMTIP_0>
-						<ANIMTIP_1>Turn Pump #ID# Off</ANIMTIP_1>
+						<ANIMTIP_0>TT:SYS.PUMP.ON</ANIMTIP_0>
+						<ANIMTIP_1>TT:SYS.PUMP.OFF</ANIMTIP_1>
 					</UseTemplate>
 				</Component>
 			</Case>

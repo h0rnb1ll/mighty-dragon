@@ -355,9 +355,9 @@
 			</INIT_VALUE>
 			<NODE_ID>PMFD_Cnt_Knob</NODE_ID>
 			<ANIM_NAME>PMFD_Cnt_Knob</ANIM_NAME>
-			<ANIMTIP_0>Decrease PFD Buttons Backlight Brightness</ANIMTIP_0>
+			<ANIMTIP_0>TT:VC.BACKLIGHT.DEC</ANIMTIP_0>
 			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
-			<ANIMTIP_1>Increase PFD Buttons Backlight Brightness</ANIMTIP_1>
+			<ANIMTIP_1>TT:VC.BACKLIGHT.INC</ANIMTIP_1>
 			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 		</UseTemplate>
 		<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
@@ -384,9 +384,9 @@
 			</INIT_VALUE>
 			<NODE_ID>SMFD_#PANEL_ID#_Cnt_Knob</NODE_ID>
 			<ANIM_NAME>SMFD_#PANEL_ID#_Cnt_Knob</ANIM_NAME>
-			<ANIMTIP_0>Decrease MFD Buttons Backlight Brightness</ANIMTIP_0>
+			<ANIMTIP_0>TT:VC.BACKLIGHT.DEC</ANIMTIP_0>
 			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
-			<ANIMTIP_1>Increase MFD Buttons Backlight Brightness</ANIMTIP_1>
+			<ANIMTIP_1>TT:VC.BACKLIGHT.INC</ANIMTIP_1>
 			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 		</UseTemplate>
 		<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
@@ -412,9 +412,9 @@
 			</INIT_VALUE>
 			<NODE_ID>TMFD_#PANEL_ID#_Cnt_Knob</NODE_ID>
 			<ANIM_NAME>TMFD_#PANEL_ID#_Cnt_Knob</ANIM_NAME>
-			<ANIMTIP_0>Decrease TMFD Buttons Backlight Brightness</ANIMTIP_0>
+			<ANIMTIP_0>TT:VC.BACKLIGHT.DEC</ANIMTIP_0>
 			<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
-			<ANIMTIP_1>Increase TMFD Buttons Backlight Brightness</ANIMTIP_1>
+			<ANIMTIP_1>TT:VC.BACKLIGHT.INC</ANIMTIP_1>
 			<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 		</UseTemplate>
 		<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">

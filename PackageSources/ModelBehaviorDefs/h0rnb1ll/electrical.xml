@@ -53,8 +53,8 @@
 				<BUS_DEST2>10</BUS_DEST2>
 				<WWISE_EVENT_1>alternator_switch_on</WWISE_EVENT_1>
 				<WWISE_EVENT_2>alternator_switch_off</WWISE_EVENT_2>
-				<ANIMTIP_0>Connect Generator</ANIMTIP_0>
-				<ANIMTIP_1>Disconnect Generator</ANIMTIP_1>
+				<ANIMTIP_0>TT:VC.ELEC.GEN.CONN</ANIMTIP_0>
+				<ANIMTIP_1>TT:VC.ELEC.GEN.DISCONN</ANIMTIP_1>
 			</DefaultTemplateParameters>
 			<UseTemplate Name="ASOBO_GT_Switch_Code">
 				<ANIM_NAME>#ID#</ANIM_NAME>
@@ -80,8 +80,8 @@
 			<WWISE_EVENT_1>starter_apu_switch_on</WWISE_EVENT_1>
 			<WWISE_EVENT_2>starter_apu_switch_off</WWISE_EVENT_2>
 			<NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
-			<ANIMTIP_0>Start APU</ANIMTIP_0>
-			<ANIMTIP_1>Stop APU</ANIMTIP_1>
+			<ANIMTIP_0>TT:VC.ELEC.APU.START</ANIMTIP_0>
+			<ANIMTIP_1>TT:VC.ELEC.APU.STOP</ANIMTIP_1>
 		</DefaultTemplateParameters>
 		<OverrideTemplateParameters>
 			<LEFT_SINGLE_CODE>

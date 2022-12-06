@@ -202,6 +202,240 @@
             "Text": "显示/隐藏油门"
           }
         }
+      },
+      "VC.ELEC.APU.START": {
+        "UUID": "60ccdec2-7f72-4faa-8cc0-661825c02c89",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Start APU"
+          },
+          "zh-CN": {
+            "Text": "开启副电功"
+          }
+        }
+      },
+      "VC.ELEC.APU.STOP": {
+        "UUID": "eec7ca7a-1b4a-4cf2-8ea9-dd6f8b3cfa0d",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Stop APU"
+          },
+          "zh-CN": {
+            "Text": "停止副电功"
+          }
+        }
+      },
+      "VC.ELEC.GEN.CONN": {
+        "UUID": "04f37924-bef8-4c09-8321-15d3f54dd64d",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Connect Generator"
+          },
+          "zh-CN": {
+            "Text": "连接发电机"
+          }
+        }
+      },
+      "VC.ELEC.GEN.DISCONN": {
+        "UUID": "9d3e35ea-4dd1-4129-bb44-38ee6f11a69d",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Disconnect Generator"
+          },
+          "zh-CN": {
+            "Text": "断开发电机"
+          }
+        }
+      },
+      "VC.LIGHTS.EXT": {
+        "UUID": "1d506e97-bfe6-43a0-954c-8bd0d9205088",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Exterior Lights"
+          },
+          "zh-CN": {
+            "Text": "外置灯"
+          }
+        }
+      },
+      "VC.LIGHTS.FORMATION": {
+        "UUID": "2aebe860-dd9c-44ac-b605-113aa671c450",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Formation Lights"
+          },
+          "zh-CN": {
+            "Text": "队形灯"
+          }
+        }
+      },
+      "VC.MFD.BRIGHT.INC": {
+        "UUID": "e4341015-ed54-406d-925b-a419ada7d1d1",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Increase MFD Brightness"
+          },
+          "zh-CN": {
+            "Text": "增加MFD亮度"
+          }
+        }
+      },
+      "VC.MFD.BRIGHT.DEC": {
+        "UUID": "70a000e1-31ad-4d95-abaf-76d165eae402",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Decrease MFD Brightness"
+          },
+          "zh-CN": {
+            "Text": "降低MFD亮度"
+          }
+        }
+      },
+      "VC.BACKLIGHT.DEC": {
+        "UUID": "92f2fa31-70dc-4c5a-9748-cf290260c7be",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Decrease Backlight"
+          },
+          "zh-CN": {
+            "Text": "降低背景灯亮度"
+          }
+        }
+      },
+      "VC.BACKLIGHT.INC": {
+        "UUID": "a713db60-dea1-4469-b8fa-76366470ad08",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Increase Backlight"
+          },
+          "zh-CN": {
+            "Text": "增加背景灯亮度"
+          }
+        }
+      },
+      "VC.DISP.BRIGHT.DEC": {
+        "UUID": "dc72bbc6-ec31-41b5-9e38-98a5ba7e55e3",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Decrease Display Brightness"
+          },
+          "zh-CN": {
+            "Text": "降低显示亮度"
+          }
+        }
+      },
+      "VC.DISP.BRIGHT.INC": {
+        "UUID": "5a376689-1022-4742-9aa9-5a980ecd9ad6",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Increase Display Brightness"
+          },
+          "zh-CN": {
+            "Text": "增加显示亮度"
+          }
+        }
+      },
+      "VC.PANEL.BRIGHT.DEC": {
+        "UUID": "a59c07be-a9e1-46ee-bc88-c6c9ae8fe7bb",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Decrease Panel Brightness"
+          },
+          "zh-CN": {
+            "Text": "降低面板亮度"
+          }
+        }
+      },
+      "VC.PANEL.BRIGHT.INC": {
+        "UUID": "4ba11c44-fef8-4198-bae6-8b4aa391e763",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Increase Panel Brightness"
+          },
+          "zh-CN": {
+            "Text": "增加面板亮度"
+          }
+        }
+      },
+      "VC.FLOODLIGHT.DEC": {
+        "UUID": "18241b24-91c9-4ea5-86bc-b048ef906dff",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Decrease Floodlight Brightness"
+          },
+          "zh-CN": {
+            "Text": "降低舱灯亮度"
+          }
+        }
+      },
+      "VC.FLOODLIGHT.INC": {
+        "UUID": "e8b63870-454d-4384-aab3-495474935d4d",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Increase Floodlight Brightness"
+          },
+          "zh-CN": {
+            "Text": "增加舱灯亮度"
+          }
+        }
+      },
+      "SYS.PUMP.ON": {
+        "UUID": "317a35b4-7cfb-4659-9e53-3cdca00c7693",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Turn Pump #ID# On"
+          },
+          "zh-CN": {
+            "Text": "开启泵#ID#"
+          }
+        }
+      },
+      "SYS.PUMP.OFF": {
+        "UUID": "1c74dea0-379c-4415-befe-c1921d6655d9",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "Increase Floodlight Brightness"
+          },
+          "zh-CN": {
+            "Text": "停止泵#ID#"
+          }
+        }
       }
     }
   }

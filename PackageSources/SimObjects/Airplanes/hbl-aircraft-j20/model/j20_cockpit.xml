@@ -67,8 +67,8 @@
 					</INIT_VALUE>
 					<NODE_ID>PMFD_Brt_Knob</NODE_ID>
 					<ANIM_NAME>PMFD_Brt_Knob</ANIM_NAME>
-					<ANIMTIP_0>Decrease PFD Screen Brightness</ANIMTIP_0>
-					<ANIMTIP_1>Increase PFD Screen Brightness</ANIMTIP_1>
+					<ANIMTIP_0>TT:VC.MFD.BRIGHT.DEC</ANIMTIP_0>
+					<ANIMTIP_1>TT:VC.MFD.BRIGHT.INC</ANIMTIP_1>
 				</UseTemplate>
 				<UseTemplate Name="HBL_PMFD_Emissive_Template"/>
 			</Component>
@@ -92,8 +92,8 @@
 					</INIT_VALUE>
 					<NODE_ID>SMFD_1_Brt_Knob</NODE_ID>
 					<ANIM_NAME>SMFD_1_Brt_Knob</ANIM_NAME>
-					<ANIMTIP_0>Decrease MFD Screen Brightness</ANIMTIP_0>
-					<ANIMTIP_1>Increase MFD Screen Brightness</ANIMTIP_1>
+					<ANIMTIP_0>TT:VC.MFD.BRIGHT.DEC</ANIMTIP_0>
+					<ANIMTIP_1>TT:VC.MFD.BRIGHT.INC</ANIMTIP_1>
 				</UseTemplate>
 				<UseTemplate Name="HBL_SMFD_Emissive_Template">
 					<POTENTIOMETER_ID>20</POTENTIOMETER_ID>
@@ -120,8 +120,8 @@
 					</INIT_VALUE>
 					<NODE_ID>SMFD_2_Brt_Knob</NODE_ID>
 					<ANIM_NAME>SMFD_2_Brt_Knob</ANIM_NAME>
-					<ANIMTIP_0>Decrease MFD Screen Brightness</ANIMTIP_0>
-					<ANIMTIP_1>Increase MFD Screen Brightness</ANIMTIP_1>
+					<ANIMTIP_0>TT:VC.MFD.BRIGHT.DEC</ANIMTIP_0>
+					<ANIMTIP_1>TT:VC.MFD.BRIGHT.INC</ANIMTIP_1>
 				</UseTemplate>
 				<UseTemplate Name="HBL_SMFD_Emissive_Template">
 					<POTENTIOMETER_ID>21</POTENTIOMETER_ID>
@@ -148,8 +148,8 @@
 					</INIT_VALUE>
 					<NODE_ID>SMFD_3_Brt_Knob</NODE_ID>
 					<ANIM_NAME>SMFD_3_Brt_Knob</ANIM_NAME>
-					<ANIMTIP_0>Decrease MFD Screen Brightness</ANIMTIP_0>
-					<ANIMTIP_1>Increase MFD Screen Brightness</ANIMTIP_1>
+					<ANIMTIP_0>TT:VC.MFD.BRIGHT.DEC</ANIMTIP_0>
+					<ANIMTIP_1>TT:VC.MFD.BRIGHT.INC</ANIMTIP_1>
 				</UseTemplate>
 				<UseTemplate Name="HBL_SMFD_Emissive_Template">
 					<POTENTIOMETER_ID>22</POTENTIOMETER_ID>
@@ -177,8 +177,8 @@
 					</INIT_VALUE>
 					<NODE_ID>TMFD_1_Brt_Knob</NODE_ID>
 					<ANIM_NAME>TMFD_1_Brt_Knob</ANIM_NAME>
-					<ANIMTIP_0>Decrease TMFD Screen Brightness</ANIMTIP_0>
-					<ANIMTIP_1>Increase TMFD Screen Brightness</ANIMTIP_1>
+					<ANIMTIP_0>TT:VC.MFD.BRIGHT.DEC</ANIMTIP_0>
+					<ANIMTIP_1>TT:VC.MFD.BRIGHT.INC</ANIMTIP_1>
 				</UseTemplate>
 				<UseTemplate Name="HBL_TMFD_Emissive_Template"/>
 			</Component>
@@ -203,8 +203,8 @@
 					</INIT_VALUE>
 					<NODE_ID>TMFD_2_Brt_Knob</NODE_ID>
 					<ANIM_NAME>TMFD_2_Brt_Knob</ANIM_NAME>
-					<ANIMTIP_0>Decrease TMFD Screen Brightness</ANIMTIP_0>
-					<ANIMTIP_1>Increase TMFD Screen Brightness</ANIMTIP_1>
+					<ANIMTIP_0>TT:VC.MFD.BRIGHT.DEC</ANIMTIP_0>
+					<ANIMTIP_1>TT:VC.MFD.BRIGHT.INC</ANIMTIP_1>
 				</UseTemplate>
 				<UseTemplate Name="HBL_TMFD_Emissive_Template">
 					<POTENTIOMETER_ID>24</POTENTIOMETER_ID>
@@ -292,9 +292,9 @@
 					</INIT_VALUE>
 					<NODE_ID>ICP_Brt_Wheel</NODE_ID>
 					<ANIM_NAME>ICP_Brt_Wheel</ANIM_NAME>
-					<ANIMTIP_0>Decrease ICP Backlight</ANIMTIP_0>
+					<ANIMTIP_0>TT:VC.BACKLIGHT.DEC</ANIMTIP_0>
 					<ANIMTIP_0_ON_CURSOR>DownArrow</ANIMTIP_0_ON_CURSOR>
-					<ANIMTIP_1>Increase ICP Backlight</ANIMTIP_1>
+					<ANIMTIP_1>TT:VC.BACKLIGHT.INC</ANIMTIP_1>
 					<ANIMTIP_1_ON_CURSOR>UpArrow</ANIMTIP_1_ON_CURSOR>
 				</UseTemplate>
 				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
@@ -396,9 +396,9 @@
 						</INIT_VALUE>
 						<NODE_ID>All_Brt_Knob</NODE_ID>
 						<ANIM_NAME>All_Brt_Knob</ANIM_NAME>
-						<ANIMTIP_0>Display Dim</ANIMTIP_0>
+						<ANIMTIP_0>TT:VC.DISP.BRIGHT.DEC</ANIMTIP_0>
 						<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
-						<ANIMTIP_1>Display Bright</ANIMTIP_1>
+						<ANIMTIP_1>TT:VC.DISP.BRIGHT.INC</ANIMTIP_1>
 						<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 					</UseTemplate>
 				</Component>
@@ -406,16 +406,16 @@
 				<!-- Panel Brightness -->
 				<UseTemplate Name="HBL_LIGHTING_Knob_Template">
 					<WWISE_EVENT>double_light_switch</WWISE_EVENT>
-					<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>
+					<KNOB_TURN_SPEED>5</KNOB_TURN_SPEED>l
 					<POTENTIOMETER>11</POTENTIOMETER>
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == 10 *
 					</INIT_VALUE>
 					<NODE_ID>LIGHTING_Knob_Panel_1</NODE_ID>
 					<ANIM_NAME>LIGHTING_Knob_Panel_1</ANIM_NAME>
-					<ANIMTIP_0>Panel Text Light Dim</ANIMTIP_0>
+					<ANIMTIP_0>TT:VC.PANEL.BRIGHT.DEC</ANIMTIP_0>
 					<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
-					<ANIMTIP_1>&#22686;&#21152;&#23383;&#20307;&#20142;&#24230;</ANIMTIP_1>
+					<ANIMTIP_1>TT:VC.PANEL.BRIGHT.INC</ANIMTIP_1>
 					<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 				</UseTemplate>
 				<UseTemplate Name="HBL_LIGHTING_Generic_Emissive_Template">
@@ -497,8 +497,8 @@
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == 50 *
 					</INIT_VALUE>
-					<ANIMTIP_0>Sidepanels Floodlight Dim</ANIMTIP_0>
-					<ANIMTIP_1>Sidepanels Floodlight Bright</ANIMTIP_1>
+					<ANIMTIP_0>TT:VC.FLOODLIGHT.DEC</ANIMTIP_0>
+					<ANIMTIP_1>TT:VC.FLOODLIGHT.INC</ANIMTIP_1>
 				</UseTemplate>
 				<!-- Glareshield Brightness -->
 				<UseTemplate Name="HBL_LIGHTING_Knob_Glareshield_Template">
@@ -508,8 +508,8 @@
 					<INIT_VALUE>
 						(E:Time of Day,enum) 3 == 50 *
 					</INIT_VALUE>
-					<ANIMTIP_0>Frontpanel Floodlight Dim</ANIMTIP_0>
-					<ANIMTIP_1>Frontpanel Floodlight Bright</ANIMTIP_1>
+					<ANIMTIP_0>TT:VC.FLOODLIGHT.DEC</ANIMTIP_0>
+					<ANIMTIP_1>TT:VC.FLOODLIGHT.INC</ANIMTIP_1>
 				</UseTemplate>
 			</Component>
 			<Component ID="Lighting_Exterior">
