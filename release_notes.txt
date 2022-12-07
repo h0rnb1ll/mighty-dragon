@@ -1,5 +1,6 @@
 2022-12-06:
 added Asobo's animated F-18 pilot (requires Maveric DLC)
+click on seat to toggle pilot visibility
 Pilot visibility debug
 VC localisations
 
