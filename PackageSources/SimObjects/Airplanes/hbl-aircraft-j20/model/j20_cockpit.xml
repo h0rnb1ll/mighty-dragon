@@ -640,9 +640,9 @@
 				<VISIBILITY_CODE>(L:XMLVAR_YokeHidden1) !</VISIBILITY_CODE>
 			</UseTemplate> 
 		</Component>
-		<Component ID="Pilot_Int_Visibility" Node="Seat">
+		<Component ID="Pilot_Int_Visibility" Node="PilotCollider">
 			<DefaultTemplateParameters>
-                <NODE_ID>Seat</NODE_ID>
+                <NODE_ID>PilotCollider</NODE_ID>a
                 <LEFT_SINGLE_CODE>(L:PILOT_0_VIS) ! (&gt;L:PILOT_0_VIS)</LEFT_SINGLE_CODE>
             </DefaultTemplateParameters>
 			<Component ID="#NODE_ID#_Hider" Node="#NODE_ID#">
