@@ -1,4 +1,7 @@
+2022-12-10:
 ejection seat update
+pilot collider update
+traffic nameplate type update
 
 2022-12-08:
 Interior: added Flaps and Speedbrake levers
