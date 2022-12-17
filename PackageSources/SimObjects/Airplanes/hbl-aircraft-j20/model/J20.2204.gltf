@@ -4150,9 +4150,12 @@
                 "msfs_blend_mask_texture" : {}
             },
             "name" : "Landing Lights",
+            "normalTexture" : {
+                "index" : 14
+            },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 14
+                    "index" : 15
                 },
                 "metallicFactor" : 0.5,
                 "roughnessFactor" : 0
@@ -4199,7 +4202,7 @@
             "name" : "BODY_DECAL",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 15
+                    "index" : 16
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -4414,10 +4417,10 @@
             },
             "name" : "Rivets",
             "normalTexture" : {
-                "index" : 16
+                "index" : 17
             },
             "occlusionTexture" : {
-                "index" : 17
+                "index" : 18
             },
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
@@ -4427,11 +4430,11 @@
                     0.5
                 ],
                 "baseColorTexture" : {
-                    "index" : 18
+                    "index" : 19
                 },
                 "metallicFactor" : 0.5,
                 "metallicRoughnessTexture" : {
-                    "index" : 17
+                    "index" : 18
                 }
             }
         },
@@ -6220,6 +6223,10 @@
         {
             "sampler" : 0,
             "source" : 8
+        },
+        {
+            "sampler" : 0,
+            "source" : 0
         },
         {
             "sampler" : 0,
