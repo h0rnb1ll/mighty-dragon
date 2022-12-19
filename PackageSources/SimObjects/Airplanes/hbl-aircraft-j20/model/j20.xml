@@ -290,10 +290,6 @@
 			</Component>
 		</Component>
 
-		<Component ID="afterburners">
-			<UseTemplate Name="HBL_Eng_Afterburner"></UseTemplate>
-		</Component>
-
 		<Component ID="Canopy_Visibility">
 			<Component ID="Canopy_Int" Node="Canopy_Int">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
