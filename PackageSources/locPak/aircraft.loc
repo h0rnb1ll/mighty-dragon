@@ -13,10 +13,10 @@
         "LocalizationStatus": "TranslationNeeded",
         "Languages": {
           "en-US": {
-            "Text": "J-20威龍"
+            "Text": "J-20威龙"
           },
           "zh-CN": {
-            "Text": "J-20威龍"
+            "Text": "歼-20威龙"
           }
         }
       },
@@ -53,10 +53,10 @@
         "LastModifiedDate": "2021-09-14 23:59:59",
         "Languages": {
           "en-US": {
-            "Text": "J-20 Mighty Dragon"
+            "Text": "歼-20 Mighty Dragon"
           },
           "zh-CN": {
-            "Text": "J-20威龍"
+            "Text": "歼-20威龍"
           }
         }
       },
@@ -135,6 +135,19 @@
           },
           "zh-CN": {
             "Text": "现役歼-20大致已换装沈飞涡扇-10C发动机"
+          }
+        }
+      },
+      "AIRCRAFT.LOADING.TIPS4": {
+        "UUID": "0c53270b-3673-45f3-a415-989198c171e5",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-12-05 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "J-20s are being refitted with WS-15 engines, enabling vectored thurst and supercruise abilities"
+          },
+          "zh-CN": {
+            "Text": "歼-20已开始陆续换装涡扇-15发动机，可实现矢量推进与超级巡航"
           }
         }
       },
