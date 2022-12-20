@@ -1,5 +1,6 @@
 WIP:
 WS-15 engine data - increased thrust to 40774 lbf
+15秒就可推到1马赫，爽！
 
 2022-12-10:
 ejection seat update
