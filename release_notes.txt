@@ -1,5 +1,5 @@
 WIP:
-WS-15 engine data - increased thrust to 40774 lbf
+WS-15 engine data - increased thrust to match WS-15's performance
 15秒就可推到1马赫，爽！
 
 2022-12-10:
