@@ -1,6 +1,6 @@
 # J-20 Mighty-Dragon for MSFS
 ### Alpha release stage, Work In Progress. 
-#### Updated on: 2022-12-10 [release notes](https://raw.githubusercontent.com/h0rnb1ll/mighty-dragon/main/release_notes.txt)
+#### Updated on: 2022-12-29 [release notes](https://raw.githubusercontent.com/h0rnb1ll/mighty-dragon/main/release_notes.txt)
 [alpha realease download](https://github.com/h0rnb1ll/mighty-dragon/releases/download/0.3.2/hbl-aircraft-j20.zip)    
 [other versions](https://github.com/h0rnb1ll/mighty-dragon/releases)    
 [paintkit](https://github.com/h0rnb1ll/mighty-dragon/releases/download/Paintkit/paintkit.zip)
@@ -22,7 +22,7 @@ Many performance information on the J-20 stealth fighter are still classified. T
 - thrust vectors yet to be implemented (not avail. in Saturn / Shenyang WS-10 engines IRL, probable with WS-15 introduction)
 
 <a href="https://www.buymeacoffee.com/hornbill" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-![image](https://github.com/h0rnb1ll/mighty-dragon/blob/main/PackageSources/SimObjects/Airplanes/hbl-aircraft-j20/texture/thumbnail.jpg)
+![image](https://github.com/h0rnb1ll/mighty-dragon/blob/main/PackageSources/SimObjects/Airplanes/hbl-aircraft-j20/texture.j20b-plaaf/thumbnail.jpg)
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.220601.jpg)
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.2204.02.jpg)    
 ![Cockpit WIP](https://github.com/h0rnb1ll/mighty-dragon/blob/main/images/screenshots/scr.2205.03.jpg)    
