@@ -73,6 +73,19 @@
           }
         }
       },
+      "AIRCRAFT.UI_VARIATION.J20B.PLAAF": {
+        "UUID": "2cacce0e-5b5b-4d00-8e68-f08d7b03299e",
+        "LastModifiedBy": "h0rnb1ll",
+        "LastModifiedDate": "2021-09-14 23:59:59",
+        "Languages": {
+          "en-US": {
+            "Text": "J-20B PLAAF"
+          },
+          "zh-CN": {
+            "Text": "歼-20B 中国人民解放军空军"
+          }
+        }
+      },
       "AIRCRAFT.LOADING.TIPS0": {
         "UUID": "7d76a200-7525-417f-9727-98ccc4168a53",
         "LastModifiedBy": "h0rnb1ll",
