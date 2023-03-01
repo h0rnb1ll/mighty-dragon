@@ -3907,6 +3907,14 @@
         },
         {
             "doubleSided" : true,
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "emissiveTexture" : {
+                "index" : 6
+            },
             "extensions" : {
                 "ASOBO_material_blend_gbuffer" : {
                     "enabled" : true,
@@ -3946,7 +3954,7 @@
             "name" : "Formation",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 6
+                    "index" : 7
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -3954,7 +3962,7 @@
         },
         {
             "emissiveTexture" : {
-                "index" : 7
+                "index" : 8
             },
             "extras" : {
                 "msfs_material_type" : 1,
@@ -3994,17 +4002,17 @@
             },
             "name" : "Engines + exhausts",
             "normalTexture" : {
-                "index" : 8
+                "index" : 9
             },
             "occlusionTexture" : {
-                "index" : 9
+                "index" : 10
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 10
+                    "index" : 11
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 9
+                    "index" : 10
                 }
             }
         },
@@ -4076,7 +4084,7 @@
             "name" : "GEAR",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 11
+                    "index" : 12
                 }
             }
         },
@@ -4108,7 +4116,7 @@
                 1
             ],
             "emissiveTexture" : {
-                "index" : 12
+                "index" : 13
             },
             "extras" : {
                 "msfs_detail_color_texture" : {},
@@ -4136,7 +4144,7 @@
                 1
             ],
             "emissiveTexture" : {
-                "index" : 13
+                "index" : 14
             },
             "extras" : {
                 "msfs_detail_color_texture" : {},
@@ -4146,11 +4154,11 @@
             },
             "name" : "Landing Lights",
             "normalTexture" : {
-                "index" : 14
+                "index" : 15
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 15
+                    "index" : 16
                 },
                 "metallicFactor" : 0.5,
                 "roughnessFactor" : 0
@@ -4197,7 +4205,7 @@
             "name" : "BODY_DECAL",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 16
+                    "index" : 17
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -4412,10 +4420,10 @@
             },
             "name" : "Rivets",
             "normalTexture" : {
-                "index" : 17
+                "index" : 18
             },
             "occlusionTexture" : {
-                "index" : 18
+                "index" : 19
             },
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
@@ -4425,11 +4433,11 @@
                     0.5
                 ],
                 "baseColorTexture" : {
-                    "index" : 19
+                    "index" : 20
                 },
                 "metallicFactor" : 0.5,
                 "metallicRoughnessTexture" : {
-                    "index" : 18
+                    "index" : 19
                 }
             }
         },
@@ -6185,6 +6193,10 @@
         {
             "sampler" : 0,
             "source" : 4
+        },
+        {
+            "sampler" : 0,
+            "source" : 5
         },
         {
             "sampler" : 0,
