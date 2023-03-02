@@ -3911,12 +3911,7 @@
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                1,
-                1,
-                1
-            ],
+            "alphaMode" : "BLEND",
             "emissiveTexture" : {
                 "index" : 6
             },
@@ -3934,10 +3929,16 @@
             "extras" : {
                 "msfs_material_type" : 2,
                 "msfs_blend_mask_texture" : {},
-                "msfs_base_color_texture" : {},
+                "msfs_base_color_texture" : {
+                    "name" : "J20_VC_DECAL_ALBD.PNG",
+                    "type" : "Image"
+                },
                 "msfs_occlusion_metallic_roughness_texture" : {},
                 "msfs_normal_texture" : {},
-                "msfs_emissive_texture" : {},
+                "msfs_emissive_texture" : {
+                    "name" : "J20_VC_DECAL_ALBD.PNG",
+                    "type" : "Image"
+                },
                 "msfs_detail_color_texture" : {},
                 "msfs_detail_occlusion_metallic_roughness_texture" : {},
                 "msfs_detail_normal_texture" : {},
@@ -3958,11 +3959,15 @@
             },
             "name" : "Formation",
             "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.3005430996417999,
+                    0.799102783203125,
+                    0,
+                    1
+                ],
                 "baseColorTexture" : {
                     "index" : 7
-                },
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.5
+                }
             }
         },
         {
