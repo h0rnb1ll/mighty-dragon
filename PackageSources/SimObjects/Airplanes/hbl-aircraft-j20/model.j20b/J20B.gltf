@@ -3906,23 +3906,11 @@
             }
         },
         {
-            "alphaMode" : "BLEND",
             "emissiveTexture" : {
                 "index" : 6
             },
-            "extensions" : {
-                "ASOBO_material_blend_gbuffer" : {
-                    "enabled" : true,
-                    "baseColorBlendFactor" : 1,
-                    "metallicBlendFactor" : 1,
-                    "roughnessBlendFactor" : 1,
-                    "normalBlendFactor" : 1,
-                    "emissiveBlendFactor" : 1,
-                    "occlusionBlendFactor" : 1
-                }
-            },
             "extras" : {
-                "msfs_material_type" : 2,
+                "msfs_material_type" : 1,
                 "msfs_blend_mask_texture" : {},
                 "msfs_base_color_texture" : {},
                 "msfs_occlusion_metallic_roughness_texture" : {},
@@ -3944,7 +3932,7 @@
                 ],
                 "msfs_metallic_factor" : 1.0,
                 "msfs_roughness_factor" : 1.0,
-                "msfs_alpha_mode" : 2
+                "msfs_alpha_mode" : 0
             },
             "name" : "Formation",
             "pbrMetallicRoughness" : {

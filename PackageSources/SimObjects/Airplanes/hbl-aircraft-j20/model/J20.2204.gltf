@@ -13,6 +13,7 @@
         "ASOBO_normal_map_convention",
         "ASOBO_material_environment_occluder",
         "ASOBO_material_windshield_v2",
+        "ASOBO_material_draw_order",
         "ASOBO_material_blend_gbuffer"
     ],
     "scene" : 0,
@@ -3911,23 +3912,21 @@
             }
         },
         {
-            "alphaMode" : "BLEND",
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
             "emissiveTexture" : {
                 "index" : 6
             },
             "extensions" : {
-                "ASOBO_material_blend_gbuffer" : {
-                    "enabled" : true,
-                    "baseColorBlendFactor" : 1,
-                    "metallicBlendFactor" : 1,
-                    "roughnessBlendFactor" : 1,
-                    "normalBlendFactor" : 1,
-                    "emissiveBlendFactor" : 1,
-                    "occlusionBlendFactor" : 1
+                "ASOBO_material_draw_order" : {
+                    "drawOrderOffset" : 10
                 }
             },
             "extras" : {
-                "msfs_material_type" : 2,
+                "msfs_material_type" : 1,
                 "msfs_blend_mask_texture" : {},
                 "msfs_base_color_texture" : {
                     "name" : "J20_VC_DECAL_ALBD.PNG",
@@ -3955,7 +3954,11 @@
                 ],
                 "msfs_metallic_factor" : 1.0,
                 "msfs_roughness_factor" : 1.0,
-                "msfs_alpha_mode" : 2
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order_offset" : 10,
+                "msfs_disable_motion_blur" : 0,
+                "msfs_no_cast_shadow" : 0,
+                "msfs_double_sided" : 0
             },
             "name" : "Formation",
             "pbrMetallicRoughness" : {
