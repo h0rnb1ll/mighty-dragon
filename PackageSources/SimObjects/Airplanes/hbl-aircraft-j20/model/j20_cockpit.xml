@@ -247,6 +247,10 @@
 			</Component>
 
 			<Component ID="HMD">
+				<UseTemplate Name="ASOBO_GT_Visibility_Code">
+					<NODE_ID>HMD</NODE_ID>
+					<VISIBILITY_CODE>(A:CAMERA STATE, number) 2 ==</VISIBILITY_CODE>
+				</UseTemplate> 
 				<UseTemplate Name="HBL_Screen_Template">
 					<AMBIENT_POTENTIOMETER>16</AMBIENT_POTENTIOMETER>
 					<!--<MAX_AMBIENT_EMISSIVE_PERCENT>0.25</MAX_AMBIENT_EMISSIVE_PERCENT>-->
