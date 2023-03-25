@@ -57,7 +57,7 @@
 				<FSXCompatibility>false</FSXCompatibility>
 			</Flags>
 			<AssetDir>PackageSources\locPak\</AssetDir>
-			<OutputDir>\</OutputDir>
+			<OutputDir/>
 		</AssetGroup>
 		<AssetGroup Name="modelbehaviordefs">
 			<Type>Copy</Type>
