@@ -5,11 +5,11 @@
 	</LODS>
 
 	<Behaviors>
-		<Include ModelBehaviorFile="Asobo\Exterior.xml"/>
+    	<Include ModelBehaviorFile="Asobo\Generic\FX.xml"/>
+		<Include Path="Asobo\Exterior.xml"/>
 		<Include ModelBehaviorFile="Asobo\Common.xml"/>
 		<Include ModelBehaviorFile="h0rnb1ll\lights.xml"/>
 		<Include ModelBehaviorFile="h0rnb1ll\engine.xml"/>
-    	<Include ModelBehaviorFile="Asobo\Generic\FX.xml"/>
 		<Include ModelBehaviorFile="h0rnb1ll\fx.xml"/>
 
 		<Component ID="Effects">
@@ -20,7 +20,7 @@
 			<UseTemplate Name="HBL_LIGHTING_Formation_Lights_Template"/>
 		</Component>
 		
-		<Component ID="ENGINE">
+		<Component ID="Engines">
 			<!--<UseTemplate Name="ASOBO_ENGINE_Turbine_Template">
 				<ID>1</ID>
 				<ANIM_NODE_ID>fanblade_l</ANIM_NODE_ID>
@@ -38,13 +38,21 @@
 				<BLURRED_NODE_ID>fuselage_engine_R</BLURRED_NODE_ID>
 			</UseTemplate>
 			-->
-			<UseTemplate Name="ASOBO_Nozzle_Template">
-				<ANIM_NAME>EXHAUSTS_LEFT</ANIM_NAME>
-			</UseTemplate>
-			<UseTemplate Name="ASOBO_Nozzle_Template">
-				<ANIM_NAME>EXHAUSTS_RIGHT</ANIM_NAME>
-				<ID>2</ID>
-			</UseTemplate>
+			<Component ID="NOZZLE_LEFT">
+				<UseTemplate Name = "HBL_TURB_ENG_NOZZLE">
+					<ANIM_NAME>EXHAUSTS_Left</ANIM_NAME>
+					<ANIM_LENGTH>100</ANIM_LENGTH>
+					<ENGINE_ID>1</ENGINE_ID>
+				</UseTemplate>
+			</Component>
+
+			<Component ID="NOZZLE_RIGHT">
+				<UseTemplate Name = "HBL_TURB_ENG_NOZZLE">
+					<ANIM_NAME>EXHAUSTS_Right</ANIM_NAME>
+					<ANIM_LENGTH>100</ANIM_LENGTH>
+					<ENGINE_ID>2</ENGINE_ID>
+				</UseTemplate>
+			</Component>
 			
 			<Component ID="Engines_Emissive">
 				<Parameters Type="Default">
@@ -323,7 +331,7 @@
 	<Animation guid="2a59a922-3aae-4db9-b4f6-8cbaca89a197" name="Flaps_Right" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="24b45c88-9773-4d7a-b4dc-cb024419a0ad" name="Slats_Left" type="Sim" typeparam="AutoPlay"/>
 	<Animation guid="3a946506-43a1-4e78-893b-5e5d0153059f" name="Slats_Right" type="Sim" typeparam="AutoPlay"/>
-	
+
 	<PartInfo>
 		<Name>Elevators</Name>
 		<AnimLength>100</AnimLength>

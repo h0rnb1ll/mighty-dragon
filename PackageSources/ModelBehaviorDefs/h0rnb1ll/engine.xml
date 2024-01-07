@@ -1,4 +1,23 @@
 <ModelBehaviors>
+    <Template Name="HBL_TURB_ENG_NOZZLE">
+        <DefaultTemplateParameters>
+            <ANIM_LENGTH>100</ANIM_LENGTH>
+            <ENGINE_ID>1</ENGINE_ID>
+        </DefaultTemplateParameters>
+        <UseTemplate Name = "ASOBO_GT_Anim_Code">
+            <ANIM_NAME>#ANIM_NAME#</ANIM_NAME>
+            <ANIM_LENGTH>#ANIM_LENGTH#</ANIM_LENGTH>
+            <ANIM_CODE>
+                (A:GENERAL ENG RPM:#ENGINE_ID#,revolutions per minute) 17000 &lt; if {
+                    (A:GENERAL ENG RPM:#ENGINE_ID#,revolutions per minute) 17000 / 100 *
+                } (A:GENERAL ENG RPM:#ENGINE_ID#,revolutions per minute) 18000 &lt; if els {
+                    100 ((A:GENERAL ENG RPM:#ENGINE_ID#,revolutions per minute) 18000 / 100 *) -
+                } els {
+                    (A:GENERAL ENG RPM:#ENGINE_ID#,revolutions per minute) 18000 - 11000 / 100 *
+                }
+            </ANIM_CODE>
+        </UseTemplate>
+    </Template>
     <Template Name="HBL_Eng_Afterburner_End_Subtemplate">
         <DefaultTemplateParameters>
             <ANIM_LENGTH>100</ANIM_LENGTH>

@@ -1,5 +1,9 @@
 minor lighting fixes
 
+2024-01-08:
+Compile for MSFS SU14
+Added engine nozzle animation
+
 2023-03-25:
 Added canopy severance cord
 fix formation light brightness and reduce flickering

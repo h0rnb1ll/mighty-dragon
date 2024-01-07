@@ -8,3 +8,6 @@ PackagesMetadata
 
 ## backup files
 *.bak
+
+**/texture/*.gltf
+**/texture/*.bin
