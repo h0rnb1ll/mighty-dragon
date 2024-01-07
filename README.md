@@ -1,13 +1,13 @@
 # J-20 Mighty-Dragon for MSFS
 ### Alpha release stage, Work In Progress. 
-#### Updated on: 2023-03-25 [release notes](https://raw.githubusercontent.com/h0rnb1ll/mighty-dragon/main/release_notes.txt)
+#### Updated on: 2024-01-08 [release notes](https://raw.githubusercontent.com/h0rnb1ll/mighty-dragon/main/release_notes.txt)
 [alpha realease download](https://github.com/h0rnb1ll/mighty-dragon/releases/download/0.3.2/hbl-aircraft-j20.zip)    
 [other versions](https://github.com/h0rnb1ll/mighty-dragon/releases)    
-[paintkit](https://github.com/h0rnb1ll/mighty-dragon/releases/download/Paintkit/paintkit.zip)
+[paintkit](https://github.com/h0rnb1ll/mighty-dragon/releases/download/Paintkit/paintkit.zip)    
 
-Compiled and tested on SU11
+Compiled and tested on SU14    
 
-Project repository for MSFS Chinese 5th generation fighter J20 (Mighty Dragon). This project is primarily meant to be a study platform for MSFS aircraft development, exact replication of the J20 aircraft is non-essential at this moment. This repository serves as a resource for anyone desiring to have a hands-on in MSFS aircraft development.
+Project repository for MSFS Chinese 5th generation fighter J20 (Mighty Dragon). This project is primarily meant to be a study platform for MSFS aircraft development, exact replication of the J20 aircraft is non-essential at this moment. This repository serves as a resource for anyone desiring to have a hands-on in MSFS aircraft development.    
 
 Features included:
 * working cockpit with animations
